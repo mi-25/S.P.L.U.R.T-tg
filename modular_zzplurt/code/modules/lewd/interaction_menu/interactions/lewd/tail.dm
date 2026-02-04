@@ -1,4 +1,4 @@
-// Lewd tail interactions with dynamic intent-based messaging and fluid collection mechanics
+// 基于意图的动态消息和液体收集机制的淫荡尾巴互动
 /datum/interaction/lewd/tail
 	user_required_parts = list(ORGAN_SLOT_TAIL = REQUIRE_GENITAL_ANY)
 	cum_target = list(CLIMAX_POSITION_TARGET = null)
@@ -10,7 +10,7 @@
 	var/harm_text
 
 /datum/interaction/lewd/tail/act(mob/living/user, mob/living/target)
-	// Check for containers to collect fluids during interactions
+	// 检查容器以在互动期间收集液体
 	var/obj/item/reagent_containers/liquid_container
 	if(try_milking)
 		var/obj/item/cached_item = user.get_active_held_item()
@@ -21,7 +21,7 @@
 			if(istype(cached_item) && cached_item.is_refillable() && cached_item.is_drainable())
 				liquid_container = cached_item
 
-	// Initialize arousal/pleasure values and clear previous message state
+	// 初始化欲望/快感值并清除之前的消息状态
 	message = null
 	target_arousal = 6
 	target_pleasure = 4
@@ -30,7 +30,7 @@
 	user_pleasure = 4
 	user_pain = 0
 
-	// Select appropriate message text based on user's current intent
+	// 根据用户当前意图选择适当的消息文本
 	switch(resolve_intent_name(user))
 		if("help")
 			message = islist(help_text) ? pick(help_text) : help_text
@@ -51,10 +51,10 @@
 		user_pain = target_pain
 
 	message = list(message)
-	..() // Execute parent interaction logic and send formatted message
+	..() // 执行父互动逻辑并发送格式化消息
 
-// Standard lewd interactions targeting other players' body parts
-// Includes penetration, rubbing, and stimulation actions
+// 针对其他玩家身体部位的标准淫荡互动
+// 包括插入、摩擦和刺激动作
 
 /datum/interaction/lewd/tail/dick
 	name = "Tail. Jerk Cock"
@@ -67,21 +67,21 @@
 						'modular_zzplurt/sound/interactions/bang2.ogg',
 						'modular_zzplurt/sound/interactions/bang3.ogg')
 	help_text = list(
-		"pleasures %TARGET%'s cock, gliding their tail along it.",
-		"runs the tip of their tail along %TARGET%'s shaft.",
-		"moves their tail up and down %TARGET%'s cock, trying to bring pleasure."
+		"用尾巴滑过%TARGET%的肉棒,取悦对方.",
+		"用尾巴尖沿着%TARGET%的肉棒滑动.",
+		"用尾巴在%TARGET%的肉棒上上下移动,试图带来快感."
 	)
 	grab_text = list(
-		"firmly grips %TARGET%'s cock with their tail, sliding along its full length.",
-		"predatorily wraps their tail around %TARGET%'s cock and moves along it, not letting them relax.",
-		"holds %TARGET%'s cock in a tight ring of their tail, making insistent thrusting motions."
+		"用尾巴紧紧握住%TARGET%的肉棒,沿着整根滑动.",
+		"用尾巴掠夺性地缠绕%TARGET%的肉棒并沿着它移动,不让对方放松.",
+		"用尾巴紧紧环住%TARGET%的肉棒,做出坚持的抽插动作."
 	)
 	harm_text = list(
-		"tormentingly rough with %TARGET%'s cock, clearly not caring about their partner's sensations.",
-		"squeezes and pulls %TARGET%'s cock with their tail, as if enjoying the pain they cause.",
-		"sharply grips and twists %TARGET%'s cock, acting without mercy and holding with force."
+		"粗暴地对待%TARGET%的肉棒,显然不在乎对方的感受.",
+		"用尾巴挤压和拉扯%TARGET%的肉棒,似乎享受着造成的痛苦.",
+		"猛烈地抓住并扭动%TARGET%的肉棒,毫不留情地用力握住."
 	)
-	cum_message_text_overrides = list(CLIMAX_POSITION_TARGET = list("%CUMMING% covers %CAME_IN%'s tail with cum."))
+	cum_message_text_overrides = list(CLIMAX_POSITION_TARGET = list("%CUMMING%的精液覆盖了%CAME_IN%的尾巴."))
 
 /datum/interaction/lewd/tail/vagina
 	name = "Tail. Penetrate Pussy"
@@ -91,23 +91,23 @@
 	try_milking = TRUE
 	additional_details = list(INTERACTION_FILLS_CONTAINERS)
 	help_text = list(
-		"gently pushes their tail inside %TARGET%'s pussy.",
-		"tenderly moves their tail deep into their core, listening to %TARGET%'s reaction.",
-		"rhythmically slides their tail into %TARGET%'s pussy, trying to bring maximum pleasure."
+		"轻轻地将尾巴推入%TARGET%的小穴.",
+		"温柔地将尾巴深入对方的核心,倾听%TARGET%的反应.",
+		"有节奏地将尾巴滑入%TARGET%的小穴,试图带来最大的快感."
 	)
 	grab_text = list(
-		"insistently pounds into %TARGET%'s pussy with their tail, writhing from side to side.",
-		"drives their tail deep into %TARGET%'s pussy, forcefully spreading their walls.",
-		"presses their tail into %TARGET%'s pussy and begins to move, as if wanting to fill them completely."
+		"用尾巴坚持不懈地冲击%TARGET%的小穴,左右扭动.",
+		"将尾巴深深插入%TARGET%的小穴,用力撑开对方的内壁.",
+		"将尾巴压入%TARGET%的小穴并开始移动,仿佛想要完全填满对方."
 	)
 	harm_text = list(
-		"brutally violates %TARGET%'s pussy with their tail, trying to reach the deepest parts.",
-		"forcefully rams their tail into %TARGET%'s pussy with merciless power, giving no rest.",
-		"roughly penetrates %TARGET%'s pussy with their tail, stretching and causing discomfort."
+		"用尾巴残忍地侵犯%TARGET%的小穴,试图触及最深处.",
+		"用无情的力量将尾巴强行插入%TARGET%的小穴,不给任何休息.",
+		"粗暴地用尾巴贯穿%TARGET%的小穴,拉伸并造成不适."
 	)
 	sound_possible = list('modular_zzplurt/sound/interactions/champ1.ogg',
 						'modular_zzplurt/sound/interactions/champ2.ogg')
-	cum_message_text_overrides = list(CLIMAX_POSITION_TARGET = list("%CUMMING% covers %CAME_IN%'s tail with juices."))
+	cum_message_text_overrides = list(CLIMAX_POSITION_TARGET = list("%CUMMING%的淫水覆盖了%CAME_IN%的尾巴."))
 
 /datum/interaction/lewd/tail/vagina_rub
 	name = "Tail. Rub Pussy"
@@ -117,71 +117,71 @@
 	try_milking = TRUE
 	additional_details = list(INTERACTION_FILLS_CONTAINERS)
 	help_text = list(
-		"gently slides their tail around %TARGET%'s slit.",
-		"tenderly moves near %TARGET%'s pussy, listening to their reaction.",
-		"rhythmically and softly pats %TARGET%'s cunt with their tail, trying to bring maximum pleasure."
+		"轻轻地用尾巴在%TARGET%的花缝周围滑动.",
+		"温柔地在%TARGET%的小穴附近移动,倾听对方的反应.",
+		"有节奏地用尾巴轻柔拍打%TARGET%的小穴,试图带来最大的快感."
 	)
 	grab_text = list(
-		"insistently presses into %TARGET%'s pussy with their tail, writhing from side to side.",
-		"actively slaps %TARGET%'s pussy, forcefully pulling at their folds.",
-		"pushes their tail into %TARGET%'s pussy and begins to move, as if about to enter inside."
+		"用尾巴坚持不懈地压入%TARGET%的小穴,左右扭动.",
+		"积极地拍打%TARGET%的小穴,用力拉扯对方的花瓣.",
+		"将尾巴推入%TARGET%的小穴并开始移动,仿佛要进入内部."
 	)
 	harm_text = list(
-		"brutally rough slaps %TARGET%'s pussy with their tail, trying to leave pain from each strike.",
-		"sharply slaps %TARGET%'s pussy with their tail using merciless force, as if trying to knock out their strength.",
-		"actively stretches %TARGET%'s folds with their tail, making them think about tearing their body."
+		"用尾巴残忍粗暴地拍打%TARGET%的小穴,试图让每次击打都留下痛苦.",
+		"用无情的力量猛烈拍打%TARGET%的小穴,仿佛要击垮对方的力量.",
+		"用尾巴积极拉伸%TARGET%的花瓣,让对方想到撕裂身体."
 	)
 	sound_possible = list('modular_zzplurt/sound/interactions/champ1.ogg',
 						'modular_zzplurt/sound/interactions/champ2.ogg')
-	cum_message_text_overrides = list(CLIMAX_POSITION_TARGET = list("%CUMMING% covers %CAME_IN%'s tail with juices."))
+	cum_message_text_overrides = list(CLIMAX_POSITION_TARGET = list("%CUMMING%的淫水覆盖了%CAME_IN%的尾巴."))
 
 /datum/interaction/lewd/tail/ass
 	name = "Tail. Penetrate Ass"
 	description = "Penetrate their ass with your tail."
 	target_required_parts = list(ORGAN_SLOT_ANUS = REQUIRE_GENITAL_EXPOSED)
 	help_text = list(
-		"slides inside %TARGET%'s ass with their tail.",
-		"gently moves their tail in %TARGET%'s anus, massaging them from inside.",
-		"slowly penetrates %TARGET%'s ass with their tail, trying to bring pleasant sensations."
+		"用尾巴滑入%TARGET%的肛门.",
+		"用尾巴在%TARGET%的肛门内轻轻移动,从内部按摩对方.",
+		"用尾巴缓慢插入%TARGET%的肛门,试图带来愉悦的感觉."
 	)
 	grab_text = list(
-		"actively rams their tail inside %TARGET%'s anus, repeatedly trying to hit sensitive spots.",
-		"pushes their tail into %TARGET%'s anal opening, moving confidently and quickly.",
-		"rhythmically thrusts their tail into %TARGET%'s anus, writhing and pressing from inside."
+		"用尾巴积极地冲撞%TARGET%的肛门内部,反复试图击中敏感点.",
+		"将尾巴推入%TARGET%的肛门,自信而快速地移动.",
+		"有节奏地将尾巴插入%TARGET%的肛门,扭动并从内部施压."
 	)
 	harm_text = list(
-		"violates %TARGET%'s ass with their tail, as if trying to pierce right through.",
-		"forcefully penetrates %TARGET%'s anal opening with their tail, causing painful sensations.",
-		"roughly rams their tail into %TARGET%'s rear passage, acting with force and without a drop of mercy."
+		"用尾巴侵犯%TARGET%的肛门,仿佛试图直接贯穿.",
+		"用尾巴强行插入%TARGET%的肛门,造成痛苦的感觉.",
+		"粗暴地将尾巴插入%TARGET%的后穴,用力且毫不留情."
 	)
 	sound_possible = list('modular_zzplurt/sound/interactions/bang1.ogg',
 						'modular_zzplurt/sound/interactions/bang2.ogg',
 						'modular_zzplurt/sound/interactions/bang3.ogg')
-	cum_message_text_overrides = list(CLIMAX_POSITION_TARGET = list("%CUMMING% tightly grips %CAME_IN%'s tail."))
+	cum_message_text_overrides = list(CLIMAX_POSITION_TARGET = list("%CUMMING%紧紧夹住%CAME_IN%的尾巴."))
 
 /datum/interaction/lewd/tail/ass_rub
 	name = "Tail. Slide Between Cheeks"
 	description = "Slide your tail between their cheeks."
 	target_required_parts = list(ORGAN_SLOT_ANUS = REQUIRE_GENITAL_EXPOSED)
 	help_text = list(
-		"slides between %TARGET%'s cheeks with their tail.",
-		"gently moves their tail around %TARGET%'s anus, massaging it.",
-		"teases %TARGET%'s ring with their tail, trying to bring pleasant sensations."
+		"用尾巴在%TARGET%的臀瓣之间滑动.",
+		"用尾巴在%TARGET%的肛门周围轻轻移动,按摩它.",
+		"用尾巴挑逗%TARGET%的菊花,试图带来愉悦的感觉."
 	)
 	grab_text = list(
-		"actively rubs their tail around %TARGET%'s anus, repeatedly trying to poke sensitive spots.",
-		"presses their tail into %TARGET%'s anal opening, trying to open it by pulling their tail aside.",
-		"rhythmically writhes between %TARGET%'s cheeks, writhing and pressing inward."
+		"用尾巴在%TARGET%的肛门周围积极摩擦,反复试图戳刺敏感点.",
+		"将尾巴压入%TARGET%的肛门,试图通过将尾巴拉到一边来打开它.",
+		"有节奏地在%TARGET%的臀瓣之间扭动,扭动并向内施压."
 	)
 	harm_text = list(
-		"torments %TARGET%'s ass with their tail, as if trying to force their way inside.",
-		"forcefully pulls at %TARGET%'s ass with their tail, causing painful sensations.",
-		"roughly slaps %TARGET%'s ring, acting with force and without a drop of mercy."
+		"用尾巴折磨%TARGET%的肛门,仿佛试图强行进入内部.",
+		"用尾巴强行拉扯%TARGET%的肛门,造成痛苦的感觉.",
+		"粗暴地拍打%TARGET%的菊花,用力且毫不留情."
 	)
 	sound_possible = list('modular_zzplurt/sound/interactions/bang1.ogg',
 						'modular_zzplurt/sound/interactions/bang2.ogg',
 						'modular_zzplurt/sound/interactions/bang3.ogg')
-	cum_message_text_overrides = list(CLIMAX_POSITION_TARGET = list("%CUMMING% tightly grips %CAME_IN%'s tail."))
+	cum_message_text_overrides = list(CLIMAX_POSITION_TARGET = list("%CUMMING%紧紧夹住%CAME_IN%的尾巴."))
 
 /datum/interaction/lewd/slap/tail
 	name = "Tail. Spank Ass"
@@ -190,9 +190,9 @@
 	user_required_parts = list(ORGAN_SLOT_TAIL = REQUIRE_GENITAL_ANY)
 	category = "Lewd (Tail)"
 	message = list(
-		"spanks %TARGET%'s ass with their tail!",
-		"swats %TARGET%'s ass with their tail!",
-		"gives %TARGET% a good spank on the ass with their tail!",
+		"用尾巴拍打%TARGET%的屁股!",
+		"用尾巴抽打%TARGET%的屁股!",
+		"用尾巴给%TARGET%的屁股来了一记响亮的巴掌!",
 	)
 
 /datum/interaction/lewd/tail/urethra
@@ -207,34 +207,34 @@
 						'modular_zzplurt/sound/interactions/bang5.ogg',
 						'modular_zzplurt/sound/interactions/bang6.ogg',)
 	help_text = list(
-		"pushes and explores %TARGET%'s urethra with their tail.",
-		"slowly moves their tail inside %TARGET%'s urethra, feeling every detail.",
-		"gently thrusts their tail in %TARGET%'s urethra, trying to bring pleasure."
+		"用尾巴推入并探索%TARGET%的尿道.",
+		"用尾巴在%TARGET%的尿道内缓慢移动,感受每一个细节.",
+		"用尾巴在%TARGET%的尿道内轻轻抽插,试图带来快感."
 	)
 	grab_text = list(
-		"tries to reach %TARGET%'s groin through their urethra with their tail.",
-		"actively pushes their tail deep into %TARGET%'s urethra, as if striving to reach the very base.",
-		"forces their tail further down %TARGET%'s urethra, stubbornly making their way to their groin."
+		"试图用尾巴通过%TARGET%的尿道触及对方的腹股沟.",
+		"用尾巴积极地深入%TARGET%的尿道,仿佛努力触及最底部.",
+		"将尾巴进一步推入%TARGET%的尿道,顽强地向对方的腹股沟前进."
 	)
 	harm_text = list(
-		"uses %TARGET%'s urethra like a toy, clearly not caring about their partner's sensations.",
-		"mercilessly rams their tail into %TARGET%'s urethra, not reducing pressure for a second.",
-		"brutally violates %TARGET%'s urethra with their tail, stretching it from inside."
+		"将%TARGET%的尿道当作玩具,显然不在乎对方的感受.",
+		"无情地将尾巴插入%TARGET%的尿道,一秒钟都不减轻压力.",
+		"残忍地用尾巴侵犯%TARGET%的尿道,从内部拉伸它."
 	)
-	cum_message_text_overrides = list(CLIMAX_POSITION_TARGET = list("%CUMMING% tightly grips %CAME_IN%'s tail, covering it with cum."))
+	cum_message_text_overrides = list(CLIMAX_POSITION_TARGET = list("%CUMMING%紧紧夹住%CAME_IN%的尾巴,用精液覆盖它."))
 
 /datum/interaction/lewd/tail/breast
 	name = "Tail. Slide Between Breasts"
 	description = "Slide between their breasts with your tail."
 	target_required_parts = list(ORGAN_SLOT_BREASTS = REQUIRE_GENITAL_EXPOSED)
-	help_text = list("gently slides between %TARGET%'s breasts with their tail.")
-	grab_text = list("insistently presses their tail and writhes it between %TARGET%'s breasts.")
-	harm_text = list("mockingly active writhes between %TARGET%'s breasts with their tail, almost slapping them.")
+	help_text = list("轻轻地用尾巴在%TARGET%的乳房之间滑动.")
+	grab_text = list("用尾巴坚持不懈地压入并在%TARGET%的乳房之间扭动.")
+	harm_text = list("用尾巴在%TARGET%的乳房之间嘲弄般地积极扭动,几乎拍打它们.")
 	sound_possible = list('modular_zzplurt/sound/interactions/squelch1.ogg')
 
 
-// Interactions that target another player's tail
-// Uses standard mouth/oral mechanics with tail-specific messaging
+// 针对另一个玩家尾巴的互动
+// 使用标准口腔/口交机制和尾巴特定消息
 
 /datum/interaction/lewd/tail/someone
 	user_required_parts = list()
@@ -244,9 +244,9 @@
 	name = "Mouth. Lick Tail"
 	description = "Lick their tail."
 	interaction_requires = list(INTERACTION_REQUIRE_SELF_MOUTH)
-	help_text = list("licks the tip of %TARGET%'s tail.")
-	grab_text = list("wraps their lips around the tip of %TARGET%'s tail.")
-	harm_text = list("bites the tip of %TARGET%'s tail.")
+	help_text = list("舔舐%TARGET%的尾巴尖.")
+	grab_text = list("用嘴唇包裹%TARGET%的尾巴尖.")
+	harm_text = list("咬%TARGET%的尾巴尖.")
 	sound_possible = list('modular_zzplurt/sound/interactions/squelch1.ogg')
 
 /datum/interaction/lewd/extreme/harmful/tail_choke
@@ -264,21 +264,21 @@
 	var/oxy_damage = 3
 	target_pleasure = 0
 	target_arousal = 6
-	if(target.get_oxy_loss() > 40) // Prevent damage stacking - converts to pure RP when target already suffocating
+	if(target.get_oxy_loss() > 40) // 防止伤害叠加 - 当目标已经窒息时转换为纯RP
 		oxy_damage = 0
 	switch(resolve_intent_name(user))
 		if("harm")
 			oxy_damage = rand(3, 6)
 			message = list(
-				"roughly wraps their tail around %TARGET%'s neck, trying to cut off their air supply.",
-				"coils their tail around %TARGET%'s neck and immediately begins to squeeze, blocking their airways.",
-				"sharply tightens their tail around %TARGET%'s neck, causing suffocation."
+				"粗暴地用尾巴缠绕%TARGET%的脖子,试图切断对方的空气供应.",
+				"用尾巴盘绕%TARGET%的脖子并立即开始挤压,阻塞对方的气道.",
+				"猛烈地用尾巴勒紧%TARGET%的脖子,造成窒息."
 			)
 		else
 			message = list(
-				"grips %TARGET%'s throat with their tail, trying to block access to air.",
-				"holds %TARGET%'s neck with their tail, squeezing it tighter and tighter.",
-				"latches onto %TARGET%'s neck with their tail, holding and not letting them take a breath."
+				"用尾巴抓住%TARGET%的喉咙,试图阻止空气进入.",
+				"用尾巴握住%TARGET%的脖子,越勒越紧.",
+				"用尾巴锁住%TARGET%的脖子,握住不让对方呼吸."
 			)
 
 	if(!HAS_TRAIT(target, TRAIT_NOBREATH) && oxy_damage)

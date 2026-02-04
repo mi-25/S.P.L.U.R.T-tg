@@ -1,23 +1,23 @@
 /datum/interaction/lewd/unholy/facefart
 	name = "Face Fart"
-	description = "Fart on their face."
+	description = "对着他们的脸放屁."
 	interaction_requires = list(INTERACTION_REQUIRE_TARGET_MOUTH)
 	user_required_parts = list(ORGAN_SLOT_ANUS = REQUIRE_GENITAL_ANY)
 	message = list(
-		"presses their ass against %TARGET%'s face and lets out a fart",
-		"releases gas right into %TARGET%'s face",
-		"lets loose a nasty fart on %TARGET%'s face",
-		"forces %TARGET% to smell their flatulence"
+		"将屁股压在%TARGET%的脸上并放了个屁",
+		"直接对着%TARGET%的脸释放气体",
+		"对着%TARGET%的脸放了个恶臭的屁",
+		"强迫%TARGET%闻自己的屁"
 	)
 	user_messages = list(
-		"You feel relief as you release gas in %TARGET%'s face",
-		"You let out a fart right on %TARGET%'s face",
-		"You make %TARGET% smell your gas"
+		"你对着%TARGET%的脸释放气体,感到一阵轻松",
+		"你直接对着%TARGET%的脸放了个屁",
+		"你让%TARGET%闻你的屁"
 	)
 	target_messages = list(
-		"%USER% releases their gas right in your face",
-		"You're forced to smell %USER%'s fart",
-		"%USER%'s flatulence fills your nostrils"
+		"%USER%直接对着你的脸释放气体",
+		"你被迫闻%USER%的屁",
+		"%USER%的屁充满了你的鼻孔"
 	)
 	sound_possible = list()
 	sound_range = 1
@@ -38,23 +38,23 @@
 
 /datum/interaction/lewd/unholy/crotchfart
 	name = "Crotch Fart"
-	description = "Fart on their crotch."
+	description = "对着他们的胯部放屁."
 	user_required_parts = list(ORGAN_SLOT_ANUS = REQUIRE_GENITAL_ANY)
 	message = list(
-		"presses their ass against %TARGET%'s crotch and lets out a fart",
-		"releases gas all over %TARGET%'s groin",
-		"lets loose a nasty fart on %TARGET%'s genitals",
-		"forces %TARGET% to feel their flatulence"
+		"将屁股压在%TARGET%的胯部并放了个屁",
+		"对着%TARGET%的腹股沟释放气体",
+		"对着%TARGET%的生殖器放了个恶臭的屁",
+		"强迫%TARGET%感受自己的屁"
 	)
 	user_messages = list(
-		"You feel relief as you release gas on %TARGET%'s crotch",
-		"You let out a fart right on %TARGET%'s groin",
-		"You make %TARGET% feel your gas"
+		"你对着%TARGET%的胯部释放气体,感到一阵轻松",
+		"你直接对着%TARGET%的腹股沟放了个屁",
+		"你让%TARGET%感受你的屁"
 	)
 	target_messages = list(
-		"%USER% releases their gas right on your crotch",
-		"You feel %USER%'s fart on your groin",
-		"%USER%'s flatulence washes over your genitals"
+		"%USER%直接对着你的胯部释放气体",
+		"你感受到%USER%的屁在你的腹股沟上",
+		"%USER%的屁笼罩着你的生殖器"
 	)
 	sound_possible = list()
 	sound_range = 1
@@ -70,7 +70,7 @@
 
 /datum/interaction/lewd/unholy/fartfuck
 	name = "Fart Fuck"
-	description = "Fuck their ass + fart."
+	description = "操他们的屁眼 + 放屁."
 	user_required_parts = list(ORGAN_SLOT_PENIS = REQUIRE_GENITAL_EXPOSED)
 	target_required_parts = list(ORGAN_SLOT_ANUS = REQUIRE_GENITAL_EXPOSED)
 	cum_genital = list(
@@ -81,20 +81,20 @@
 		CLIMAX_POSITION_USER = ORGAN_SLOT_ANUS
 	)
 	message = list(
-		"pounds %TARGET%'s ass as they release gas on their cock",
-		"fucks %TARGET%'s hole while they let out farts",
-		"thrusts into %TARGET%'s ass as they release flatulence",
-		"gets their cock gassed by %TARGET%'s farts while fucking them"
+		"猛烈冲击%TARGET%的屁眼,同时他们对着肉棒释放气体",
+		"操着%TARGET%的后穴,同时他们不断放屁",
+		"插入%TARGET%的屁眼,同时他们释放屁",
+		"操着%TARGET%的同时被他们的屁熏到肉棒"
 	)
 	user_messages = list(
-		"You feel %TARGET%'s gas washing over your cock as you fuck them",
-		"You pound %TARGET%'s ass while they fart on your member",
-		"You get blasted by %TARGET%'s flatulence with each thrust"
+		"你操着%TARGET%时感受到他们的屁笼罩着你的肉棒",
+		"你猛烈冲击%TARGET%的屁眼,同时他们对着你的肉棒放屁",
+		"每次抽插都被%TARGET%的屁熏到"
 	)
 	target_messages = list(
-		"You release gas all over %USER%'s cock inside you",
-		"You let out farts around %USER%'s thrusting member",
-		"Your flatulence envelops %USER%'s cock as they fuck you"
+		"你对着体内%USER%的肉棒释放气体",
+		"你在%USER%抽插的肉棒周围放屁",
+		"你的屁包裹着%USER%操你的肉棒"
 	)
 	sound_possible = list(
 		'modular_zzplurt/sound/interactions/bang1.ogg',
@@ -121,27 +121,27 @@
 
 /datum/interaction/lewd/unholy/suck_fart
 	name = "Suck Fart"
-	description = "Suck the farts out of their asshole."
+	description = "从他们的屁眼吸出屁."
 	interaction_requires = list(INTERACTION_REQUIRE_SELF_MOUTH)
 	target_required_parts = list(ORGAN_SLOT_ANUS = REQUIRE_GENITAL_EXPOSED)
 	cum_genital = list(
 		CLIMAX_POSITION_TARGET = CLIMAX_BOTH
 	)
 	message = list(
-		"presses their face between %TARGET%'s asscheeks and inhales their farts",
-		"sucks the gas right out of %TARGET%'s ass",
-		"breathes in %TARGET%'s flatulence deeply",
-		"puts their mouth on %TARGET%'s hole to taste their gas"
+		"将脸埋在%TARGET%的屁股之间并吸入他们的屁",
+		"直接从%TARGET%的屁眼吸出气体",
+		"深深吸入%TARGET%的屁",
+		"将嘴贴在%TARGET%的菊花上品尝他们的屁"
 	)
 	user_messages = list(
-		"You inhale %TARGET%'s farts directly from the source",
-		"You suck the gas from %TARGET%'s asshole",
-		"You taste %TARGET%'s flatulence on your tongue"
+		"你直接从源头吸入%TARGET%的屁",
+		"你从%TARGET%的屁眼吸出气体",
+		"你用舌头品尝%TARGET%的屁"
 	)
 	target_messages = list(
-		"%USER% sucks your farts right out of your ass",
-		"You feel %USER%'s mouth pulling gas from your hole",
-		"%USER% inhales your flatulence eagerly"
+		"%USER%直接从你的屁眼吸出你的屁",
+		"你感受到%USER%的嘴从你的菊花吸出气体",
+		"%USER%急切地吸入你的屁"
 	)
 	sound_possible = list()
 	sound_range = 1

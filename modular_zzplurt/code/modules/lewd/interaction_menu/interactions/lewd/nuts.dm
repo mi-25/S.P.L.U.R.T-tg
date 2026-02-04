@@ -1,17 +1,17 @@
 /datum/interaction/lewd/nuts
-	name = "Nuts to Face"
-	description = "Put your balls in their face."
+	name = "用睾丸蹭脸"
+	description = "把你的睾丸压在对方脸上."
 	interaction_requires = list(INTERACTION_REQUIRE_TARGET_MOUTH)
 	user_required_parts = list(ORGAN_SLOT_TESTICLES = REQUIRE_GENITAL_EXPOSED)
 	cum_genital = list(CLIMAX_POSITION_USER = CLIMAX_PENIS)
 	cum_target = list(CLIMAX_POSITION_USER = CLIMAX_TARGET_MOUTH)
 	message = list(
-		"grabs the back of %TARGET%'s head and pulls it into their crotch.",
-		"jams their nutsack right into %TARGET%'s face.",
-		"roughly grinds their fat nutsack into %TARGET%'s mouth.",
-		"pulls out their saliva-covered nuts from %TARGET%'s violated mouth and then wipes off the slime onto their face.",
-		"wedges a digit into the side of %TARGET%'s jaw and pries it open before using their other hand to shove their whole nutsack inside!",
-		"stands with their groin inches away from %TARGET%'s face, then thrusting their hips forward and smothering %TARGET%'s whole face with their heavy ballsack."
+		"抓住%TARGET%的后脑勺,将对方的脸拉向自己的胯部.",
+		"将阴囊直接压在%TARGET%的脸上.",
+		"粗暴地用肥硕的阴囊在%TARGET%的嘴上研磨.",
+		"从%TARGET%被侵犯的嘴里拔出沾满唾液的睾丸,然后将黏液抹在对方脸上.",
+		"用手指撬开%TARGET%的下颚,然后用另一只手将整个阴囊塞进去!",
+		"站在距离%TARGET%脸部几英寸的地方,然后向前挺胯,用沉重的阴囊闷住%TARGET%的整张脸."
 	)
 	sound_possible = list(
 		'modular_zzplurt/sound/interactions/oral1.ogg',
@@ -25,15 +25,15 @@
 	target_arousal = 2
 
 /datum/interaction/lewd/nut_smack
-	name = "Smack Nuts"
-	description = "Smack their nuts."
+	name = "打睾丸"
+	description = "打对方的睾丸."
 	interaction_requires = list(INTERACTION_REQUIRE_SELF_HAND)
 	target_required_parts = list(ORGAN_SLOT_TESTICLES = REQUIRE_GENITAL_EXPOSED)
 	message = list(
-		"smacks %TARGET%'s nuts!",
-		"slaps %TARGET%'s balls!",
-		"gives %TARGET%'s testicles a slap!",
-		"whacks %TARGET% right in the nuts!"
+		"打了%TARGET%的睾丸!",
+		"拍打%TARGET%的睾丸!",
+		"给%TARGET%的睾丸来了一巴掌!",
+		"直接打在%TARGET%的睾丸上!"
 	)
 	sound_possible = list(
 		'modular_zzplurt/sound/interactions/slap.ogg'
@@ -49,6 +49,6 @@
 /datum/interaction/lewd/nut_smack/act(mob/living/user, mob/living/target)
 	var/original_pleasure = target_pleasure
 	if(HAS_TRAIT(target, TRAIT_MASOCHISM))
-		target_pleasure = abs(original_pleasure) * 1.5 // Masochists get 50% more pleasure from the pain
+		target_pleasure = abs(original_pleasure) * 1.5 // 受虐狂从疼痛中获得50%额外快感
 	. = ..()
 	target_pleasure = original_pleasure

@@ -1,13 +1,13 @@
 /datum/interaction/lewd/slap
-	name = "Slap Ass"
-	description = "Slap their ass."
+	name = "打屁股"
+	description = "打对方的屁股."
 	interaction_requires = list(INTERACTION_REQUIRE_SELF_HAND)
 	target_required_parts = list(ORGAN_SLOT_BUTT = REQUIRE_GENITAL_EXPOSED)
 	message = list(
-		"slaps %TARGET% right on the ass!",
-		"spanks %TARGET%'s ass!",
-		"gives %TARGET%'s behind a good smack!",
-		"lands a stinging slap on %TARGET%'s butt!"
+		"直接打在%TARGET%的屁股上!",
+		"拍打%TARGET%的屁股!",
+		"给%TARGET%的屁股来了一记响亮的巴掌!",
+		"在%TARGET%的屁股上留下一个火辣辣的巴掌印!"
 	)
 	sound_possible = list(
 		'modular_zzplurt/sound/interactions/slap.ogg'

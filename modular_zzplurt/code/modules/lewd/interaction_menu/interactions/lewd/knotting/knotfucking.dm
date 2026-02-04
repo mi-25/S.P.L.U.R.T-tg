@@ -22,9 +22,9 @@
 	cum_genital = list(CLIMAX_POSITION_USER = CLIMAX_PENIS, CLIMAX_POSITION_TARGET = CLIMAX_VAGINA)
 	cum_target = list(CLIMAX_POSITION_USER = ORGAN_SLOT_VAGINA, CLIMAX_POSITION_TARGET = ORGAN_SLOT_PENIS)
 	message = list(
-		"pounds %TARGET%'s pussy with their %KNOT%.",
-		"forces their %KNOT% deep into %TARGET%'s pussy.",
-		"slams their %KNOT% in and out of %TARGET%'s cunt."
+		"用%KNOT%猛烈冲击%TARGET%的小穴.",
+		"将%KNOT%深深插入%TARGET%的小穴.",
+		"用%KNOT%在%TARGET%的小穴里猛烈抽插."
 	)
 	sound_possible = list(
 		'modular_zzplurt/sound/interactions/champ1.ogg',
@@ -46,9 +46,9 @@
 	cum_genital = list(CLIMAX_POSITION_USER = CLIMAX_PENIS)
 	cum_target = list(CLIMAX_POSITION_USER = ORGAN_SLOT_ANUS)
 	message = list(
-		"pounds %TARGET%'s ass with their %KNOT%.",
-		"forces their %KNOT% deep into %TARGET%'s ass.",
-		"slams their %KNOT% in and out of %TARGET%'s ass."
+		"用%KNOT%猛烈冲击%TARGET%的肛门.",
+		"将%KNOT%深深插入%TARGET%的肛门.",
+		"用%KNOT%在%TARGET%的肛门里猛烈抽插."
 	)
 	sound_possible = list(
 		'modular_zzplurt/sound/interactions/bang1.ogg',
@@ -71,9 +71,9 @@
 	cum_genital = list(CLIMAX_POSITION_USER = CLIMAX_PENIS)
 	cum_target = list(CLIMAX_POSITION_USER = CLIMAX_TARGET_MOUTH)
 	message = list(
-		"shoves their %KNOT% into %TARGET%'s throat, bulging their cheeks.",
-		"chokes %TARGET% on their %KNOT%, cutting off their air supply.",
-		"slams their %KNOT% in and out of %TARGET%'s mouth."
+		"将%KNOT%塞进%TARGET%的喉咙,撑起对方的脸颊.",
+		"用%KNOT%让%TARGET%窒息,切断对方的空气供应.",
+		"用%KNOT%在%TARGET%的嘴里猛烈抽插."
 	)
 	sound_possible = list(
 		'modular_zzplurt/sound/interactions/oral1.ogg',
@@ -93,7 +93,7 @@
 		var/stat_before = target.stat
 		target.adjust_oxy_loss(3)
 		if(target.stat == UNCONSCIOUS && stat_before != UNCONSCIOUS)
-			message = list("%TARGET% passes out on %USER%'s %KNOT%.")
+			message = list("%TARGET%被%USER%的%KNOT%弄晕了.")
 
 /datum/interaction/lewd/knotting/knotfucking/knotfuck_nipple
 	target_knotting_require = list(ORGAN_SLOT_NIPPLES)
@@ -107,35 +107,35 @@
 	target_required_parts = list(ORGAN_SLOT_BREASTS = REQUIRE_GENITAL_EXPOSED)
 	cum_genital = list(CLIMAX_POSITION_USER = CLIMAX_PENIS)
 	cum_message_text_overrides = list(CLIMAX_POSITION_USER = list(
-		"%CUMMING% cums all over %CAME_IN%'s nipple",
-		"%CUMMING% shoots their load into %CAME_IN%'s breast",
-		"%CUMMING% fills %CAME_IN%'s nipple with cum"
+		"%CUMMING%射满了%CAME_IN%的乳头",
+		"%CUMMING%将精液射进%CAME_IN%的乳房",
+		"%CUMMING%用精液填满%CAME_IN%的乳头"
 	))
 	cum_self_text_overrides = list(CLIMAX_POSITION_USER = list(
-		"You cum all over %CAME_IN%'s nipple",
-		"You shoot your load into %CAME_IN%'s breast",
-		"You fill %CAME_IN%'s nipple with cum"
+		"你射满了%CAME_IN%的乳头",
+		"你将精液射进%CAME_IN%的乳房",
+		"你用精液填满%CAME_IN%的乳头"
 	))
 	cum_partner_text_overrides = list(CLIMAX_POSITION_USER = list(
-		"%CUMMING% cums all over your nipple",
-		"%CUMMING% shoots their load into your breast",
-		"%CUMMING% fills your nipple with cum"
+		"%CUMMING%射满了你的乳头",
+		"%CUMMING%将精液射进你的乳房",
+		"%CUMMING%用精液填满你的乳头"
 	))
 	message = list(
-		"fucks %TARGET%'s nipple",
-		"slams their %KNOT% into %TARGET%'s breast",
-		"pounds %TARGET%'s nipple",
-		"thrusts deep into %TARGET%'s nipple"
+		"插入%TARGET%的乳头",
+		"将%KNOT%猛烈插入%TARGET%的乳房",
+		"猛烈抽插%TARGET%的乳头",
+		"深深插入%TARGET%的乳头"
 	)
 	user_messages = list(
-		"You feel %TARGET%'s nipple squeezing your %KNOT%",
-		"The warmth of %TARGET%'s breast envelops your shaft",
-		"%TARGET%'s nipple feels amazing around your %KNOT%"
+		"你感受到%TARGET%的乳头挤压着你的%KNOT%",
+		"%TARGET%乳房的温暖包裹着你的肉棒",
+		"%TARGET%的乳头在你的%KNOT%周围感觉美妙"
 	)
 	target_messages = list(
-		"You feel %USER%'s %KNOT% stretching your nipple",
-		"%USER%'s shaft pushes deep into your breast",
-		"The warmth of %USER%'s %KNOT% fills your nipple"
+		"你感受到%USER%的%KNOT%撑开你的乳头",
+		"%USER%的肉棒深深插入你的乳房",
+		"%USER%的%KNOT%的温暖填满你的乳头"
 	)
 	sound_possible = list(
 		'modular_zzplurt/sound/interactions/bang1.ogg',

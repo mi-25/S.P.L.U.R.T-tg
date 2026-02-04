@@ -1,15 +1,15 @@
 /datum/interaction/lewd/finger
-	name = "Finger Pussy"
-	description = "Finger their pussy."
+	name = "指交阴部"
+	description = "用手指插对方的小穴."
 	interaction_requires = list(INTERACTION_REQUIRE_SELF_HAND)
 	target_required_parts = list(ORGAN_SLOT_VAGINA = REQUIRE_GENITAL_EXPOSED)
 	cum_genital = list(CLIMAX_POSITION_TARGET = CLIMAX_VAGINA)
 	cum_target = list(CLIMAX_POSITION_TARGET = null)
 	additional_details = list(INTERACTION_FILLS_CONTAINERS)
 	message = list(
-		"fingers %TARGET%",
-		"fingers %TARGET%'s pussy",
-		"fingers %TARGET% hard"
+		"用手指插%TARGET%",
+		"用手指插%TARGET%的小穴",
+		"用力用手指插%TARGET%"
 	)
 	sound_possible = list(
 		'modular_zzplurt/sound/interactions/champ_fingering.ogg'
@@ -37,9 +37,9 @@
 	if(liquid_container)
 		LAZYADD(fluid_transfer_objects, list("[REF(target)]" = liquid_container))
 		message = list(
-			"fingers %TARGET% over \the [liquid_container]",
-			"fingers %TARGET%'s pussy above \the [liquid_container]",
-			"fingers %TARGET% hard while holding \the [liquid_container]"
+			"在\the [liquid_container]上方用手指插%TARGET%",
+			"在\the [liquid_container]上方用手指插%TARGET%的小穴",
+			"拿着\the [liquid_container]用力用手指插%TARGET%"
 		)
 		. = ..()
 		LAZYREMOVE(fluid_transfer_objects, REF(target))
@@ -48,15 +48,15 @@
 		. = ..()
 
 /datum/interaction/lewd/fingerass
-	name = "Finger Ass"
-	description = "Finger their ass."
+	name = "指交肛门"
+	description = "用手指插对方的肛门."
 	interaction_requires = list(INTERACTION_REQUIRE_SELF_HAND)
 	target_required_parts = list(ORGAN_SLOT_ANUS = REQUIRE_GENITAL_EXPOSED)
 	cum_genital = list(CLIMAX_POSITION_TARGET = CLIMAX_BOTH)
 	message = list(
-		"fingers %TARGET%'s ass",
-		"fingers %TARGET%'s asshole",
-		"fingers %TARGET% hard"
+		"用手指插%TARGET%的肛门",
+		"用手指插%TARGET%的后穴",
+		"用力用手指插%TARGET%"
 	)
 	sound_possible = list(
 		'modular_zzplurt/sound/interactions/champ_fingering.ogg'

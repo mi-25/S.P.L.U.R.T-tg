@@ -1,15 +1,15 @@
 /datum/interaction/lewd/mount_vagina
-	name = "Mount (Vagina)"
-	description = "Mount them with your pussy."
+	name = "骑乘（阴道）"
+	description = "用你的小穴骑乘对方."
 	user_required_parts = list(ORGAN_SLOT_VAGINA = REQUIRE_GENITAL_EXPOSED)
 	target_required_parts = list(ORGAN_SLOT_PENIS = REQUIRE_GENITAL_EXPOSED)
 	cum_genital = list(CLIMAX_POSITION_USER = CLIMAX_VAGINA, CLIMAX_POSITION_TARGET = CLIMAX_PENIS)
 	cum_target = list(CLIMAX_POSITION_USER = ORGAN_SLOT_PENIS, CLIMAX_POSITION_TARGET = ORGAN_SLOT_VAGINA)
 	message = list(
-		"rides %TARGET%'s cock.",
-		"forces %TARGET%'s cock into their pussy.",
-		"slides their pussy onto %TARGET%'s cock.",
-		"impales themself on %TARGET%'s cock."
+		"骑乘%TARGET%的肉棒.",
+		"将%TARGET%的肉棒强行插入自己的小穴.",
+		"将小穴滑到%TARGET%的肉棒上.",
+		"将自己插在%TARGET%的肉棒上."
 	)
 	sound_possible = list(
 		'modular_zzplurt/sound/interactions/bang1.ogg',
@@ -24,17 +24,17 @@
 	target_arousal = 10
 
 /datum/interaction/lewd/mount_anus
-	name = "Mount (Anus)"
-	description = "Mount them with your ass."
+	name = "骑乘（肛门）"
+	description = "用你的肛门骑乘对方."
 	user_required_parts = list(ORGAN_SLOT_ANUS = REQUIRE_GENITAL_EXPOSED)
 	target_required_parts = list(ORGAN_SLOT_PENIS = REQUIRE_GENITAL_EXPOSED)
 	cum_genital = list(CLIMAX_POSITION_USER = CLIMAX_BOTH, CLIMAX_POSITION_TARGET = CLIMAX_PENIS)
 	cum_target = list(CLIMAX_POSITION_USER = null, CLIMAX_POSITION_TARGET = ORGAN_SLOT_ANUS)
 	message = list(
-		"rides %TARGET%'s cock with their ass.",
-		"forces %TARGET%'s cock into their ass.",
-		"slides their ass onto %TARGET%'s cock.",
-		"impales their ass on %TARGET%'s cock."
+		"用肛门骑乘%TARGET%的肉棒.",
+		"将%TARGET%的肉棒强行插入自己的肛门.",
+		"将肛门滑到%TARGET%的肉棒上.",
+		"将自己的肛门插在%TARGET%的肉棒上."
 	)
 	sound_possible = list(
 		'modular_zzplurt/sound/interactions/bang1.ogg',
@@ -50,15 +50,15 @@
 	user_pain = 3
 
 /datum/interaction/lewd/mount_face
-	name = "Mount Face"
-	description = "Sit on their face."
+	name = "坐脸"
+	description = "坐在对方的脸上."
 	interaction_requires = list(INTERACTION_REQUIRE_TARGET_MOUTH)
 	user_required_parts = list(ORGAN_SLOT_ANUS = REQUIRE_GENITAL_EXPOSED)
 	message = list(
-		"grinds their ass into %TARGET%'s face.",
-		"shoves their ass into %TARGET%'s face.",
-		"plants their ass right on %TARGET%'s face.",
-		"grabs the back of %TARGET%'s head and forces it into their asscheeks."
+		"用屁股在%TARGET%的脸上研磨.",
+		"将屁股压在%TARGET%的脸上.",
+		"将屁股直接坐在%TARGET%的脸上.",
+		"抓住%TARGET%的后脑勺,强迫对方埋进自己的臀瓣."
 	)
 	sound_possible = list(
 		'modular_zzplurt/sound/interactions/squelch1.ogg',

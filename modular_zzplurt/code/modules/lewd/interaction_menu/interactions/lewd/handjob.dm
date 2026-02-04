@@ -1,35 +1,35 @@
 /datum/interaction/lewd/handjob
-	name = "Handjob"
-	description = "Jerk them off."
+	name = "手交"
+	description = "为对方手淫."
 	interaction_requires = list(INTERACTION_REQUIRE_SELF_HAND)
 	target_required_parts = list(ORGAN_SLOT_PENIS = REQUIRE_GENITAL_EXPOSED)
 	cum_genital = list(CLIMAX_POSITION_TARGET = CLIMAX_PENIS)
 	cum_target = list(CLIMAX_POSITION_TARGET = null)
 	additional_details = list(INTERACTION_FILLS_CONTAINERS)
 	message = list(
-		"jerks %TARGET% off",
-		"works %TARGET%'s shaft",
-		"wanks %TARGET%'s cock hard"
+		"为%TARGET%手淫",
+		"套弄%TARGET%的阴茎",
+		"用力撸%TARGET%的肉棒"
 	)
 	cum_message_text_overrides = list(
 		CLIMAX_POSITION_TARGET = list(
-			"%CUMMING% cums all over %CAME_IN%'s hand.",
-			"%CUMMING% shoots their load onto %CAME_IN%'s palm.",
-			"%CUMMING% covers %CAME_IN%'s fingers in cum."
+			"%CUMMING%射在了%CAME_IN%的手上.",
+			"%CUMMING%将精液射到了%CAME_IN%的手掌上.",
+			"%CUMMING%的精液覆盖了%CAME_IN%的手指."
 		)
 	)
 	cum_self_text_overrides = list(
 		CLIMAX_POSITION_TARGET = list(
-			"you cum all over %CAME_IN%'s hand.",
-			"you shoot your load onto %CAME_IN%'s palm.",
-			"you cover %CAME_IN%'s fingers in cum."
+			"你射在了%CAME_IN%的手上.",
+			"你将精液射到了%CAME_IN%的手掌上.",
+			"你的精液覆盖了%CAME_IN%的手指."
 		)
 	)
 	cum_partner_text_overrides = list(
 		CLIMAX_POSITION_TARGET = list(
-			"%CUMMING% cums all over your hand.",
-			"%CUMMING% shoots their load onto your palm.",
-			"%CUMMING% covers your fingers in cum."
+			"%CUMMING%射在了你的手上.",
+			"%CUMMING%将精液射到了你的手掌上.",
+			"%CUMMING%的精液覆盖了你的手指."
 		)
 	)
 	sound_possible = list(
@@ -47,17 +47,17 @@
 /datum/interaction/lewd/handjob/act(mob/living/user, mob/living/target)
 	var/obj/item/liquid_container
 
-	// Check active hand first
+	// 首先检查活动手
 	var/obj/item/cached_item = user.get_active_held_item()
 	if(istype(cached_item) && cached_item.is_refillable() && cached_item.is_drainable())
 		liquid_container = cached_item
 	else
-		// Check if pulling a container
+		// 检查是否拉着容器
 		cached_item = user.pulling
 		if(istype(cached_item) && cached_item.is_refillable() && cached_item.is_drainable())
 			liquid_container = cached_item
 
-	// Add container text to message if needed
+	// 如果需要,在消息中添加容器文本
 	if(liquid_container)
 		var/list/original_messages = message.Copy()
 		var/chosen_message = pick(message)

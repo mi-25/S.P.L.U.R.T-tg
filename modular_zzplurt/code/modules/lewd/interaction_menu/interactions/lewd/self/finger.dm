@@ -7,20 +7,20 @@
 	cum_genital = list(CLIMAX_POSITION_USER = CLIMAX_VAGINA)
 	additional_details = list(INTERACTION_FILLS_CONTAINERS)
 	cum_message_text_overrides = list(CLIMAX_POSITION_USER = list(
-		"%CUMMING% cums hard on their fingers",
-		"%CUMMING% shudders as they cum on their hand",
-		"%CUMMING% fingers themself to climax"
+		"%CUMMING%在自己的手指上激烈高潮",
+		"%CUMMING%在手上高潮时颤抖",
+		"%CUMMING%用手指让自己达到高潮"
 	))
 	cum_self_text_overrides = list(CLIMAX_POSITION_USER = list(
-		"You cum hard on your fingers",
-		"You shudder as you cum on your hand",
-		"You finger yourself to climax"
+		"你在自己的手指上激烈高潮",
+		"你在手上高潮时颤抖",
+		"你用手指让自己达到高潮"
 	))
 	message = list(
-		"fingers their pussy deep",
-		"fingers their pussy",
-		"plays with their pussy",
-		"fingers their own pussy hard"
+		"深深地指交自己的小穴",
+		"指交自己的小穴",
+		"玩弄自己的小穴",
+		"用力指交自己的小穴"
 	)
 	sound_possible = list(
 		'modular_zzplurt/sound/interactions/champ_fingering.ogg'
@@ -60,9 +60,9 @@
 	usage = INTERACTION_SELF
 	cum_genital = list(CLIMAX_POSITION_USER = CLIMAX_BOTH)
 	message = list(
-		"fingers themself",
-		"fingers their asshole",
-		"fingers themself hard"
+		"指交自己",
+		"指交自己的肛门",
+		"用力指交自己"
 	)
 	sound_possible = list(
 		'modular_zzplurt/sound/interactions/champ_fingering.ogg'

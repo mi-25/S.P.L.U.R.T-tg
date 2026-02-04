@@ -1,15 +1,15 @@
 /datum/interaction/lewd/rimjob
-	name = "Rim"
-	description = "Lick their ass."
+	name = "舔肛"
+	description = "舔对方的肛门."
 	interaction_requires = list(INTERACTION_REQUIRE_SELF_MOUTH)
 	target_required_parts = list(ORGAN_SLOT_ANUS = REQUIRE_GENITAL_EXPOSED)
 	cum_genital = list(CLIMAX_POSITION_TARGET = CLIMAX_BOTH)
 	message = list(
-		"licks %TARGET%'s asshole.",
-		"rims %TARGET% deeply.",
-		"buries their tongue in %TARGET%'s ass.",
-		"presses their tongue against %TARGET%'s pucker.",
-		"gives %TARGET%'s ass a passionate licking."
+		"舔舐%TARGET%的肛门.",
+		"深深地舔%TARGET%的后穴.",
+		"将舌头埋进%TARGET%的肛门.",
+		"将舌头压在%TARGET%的菊花上.",
+		"热情地舔舐%TARGET%的肛门."
 	)
 	sound_possible = list(
 		'modular_zzplurt/sound/interactions/champ_fingering.ogg'
@@ -22,14 +22,14 @@
 	target_arousal = 6
 
 /datum/interaction/lewd/lickfeet
-	name = "Lick Feet"
-	description = "Lick their feet."
+	name = "舔脚"
+	description = "舔对方的脚."
 	interaction_requires = list(INTERACTION_REQUIRE_SELF_MOUTH, INTERACTION_REQUIRE_TARGET_FEET)
 	message = list(
-		"licks %TARGET%'s bare feet.",
-		"runs their tongue along %TARGET%'s soles.",
-		"laps at %TARGET%'s toes.",
-		"tastes %TARGET%'s bare feet."
+		"舔舐%TARGET%的赤脚.",
+		"用舌头滑过%TARGET%的脚底.",
+		"舔舐%TARGET%的脚趾.",
+		"品尝%TARGET%的赤脚."
 	)
 	sound_possible = list(
 		'modular_zzplurt/sound/interactions/champ_fingering.ogg'
@@ -47,33 +47,33 @@
 
 	if(shoes)
 		message = list(
-			"licks %TARGET%'s [shoes.name].",
-			"runs their tongue over %TARGET%'s [shoes.name].",
-			"drags their tongue across %TARGET%'s [shoes.name].",
-			"tastes %TARGET%'s [shoes.name]."
+			"舔舐%TARGET%的[shoes.name].",
+			"用舌头滑过%TARGET%的[shoes.name].",
+			"用舌头拖过%TARGET%的[shoes.name].",
+			"品尝%TARGET%的[shoes.name]."
 		)
 	. = ..()
 	message = original_messages
 
 /datum/interaction/lewd/lick_sweat
-	name = "Lick Sweat"
-	description = "Lick their sweat."
+	name = "舔汗"
+	description = "舔对方的汗水."
 	interaction_requires = list(INTERACTION_REQUIRE_SELF_MOUTH)
 	message = list(
-		"licks the sweat off %TARGET%'s skin",
-		"tastes %TARGET%'s salty sweat",
-		"runs their tongue along %TARGET%'s sweaty body",
-		"savors the taste of %TARGET%'s perspiration"
+		"舔掉%TARGET%皮肤上的汗水",
+		"品尝%TARGET%咸咸的汗水",
+		"用舌头滑过%TARGET%满是汗水的身体",
+		"品味%TARGET%的汗液"
 	)
 	user_messages = list(
-		"You taste %TARGET%'s salty sweat",
-		"The tang of %TARGET%'s sweat fills your mouth",
-		"You savor the salty taste of %TARGET%'s skin"
+		"你品尝到%TARGET%咸咸的汗水",
+		"%TARGET%汗水的味道充满你的嘴",
+		"你品味%TARGET%皮肤上咸咸的味道"
 	)
 	target_messages = list(
-		"You feel %USER%'s tongue licking your sweat",
-		"%USER%'s wet tongue slides across your sweaty skin",
-		"The warmth of %USER%'s mouth tingles against your damp skin"
+		"你感受到%USER%的舌头舔舐你的汗水",
+		"%USER%湿润的舌头滑过你满是汗水的皮肤",
+		"%USER%温热的口腔让你湿润的皮肤感到酥麻"
 	)
 	sound_possible = list(
 		'modular_zzplurt/sound/interactions/champ_fingering.ogg'
@@ -86,26 +86,26 @@
 	target_arousal = 3
 
 /datum/interaction/lewd/lick_nuts
-	name = "Lick Balls"
-	description = "Lick their balls."
+	name = "舔睾丸"
+	description = "舔对方的睾丸."
 	interaction_requires = list(INTERACTION_REQUIRE_SELF_MOUTH)
 	target_required_parts = list(ORGAN_SLOT_TESTICLES = REQUIRE_GENITAL_EXPOSED)
 	cum_genital = list(CLIMAX_POSITION_TARGET = CLIMAX_PENIS)
 	message = list(
-		"licks %TARGET%'s balls",
-		"sucks on %TARGET%'s testicles",
-		"tongues %TARGET%'s ballsack",
-		"worships %TARGET%'s balls with their tongue"
+		"舔舐%TARGET%的睾丸",
+		"吮吸%TARGET%的睾丸",
+		"用舌头舔%TARGET%的阴囊",
+		"用舌头崇拜%TARGET%的睾丸"
 	)
 	user_messages = list(
-		"You feel %TARGET%'s balls against your tongue",
-		"The taste of %TARGET%'s sack fills your mouth",
-		"You lavish attention on %TARGET%'s balls"
+		"你感受到%TARGET%的睾丸贴着你的舌头",
+		"%TARGET%阴囊的味道充满你的嘴",
+		"你热情地关注%TARGET%的睾丸"
 	)
 	target_messages = list(
-		"%USER%'s tongue works over your balls",
-		"You feel %USER%'s hot mouth on your sack",
-		"The warmth of %USER%'s tongue makes your balls tingle"
+		"%USER%的舌头在你的睾丸上游走",
+		"你感受到%USER%温热的嘴含着你的阴囊",
+		"%USER%温热的舌头让你的睾丸感到酥麻"
 	)
 	sound_possible = list(
 		'modular_zzplurt/sound/interactions/bj1.ogg',

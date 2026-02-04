@@ -6,9 +6,9 @@
 		INTERACTION_REQUIRE_SELF_HUMAN
 	)
 	message = list(
-		"bursts out of their clothes!",
-		"explodes out of their outfit!",
-		"dramatically tears free of their garments!"
+		"从衣服中爆裂而出!",
+		"从服装中爆炸而出!",
+		"戏剧性地撕破衣服挣脱出来!"
 	)
 	sound_range = 1
 	sound_use = FALSE

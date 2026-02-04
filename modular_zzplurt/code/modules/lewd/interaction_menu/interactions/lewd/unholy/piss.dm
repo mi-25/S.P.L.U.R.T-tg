@@ -1,22 +1,22 @@
 /datum/interaction/lewd/unholy/piss_over
 	name = "Piss Over"
-	description = "Piss all over them."
+	description = "对着他们撒尿."
 	interaction_requires = list(INTERACTION_REQUIRE_SELF_BOTTOMLESS)
 	message = list(
-		"relieves themselves all over %TARGET%",
-		"marks their territory on %TARGET%",
-		"releases their bladder onto %TARGET%",
-		"pisses all over %TARGET%"
+		"对着%TARGET%释放自己",
+		"在%TARGET%身上标记领地",
+		"对着%TARGET%释放膀胱",
+		"对着%TARGET%撒尿"
 	)
 	user_messages = list(
-		"You feel relief as you release onto %TARGET%",
-		"You empty your bladder on %TARGET%",
-		"You mark %TARGET% with your urine"
+		"你对着%TARGET%释放时感到一阵轻松",
+		"你对着%TARGET%排空膀胱",
+		"你用尿液在%TARGET%身上标记"
 	)
 	target_messages = list(
-		"%USER% pisses all over you",
-		"You feel %USER%'s warm urine splash on you",
-		"%USER% marks you as their territory"
+		"%USER%对着你撒尿",
+		"你感受到%USER%温热的尿液溅在你身上",
+		"%USER%将你标记为他们的领地"
 	)
 	sound_possible = list()
 	sound_range = 1
@@ -46,18 +46,18 @@
 
 /datum/interaction/lewd/unholy/piss_self
 	name = "Piss over self"
-	description = "Piss all over yourself."
+	description = "对着自己撒尿."
 	usage = INTERACTION_SELF
 	message = list(
-		"relieves themselves all over themselves.",
-		"releases onto themselves.",
-		"paints themselves with their own urine.",
-		"pisses all over themselves."
+		"对着自己释放.",
+		"对着自己释放.",
+		"用自己的尿液涂抹自己.",
+		"对着自己撒尿."
 	)
 	user_messages = list(
-		"You feel relief as you release onto yourself.",
-		"You empty your bladder on your own body.",
-		"You mark your chest with your urine."
+		"你对着自己释放时感到一阵轻松.",
+		"你对着自己的身体排空膀胱.",
+		"你用尿液标记自己的胸部."
 	)
 	sound_possible = list()
 	sound_range = 1
@@ -83,26 +83,26 @@
 
 /datum/interaction/lewd/unholy/piss_mouth
 	name = "Piss Mouth"
-	description = "Piss inside their mouth."
+	description = "对着他们的嘴里撒尿."
 	interaction_requires = list(
 		INTERACTION_REQUIRE_SELF_BOTTOMLESS,
 		INTERACTION_REQUIRE_TARGET_MOUTH
 	)
 	message = list(
-		"relieves themselves into %TARGET%'s mouth",
-		"fills %TARGET%'s mouth with piss",
-		"releases their bladder down %TARGET%'s throat",
-		"uses %TARGET%'s mouth as their urinal"
+		"对着%TARGET%的嘴里释放",
+		"用尿液填满%TARGET%的嘴",
+		"对着%TARGET%的喉咙释放膀胱",
+		"将%TARGET%的嘴当作尿壶使用"
 	)
 	user_messages = list(
-		"You feel relief as you release into %TARGET%'s mouth",
-		"You empty your bladder down %TARGET%'s throat",
-		"You make %TARGET% drink your piss"
+		"你对着%TARGET%的嘴里释放时感到一阵轻松",
+		"你对着%TARGET%的喉咙排空膀胱",
+		"你让%TARGET%喝下你的尿"
 	)
 	target_messages = list(
-		"%USER% pisses right into your mouth",
-		"You're forced to swallow %USER%'s urine",
-		"%USER% uses your mouth as their urinal"
+		"%USER%直接对着你的嘴里撒尿",
+		"你被迫吞下%USER%的尿液",
+		"%USER%将你的嘴当作尿壶使用"
 	)
 	sound_possible = list()
 	sound_range = 1
@@ -131,23 +131,23 @@
 
 /datum/interaction/lewd/unholy/piss_slit
 	name = "Piss in slit"
-	description = "Piss in their slit."
+	description = "对着他们的生殖腔撒尿."
 	interaction_requires = list(INTERACTION_REQUIRE_SELF_BOTTOMLESS)
 	message = list(
-		"relieves themselves inside %TARGET%'s slit.",
-		"marks %TARGET%'s slit as their territory.",
-		"releases their bladder inside %TARGET%.",
-		"pisses all over %TARGET%'s slit."
+		"对着%TARGET%的生殖腔内释放.",
+		"在%TARGET%的生殖腔上标记领地.",
+		"对着%TARGET%体内释放膀胱.",
+		"对着%TARGET%的生殖腔撒尿."
 	)
 	user_messages = list(
-		"You feel relief as you release into %TARGET%.",
-		"You empty your bladder into %TARGET%'s slit.",
-		"You mark %TARGET%'s slit with your urine."
+		"你对着%TARGET%体内释放时感到一阵轻松.",
+		"你对着%TARGET%的生殖腔排空膀胱.",
+		"你用尿液在%TARGET%的生殖腔上标记."
 	)
 	target_messages = list(
-		"%USER% pisses inside your slit.",
-		"You feel %USER%'s warm urine fill your slit.",
-		"%USER% marks your slit as their territory."
+		"%USER%对着你的生殖腔内撒尿.",
+		"你感受到%USER%温热的尿液填满你的生殖腔.",
+		"%USER%将你的生殖腔标记为他们的领地."
 	)
 	sound_possible = list()
 	sound_range = 1
@@ -174,24 +174,24 @@
 
 /datum/interaction/lewd/unholy/piss_ass
 	name = "Piss in ass"
-	description = "Piss in their ass."
+	description = "对着他们的屁眼撒尿."
 	interaction_requires = list(INTERACTION_REQUIRE_SELF_BOTTOMLESS)
 	target_required_parts = list(ORGAN_SLOT_ANUS = REQUIRE_GENITAL_EXPOSED)
 	message = list(
-		"relieves themselves inside %TARGET%'s anus.",
-		"marks %TARGET%'s bowels as their territory.",
-		"releases their bladder inside %TARGET%'s anus'.",
-		"pisses all over %TARGET%'s anus."
+		"对着%TARGET%的肛门内释放.",
+		"在%TARGET%的肠道上标记领地.",
+		"对着%TARGET%的肛门内释放膀胱.",
+		"对着%TARGET%的肛门撒尿."
 	)
 	user_messages = list(
-		"You feel relief as you release into %TARGET%'s bowels'.",
-		"You empty your bladder into %TARGET%'s anus.",
-		"You mark %TARGET%'s insides with your urine."
+		"你对着%TARGET%的肠道释放时感到一阵轻松.",
+		"你对着%TARGET%的肛门排空膀胱.",
+		"你用尿液在%TARGET%的体内标记."
 	)
 	target_messages = list(
-		"%USER% pisses inside your anus.",
-		"You feel %USER%'s warm urine fill your bowels.",
-		"%USER% marks your anus as their territory."
+		"%USER%对着你的肛门内撒尿.",
+		"你感受到%USER%温热的尿液填满你的肠道.",
+		"%USER%将你的肛门标记为他们的领地."
 	)
 	sound_possible = list()
 	sound_range = 1
@@ -215,23 +215,23 @@
 
 /datum/interaction/lewd/unholy/piss_ear
 	name = "Piss in ear"
-	description = "Piss in their ear."
+	description = "对着他们的耳朵撒尿."
 	interaction_requires = list(INTERACTION_REQUIRE_SELF_BOTTOMLESS)
 	message = list(
-		"relieves themselves inside %TARGET%'s ear.",
-		"marks %TARGET%'s ear as their territory.",
-		"releases their bladder inside %TARGET%'s ear.",
-		"pisses all over %TARGET%'s ear."
+		"对着%TARGET%的耳朵内释放.",
+		"在%TARGET%的耳朵上标记领地.",
+		"对着%TARGET%的耳朵内释放膀胱.",
+		"对着%TARGET%的耳朵撒尿."
 	)
 	user_messages = list(
-		"You feel relief as you release into %TARGET%'s ear'.",
-		"You empty your bladder into %TARGET%'s ear.",
-		"You mark %TARGET%'s head and ear with your urine."
+		"你对着%TARGET%的耳朵释放时感到一阵轻松.",
+		"你对着%TARGET%的耳朵排空膀胱.",
+		"你用尿液在%TARGET%的头部和耳朵上标记."
 	)
 	target_messages = list(
-		"%USER% pisses inside your ear.",
-		"You feel %USER%'s warm urine fill your ear and head.",
-		"%USER% marks your ear as their territory."
+		"%USER%对着你的耳朵内撒尿.",
+		"你感受到%USER%温热的尿液填满你的耳朵和头部.",
+		"%USER%将你的耳朵标记为他们的领地."
 	)
 	sound_possible = list()
 	sound_range = 1
@@ -255,23 +255,23 @@
 
 /datum/interaction/lewd/unholy/piss_urethra
 	name = "Piss in urethra"
-	description = "Piss in their urethra."
+	description = "对着他们的尿道撒尿."
 	interaction_requires = list(INTERACTION_REQUIRE_SELF_BOTTOMLESS)
 	message = list(
-		"relieves themselves inside %TARGET%'s urethra.",
-		"marks %TARGET%'s urethra as their territory.",
-		"releases their bladder inside %TARGET%'s urethra.",
-		"pisses all over %TARGET%'s urethra."
+		"对着%TARGET%的尿道内释放.",
+		"在%TARGET%的尿道上标记领地.",
+		"对着%TARGET%的尿道内释放膀胱.",
+		"对着%TARGET%的尿道撒尿."
 	)
 	user_messages = list(
-		"You feel relief as you release into %TARGET%'s urethra'.",
-		"You empty your bladder into %TARGET%'s urethra.",
-		"You mark %TARGET%'s urethra with your urine."
+		"你对着%TARGET%的尿道释放时感到一阵轻松.",
+		"你对着%TARGET%的尿道排空膀胱.",
+		"你用尿液在%TARGET%的尿道上标记."
 	)
 	target_messages = list(
-		"%USER% pisses inside your urethra.",
-		"You feel %USER%'s warm urine fill your urethra.",
-		"%USER% marks your urethra as their territory."
+		"%USER%对着你的尿道内撒尿.",
+		"你感受到%USER%温热的尿液填满你的尿道.",
+		"%USER%将你的尿道标记为他们的领地."
 	)
 	sound_possible = list()
 	sound_range = 1

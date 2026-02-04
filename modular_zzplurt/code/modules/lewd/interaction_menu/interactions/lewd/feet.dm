@@ -1,14 +1,14 @@
 /datum/interaction/lewd/grindface
-	name = "Grind Face"
-	description = "Feet grind their face."
+	name = "踩脸"
+	description = "用脚踩对方的脸."
 	interaction_requires = list(INTERACTION_REQUIRE_SELF_FEET, INTERACTION_REQUIRE_TARGET_MOUTH)
 	message = list(
-		"grinds their %FEET% into %TARGET%'s face.",
-		"presses their %FEET% down hard on %TARGET%'s face.",
-		"rubs off the dirt from their %FEET% onto %TARGET%'s face.",
-		"plants their %FEET% ontop of %TARGET%'s face.",
-		"rests their %FEET% on %TARGET%'s face and presses down hard.",
-		"harshly places their %FEET% atop %TARGET%'s face."
+		"用%FEET%在%TARGET%的脸上研磨.",
+		"用力将%FEET%压在%TARGET%的脸上.",
+		"将%FEET%上的污垢蹭到%TARGET%的脸上.",
+		"将%FEET%踩在%TARGET%的脸上.",
+		"将%FEET%放在%TARGET%的脸上并用力压下.",
+		"粗暴地将%FEET%放在%TARGET%的脸上."
 	)
 	sound_possible = list(
 		'modular_zzplurt/sound/interactions/foot_dry1.ogg',
@@ -25,9 +25,9 @@
 
 /datum/interaction/lewd/grindface/act(mob/living/user, mob/living/target)
 	var/list/original_messages = message.Copy()
-	// Get shoes or barefoot text
+	// 获取鞋子或赤脚文本
 	var/obj/item/clothing/shoes/worn_shoes = user.get_item_by_slot(ITEM_SLOT_FEET)
-	var/feet_text = worn_shoes?.name || pick("bare feet", "soles")
+	var/feet_text = worn_shoes?.name || pick("赤脚", "脚底")
 
 	var/chosen_message = pick(message)
 	chosen_message = replacetext(chosen_message, "%FEET%", feet_text)
@@ -36,16 +36,16 @@
 	message = original_messages
 
 /datum/interaction/lewd/grindmouth
-	name = "Grind Mouth"
-	description = "Feet grind their mouth."
+	name = "踩嘴"
+	description = "用脚踩对方的嘴."
 	interaction_requires = list(INTERACTION_REQUIRE_SELF_FEET, INTERACTION_REQUIRE_TARGET_MOUTH)
 	message = list(
-		"roughly shoves their %FEET% deeper into %TARGET%'s mouth.",
-		"harshly forces another inch of their %FEET% into %TARGET%'s mouth.",
-		"presses their weight down, their %FEET% prying deeper into %TARGET%'s mouth.",
-		"forces their %FEET% deep into %TARGET%'s mouth.",
-		"presses the tip of their %FEET% against %TARGET%'s lips and shoves inwards.",
-		"readies themselves and in one swift motion, shoves their %FEET% into %TARGET%'s mouth."
+		"粗暴地将%FEET%更深地塞进%TARGET%的嘴里.",
+		"强行将%FEET%再深入%TARGET%的嘴里一英寸.",
+		"用体重压下,%FEET%撬开%TARGET%的嘴更深入.",
+		"强行将%FEET%深深塞进%TARGET%的嘴里.",
+		"将%FEET%的尖端抵在%TARGET%的嘴唇上并向内推.",
+		"准备好后,一个迅速的动作将%FEET%塞进%TARGET%的嘴里."
 	)
 	sound_possible = list(
 		'modular_zzplurt/sound/interactions/foot_wet1.ogg',
@@ -62,7 +62,7 @@
 /datum/interaction/lewd/grindmouth/act(mob/living/user, mob/living/target)
 	var/list/original_messages = message.Copy()
 	var/obj/item/clothing/shoes/worn_shoes = user.get_item_by_slot(ITEM_SLOT_FEET)
-	var/feet_text = worn_shoes?.name || pick("bare feet", "toes", "soles")
+	var/feet_text = worn_shoes?.name || pick("赤脚", "脚趾", "脚底")
 
 	var/chosen_message = pick(message)
 	chosen_message = replacetext(chosen_message, "%FEET%", feet_text)
@@ -71,36 +71,36 @@
 	message = original_messages
 
 /datum/interaction/lewd/footjob
-	name = "Footjob"
-	description = "Jerk them off with your foot."
+	name = "足交"
+	description = "用你的脚为对方手淫."
 	interaction_requires = list(INTERACTION_REQUIRE_SELF_FEET)
 	target_required_parts = list(ORGAN_SLOT_PENIS = REQUIRE_GENITAL_EXPOSED)
 	cum_genital = list(CLIMAX_POSITION_TARGET = CLIMAX_PENIS)
 	cum_target = list(CLIMAX_POSITION_TARGET = null)
 	message = list(
-		"jerks %TARGET% off with their %FEET%.",
-		"rubs their %FEET% on %TARGET%'s shaft.",
-		"works their %FEET% up and down on %TARGET%'s cock."
+		"用%FEET%为%TARGET%手淫.",
+		"用%FEET%摩擦%TARGET%的阴茎.",
+		"用%FEET%在%TARGET%的肉棒上上下套弄."
 	)
 	cum_message_text_overrides = list(
 		CLIMAX_POSITION_TARGET = list(
-			"%CUMMING% cums all over %CAME_IN%'s %FEET%.",
-			"%CUMMING% covers %CAME_IN%'s %FEET% in cum.",
-			"%CUMMING% shoots their load onto %CAME_IN%'s %FEET%."
+			"%CUMMING%射在了%CAME_IN%的%FEET%上.",
+			"%CUMMING%的精液覆盖了%CAME_IN%的%FEET%.",
+			"%CUMMING%将精液射到了%CAME_IN%的%FEET%上."
 		)
 	)
 	cum_self_text_overrides = list(
 		CLIMAX_POSITION_TARGET = list(
-			"you cum all over %CAME_IN%'s %FEET%.",
-			"you cover %CAME_IN%'s %FEET% in cum.",
-			"you shoot your load onto %CAME_IN%'s %FEET%."
+			"你射在了%CAME_IN%的%FEET%上.",
+			"你的精液覆盖了%CAME_IN%的%FEET%.",
+			"你将精液射到了%CAME_IN%的%FEET%上."
 		)
 	)
 	cum_partner_text_overrides = list(
 		CLIMAX_POSITION_TARGET = list(
-			"%CUMMING% cums all over your %FEET%.",
-			"%CUMMING% covers your %FEET% in cum.",
-			"%CUMMING% shoots their load onto your %FEET%."
+			"%CUMMING%射在了你的%FEET%上.",
+			"%CUMMING%的精液覆盖了你的%FEET%.",
+			"%CUMMING%将精液射到了你的%FEET%上."
 		)
 	)
 	sound_possible = list(
@@ -119,7 +119,7 @@
 /datum/interaction/lewd/footjob/act(mob/living/user, mob/living/target)
 	var/list/original_messages = message.Copy()
 	var/obj/item/clothing/shoes/worn_shoes = user.get_item_by_slot(ITEM_SLOT_FEET)
-	var/feet_text = worn_shoes?.name || pick("foot", "sole")
+	var/feet_text = worn_shoes?.name || pick("脚", "脚底")
 
 	var/chosen_message = pick(message)
 	chosen_message = replacetext(chosen_message, "%FEET%", feet_text)
@@ -129,9 +129,9 @@
 
 /datum/interaction/lewd/footjob/show_climax(mob/living/cumming, mob/living/came_in, position)
 	var/obj/item/clothing/shoes/worn_shoes = cumming.get_item_by_slot(ITEM_SLOT_FEET)
-	var/feet_text = worn_shoes?.name || pick("foot", "sole")
+	var/feet_text = worn_shoes?.name || pick("脚", "脚底")
 
-	// Store original lists, with null checks
+	// 存储原始列表,带空值检查
 	var/list/original_message_overrides = cum_message_text_overrides[position]
 	var/list/original_self_overrides = cum_self_text_overrides[position]
 	var/list/original_partner_overrides = cum_partner_text_overrides[position]
@@ -139,31 +139,31 @@
 	original_self_overrides = original_self_overrides?.Copy()
 	original_partner_overrides = original_partner_overrides?.Copy()
 
-	// Pick and modify one message from each list
+	// 从每个列表中选择并修改一条消息
 	var/message_override = replacetext(pick(cum_message_text_overrides[position]), "%FEET%", feet_text)
 	var/self_override = replacetext(pick(cum_self_text_overrides[position]), "%FEET%", feet_text)
 	var/partner_override = replacetext(pick(cum_partner_text_overrides[position]), "%FEET%", feet_text)
 
-	// Set single message lists
+	// 设置单条消息列表
 	cum_message_text_overrides[position] = list(message_override)
 	cum_self_text_overrides[position] = list(self_override)
 	cum_partner_text_overrides[position] = list(partner_override)
 
 	. = ..()
 
-	// Restore original lists
+	// 恢复原始列表
 	cum_message_text_overrides[position] = original_message_overrides
 	cum_self_text_overrides[position] = original_self_overrides
 	cum_partner_text_overrides[position] = original_partner_overrides
 
 /datum/interaction/lewd/footjob/double
-	name = "Double Footjob"
-	description = "Jerk them off with both of your feet."
+	name = "双足交"
+	description = "用你的双脚为对方手淫."
 	interaction_requires = list(INTERACTION_REQUIRE_SELF_FEET)
 	message = list(
-		"jerks %TARGET% off with their %FEET%.",
-		"rubs their %FEET% on %TARGET%'s shaft.",
-		"works their %FEET% up and down on %TARGET%'s cock."
+		"用%FEET%为%TARGET%手淫.",
+		"用%FEET%摩擦%TARGET%的阴茎.",
+		"用%FEET%在%TARGET%的肉棒上上下套弄."
 	)
 	user_pleasure = 0
 	target_pleasure = 5
@@ -173,7 +173,7 @@
 /datum/interaction/lewd/footjob/double/act(mob/living/user, mob/living/target)
 	var/list/original_messages = message.Copy()
 	var/obj/item/clothing/shoes/worn_shoes = user.get_item_by_slot(ITEM_SLOT_FEET)
-	var/feet_text = worn_shoes?.name || "feet"
+	var/feet_text = worn_shoes?.name || "双脚"
 
 	var/chosen_message = pick(message)
 	chosen_message = replacetext(chosen_message, "%FEET%", feet_text)
@@ -182,36 +182,36 @@
 	message = original_messages
 
 /datum/interaction/lewd/footjob/vagina
-	name = "Vaginal Footjob"
-	description = "Rub their vagina with your foot."
+	name = "阴部足交"
+	description = "用你的脚摩擦对方的阴部."
 	target_required_parts = list(ORGAN_SLOT_VAGINA = REQUIRE_GENITAL_EXPOSED)
 	cum_genital = list(CLIMAX_POSITION_TARGET = CLIMAX_VAGINA)
 	cum_target = list(CLIMAX_POSITION_TARGET = null)
 	message = list(
-		"rubs %TARGET%'s clit with their %FEET%.",
-		"rubs their %FEET% on %TARGET%'s coochie.",
-		"rubs their %FEET% on %TARGET%'s pussy.",
-		"rubs their foot up and down on %TARGET%'s pussy."
+		"用%FEET%摩擦%TARGET%的阴蒂.",
+		"用%FEET%摩擦%TARGET%的小穴.",
+		"用%FEET%摩擦%TARGET%的阴部.",
+		"用脚在%TARGET%的小穴上上下摩擦."
 	)
 	cum_message_text_overrides = list(
 		CLIMAX_POSITION_TARGET = list(
-			"%CUMMING% squirts all over %CAME_IN%'s %FEET%.",
-			"%CUMMING% orgasms on %CAME_IN%'s %FEET%.",
-			"%CUMMING% coats %CAME_IN%'s %FEET% with their juices."
+			"%CUMMING%喷在了%CAME_IN%的%FEET%上.",
+			"%CUMMING%在%CAME_IN%的%FEET%上高潮了.",
+			"%CUMMING%的淫液涂满了%CAME_IN%的%FEET%."
 		)
 	)
 	cum_self_text_overrides = list(
 		CLIMAX_POSITION_TARGET = list(
-			"you squirt all over %CAME_IN%'s %FEET%.",
-			"you orgasm on %CAME_IN%'s %FEET%.",
-			"you coat %CAME_IN%'s %FEET% with your juices."
+			"你喷在了%CAME_IN%的%FEET%上.",
+			"你在%CAME_IN%的%FEET%上高潮了.",
+			"你的淫液涂满了%CAME_IN%的%FEET%."
 		)
 	)
 	cum_partner_text_overrides = list(
 		CLIMAX_POSITION_TARGET = list(
-			"%CUMMING% squirts all over your %FEET%.",
-			"%CUMMING% orgasms on your %FEET%.",
-			"%CUMMING% coats your %FEET% with their juices."
+			"%CUMMING%喷在了你的%FEET%上.",
+			"%CUMMING%在你的%FEET%上高潮了.",
+			"%CUMMING%的淫液涂满了你的%FEET%."
 		)
 	)
 	sound_possible = list(

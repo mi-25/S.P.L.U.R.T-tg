@@ -1,22 +1,22 @@
 /datum/interaction/lewd/grope_ass
-	name = "Grope Ass"
-	description = "Grope their ass."
+	name = "揉捏屁股"
+	description = "揉捏对方的屁股."
 	interaction_requires = list(INTERACTION_REQUIRE_SELF_HAND)
 	message = list(
-		"gropes %TARGET%'s ass",
-		"squeezes %TARGET%'s butt",
-		"fondles %TARGET%'s rear",
-		"grabs %TARGET%'s ass cheeks"
+		"揉捏%TARGET%的屁股",
+		"挤压%TARGET%的臀部",
+		"抚摸%TARGET%的后臀",
+		"抓住%TARGET%的臀瓣"
 	)
 	user_messages = list(
-		"You feel %TARGET%'s soft ass in your hand",
-		"The firmness of %TARGET%'s butt feels nice in your palm",
-		"You squeeze %TARGET%'s plump rear"
+		"你感受到%TARGET%柔软的屁股在你的手中",
+		"%TARGET%紧实的臀部在你的手掌中感觉很舒服",
+		"你挤压%TARGET%丰满的后臀"
 	)
 	target_messages = list(
-		"You feel %USER%'s hand groping your ass",
-		"%USER%'s fingers squeeze your butt cheeks",
-		"The warmth of %USER%'s palm presses against your rear"
+		"你感受到%USER%的手揉捏你的屁股",
+		"%USER%的手指挤压你的臀瓣",
+		"%USER%温暖的手掌压在你的后臀上"
 	)
 	sound_possible = list(
 		'modular_zzplurt/sound/interactions//thudswoosh.ogg'

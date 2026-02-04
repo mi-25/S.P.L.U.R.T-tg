@@ -7,20 +7,20 @@
 	cum_genital = list(CLIMAX_POSITION_USER = CLIMAX_PENIS)
 	additional_details = list(INTERACTION_FILLS_CONTAINERS)
 	cum_message_text_overrides = list(CLIMAX_POSITION_USER = list(
-		"%CUMMING% cums hard on their hand",
-		"%CUMMING% shoots their load onto their fingers",
-		"%CUMMING% ejaculates onto their palm"
+		"%CUMMING%在自己的手上激烈射精",
+		"%CUMMING%将精液射到自己的手指上",
+		"%CUMMING%射在自己的手掌上"
 	))
 	cum_self_text_overrides = list(CLIMAX_POSITION_USER = list(
-		"You cum hard on your hand",
-		"You shoot your load onto your fingers",
-		"You ejaculate onto your palm"
+		"你在自己的手上激烈射精",
+		"你将精液射到自己的手指上",
+		"你射在自己的手掌上"
 	))
 	message = list(
-		"jerks themself off",
-		"works their shaft",
-		"strokes their cock",
-		"wanks their cock hard"
+		"撸自己",
+		"抚弄自己的肉棒",
+		"抚摸自己的肉棒",
+		"用力撸自己的肉棒"
 	)
 	sound_possible = list(
 		'modular_zzplurt/sound/interactions/bang1.ogg',

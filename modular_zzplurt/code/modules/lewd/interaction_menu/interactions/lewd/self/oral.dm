@@ -7,10 +7,10 @@
 	cum_genital = list(CLIMAX_POSITION_USER = CLIMAX_VAGINA)
 	cum_target = list(CLIMAX_POSITION_USER = CLIMAX_TARGET_MOUTH)
 	message = list(
-		"licks their own pussy.",
-		"pleasures themself with their tongue.",
-		"performs oral on themself.",
-		"licks their own clit eagerly."
+		"舔舐自己的小穴.",
+		"用舌头取悦自己.",
+		"为自己口交.",
+		"急切地舔舐自己的阴蒂."
 	)
 	sound_possible = list(
 		'modular_zzplurt/sound/interactions/bj1.ogg',
@@ -57,10 +57,10 @@
 	cum_genital = list(CLIMAX_POSITION_USER = CLIMAX_PENIS)
 	cum_target = list(CLIMAX_POSITION_USER = CLIMAX_TARGET_MOUTH)
 	message = list(
-		"wraps their lips around their own cock.",
-		"pleasures themself with their mouth.",
-		"sucks their own cock eagerly.",
-		"gives themself head."
+		"用嘴唇包裹自己的肉棒.",
+		"用嘴取悦自己.",
+		"急切地吮吸自己的肉棒.",
+		"为自己口交."
 	)
 	sound_possible = list(
 		'modular_zzplurt/sound/interactions/bj1.ogg',

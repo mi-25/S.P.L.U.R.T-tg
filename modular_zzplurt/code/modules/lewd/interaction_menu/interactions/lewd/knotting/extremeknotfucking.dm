@@ -8,25 +8,25 @@
 	user_required_parts = list(ORGAN_SLOT_PENIS = REQUIRE_GENITAL_EXPOSED)
 	cum_genital = list(CLIMAX_POSITION_USER = CLIMAX_PENIS)
 	cum_message_text_overrides = list(CLIMAX_POSITION_USER = list(
-		"%CUMMING% cums deep into %CAME_IN%'s ear",
-		"%CUMMING% shoots their load into %CAME_IN%'s ear canal",
-		"%CUMMING% fills %CAME_IN%'s ear with their cum"
+		"%CUMMING%深深射入%CAME_IN%的耳朵",
+		"%CUMMING%将精液射入%CAME_IN%的耳道",
+		"%CUMMING%用精液填满%CAME_IN%的耳朵"
 	))
 	cum_self_text_overrides = list(CLIMAX_POSITION_USER = list(
-		"You cum deep into %CAME_IN%'s ear",
-		"You shoot your load into %CAME_IN%'s ear canal",
-		"You fill %CAME_IN%'s ear with your cum"
+		"你深深射入%CAME_IN%的耳朵",
+		"你将精液射入%CAME_IN%的耳道",
+		"你用精液填满%CAME_IN%的耳朵"
 	))
 	cum_partner_text_overrides = list(CLIMAX_POSITION_USER = list(
-		"%CUMMING% cums deep into your ear",
-		"%CUMMING% shoots their load into your ear canal",
-		"%CUMMING% fills your ear with their cum"
+		"%CUMMING%深深射入你的耳朵",
+		"%CUMMING%将精液射入你的耳道",
+		"%CUMMING%用精液填满你的耳朵"
 	))
 	message = list(
-		"pounds into %TARGET%'s ear.",
-		"shoves their knot deep into %TARGET%'s skull",
-		"slams their knot in and out of %TARGET%'s ear.",
-		"goes balls deep into %TARGET%'s cranium over and over again."
+		"猛烈插入%TARGET%的耳朵.",
+		"将结深深插入%TARGET%的头骨",
+		"用结在%TARGET%的耳朵里猛烈抽插.",
+		"一次又一次地深深插入%TARGET%的颅骨."
 	)
 	sound_possible = list(
 		'modular_zzplurt/sound/interactions/champ1.ogg',
@@ -60,25 +60,25 @@
 	user_required_parts = list(ORGAN_SLOT_PENIS = REQUIRE_GENITAL_EXPOSED)
 	cum_genital = list(CLIMAX_POSITION_USER = CLIMAX_PENIS)
 	cum_message_text_overrides = list(CLIMAX_POSITION_USER = list(
-		"%CUMMING% cums deep into %CAME_IN%'s empty ear socket",
-		"%CUMMING% shoots their load into %CAME_IN%'s skull",
-		"%CUMMING% fills %CAME_IN%'s ear socket with their cum"
+		"%CUMMING%深深射入%CAME_IN%的空耳窝",
+		"%CUMMING%将精液射入%CAME_IN%的头骨",
+		"%CUMMING%用精液填满%CAME_IN%的耳窝"
 	))
 	cum_self_text_overrides = list(CLIMAX_POSITION_USER = list(
-		"You cum deep into %CAME_IN%'s empty ear socket",
-		"You shoot your load into %CAME_IN%'s skull",
-		"You fill %CAME_IN%'s ear socket with your cum"
+		"你深深射入%CAME_IN%的空耳窝",
+		"你将精液射入%CAME_IN%的头骨",
+		"你用精液填满%CAME_IN%的耳窝"
 	))
 	cum_partner_text_overrides = list(CLIMAX_POSITION_USER = list(
-		"%CUMMING% cums deep into your empty ear socket",
-		"%CUMMING% shoots their load into your skull",
-		"%CUMMING% fills your ear socket with their cum"
+		"%CUMMING%深深射入你的空耳窝",
+		"%CUMMING%将精液射入你的头骨",
+		"%CUMMING%用精液填满你的耳窝"
 	))
 	message = list(
-		"pounds into %TARGET%'s earsocket.",
-		"shoves their %KNOT% deep into %TARGET%'s skull",
-		"slams their %KNOT% in and out of %TARGET%'s earsocket.",
-		"goes balls deep into %TARGET%'s cranium over and over again."
+		"猛烈插入%TARGET%的耳窝.",
+		"将%KNOT%深深插入%TARGET%的头骨",
+		"用%KNOT%在%TARGET%的耳窝里猛烈抽插.",
+		"一次又一次地深深插入%TARGET%的颅骨."
 	)
 	sound_possible = list(
 		'modular_zzplurt/sound/interactions/champ1.ogg',
@@ -111,25 +111,25 @@
 	user_required_parts = list(ORGAN_SLOT_PENIS = REQUIRE_GENITAL_EXPOSED)
 	cum_genital = list(CLIMAX_POSITION_USER = CLIMAX_PENIS)
 	cum_message_text_overrides = list(CLIMAX_POSITION_USER = list(
-		"%CUMMING% cums deep into %CAME_IN%'s eye",
-		"%CUMMING% shoots their load into %CAME_IN%'s eye socket",
-		"%CUMMING% fills %CAME_IN%'s eye with their cum"
+		"%CUMMING%深深射入%CAME_IN%的眼睛",
+		"%CUMMING%将精液射入%CAME_IN%的眼窝",
+		"%CUMMING%用精液填满%CAME_IN%的眼睛"
 	))
 	cum_self_text_overrides = list(CLIMAX_POSITION_USER = list(
-		"You cum deep into %CAME_IN%'s eye",
-		"You shoot your load into %CAME_IN%'s eye socket",
-		"You fill %CAME_IN%'s eye with your cum"
+		"你深深射入%CAME_IN%的眼睛",
+		"你将精液射入%CAME_IN%的眼窝",
+		"你用精液填满%CAME_IN%的眼睛"
 	))
 	cum_partner_text_overrides = list(CLIMAX_POSITION_USER = list(
-		"%CUMMING% cums deep into your eye",
-		"%CUMMING% shoots their load into your eye socket",
-		"%CUMMING% fills your eye with their cum"
+		"%CUMMING%深深射入你的眼睛",
+		"%CUMMING%将精液射入你的眼窝",
+		"%CUMMING%用精液填满你的眼睛"
 	))
 	message = list(
-		"pounds into %TARGET%'s eye.",
-		"shoves their %KNOT% deep into %TARGET%'s skull",
-		"slams their %KNOT% in and out of %TARGET%'s eye.",
-		"goes balls deep into %TARGET%'s cranium over and over again."
+		"猛烈插入%TARGET%的眼睛.",
+		"将%KNOT%深深插入%TARGET%的头骨",
+		"用%KNOT%在%TARGET%的眼睛里猛烈抽插.",
+		"一次又一次地深深插入%TARGET%的颅骨."
 	)
 	sound_possible = list(
 		'modular_zzplurt/sound/interactions/champ1.ogg',
@@ -163,25 +163,25 @@
 	user_required_parts = list(ORGAN_SLOT_PENIS = REQUIRE_GENITAL_EXPOSED)
 	cum_genital = list(CLIMAX_POSITION_USER = CLIMAX_PENIS)
 	cum_message_text_overrides = list(CLIMAX_POSITION_USER = list(
-		"%CUMMING% cums deep into %CAME_IN%'s empty eye socket",
-		"%CUMMING% shoots their load into %CAME_IN%'s skull",
-		"%CUMMING% fills %CAME_IN%'s eye socket with their cum"
+		"%CUMMING%深深射入%CAME_IN%的空眼窝",
+		"%CUMMING%将精液射入%CAME_IN%的头骨",
+		"%CUMMING%用精液填满%CAME_IN%的眼窝"
 	))
 	cum_self_text_overrides = list(CLIMAX_POSITION_USER = list(
-		"You cum deep into %CAME_IN%'s empty eye socket",
-		"You shoot your load into %CAME_IN%'s skull",
-		"You fill %CAME_IN%'s eye socket with your cum"
+		"你深深射入%CAME_IN%的空眼窝",
+		"你将精液射入%CAME_IN%的头骨",
+		"你用精液填满%CAME_IN%的眼窝"
 	))
 	cum_partner_text_overrides = list(CLIMAX_POSITION_USER = list(
-		"%CUMMING% cums deep into your empty eye socket",
-		"%CUMMING% shoots their load into your skull",
-		"%CUMMING% fills your eye socket with their cum"
+		"%CUMMING%深深射入你的空眼窝",
+		"%CUMMING%将精液射入你的头骨",
+		"%CUMMING%用精液填满你的眼窝"
 	))
 	message = list(
-		"pounds into %TARGET%'s eyesocket.",
-		"shoves their %KNOT% deep into %TARGET%'s skull",
-		"slams their %KNOT% in and out of %TARGET%'s eyesocket.",
-		"goes balls deep into %TARGET%'s cranium over and over again."
+		"猛烈插入%TARGET%的眼窝.",
+		"将%KNOT%深深插入%TARGET%的头骨",
+		"用%KNOT%在%TARGET%的眼窝里猛烈抽插.",
+		"一次又一次地深深插入%TARGET%的颅骨."
 	)
 	sound_possible = list(
 		'modular_zzplurt/sound/interactions/champ1.ogg',

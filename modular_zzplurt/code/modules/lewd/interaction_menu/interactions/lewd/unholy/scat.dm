@@ -1,23 +1,23 @@
 /datum/interaction/lewd/unholy/faceshit
 	name = "Face Shit"
-	description = "Shit on their face."
+	description = "对着他们的脸拉屎."
 	interaction_requires = list(INTERACTION_REQUIRE_TARGET_MOUTH)
 	user_required_parts = list(ORGAN_SLOT_ANUS = REQUIRE_GENITAL_ANY)
 	message = list(
-		"squats over %TARGET%'s face and releases their bowels",
-		"defecates right onto %TARGET%'s face",
-		"lets loose their filth on %TARGET%'s face",
-		"forces %TARGET% to experience their mess"
+		"蹲在%TARGET%的脸上并释放肠道",
+		"直接对着%TARGET%的脸排便",
+		"对着%TARGET%的脸释放污秽",
+		"强迫%TARGET%体验自己的排泄物"
 	)
 	user_messages = list(
-		"You feel relief as you release onto %TARGET%'s face",
-		"You empty your bowels on %TARGET%'s face",
-		"You make %TARGET% deal with your mess"
+		"你对着%TARGET%的脸释放时感到一阵轻松",
+		"你对着%TARGET%的脸排空肠道",
+		"你让%TARGET%处理你的排泄物"
 	)
 	target_messages = list(
-		"%USER% releases their filth right on your face",
-		"You're forced to experience %USER%'s mess",
-		"%USER%'s waste covers your face"
+		"%USER%直接对着你的脸释放污秽",
+		"你被迫体验%USER%的排泄物",
+		"%USER%的排泄物覆盖了你的脸"
 	)
 	sound_possible = list()
 	sound_range = 1
@@ -38,23 +38,23 @@
 
 /datum/interaction/lewd/unholy/crotchshit
 	name = "Crotch Shit"
-	description = "Shit on their crotch."
+	description = "对着他们的胯部拉屎."
 	user_required_parts = list(ORGAN_SLOT_ANUS = REQUIRE_GENITAL_ANY)
 	message = list(
-		"squats over %TARGET%'s crotch and releases their bowels",
-		"defecates all over %TARGET%'s groin",
-		"lets loose their filth on %TARGET%'s genitals",
-		"forces %TARGET% to feel their mess"
+		"蹲在%TARGET%的胯部并释放肠道",
+		"对着%TARGET%的腹股沟排便",
+		"对着%TARGET%的生殖器释放污秽",
+		"强迫%TARGET%感受自己的排泄物"
 	)
 	user_messages = list(
-		"You feel relief as you release onto %TARGET%'s crotch",
-		"You empty your bowels on %TARGET%'s groin",
-		"You make %TARGET% deal with your mess"
+		"你对着%TARGET%的胯部释放时感到一阵轻松",
+		"你对着%TARGET%的腹股沟排空肠道",
+		"你让%TARGET%处理你的排泄物"
 	)
 	target_messages = list(
-		"%USER% releases their filth right on your crotch",
-		"You feel %USER%'s mess on your groin",
-		"%USER%'s waste covers your genitals"
+		"%USER%直接对着你的胯部释放污秽",
+		"你感受到%USER%的排泄物在你的腹股沟上",
+		"%USER%的排泄物覆盖了你的生殖器"
 	)
 	sound_possible = list()
 	sound_range = 1
@@ -70,7 +70,7 @@
 
 /datum/interaction/lewd/unholy/shitfuck
 	name = "Shit Fuck"
-	description = "Fuck their ass + shit."
+	description = "操他们的屁眼 + 拉屎."
 	user_required_parts = list(ORGAN_SLOT_PENIS = REQUIRE_GENITAL_EXPOSED)
 	target_required_parts = list(ORGAN_SLOT_ANUS = REQUIRE_GENITAL_EXPOSED)
 	cum_genital = list(
@@ -81,20 +81,20 @@
 		CLIMAX_POSITION_USER = ORGAN_SLOT_ANUS
 	)
 	message = list(
-		"pounds %TARGET%'s ass while they release their bowels",
-		"fucks %TARGET%'s hole as they defecate",
-		"thrusts into %TARGET%'s ass as they make a mess",
-		"fills %TARGET% with their cock while they empty themselves"
+		"猛烈冲击%TARGET%的屁眼,同时他们释放肠道",
+		"操着%TARGET%的后穴,同时他们排便",
+		"插入%TARGET%的屁眼,同时他们制造混乱",
+		"用肉棒填满%TARGET%,同时他们排空自己"
 	)
 	user_messages = list(
-		"You feel %TARGET% releasing as you fuck them",
-		"You pound %TARGET%'s ass as they make a mess",
-		"You make %TARGET% feel full while they empty themselves"
+		"你操着%TARGET%时感受到他们在释放",
+		"你猛烈冲击%TARGET%的屁眼,同时他们制造混乱",
+		"你让%TARGET%在排空自己的同时感到充实"
 	)
 	target_messages = list(
-		"You release your bowels as %USER% fucks you",
-		"You feel %USER%'s cock while you make a mess",
-		"You empty yourself as %USER% fills you up"
+		"你在%USER%操你时释放肠道",
+		"你感受到%USER%的肉棒,同时制造混乱",
+		"你在%USER%填满你时排空自己"
 	)
 	sound_possible = list(
 		'modular_zzplurt/sound/interactions/bang1.ogg',
@@ -120,27 +120,27 @@
 
 /datum/interaction/lewd/unholy/suck_shit
 	name = "Suck Shit"
-	description = "Suck the shit out of their asshole."
+	description = "从他们的屁眼吸出屎."
 	interaction_requires = list(INTERACTION_REQUIRE_SELF_MOUTH)
 	target_required_parts = list(ORGAN_SLOT_ANUS = REQUIRE_GENITAL_EXPOSED)
 	cum_genital = list(
 		CLIMAX_POSITION_TARGET = CLIMAX_BOTH
 	)
 	message = list(
-		"presses their face between %TARGET%'s asscheeks and sucks out their filth",
-		"eagerly consumes %TARGET%'s mess directly from the source",
-		"feeds on %TARGET%'s waste eagerly",
-		"puts their mouth on %TARGET%'s hole to taste their mess"
+		"将脸埋在%TARGET%的屁股之间并吸出他们的污秽",
+		"急切地直接从源头吞食%TARGET%的排泄物",
+		"急切地吞食%TARGET%的排泄物",
+		"将嘴贴在%TARGET%的菊花上品尝他们的排泄物"
 	)
 	user_messages = list(
-		"You consume %TARGET%'s waste directly from the source",
-		"You suck the filth from %TARGET%'s asshole",
-		"You taste %TARGET%'s mess on your tongue"
+		"你直接从源头吞食%TARGET%的排泄物",
+		"你从%TARGET%的屁眼吸出污秽",
+		"你用舌头品尝%TARGET%的排泄物"
 	)
 	target_messages = list(
-		"%USER% sucks your waste right out of your ass",
-		"You feel %USER%'s mouth pulling your mess from your hole",
-		"%USER% eagerly consumes your waste"
+		"%USER%直接从你的屁眼吸出你的排泄物",
+		"你感受到%USER%的嘴从你的菊花拉出排泄物",
+		"%USER%急切地吞食你的排泄物"
 	)
 	sound_possible = list()
 	sound_range = 1

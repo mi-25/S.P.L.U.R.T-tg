@@ -7,12 +7,12 @@
 	cum_genital = list(CLIMAX_POSITION_USER = CLIMAX_BOTH)
 	additional_details = list(INTERACTION_FILLS_CONTAINERS)
 	message = list(
-		"gently gropes their breast",
-		"softly squeezes their breasts",
-		"grips their breasts",
-		"runs a few fingers over their breast",
-		"delicately teases their nipple",
-		"traces a touch across their breast"
+		"轻轻抓摸自己的乳房",
+		"轻柔地挤压自己的乳房",
+		"抓住自己的乳房",
+		"用几根手指抚摸自己的乳房",
+		"细腻地挑逗自己的乳头",
+		"用触摸划过自己的乳房"
 	)
 	sound_possible = list(
 		'modular_zzplurt/sound/interactions/squelch1.ogg'
@@ -28,12 +28,12 @@
 		return
 	if(prob(5 + user.arousal))
 		user.visible_message(span_lewd("<b>\The [user]</b> [pick(
-			"shivers in arousal.",
-			"moans quietly.",
-			"breathes out a soft moan.",
-			"gasps.",
-			"shudders softly.",
-			"trembles as their hands run across bare skin.")]"))
+			"因欲望而颤抖.",
+			"轻声呻吟.",
+			"发出柔和的呻吟.",
+			"喘息着.",
+			"轻轻颤抖.",
+			"在双手抚摸裸露皮肤时颤抖.")]"))
 
 	var/obj/item/liquid_container
 	var/obj/item/cached_item = user.get_active_held_item()
@@ -47,7 +47,7 @@
 	if(liquid_container)
 		var/obj/item/organ/genital/breasts/breasts = user.get_organ_slot(ORGAN_SLOT_BREASTS)
 		if(breasts?.internal_fluid_datum)
-			// Calculate milk amount based on how full the breasts are (0.5 to 2 multiplier)
+			// 根据乳房的饱满程度计算乳汁量（0.5到2倍）
 			var/milk_multiplier = 0.5
 			if(breasts.internal_fluid_maximum > 0)
 				milk_multiplier = 0.5 + (1.5 * (breasts.reagents.total_volume / breasts.internal_fluid_maximum))
@@ -66,9 +66,9 @@
 	additional_details = list(INTERACTION_MAY_CONTAIN_DRINK)
 	usage = INTERACTION_SELF
 	message = list(
-		"brings their own milk tanks to their mouth and sucks deeply into them",
-		"takes a big sip of their own fresh milk",
-		"fills their own mouth with a big gulp of their warm milk"
+		"将自己的奶子送到嘴边并深深吮吸",
+		"大口喝下自己的新鲜乳汁",
+		"用自己温暖的乳汁填满嘴巴"
 	)
 	sound_possible = list(
 		'modular_zzplurt/sound/interactions/oral1.ogg',
@@ -85,7 +85,7 @@
 		return
 	var/obj/item/organ/genital/breasts/breasts = user.get_organ_slot(ORGAN_SLOT_BREASTS)
 	if(breasts?.internal_fluid_datum)
-		// Calculate milk amount based on how full the breasts are (0.5 to 2 multiplier)
+		// 根据乳房的饱满程度计算乳汁量（0.5到2倍）
 		var/milk_multiplier = 0.5
 		if(breasts.internal_fluid_maximum > 0)
 			milk_multiplier = 0.5 + (1.5 * (breasts.reagents.total_volume / breasts.internal_fluid_maximum))
@@ -107,20 +107,20 @@
 	usage = INTERACTION_SELF
 	cum_genital = list(CLIMAX_POSITION_USER = CLIMAX_PENIS)
 	cum_message_text_overrides = list(CLIMAX_POSITION_USER = list(
-		"%CUMMING% cums all over their own breasts",
-		"%CUMMING% shoots their load onto their tits",
-		"%CUMMING% covers their breasts in cum"
+		"%CUMMING%射满了自己的乳房",
+		"%CUMMING%将精液射到自己的奶子上",
+		"%CUMMING%用精液覆盖自己的乳房"
 	))
 	cum_self_text_overrides = list(CLIMAX_POSITION_USER = list(
-		"You cum all over your own breasts",
-		"You shoot your load onto your tits",
-		"You cover your breasts in cum"
+		"你射满了自己的乳房",
+		"你将精液射到自己的奶子上",
+		"你用精液覆盖自己的乳房"
 	))
 	message = list(
-		"fucks their own breasts",
-		"slides their cock between their breasts",
-		"thrusts between their tits",
-		"pleasures themself with their breasts"
+		"插入自己的乳房",
+		"将肉棒滑入自己的乳房之间",
+		"在自己的奶子之间抽插",
+		"用自己的乳房取悦自己"
 	)
 	sound_possible = list(
 		'modular_zzplurt/sound/interactions/bang1.ogg',

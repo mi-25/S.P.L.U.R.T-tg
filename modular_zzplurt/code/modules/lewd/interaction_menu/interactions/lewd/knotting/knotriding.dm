@@ -6,10 +6,10 @@
 	cum_genital = list(CLIMAX_POSITION_USER = CLIMAX_VAGINA, CLIMAX_POSITION_TARGET = CLIMAX_PENIS)
 	cum_target = list(CLIMAX_POSITION_USER = ORGAN_SLOT_PENIS, CLIMAX_POSITION_TARGET = ORGAN_SLOT_VAGINA)
 	message = list(
-		"rides %TARGET%'s %KNOT%.",
-		"forces %TARGET%'s %KNOT% into their pussy.",
-		"pops %TARGET%'s %KNOT% in and out of their pussy.",
-		"impales themself on %TARGET%'s cock."
+		"骑乘%TARGET%的%KNOT%.",
+		"将%TARGET%的%KNOT%强行插入自己的小穴.",
+		"让%TARGET%的%KNOT%在小穴里进出.",
+		"将自己插在%TARGET%的肉棒上."
 	)
 	sound_possible = list(
 		'modular_zzplurt/sound/interactions/bang1.ogg',
@@ -32,10 +32,10 @@
 	cum_genital = list(CLIMAX_POSITION_TARGET = CLIMAX_PENIS)
 	cum_target = list(CLIMAX_POSITION_TARGET = ORGAN_SLOT_ANUS)
 	message = list(
-		"rides %TARGET%'s %KNOT% with their ass.",
-		"forces %TARGET%'s %KNOT% into their ass.",
-		"pops %TARGET%'s %KNOT% in and out of their ass.",
-		"impales their ass on %TARGET%'s cock."
+		"用肛门骑乘%TARGET%的%KNOT%.",
+		"将%TARGET%的%KNOT%强行插入自己的肛门.",
+		"让%TARGET%的%KNOT%在肛门里进出.",
+		"将肛门插在%TARGET%的肉棒上."
 	)
 	sound_possible = list(
 		'modular_zzplurt/sound/interactions/bang1.ogg',

@@ -1,13 +1,13 @@
 /datum/interaction/lewd/nipsuck
-	name = "Suck Nipples"
-	description = "Suck their nipples."
+	name = "吮吸乳头"
+	description = "吮吸对方的乳头."
 	interaction_requires = list(INTERACTION_REQUIRE_SELF_MOUTH)
 	target_required_parts = list(ORGAN_SLOT_BREASTS = REQUIRE_GENITAL_EXPOSED)
 	additional_details = list(INTERACTION_MAY_CONTAIN_DRINK)
 	message = list(
-		"gently sucks on %TARGET%'s nipple.",
-		"gently nibs %TARGET%'s nipple.",
-		"licks %TARGET%'s nipple."
+		"轻轻吮吸%TARGET%的乳头.",
+		"轻轻啃咬%TARGET%的乳头.",
+		"舔舐%TARGET%的乳头."
 	)
 	sound_possible = list(
 		'modular_zzplurt/sound/interactions/oral1.ogg',
@@ -23,28 +23,28 @@
 /datum/interaction/lewd/nipsuck/act(mob/living/user, mob/living/target)
 	var/list/original_messages = message.Copy()
 
-	// Handle different intents
+	// 处理不同意图
 	switch(resolve_intent_name(user))
 		if("harm")
 			message = list(
-				"bites %TARGET%'s nipple.",
-				"aggressively sucks %TARGET%'s nipple."
+				"咬%TARGET%的乳头.",
+				"粗暴地吮吸%TARGET%的乳头."
 			)
-			target_pleasure = 4 // Aggressive sucking has higher rewards
+			target_pleasure = 4 // 粗暴的吮吸有更高的奖励
 			target_arousal = 5
 		if("disarm")
 			message = list(
-				"playfully nibbles %TARGET%'s nipple.",
-				"teasingly sucks %TARGET%'s nipple.",
-				"gently bites %TARGET%'s nipple."
+				"顽皮地啃咬%TARGET%的乳头.",
+				"挑逗地吮吸%TARGET%的乳头.",
+				"轻轻咬%TARGET%的乳头."
 			)
 		if("grab")
 			message = list(
-				"sucks %TARGET%'s nipple intently.",
-				"feasts on %TARGET%'s nipple.",
-				"glomps %TARGET%'s nipple."
+				"专注地吮吸%TARGET%的乳头.",
+				"贪婪地吸吮%TARGET%的乳头.",
+				"含住%TARGET%的乳头."
 			)
-			target_pleasure = 4 // Intent sucking has higher rewards
+			target_pleasure = 4 // 专注的吮吸有更高的奖励
 			target_arousal = 5
 	. = ..()
 	message = original_messages
@@ -53,7 +53,7 @@
 	. = ..()
 	var/obj/item/organ/genital/breasts/breasts = target.get_organ_slot(ORGAN_SLOT_BREASTS)
 	if(breasts?.internal_fluid_datum)
-		// Calculate milk amount based on how full the breasts are (0.5 to 2 multiplier)
+		// 根据乳房的饱满程度计算乳汁量（0.5到2倍）
 		var/milk_multiplier = 0.5
 		if(breasts.internal_fluid_maximum > 0)
 			milk_multiplier = 0.5 + (1.5 * (breasts.reagents.total_volume / breasts.internal_fluid_maximum))
@@ -61,7 +61,7 @@
 		var/transfer_amount = rand(1, 2 * milk_multiplier)
 		var/intent = resolve_intent_name(user)
 		if(intent == "harm" || intent == "grab")
-			transfer_amount = rand(1, 3 * milk_multiplier) // More aggressive sucking gets more milk
+			transfer_amount = rand(1, 3 * milk_multiplier) // 更粗暴的吮吸获得更多乳汁
 
 		var/datum/reagents/R = new(breasts.internal_fluid_maximum)
 		breasts.reagents.trans_to(R, transfer_amount)
@@ -73,28 +73,28 @@
 		switch(resolve_intent_name(user))
 			if("help")
 				arousal_messages = list(
-					"%TARGET% shivers in arousal.",
-					"%TARGET% moans quietly.",
-					"%TARGET% breathes out a soft moan.",
-					"%TARGET% gasps.",
-					"%TARGET% shudders softly.",
-					"%TARGET% trembles as their chest gets molested."
+					"%TARGET%因欲望而颤抖.",
+					"%TARGET%轻声呻吟.",
+					"%TARGET%发出柔和的呻吟.",
+					"%TARGET%喘息着.",
+					"%TARGET%轻轻颤抖.",
+					"%TARGET%在胸部被玩弄时颤抖."
 				)
 			if("disarm")
 				arousal_messages = list(
-					"%TARGET% playfully squirms.",
-					"%TARGET% wiggles teasingly.",
-					"%TARGET% lets out a playful moan.",
-					"%TARGET% bites their lip.",
-					"%TARGET% squirms from the teasing."
+					"%TARGET%顽皮地扭动.",
+					"%TARGET%挑逗地扭动.",
+					"%TARGET%发出顽皮的呻吟.",
+					"%TARGET%咬着嘴唇.",
+					"%TARGET%因挑逗而扭动."
 				)
 			if("grab")
 				arousal_messages = list(
-					"%TARGET% moans eagerly.",
-					"%TARGET% presses their chest forward.",
-					"%TARGET% lets out a wanting groan.",
-					"%TARGET% quivers with excitement.",
-					"%TARGET% shivers with anticipation."
+					"%TARGET%急切地呻吟.",
+					"%TARGET%将胸部向前挺.",
+					"%TARGET%发出渴望的呻吟.",
+					"%TARGET%兴奋地颤抖.",
+					"%TARGET%因期待而颤抖."
 				)
 
 		if(arousal_messages)

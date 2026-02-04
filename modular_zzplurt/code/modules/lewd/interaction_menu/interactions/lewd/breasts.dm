@@ -1,13 +1,13 @@
 /datum/interaction/lewd/breastfeed
-	name = "Breastfeed"
-	description = "Breastfeed them."
+	name = "哺乳"
+	description = "给对方哺乳."
 	user_required_parts = list(ORGAN_SLOT_BREASTS = REQUIRE_GENITAL_EXPOSED)
 	interaction_requires = list(INTERACTION_REQUIRE_TARGET_MOUTH, INTERACTION_REQUIRE_SELF_HUMAN)
 	additional_details = list(INTERACTION_MAY_CONTAIN_DRINK)
 	message = list(
-		"pushes their breasts against %TARGET%'s mouth, squirting their warm %MILK% into their mouth.",
-		"fills %TARGET%'s mouth with warm, sweet %MILK% as they squeeze their boobs, panting.",
-		"lets a large stream of their own abundant %MILK% coat the back of %TARGET%'s throat."
+		"将乳房压在%TARGET%的嘴上,将温暖的%MILK%喷进对方嘴里.",
+		"挤压着自己的乳房,将温暖甜美的%MILK%灌满%TARGET%的嘴,喘息着.",
+		"让大量丰沛的%MILK%涂满%TARGET%的喉咙深处."
 	)
 	sound_possible = list(
 		'modular_zzplurt/sound/interactions/oral1.ogg',
@@ -49,18 +49,18 @@
 		qdel(R)
 
 /datum/interaction/lewd/titgrope
-	name = "Grope Breasts"
-	description = "Grope their breasts."
+	name = "揉捏乳房"
+	description = "揉捏对方的乳房."
 	interaction_requires = list(INTERACTION_REQUIRE_SELF_HAND)
 	target_required_parts = list(ORGAN_SLOT_BREASTS = REQUIRE_GENITAL_ANY)
 	additional_details = list(INTERACTION_FILLS_CONTAINERS)
 	message = list(
-		"gently gropes %TARGET%'s breast.",
-		"softly squeezes %TARGET%'s breasts.",
-		"grips %TARGET%'s breasts.",
-		"runs a few fingers over %TARGET%'s breast.",
-		"delicately teases %TARGET%'s nipple.",
-		"traces a touch across %TARGET%'s breast."
+		"轻柔地揉捏%TARGET%的乳房.",
+		"温柔地挤压%TARGET%的乳房.",
+		"抓握%TARGET%的乳房.",
+		"用几根手指抚摸%TARGET%的乳房.",
+		"细腻地挑逗%TARGET%的乳头.",
+		"用手指轻抚%TARGET%的乳房."
 	)
 	sound_possible = list('modular_zzplurt/sound/interactions/squelch1.ogg')
 	sound_range = 1
@@ -84,7 +84,7 @@
 			liquid_container = cached_item
 
 	if(liquid_container)
-		message = list("milks %TARGET%'s breasts into \the [liquid_container].")
+		message = list("将%TARGET%的乳房挤奶到\the [liquid_container]中.")
 		. = ..()
 		message = original_messages
 		return
@@ -93,27 +93,27 @@
 	switch(resolve_intent_name(user))
 		if("harm")
 			message = list(
-				"aggressively gropes %TARGET%'s breast.",
-				"grabs %TARGET%'s breasts.",
-				"tightly squeezes %TARGET%'s breasts.",
-				"slaps at %TARGET%'s breasts.",
-				"gropes %TARGET%'s breasts roughly."
+				"粗暴地揉捏%TARGET%的乳房.",
+				"抓住%TARGET%的乳房.",
+				"用力挤压%TARGET%的乳房.",
+				"拍打%TARGET%的乳房.",
+				"粗鲁地揉捏%TARGET%的乳房."
 			)
 		if("disarm")
 			message = list(
-				"playfully bats at %TARGET%'s breasts.",
-				"teasingly gropes %TARGET%'s breasts.",
-				"playfully squeezes %TARGET%'s breasts.",
-				"mischievously fondles %TARGET%'s breasts.",
-				"impishly teases %TARGET%'s nipples."
+				"顽皮地拍打%TARGET%的乳房.",
+				"挑逗地揉捏%TARGET%的乳房.",
+				"玩闹地挤压%TARGET%的乳房.",
+				"调皮地抚摸%TARGET%的乳房.",
+				"淘气地挑逗%TARGET%的乳头."
 			)
 		if("grab")
 			message = list(
-				"firmly grips %TARGET%'s breasts.",
-				"possessively gropes %TARGET%'s breasts.",
-				"eagerly kneads %TARGET%'s breasts.",
-				"roughly fondles %TARGET%'s breasts.",
-				"greedily squeezes %TARGET%'s breasts."
+				"牢牢抓住%TARGET%的乳房.",
+				"占有欲地揉捏%TARGET%的乳房.",
+				"急切地揉搓%TARGET%的乳房.",
+				"粗暴地抚摸%TARGET%的乳房.",
+				"贪婪地挤压%TARGET%的乳房."
 			)
 	. = ..()
 	message = original_messages
@@ -151,28 +151,28 @@
 		switch(intent)
 			if("help")
 				arousal_messages = list(
-					"%TARGET% shivers in arousal.",
-					"%TARGET% moans quietly.",
-					"%TARGET% breathes out a soft moan.",
-					"%TARGET% gasps.",
-					"%TARGET% shudders softly.",
-					"%TARGET% trembles as hands run across bare skin."
+					"%TARGET%因兴奋而颤抖.",
+					"%TARGET%轻声呻吟.",
+					"%TARGET%发出柔和的呻吟.",
+					"%TARGET%喘息着.",
+					"%TARGET%轻轻颤抖.",
+					"%TARGET%在手抚过裸露肌肤时颤栗."
 				)
 			if("disarm")
 				arousal_messages = list(
-					"%TARGET% playfully squirms.",
-					"%TARGET% lets out a teasing giggle.",
-					"%TARGET% bites their lip.",
-					"%TARGET% wiggles teasingly.",
-					"%TARGET% gives a flirtatious gasp."
+					"%TARGET%顽皮地扭动.",
+					"%TARGET%发出挑逗的咯咯笑.",
+					"%TARGET%咬着嘴唇.",
+					"%TARGET%挑逗地扭动.",
+					"%TARGET%发出调情的喘息."
 				)
 			if("grab")
 				arousal_messages = list(
-					"%TARGET% moans eagerly.",
-					"%TARGET% presses into the touch.",
-					"%TARGET% lets out a wanting groan.",
-					"%TARGET% quivers with excitement.",
-					"%TARGET% shivers with anticipation."
+					"%TARGET%急切地呻吟.",
+					"%TARGET%迎合着触摸.",
+					"%TARGET%发出渴望的呻吟.",
+					"%TARGET%兴奋地颤抖.",
+					"%TARGET%期待地颤栗."
 				)
 
 		if(arousal_messages)
@@ -180,27 +180,27 @@
 			target.visible_message(span_lewd(replacetext(target_message, "%TARGET%", target)))
 
 /datum/interaction/lewd/breastsmother
-	name = "Breast Smother"
-	description = "Smother them with your breasts."
+	name = "乳房窒息"
+	description = "用你的乳房闷住对方."
 	interaction_requires = list(
 		INTERACTION_REQUIRE_TARGET_MOUTH
 	)
 	user_required_parts = list(ORGAN_SLOT_BREASTS = REQUIRE_GENITAL_EXPOSED)
 	message = list(
-		"presses their breasts against %TARGET%'s face",
-		"smothers %TARGET%'s face with their tits",
-		"forces %TARGET%'s face between their breasts",
-		"pins %TARGET%'s head between their boobs"
+		"将乳房压在%TARGET%的脸上",
+		"用乳房闷住%TARGET%的脸",
+		"强迫%TARGET%的脸埋进自己的乳房之间",
+		"用乳房夹住%TARGET%的头"
 	)
 	user_messages = list(
-		"You feel %TARGET%'s face pressed between your breasts",
-		"You hold %TARGET%'s head against your chest",
-		"You keep %TARGET%'s face buried in your cleavage"
+		"你感受到%TARGET%的脸被压在你的乳房之间",
+		"你用胸部压住%TARGET%的头",
+		"你让%TARGET%的脸深深埋进你的乳沟"
 	)
 	target_messages = list(
-		"Your face is pressed between %USER%'s breasts",
-		"%USER%'s tits smother your face",
-		"Your vision is filled with %USER%'s cleavage"
+		"你的脸被压在%USER%的乳房之间",
+		"%USER%的乳房闷住了你的脸",
+		"你的视野被%USER%的乳沟填满"
 	)
 	sound_possible = list(
 		'modular_zzplurt/sound/interactions/squelch1.ogg',
@@ -224,41 +224,41 @@
 		user.adjust_arousal(8)
 
 /datum/interaction/lewd/do_boobjob
-	name = "Give Boobjob"
-	description = "Give them a boobjob."
+	name = "乳交"
+	description = "给对方乳交."
 	target_required_parts = list(ORGAN_SLOT_PENIS = REQUIRE_GENITAL_EXPOSED)
 	user_required_parts = list(ORGAN_SLOT_BREASTS = REQUIRE_GENITAL_EXPOSED)
 	cum_genital = list(CLIMAX_POSITION_TARGET = CLIMAX_PENIS)
 	cum_message_text_overrides = list(CLIMAX_POSITION_TARGET = list(
-		"%CUMMING% cums all over %CAME_IN%'s breasts",
-		"%CUMMING% shoots their load onto %CAME_IN%'s tits",
-		"%CUMMING% covers %CAME_IN%'s chest in cum"
+		"%CUMMING%射在了%CAME_IN%的乳房上",
+		"%CUMMING%将精液射到了%CAME_IN%的乳房上",
+		"%CUMMING%的精液覆盖了%CAME_IN%的胸部"
 	))
 	cum_self_text_overrides = list(CLIMAX_POSITION_TARGET = list(
-		"%CUMMING% cums all over your breasts",
-		"%CUMMING% shoots their load onto your tits",
-		"%CUMMING% covers your chest in cum"
+		"%CUMMING%射在了你的乳房上",
+		"%CUMMING%将精液射到了你的乳房上",
+		"%CUMMING%的精液覆盖了你的胸部"
 	))
 	cum_partner_text_overrides = list(CLIMAX_POSITION_TARGET = list(
-		"You cum all over %CAME_IN%'s breasts",
-		"You shoot your load onto %CAME_IN%'s tits",
-		"You cover %CAME_IN%'s chest in cum"
+		"你射在了%CAME_IN%的乳房上",
+		"你将精液射到了%CAME_IN%的乳房上",
+		"你的精液覆盖了%CAME_IN%的胸部"
 	))
 	message = list(
-		"wraps their breasts around %TARGET%'s cock",
-		"works %TARGET%'s shaft between their tits",
-		"pleasures %TARGET% with their breasts",
-		"squeezes their breasts around %TARGET%'s cock"
+		"用乳房包裹%TARGET%的肉棒",
+		"用乳房套弄%TARGET%的阴茎",
+		"用乳房取悦%TARGET%",
+		"用乳房夹住%TARGET%的肉棒"
 	)
 	user_messages = list(
-		"You feel %TARGET%'s cock throbbing between your breasts",
-		"The warmth of %TARGET%'s shaft feels nice between your tits",
-		"You squeeze your breasts around %TARGET%'s cock"
+		"你感受到%TARGET%的肉棒在你的乳房之间跳动",
+		"%TARGET%温热的阴茎夹在你的乳房之间感觉很舒服",
+		"你用乳房夹紧%TARGET%的肉棒"
 	)
 	target_messages = list(
-		"%USER%'s soft breasts squeeze your cock",
-		"Your shaft slides between %USER%'s tits",
-		"The softness of %USER%'s breasts feels amazing"
+		"%USER%柔软的乳房夹住你的肉棒",
+		"你的阴茎在%USER%的乳房之间滑动",
+		"%USER%柔软的乳房让你感觉美妙"
 	)
 	sound_possible = list(
 		'modular_zzplurt/sound/interactions/bang1.ogg',

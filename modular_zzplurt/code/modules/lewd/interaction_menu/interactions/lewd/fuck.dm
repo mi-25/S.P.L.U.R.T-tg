@@ -1,15 +1,15 @@
 /datum/interaction/lewd/fuck
-	name = "Fuck"
-	description = "Fuck their pussy."
+	name = "性交"
+	description = "操对方的小穴."
 	user_required_parts = list(ORGAN_SLOT_PENIS = REQUIRE_GENITAL_EXPOSED)
 	target_required_parts = list(ORGAN_SLOT_VAGINA = REQUIRE_GENITAL_EXPOSED)
 	cum_genital = list(CLIMAX_POSITION_USER = CLIMAX_PENIS, CLIMAX_POSITION_TARGET = CLIMAX_VAGINA)
 	cum_target = list(CLIMAX_POSITION_USER = ORGAN_SLOT_VAGINA, CLIMAX_POSITION_TARGET = ORGAN_SLOT_PENIS)
 	message = list(
-		"pounds %TARGET%'s pussy.",
-		"shoves their cock deep into %TARGET%'s pussy.",
-		"thrusts in and out of %TARGET%'s cunt.",
-		"goes balls deep into %TARGET%'s pussy over and over again."
+		"猛烈地抽插%TARGET%的小穴.",
+		"将肉棒深深插入%TARGET%的小穴.",
+		"在%TARGET%的阴部进出抽插.",
+		"一次又一次地深入%TARGET%的小穴到根部."
 	)
 	sound_possible = list(
 		'modular_zzplurt/sound/interactions/champ1.ogg',
@@ -23,16 +23,16 @@
 	target_arousal = 12
 
 /datum/interaction/lewd/fuck/anal
-	name = "Anal Fuck"
-	description = "Fuck their ass."
+	name = "肛交"
+	description = "操对方的肛门."
 	target_required_parts = list(ORGAN_SLOT_ANUS = REQUIRE_GENITAL_EXPOSED)
 	cum_genital = list(CLIMAX_POSITION_USER = CLIMAX_PENIS, CLIMAX_POSITION_TARGET = CLIMAX_BOTH)
 	cum_target = list(CLIMAX_POSITION_USER = ORGAN_SLOT_ANUS, CLIMAX_POSITION_TARGET = ORGAN_SLOT_PENIS)
 	message = list(
-		"thrusts in and out of %TARGET%'s ass.",
-		"pounds %TARGET%'s ass.",
-		"slams their hips up against %TARGET%'s ass hard.",
-		"goes balls deep into %TARGET%'s ass over and over again."
+		"在%TARGET%的肛门进出抽插.",
+		"猛烈地抽插%TARGET%的肛门.",
+		"用力将臀部撞向%TARGET%的屁股.",
+		"一次又一次地深入%TARGET%的肛门到根部."
 	)
 	sound_possible = list(
 		'modular_zzplurt/sound/interactions/bang1.ogg',
@@ -47,17 +47,17 @@
 	target_pain = 3
 
 /datum/interaction/lewd/breastfuck
-	name = "Breast Fuck"
-	description = "Fuck their breasts."
+	name = "乳交抽插"
+	description = "操对方的乳房."
 	user_required_parts = list(ORGAN_SLOT_PENIS = REQUIRE_GENITAL_EXPOSED)
 	target_required_parts = list(ORGAN_SLOT_BREASTS = REQUIRE_GENITAL_EXPOSED)
 	cum_genital = list(CLIMAX_POSITION_USER = CLIMAX_PENIS)
 	cum_target = list(CLIMAX_POSITION_USER = ORGAN_SLOT_BREASTS)
 	message = list(
-		"fucks %TARGET%'s breasts.",
-		"grinds their cock between %TARGET%'s boobs.",
-		"thrusts into %TARGET%'s tits.",
-		"grabs %TARGET%'s breasts together and presses their cock between them."
+		"操%TARGET%的乳房.",
+		"用肉棒在%TARGET%的乳房之间研磨.",
+		"在%TARGET%的乳房之间抽插.",
+		"抓住%TARGET%的乳房挤在一起,将肉棒压在中间."
 	)
 	sound_possible = list(
 		'modular_zzplurt/sound/interactions/bang1.ogg',
@@ -72,39 +72,39 @@
 	target_arousal = 3
 
 /datum/interaction/lewd/footfuck
-	name = "Foot Fuck"
-	description = "Rub your cock on their foot."
+	name = "足部摩擦"
+	description = "用你的肉棒在对方的脚上摩擦."
 	user_required_parts = list(ORGAN_SLOT_PENIS = REQUIRE_GENITAL_EXPOSED)
 	interaction_requires = list(INTERACTION_REQUIRE_TARGET_FEET)
 	cum_genital = list(CLIMAX_POSITION_USER = CLIMAX_PENIS)
 	cum_message_text_overrides = list(
 		CLIMAX_POSITION_USER = list(
-			"%CUMMING% cums all over %CAME_IN%'s foot.",
-			"%CUMMING% shoots their load on %CAME_IN%'s sole.",
-			"%CUMMING% covers %CAME_IN%'s toes in cum."
+			"%CUMMING%射在了%CAME_IN%的脚上.",
+			"%CUMMING%将精液射到了%CAME_IN%的脚底.",
+			"%CUMMING%的精液覆盖了%CAME_IN%的脚趾."
 		),
 		CLIMAX_POSITION_TARGET = list()
 	)
 	cum_self_text_overrides = list(
 		CLIMAX_POSITION_USER = list(
-			"you cum all over %CAME_IN%'s foot.",
-			"you shoot your load on %CAME_IN%'s sole.",
-			"you cover %CAME_IN%'s toes in cum."
+			"你射在了%CAME_IN%的脚上.",
+			"你将精液射到了%CAME_IN%的脚底.",
+			"你的精液覆盖了%CAME_IN%的脚趾."
 		),
 		CLIMAX_POSITION_TARGET = list()
 	)
 	cum_partner_text_overrides = list(
 		CLIMAX_POSITION_USER = list(
-			"%CUMMING% cums all over your foot.",
-			"%CUMMING% shoots their load on your sole.",
-			"%CUMMING% covers your toes in cum."
+			"%CUMMING%射在了你的脚上.",
+			"%CUMMING%将精液射到了你的脚底.",
+			"%CUMMING%的精液覆盖了你的脚趾."
 		),
 		CLIMAX_POSITION_TARGET = list()
 	)
 	message = list(
-		"fucks %TARGET%'s foot.",
-		"rubs their cock on %TARGET%'s foot.",
-		"grinds their cock on %TARGET%'s foot."
+		"操%TARGET%的脚.",
+		"用肉棒在%TARGET%的脚上摩擦.",
+		"用肉棒在%TARGET%的脚上研磨."
 	)
 	sound_possible = list(
 		'modular_zzplurt/sound/interactions/foot_dry1.ogg',
@@ -120,75 +120,75 @@
 	target_arousal = 2
 
 /datum/interaction/lewd/footfuck/double
-	name = "Double Foot Fuck"
-	description = "Rub your cock between their feet."
+	name = "双足摩擦"
+	description = "用你的肉棒在对方的双脚之间摩擦."
 	interaction_requires = list(INTERACTION_REQUIRE_TARGET_FEET)
 	cum_message_text_overrides = list(
 		CLIMAX_POSITION_USER = list(
-			"%CUMMING% cums all over %CAME_IN%'s feet.",
-			"%CUMMING% shoots their load on %CAME_IN%'s soles.",
-			"%CUMMING% covers %CAME_IN%'s toes in cum."
+			"%CUMMING%射在了%CAME_IN%的双脚上.",
+			"%CUMMING%将精液射到了%CAME_IN%的脚底.",
+			"%CUMMING%的精液覆盖了%CAME_IN%的脚趾."
 		),
 		CLIMAX_POSITION_TARGET = list()
 	)
 	cum_self_text_overrides = list(
 		CLIMAX_POSITION_USER = list(
-			"you cum all over %CAME_IN%'s feet.",
-			"you shoot your load on %CAME_IN%'s soles.",
-			"you cover %CAME_IN%'s toes in cum."
+			"你射在了%CAME_IN%的双脚上.",
+			"你将精液射到了%CAME_IN%的脚底.",
+			"你的精液覆盖了%CAME_IN%的脚趾."
 		),
 		CLIMAX_POSITION_TARGET = list()
 	)
 	cum_partner_text_overrides = list(
 		CLIMAX_POSITION_USER = list(
-			"%CUMMING% cums all over your feet.",
-			"%CUMMING% shoots their load on your soles.",
-			"%CUMMING% covers your toes in cum."
+			"%CUMMING%射在了你的双脚上.",
+			"%CUMMING%将精液射到了你的脚底.",
+			"%CUMMING%的精液覆盖了你的脚趾."
 		),
 		CLIMAX_POSITION_TARGET = list()
 	)
 	message = list(
-		"fucks %TARGET%'s feet.",
-		"rubs their cock between %TARGET%'s feet.",
-		"thrusts their cock between %TARGET%'s feet.",
-		"grinds their cock between %TARGET%'s feet."
+		"操%TARGET%的双脚.",
+		"用肉棒在%TARGET%的双脚之间摩擦.",
+		"将肉棒在%TARGET%的双脚之间抽插.",
+		"用肉棒在%TARGET%的双脚之间研磨."
 	)
 	user_arousal = 15
 	target_arousal = 5
 
 /datum/interaction/lewd/footfuck/vag
-	name = "Vaginal Foot Grind"
-	description = "Rub your vagina on their foot."
+	name = "阴部足部摩擦"
+	description = "用你的阴部在对方的脚上摩擦."
 	user_required_parts = list(ORGAN_SLOT_VAGINA = REQUIRE_GENITAL_EXPOSED)
 	cum_genital = list(CLIMAX_POSITION_USER = CLIMAX_VAGINA)
 	cum_message_text_overrides = list(
 		CLIMAX_POSITION_USER = list(
-			"%CUMMING% squirts all over %CAME_IN%'s foot.",
-			"%CUMMING% orgasms on %CAME_IN%'s sole.",
-			"%CUMMING% coats %CAME_IN%'s toes with their juices."
+			"%CUMMING%喷在了%CAME_IN%的脚上.",
+			"%CUMMING%在%CAME_IN%的脚底高潮了.",
+			"%CUMMING%的淫液涂满了%CAME_IN%的脚趾."
 		),
 		CLIMAX_POSITION_TARGET = list()
 	)
 	cum_self_text_overrides = list(
 		CLIMAX_POSITION_USER = list(
-			"you squirt all over %CAME_IN%'s foot.",
-			"you orgasm on %CAME_IN%'s sole.",
-			"you coat %CAME_IN%'s toes with your juices."
+			"你喷在了%CAME_IN%的脚上.",
+			"你在%CAME_IN%的脚底高潮了.",
+			"你的淫液涂满了%CAME_IN%的脚趾."
 		),
 		CLIMAX_POSITION_TARGET = list()
 	)
 	cum_partner_text_overrides = list(
 		CLIMAX_POSITION_USER = list(
-			"%CUMMING% squirts all over your foot.",
-			"%CUMMING% orgasms on your sole.",
-			"%CUMMING% coats your toes with their juices."
+			"%CUMMING%喷在了你的脚上.",
+			"%CUMMING%在你的脚底高潮了.",
+			"%CUMMING%的淫液涂满了你的脚趾."
 		),
 		CLIMAX_POSITION_TARGET = list()
 	)
 	message = list(
-		"grinds their pussy against %TARGET%'s foot.",
-		"rubs their clit on %TARGET%'s foot.",
-		"ruts on %TARGET%'s foot."
+		"用小穴在%TARGET%的脚上研磨.",
+		"用阴蒂在%TARGET%的脚上摩擦.",
+		"在%TARGET%的脚上蹭动."
 	)
 	sound_use = TRUE
 	user_pleasure = 15
@@ -197,8 +197,8 @@
 	target_arousal = 5
 
 /datum/interaction/lewd/cockfuck
-	name = "Cockfuck"
-	description = "Fuck their cock."
+	name = "尿道交"
+	description = "操对方的肉棒."
 	user_required_parts = list(ORGAN_SLOT_PENIS = REQUIRE_GENITAL_EXPOSED)
 	target_required_parts = list(ORGAN_SLOT_PENIS = REQUIRE_GENITAL_EXPOSED)
 	cum_genital = list(
@@ -210,20 +210,20 @@
 		CLIMAX_POSITION_TARGET = ORGAN_SLOT_PENIS
 	)
 	message = list(
-		"pushes their cock into %TARGET%'s urethra",
-		"penetrates %TARGET%'s cock with their own",
-		"thrusts deep into %TARGET%'s cockhole",
-		"fucks %TARGET%'s cock from the inside"
+		"将肉棒插入%TARGET%的尿道",
+		"用自己的肉棒插入%TARGET%的肉棒",
+		"深深插入%TARGET%的尿道",
+		"从内部操%TARGET%的肉棒"
 	)
 	user_messages = list(
-		"You feel %TARGET%'s cock squeezing around yours",
-		"The warmth of %TARGET%'s urethra envelops your shaft",
-		"%TARGET%'s cock tightens around yours as you thrust deeper"
+		"你感受到%TARGET%的肉棒紧紧包裹着你的肉棒",
+		"%TARGET%温暖的尿道包裹着你的阴茎",
+		"当你深入时,%TARGET%的肉棒紧紧夹住你的肉棒"
 	)
 	target_messages = list(
-		"You feel %USER%'s cock stretching your urethra",
-		"%USER%'s shaft pushes deep inside your cock",
-		"The warmth of %USER%'s cock fills your shaft from within"
+		"你感受到%USER%的肉棒撑开你的尿道",
+		"%USER%的阴茎深深插入你的肉棒内部",
+		"%USER%温热的肉棒从内部充满你的阴茎"
 	)
 	sound_possible = list(
 		'modular_zzplurt/sound/interactions/bang1.ogg',
