@@ -130,17 +130,17 @@
 		if(BODY_ZONE_PRECISE_GROIN)
 			var/obj/item/organ/genital/penis = target.get_organ_slot(ORGAN_SLOT_PENIS)
 			var/obj/item/organ/genital/vagina = target.get_organ_slot(ORGAN_SLOT_VAGINA)
-			var/penis_message = (user == target) ? pick("leans [src] against [target.p_their()] penis, letting it shock [target.p_them()]. Ouch...",
-					"shocks [target.p_their()] penis with [src]") \
-				: pick("uses [src] to shock [target]'s penis",
-					"shocks [target]'s penis with [src]",
-					"leans [src] against [target]'s penis, turning it on")
+			var/penis_message = (user == target) ? pick("将[src]靠在[target.p_their()]的阴茎上，让它电击[target.p_them()]。哎哟...",
+					"用[src]电击[target.p_their()]的阴茎") \
+				: pick("用[src]电击[target]的阴茎",
+					"用[src]电击[target]的阴茎",
+					"将[src]靠在[target]的阴茎上，打开它")
 
-			var/vagina_message = (user == target) ? pick("leans [src] against [target.p_their()] vagina, letting it shock [target.p_them()]. Ouch...",
-					"shocks [target.p_their()] pussy with [src]") \
-				: pick("uses [src] to shock [target]'s vagina",
-					"shocks [target]'s pussy with [src]",
-					"leans [src] against [target]'s vagina, turning it on")
+			var/vagina_message = (user == target) ? pick("将[src]靠在[target.p_their()]的阴道上，让它电击[target.p_them()]。哎哟...",
+					"用[src]电击[target.p_their()]的小穴") \
+				: pick("用[src]电击[target]的阴道",
+					"用[src]电击[target]的小穴",
+					"将[src]靠在[target]的阴道上，打开它")
 
 			if(penis?.is_exposed() && vagina?.is_exposed())
 				message = pick(penis_message, vagina_message)
@@ -149,17 +149,17 @@
 			else if(penis?.is_exposed())
 				message = penis_message
 			else if(carbon_target?.is_bottomless())
-				message = (user == target) ? pick("leans [src] against [target.p_their()] belly, letting it shock [target.p_them()]. Ouch...",
-						"shocks [target.p_their()] tummy with [src]") \
-					: pick("uses [src] to shock [target]'s belly",
-						"shocks [target]'s tummy with [src]",
-						"leans [src] against [target]'s belly, turning it on")
+				message = (user == target) ? pick("将[src]靠在[target.p_their()]的腹部上，让它电击[target.p_them()]。哎哟...",
+						"用[src]电击[target.p_their()]的肚子") \
+					: pick("用[src]电击[target]的腹部",
+						"用[src]电击[target]的肚子",
+						"将[src]靠在[target]的腹部上，打开它")
 			else if(iscyborg(target))
-				message = (user == target) ? pick("leans [src] against [target.p_their()] synthetic genitals, letting it shock [target.p_them()]. Ouch...",
-						"shocks [target.p_their()] tummy with [src]") \
-					: pick("uses [src] to shock [target]'s synthetic genitals",
-						"shocks [target]'s tummy with [src]",
-						"leans [src] against [target]'s synthetic genitals, turning it on")
+				message = (user == target) ? pick("将[src]靠在[target.p_their()]的合成生殖器上，让它电击[target.p_them()]。哎哟...",
+						"用[src]电击[target.p_their()]的肚子") \
+					: pick("用[src]电击[target]的合成生殖器",
+						"用[src]电击[target]的肚子",
+						"将[src]靠在[target]的合成生殖器上，打开它")
 			else
 				to_chat(user, span_danger("看起来[target]的下体被遮住了！"))
 				return
@@ -167,17 +167,17 @@
 		if(BODY_ZONE_CHEST)
 			var/obj/item/organ/genital/breasts = target.get_organ_slot(ORGAN_SLOT_BREASTS)
 			if(breasts?.is_exposed())
-				message = (user == target) ? pick("leans [src] against [target.p_their()] breasts, letting it shock [target.p_them()].",
-						"shocks [target.p_their()] tits with [src]") \
-					: pick("uses [src] to shock [target]'s breasts",
-						"shocks [target]'s nipples with [src]",
-						"leans [src] against [target]'s tits, turning it on")
+				message = (user == target) ? pick("将[src]靠在[target.p_their()]的乳房上，让它电击[target.p_them()]。",
+						"用[src]电击[target.p_their()]的奶子") \
+					: pick("用[src]电击[target]的乳房",
+						"用[src]电击[target]的乳头",
+						"将[src]靠在[target]的奶子上，打开它")
 			else if(carbon_target?.is_topless() || iscyborg(target))
-				message = (user == target) ? pick("leans [src] against [target.p_their()] chest, letting it shock [target.p_them()].",
-						"shocks [target.p_their()] nipples with [src]") \
-					: pick("uses [src] to shock [target]'s chest",
-						"shocks [target]'s nipples with [src]",
-						"leans [src] against [target]'s chest, turning it on")
+				message = (user == target) ? pick("将[src]靠在[target.p_their()]的胸部上，让它电击[target.p_them()]。",
+						"用[src]电击[target.p_their()]的乳头") \
+					: pick("用[src]电击[target]的胸部",
+						"用[src]电击[target]的乳头",
+						"将[src]靠在[target]的胸部上，打开它")
 			else
 				to_chat(user, span_danger("看起来[target]的胸部被遮住了！"))
 				return
@@ -189,22 +189,22 @@
 			if(carbon_target && !carbon_target.is_hands_uncovered())
 				to_chat(user, span_danger("看起来[target]的手臂被遮住了！"))
 				return
-			var/arm = user.zone_selected == BODY_ZONE_L_ARM ? "left arm" : "right arm"
-			message = (user == target) ? pick("leans [src] against [target.p_their()] [arm], letting it shock [target.p_them()].",
-					"shocks [target.p_their()] arm with [src]") \
-				: pick("uses [src] to shock [target]'s [arm]",
-					"shocks [target]'s [arm] with [src]",
-					"leans [src] against [target]'s [arm], turning it on")
+			var/arm = user.zone_selected == BODY_ZONE_L_ARM ? "左臂" : "右臂"
+			message = (user == target) ? pick("将[src]靠在[target.p_their()]的[arm]上，让它电击[target.p_them()]。",
+					"用[src]电击[target.p_their()]的手臂") \
+				: pick("用[src]电击[target]的[arm]",
+					"用[src]电击[target]的[arm]",
+					"将[src]靠在[target]的[arm]上，打开它")
 
 		if(BODY_ZONE_HEAD)
 			if(carbon_target && !carbon_target.is_head_uncovered())
 				to_chat(user, span_danger("看起来[target]的头部被遮住了！"))
 				return
-			message = (user == target) ? pick("leans [src] against [target.p_their()] head, letting it shock [target.p_them()]. Ouch! Why would [target.p_they()] do that?!",
-					"shocks [target.p_their()] head with [src]") \
-				: pick("uses [src] to shock [target]'s head",
-					"shocks [target]'s neck with [src]",
-					"leans [src] against [target]'s neck, turning it on")
+			message = (user == target) ? pick("将[src]靠在[target.p_their()]的头上，让它电击[target.p_them()]。哎哟！[target.p_they()]为什么要这么做？！",
+					"用[src]电击[target.p_their()]的头部") \
+				: pick("用[src]电击[target]的头部",
+					"用[src]电击[target]的脖子",
+					"将[src]靠在[target]的脖子上，打开它")
 
 		if(BODY_ZONE_L_LEG, BODY_ZONE_R_LEG)
 			if(carbon_target && !carbon_target.has_feet())
@@ -213,12 +213,12 @@
 			if(carbon_target && !carbon_target.is_barefoot())
 				to_chat(user, span_danger("看起来[target]的脚趾被遮住了！"))
 				return
-			var/leg = user.zone_selected == BODY_ZONE_L_LEG ? "left leg" : "right leg"
-			message = (user == target) ? pick("leans [src] against [target.p_their()] [leg], letting it shock [target.p_them()].",
-					"shocks [target.p_their()] leg with [src]") \
-				: pick("uses [src] to shock [target]'s [leg]",
-					"shocks [target]'s [user.zone_selected == BODY_ZONE_L_LEG ? "left foot" : "right foot"] with [src]",
-					"leans [src] against [target]'s [leg], turning it on")
+			var/leg = user.zone_selected == BODY_ZONE_L_LEG ? "左腿" : "右腿"
+			message = (user == target) ? pick("将[src]靠在[target.p_their()]的[leg]上，让它电击[target.p_them()]。",
+					"用[src]电击[target.p_their()]的腿") \
+				: pick("用[src]电击[target]的[leg]",
+					"用[src]电击[target]的[user.zone_selected == BODY_ZONE_L_LEG ? "左脚" : "右脚"]",
+					"将[src]靠在[target]的[leg]上，打开它")
 		else
 			to_chat(user, span_danger("你不能在那里电击[target]！"))
 			return

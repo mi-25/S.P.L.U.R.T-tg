@@ -44,9 +44,9 @@
 		to_chat(user, span_danger("[to_be_leashed]不想让你这么做。"))
 		return
 	/// Actually start the leashing part here
-	to_be_leashed.visible_message(span_warning("[user] raises the [src] to [to_be_leashed]'s neck!"),\
-				span_userdanger("[user] starts to bring the [src] to your neck!"),\
-				span_hear("You hear a light click as pressure builds in the air around your neck."))
+	to_be_leashed.visible_message(span_warning("[user]将[src]举到[to_be_leashed]的脖子上！"),\
+				span_userdanger("[user]开始将[src]靠近你的脖子！"),\
+				span_hear("你听到轻微的咔嗒声，脖子周围的空气中压力增加。"))
 	if(!do_after(user, 2 SECONDS, to_be_leashed))
 		return
 	create_leash(user, to_be_leashed)
@@ -115,9 +115,9 @@
 			var/mob/living/yoinked = parent
 			yoinked.Move(get_step_towards(yoinked,user))
 			yoinked.adjust_stamina_loss(10)
-			yoinked.visible_message(span_warning("[yoinked] is pulled in as [user] tugs the [source]!"),\
-					span_userdanger("[user] suddenly tugs the [source], pulling you closer!"),\
-					span_userdanger("A sudden tug against your neck pulls you ahead!"))
+			yoinked.visible_message(span_warning("[yoinked]被拉近，因为[user]拉扯了[source]！"),\
+					span_userdanger("[user]突然拉扯[source]，将你拉近！"),\
+					span_userdanger("脖子上突然的拉扯将你向前拉！"))
 			COOLDOWN_START(leash_hookin, tug_cd, 1 SECONDS)
 
 /datum/component/leash/erp/proc/on_item_dropped(datum/source, mob/user)
@@ -125,7 +125,7 @@
 
 	if(istype(parent, /mob))
 		var/mob/our_parent = parent
-		our_parent.balloon_alert_to_viewers("unhooked")
+		our_parent.balloon_alert_to_viewers("解开了")
 	qdel(src)
 
 /datum/component/leash/erp/proc/on_parent_resist(datum/source, mob/user)
@@ -136,11 +136,11 @@
 	if(istype(parent, /mob) && istype(owner,/obj/item))
 		var/mob/our_parent = parent
 		var/obj/item/our_owner = owner
-		our_parent.visible_message(span_warning("[our_parent] attempts to unhook [our_parent.p_them()]self from the leash!"), \
-			span_userdanger("You start to unhook yourself from the leash..."), \
-			span_userdanger("You fumble in the dark, looking to unhook the leash..."))
+		our_parent.visible_message(span_warning("[our_parent]试图将[our_parent.p_them()]自己从皮带上解开！"), \
+			span_userdanger("你开始将自己从皮带上解开..."), \
+			span_userdanger("你在黑暗中摸索，试图解开皮带..."))
 		if(do_after(our_parent, our_owner.breakouttime, target = our_parent))
-			to_chat(our_parent, span_notice("You unhook yourself from the leash."))
+			to_chat(our_parent, span_notice("你将自己从皮带上解开了。"))
 			qdel(src)
 	else qdel(src) // If they're not an item; something is very wrong - qdel anyways without the breakout time.
 

@@ -189,7 +189,7 @@
 						"用[src][vibration_mode == MAGIC_WAND_MODE_LOW ? "缓慢地" : ""]按摩[target]的触觉传感器",
 						"用[src]挑逗[target]的触觉传感器")
 		else
-			to_chat(user, span_warning("Use the wand on their groin or chest!"))
+			to_chat(user, span_warning("在他们的下体或胸部使用魔杖！"))
 			return FALSE
 
 	if(prob(30))
@@ -203,13 +203,13 @@
 
 	switch(vibration_mode)
 		if(MAGIC_WAND_MODE_LOW)
-			to_chat(user, span_notice("Vibrator mode switched to low. Bzzz..."))
+			to_chat(user, span_notice("振动器模式切换到低速。嗡嗡..."))
 		if(MAGIC_WAND_MODE_MEDIUM)
-			to_chat(user, span_notice("Vibrator mode switched to medium. Bzzzz!"))
+			to_chat(user, span_notice("振动器模式切换到中速。嗡嗡嗡！"))
 		if(MAGIC_WAND_MODE_HIGH)
-			to_chat(user, span_notice("Vibrator mode switched to high. Careful with that thing."))
+			to_chat(user, span_notice("振动器模式切换到高速。小心使用。"))
 		if(MAGIC_WAND_MODE_OFF)
-			to_chat(user, span_notice("[src] is turned off. Fun time's over?"))
+			to_chat(user, span_notice("[src]已关闭。欢乐时光结束了？"))
 
 	update_icon()
 	update_icon_state()

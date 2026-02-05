@@ -185,10 +185,10 @@
 				return
 
 			if(current_whip_type == "hard")
-				message = (user == target) ? pick("Knocks [target.p_them()]self down with [src]",
-						"Uses [src] to knock [target.p_them()]self on the ground") \
-					: pick("drops [target] to the ground with [src]",
-						"Uses [src] to put [target] on [target.p_their()] knees")
+				message = (user == target) ? pick("用[src]将[target.p_them()]自己击倒",
+						"用[src]将[target.p_them()]自己击倒在地") \
+					: pick("用[src]将[target]击倒在地",
+						"用[src]让[target]跪下")
 
 				if(prob(60))
 					target.try_lewd_autoemote(pick("gasp", "shiver"))
@@ -199,10 +199,10 @@
 				target.client?.plug13.send_emote(PLUG13_EMOTE_MASOCHISM, 5, PLUG13_DURATION_SHORT) // SPLURT EDIT - Plug13 - Leather Whip
 				conditional_pref_sound(loc, 'sound/items/weapons/whip.ogg', 100)
 			else
-				message = (user == target) ? pick("knocks [target.p_them()]self down with [src]",
-						"gently uses [src] to knock [target.p_them()]self on the ground") \
-					: pick("drops [target] to the ground with [src]",
-						"uses [src] to put [target] on [target.p_their()] knees")
+				message = (user == target) ? pick("用[src]将[target.p_them()]自己击倒",
+						"轻柔地用[src]将[target.p_them()]自己击倒在地") \
+					: pick("用[src]将[target]击倒在地",
+						"用[src]让[target]跪下")
 				if(prob(30))
 					target.try_lewd_autoemote(pick("gasp", "shiver"))
 				if(prob(10))
@@ -213,10 +213,10 @@
 				conditional_pref_sound(loc, 'sound/items/weapons/whip.ogg', 60)
 
 		if(BODY_ZONE_HEAD)
-			message = (user == target) ? pick("wraps [src] around [target.p_their()] neck, choking [target.p_them()]self",
-					"chokes [target.p_them()]self with [src]") \
-				: pick("chokes [target] with [src]",
-					"twines [src] around [target]'s neck!")
+			message = (user == target) ? pick("将[src]缠绕在[target.p_their()]的脖子上，勒住[target.p_them()]自己",
+					"用[src]勒住[target.p_them()]自己") \
+				: pick("用[src]勒住[target]",
+					"将[src]缠绕在[target]的脖子上！")
 			if(prob(70))
 				target.try_lewd_autoemote(pick("gasp", "choke", "moan"))
 			carbon_target?.adjust_arousal(3)
@@ -264,11 +264,11 @@
 				conditional_pref_sound(loc, 'sound/items/weapons/whip.ogg', 100)
 		else
 			if(current_whip_type == "hard")
-				message = (user == target) ? pick("disciplines [target.p_them()]self with [src]",
-						"lashes [target.p_them()]self with [src]") \
-					: pick("lashes [target] with [src]",
-						"Uses [src] to discipline [target]",
-						"disciplines [target] with [src]")
+				message = (user == target) ? pick("用[src]惩戒[target.p_them()]自己",
+						"用[src]鞭打[target.p_them()]自己") \
+					: pick("用[src]鞭打[target]",
+						"用[src]惩戒[target]",
+						"用[src]惩戒[target]")
 				if(prob(10))
 					target.apply_status_effect(/datum/status_effect/subspace)
 				target.do_jitter_animation()
