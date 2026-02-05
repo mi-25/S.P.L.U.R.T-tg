@@ -1,6 +1,6 @@
 /obj/item/clothing/sextoy/buttplug
-	name = "buttplug"
-	desc = "I'm meant to put that WHERE?!"
+	name = "肛塞"
+	desc = "我要把这玩意儿塞到哪里？！"
 	icon_state = "buttplug_pink_small"
 	base_icon_state = "buttplug"
 	worn_icon_state = "buttplug_pink"
@@ -43,9 +43,9 @@
 /obj/item/clothing/sextoy/buttplug/examine(mob/user)
 	. = ..()
 	if(!color_changed)
-		. += span_notice("Alt-click to change it's colors.")
+		. += span_notice("按住Alt点击以更改其颜色。")
 	else if(!form_changed)
-		. += span_notice("Alt-click to change it's size.")
+		. += span_notice("按住Alt点击以更改其尺寸。")
 
 /obj/item/clothing/sextoy/buttplug/click_alt(mob/user)
 	if(!color_changed)

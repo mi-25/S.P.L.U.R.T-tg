@@ -27,8 +27,8 @@
 //Here goes code for normal collar
 
 /obj/item/clothing/neck/kink_collar
-	name = "collar"
-	desc = "A nice, tight collar. It fits snug to your skin"
+	name = "项圈"
+	desc = "一个漂亮、紧致的项圈。它紧贴你的皮肤。"
 	icon = 'modular_skyrat/modules/modular_items/lewd_items/icons/obj/lewd_clothing/lewd_neck.dmi'
 	worn_icon = 'modular_skyrat/modules/modular_items/lewd_items/icons/mob/lewd_clothing/lewd_neck.dmi'
 	icon_state = "collar_cyan"
@@ -71,7 +71,7 @@
 //rename collar code
 
 /obj/item/clothing/neck/kink_collar/attack_self(mob/user)
-	tagname = stripped_input(user, "Would you like to change the name on the tag?", "Name your new pet", "Spot", MAX_NAME_LEN)
+	tagname = stripped_input(user, "你想更改标签上的名字吗？", "给你的新宠物命名", "Spot", MAX_NAME_LEN)
 	name = "[initial(name)] - [tagname]"
 
 /*

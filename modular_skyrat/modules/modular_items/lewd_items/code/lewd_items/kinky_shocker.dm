@@ -1,6 +1,6 @@
 /obj/item/kinky_shocker
-	name = "kinky shocker"
-	desc = "A small toy that can weakly shock someone."
+	name = "情趣电击器"
+	desc = "一个可以轻微电击某人的小玩具。"
 	icon_state = "shocker_off"
 	base_icon_state = "shocker"
 	inhand_icon_state = "shocker_off"
@@ -50,23 +50,23 @@
 /obj/item/kinky_shocker/examine(mob/user)
 	. = ..()
 	if(cell)
-		. += span_notice("\The [src] is [round(cell.percent())]% charged.")
+		. += span_notice("[src]的电量为[round(cell.percent())]%。")
 	else
-		. += span_warning("\The [src] does not have a power source installed.")
+		. += span_warning("[src]没有安装电源。")
 
 /obj/item/kinky_shocker/attackby(obj/item/stock_parts/power_store/cell/powercell, mob/user, params)
 	if(!istype(powercell))
 		return ..()
 	if(cell)
-		to_chat(user, span_warning("[src] already has a cell!"))
+		to_chat(user, span_warning("[src]已经有电池了！"))
 	else
 		if(powercell.maxcharge < cell_hit_cost)
-			to_chat(user, span_notice("[src] requires a higher capacity cell."))
+			to_chat(user, span_notice("[src]需要更大容量的电池。"))
 			return
 		if(!user.transferItemToLoc(powercell, src))
 			return
 		cell = powercell
-		to_chat(user, span_notice("You install a cell in [src]."))
+		to_chat(user, span_notice("你在[src]中安装了电池。"))
 		update_appearance()
 
 /obj/item/kinky_shocker/click_alt(mob/user)
@@ -79,7 +79,7 @@
 	cell.update_appearance()
 	cell.forceMove(get_turf(src))
 	cell = null
-	to_chat(user, span_notice("You remove the cell from [src]."))
+	to_chat(user, span_notice("你从[src]中取出了电池。"))
 	shocker_on = FALSE
 	update_appearance()
 	return CLICK_ACTION_SUCCESS
@@ -90,14 +90,14 @@
 /obj/item/kinky_shocker/proc/toggle_shocker(mob/user)
 	if(cell && cell.charge >= cell_hit_cost)
 		shocker_on = !shocker_on
-		to_chat(user, span_notice("You turn the shocker [shocker_on? "on. Buzz!" : "off."]"))
+		to_chat(user, span_notice("你将电击器[shocker_on? "打开了。嗡嗡！" : "关闭了。"]"))
 		conditional_pref_sound(user, shocker_on ? 'sound/items/weapons/magin.ogg' : 'sound/items/weapons/magout.ogg', 40, TRUE)
 	else
 		shocker_on = FALSE
 		if(!cell)
-			to_chat(user, span_warning("[src] does not have a power source!"))
+			to_chat(user, span_warning("[src]没有电源！"))
 		else
-			to_chat(user, span_warning("[src] is out of charge."))
+			to_chat(user, span_warning("[src]没电了。"))
 	update_appearance()
 	add_fingerprint(user)
 
@@ -118,11 +118,11 @@
 		return
 
 	if(!shocker_on)
-		to_chat(user, span_danger("[src] must be enabled before use!"))
+		to_chat(user, span_danger("[src]必须先启用才能使用！"))
 		return
 
 	if(!target.check_erp_prefs(/datum/preference/toggle/erp/sex_toy, user, src))
-		to_chat(user, span_danger("[target] doesn't want you to do that."))
+		to_chat(user, span_danger("[target]不想让你这么做。"))
 		return
 
 	var/message = ""
@@ -161,7 +161,7 @@
 						"shocks [target]'s tummy with [src]",
 						"leans [src] against [target]'s synthetic genitals, turning it on")
 			else
-				to_chat(user, span_danger("Looks like [target]'s groin is covered!"))
+				to_chat(user, span_danger("看起来[target]的下体被遮住了！"))
 				return
 
 		if(BODY_ZONE_CHEST)
@@ -179,15 +179,15 @@
 						"shocks [target]'s nipples with [src]",
 						"leans [src] against [target]'s chest, turning it on")
 			else
-				to_chat(user, span_danger("Looks like [target]'s chest is covered!"))
+				to_chat(user, span_danger("看起来[target]的胸部被遮住了！"))
 				return
 
 		if(BODY_ZONE_L_ARM, BODY_ZONE_R_ARM)
 			if(carbon_target && !carbon_target.has_arms())
-				to_chat(user, span_danger("Looks like [target] doesn't have any arms!"))
+				to_chat(user, span_danger("看起来[target]没有手臂！"))
 				return
 			if(carbon_target && !carbon_target.is_hands_uncovered())
-				to_chat(user, span_danger("Looks like [target]'s arms are covered!"))
+				to_chat(user, span_danger("看起来[target]的手臂被遮住了！"))
 				return
 			var/arm = user.zone_selected == BODY_ZONE_L_ARM ? "left arm" : "right arm"
 			message = (user == target) ? pick("leans [src] against [target.p_their()] [arm], letting it shock [target.p_them()].",
@@ -198,7 +198,7 @@
 
 		if(BODY_ZONE_HEAD)
 			if(carbon_target && !carbon_target.is_head_uncovered())
-				to_chat(user, span_danger("Looks like [target]'s head is covered!"))
+				to_chat(user, span_danger("看起来[target]的头部被遮住了！"))
 				return
 			message = (user == target) ? pick("leans [src] against [target.p_their()] head, letting it shock [target.p_them()]. Ouch! Why would [target.p_they()] do that?!",
 					"shocks [target.p_their()] head with [src]") \
@@ -208,10 +208,10 @@
 
 		if(BODY_ZONE_L_LEG, BODY_ZONE_R_LEG)
 			if(carbon_target && !carbon_target.has_feet())
-				to_chat(user, span_danger("Looks like [target] doesn't have any legs!"))
+				to_chat(user, span_danger("看起来[target]没有腿！"))
 				return
 			if(carbon_target && !carbon_target.is_barefoot())
-				to_chat(user, span_danger("Looks like [target]'s toes are covered!"))
+				to_chat(user, span_danger("看起来[target]的脚趾被遮住了！"))
 				return
 			var/leg = user.zone_selected == BODY_ZONE_L_LEG ? "left leg" : "right leg"
 			message = (user == target) ? pick("leans [src] against [target.p_their()] [leg], letting it shock [target.p_them()].",
@@ -220,7 +220,7 @@
 					"shocks [target]'s [user.zone_selected == BODY_ZONE_L_LEG ? "left foot" : "right foot"] with [src]",
 					"leans [src] against [target]'s [leg], turning it on")
 		else
-			to_chat(user, span_danger("You can't shock [target] there!"))
+			to_chat(user, span_danger("你不能在那里电击[target]！"))
 			return
 
 	user.visible_message(span_purple("[user] [message]!"))

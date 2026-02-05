@@ -1,6 +1,6 @@
 /obj/item/clothing/sextoy/fleshlight
-	name = "fleshlight"
-	desc = "What a strange flashlight."
+	name = "飞机杯"
+	desc = "一个奇怪的手电筒。"
 	icon_state = "fleshlight_pink"
 	base_icon_state = "fleshlight"
 	inhand_icon_state = "fleshlight_pink"
@@ -30,7 +30,7 @@
 /obj/item/clothing/sextoy/fleshlight/examine(mob/user)
 	. = ..()
 	if(!color_changed)
-		. += span_notice("Alt-click to change it's color.")
+		. += span_notice("按住Alt点击以更改其颜色。")
 
 /obj/item/clothing/sextoy/fleshlight/Initialize(mapload)
 	. = ..()
@@ -63,20 +63,20 @@
 		return
 
 	if(!target.check_erp_prefs(/datum/preference/toggle/erp/sex_toy, user, src))
-		to_chat(user, span_danger("[target] doesn't want you to do that!"))
+		to_chat(user, span_danger("[target]不想让你这么做！"))
 		return
 
 	var/obj/item/organ/genital/penis = target.get_organ_slot(ORGAN_SLOT_PENIS)
 	if(!penis?.is_exposed())
-		to_chat(user, span_danger("Looks like [target]'s groin is covered!"))
+		to_chat(user, span_danger("看起来[target]的下体被遮住了！"))
 		return
 
-	var/message = (user == target) ? pick("moans in ecstasy as [target.p_they()] fuck the [src]",
-			"slowly moves [src] up and down on [target]'s penis, causing [target.p_them()] to bend in pleasure",
-			"shivers in pleasure as [target.p_they()] move[target.p_s()] [src] on [target.p_their()] penis") \
-		: pick("uses [src] on [target]'s penis",
-			"fucks [target] with [src]",
-			"masturbates [target] with [src], causing [target.p_them()] to moan in ecstasy")
+	var/message = (user == target) ? pick("在狂喜中呻吟着用[src]自慰",
+			"缓慢地在[target]的阴茎上上下移动[src]，让[target.p_them()]在快感中弯下腰",
+			"在快感中颤抖着在[target.p_their()]阴茎上移动[src]") \
+		: pick("用[src]套弄[target]的阴茎",
+			"用[src]抽插[target]",
+			"用[src]给[target]打飞机，让[target.p_them()]在狂喜中呻吟")
 
 	if(prob(70))
 		target.try_lewd_autoemote(pick("twitch_s", "moan", "blush"))
@@ -92,18 +92,18 @@
 						'modular_skyrat/modules/modular_items/lewd_items/sounds/bang6.ogg'), 70, 1, -1)
 
 /obj/item/toy/plush/fleshlight/screws
-	name = "Chief Screws Plush"
-	desc = "An adorable blue Lizard plushie wearing a Chief Engineer's Uniform... her upturned skirt revealing a tight, pre-lubed pussy."
+	name = "螺丝总工程师毛绒玩具"
+	desc = "一个可爱的蓝色蜥蜴人毛绒玩具，穿着总工程师的制服...她翘起的裙子露出了一个紧致、预先润滑的小穴。"
 	icon = 'modular_zubbers/icons/obj/toys/plushes.dmi'
 	icon_state = "cescrewsplush"
 	base_icon_state = "cescrewsplush"
 
 /obj/item/toy/plush/fleshlight/screws/examine(mob/user)
 	. = ..()
-	. += span_notice("Alt-click to cover her up.")
+	. += span_notice("按住Alt点击以遮住她。")
 
 /obj/item/toy/plush/fleshlight/screws/click_alt(mob/user)
-	user.visible_message(span_notice("[user] turns [src], hiding the hole underneath."), span_notice("You turn [src], covering her up with her little skirt."))
+	user.visible_message(span_notice("[user]转动[src]，将下面的洞藏起来。"), span_notice("你转动[src]，用她的小裙子遮住她。"))
 	playsound(user, 'sound/effects/blob/blobattack.ogg', 50, TRUE)
 	var/obj/item/toy/plush/cescrewsplush/plushie = new(null)
 	qdel(src)
@@ -118,20 +118,20 @@
 		return
 
 	if(!target.check_erp_prefs(/datum/preference/toggle/erp/sex_toy, user, src))
-		to_chat(user, span_danger("[target] doesn't want you to do that!"))
+		to_chat(user, span_danger("[target]不想让你这么做！"))
 		return
 
 	var/obj/item/organ/genital/penis = target.get_organ_slot(ORGAN_SLOT_PENIS)
 	if(!penis?.is_exposed())
-		to_chat(user, span_danger("Looks like [target]'s groin is covered!"))
+		to_chat(user, span_danger("看起来[target]的下体被遮住了！"))
 		return
 
-	var/message = (user == target) ? pick("moans in ecstasy as [target.p_they()] fuck the [src]",
-			"slowly moves [src] up and down on [target]'s penis, causing [target.p_them()] to bend in pleasure",
-			"shivers in pleasure as [target.p_they()] move [src] on their penis") \
-		: pick("uses [src] on [target]'s penis",
-			"fucks [target] with [src]",
-			"masturbates [target] with [src], causing [target.p_them()] to moan in ecstasy")
+	var/message = (user == target) ? pick("在狂喜中呻吟着用[src]自慰",
+			"缓慢地在[target]的阴茎上上下移动[src]，让[target.p_them()]在快感中弯下腰",
+			"在快感中颤抖着在自己的阴茎上移动[src]") \
+		: pick("用[src]套弄[target]的阴茎",
+			"用[src]抽插[target]",
+			"用[src]给[target]打飞机，让[target.p_them()]在狂喜中呻吟")
 
 	if(prob(70))
 		target.try_lewd_autoemote(pick("twitch_s", "moan", "blush"))

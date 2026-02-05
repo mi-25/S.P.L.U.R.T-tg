@@ -1,6 +1,6 @@
 /obj/item/clothing/strapon
-	name = "strapon"
-	desc = "Sometimes you need a special way to humiliate someone."
+	name = "束带式假阳具"
+	desc = "有时你需要一种特殊的方式来羞辱某人。"
 	icon_state = "strapon_human"
 	base_icon_state = "strapon"
 	icon = 'modular_skyrat/modules/modular_items/lewd_items/icons/obj/lewd_items/lewd_items.dmi'

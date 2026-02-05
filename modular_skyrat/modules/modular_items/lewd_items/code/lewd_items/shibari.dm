@@ -4,8 +4,8 @@
 #define ROPE_TIGHTNESS_HIGH (1<<2)
 
 /obj/item/stack/shibari_rope
-	name = "shibari ropes"
-	desc = "Coil of bondage ropes."
+	name = "绳缚绳索"
+	desc = "一卷束缚绳索。"
 	icon = 'icons/map_icons/items/_item.dmi'
 	icon_state = "/obj/item/stack/shibari_rope"
 	post_init_icon_state = "shibari_rope"
@@ -38,8 +38,8 @@
 	amount = 5
 
 /obj/item/stack/shibari_rope/glow
-	name = "glowy shibari ropes"
-	singular_name = "glowy rope"
+	name = "发光绳缚绳索"
+	singular_name = "发光绳索"
 	merge_type = /obj/item/stack/shibari_rope/glow
 	icon_state = "/obj/item/stack/shibari_rope/glow"
 	post_init_icon_state = "shibari_rope_glow"
@@ -134,11 +134,11 @@
 		handle_fullbody_tying(them, user)
 		return
 	else if(them.w_uniform)
-		to_chat(user, span_warning("They're already wearing something on this slot!"))
+		to_chat(user, span_warning("他们已经在这个部位穿着东西了！"))
 		return
-	them.visible_message(span_warning("[user] starts tying [them]'s groin!"),\
-		span_userdanger("[user] starts tying your groin!"),\
-		span_hear("You hear ropes being tightened."))
+	them.visible_message(span_warning("[user]开始捆绑[them]的下体！"),\
+		span_userdanger("[user]开始捆绑你的下体！"),\
+		span_hear("你听到绳索被拉紧的声音。"))
 	if(!do_after(user, HAS_TRAIT(user, TRAIT_RIGGER) ? 20 : 60, them))
 		return
 	var/obj/item/stack/shibari_rope/split_rope = null
@@ -149,7 +149,7 @@
 	else
 		split_rope = split_stack(1)
 	if(!split_rope)
-		to_chat(user, span_warning("You don't have enough ropes!"))
+		to_chat(user, span_warning("你没有足够的绳索！"))
 		return
 	shibari_groin = new(src)
 	shibari_groin.slowdown = slow
@@ -159,9 +159,9 @@
 	if(them.equip_to_slot_if_possible(shibari_groin, ITEM_SLOT_ICLOTHING, TRUE, FALSE, TRUE))
 		shibari_groin.tightness = tightness
 		shibari_groin = null
-		them.visible_message(span_warning("[user] tied [them]'s groin!"),\
-			span_userdanger("[user] tied your groin!"),\
-			span_hear("You hear ropes being completely tightened."))
+		them.visible_message(span_warning("[user]捆绑了[them]的下体！"),\
+			span_userdanger("[user]捆绑了你的下体！"),\
+			span_hear("你听到绳索被完全拉紧的声音。"))
 
 
 
@@ -170,11 +170,11 @@
 		handle_fullbody_tying(them, user)
 		return
 	else if(them.w_uniform)
-		to_chat(user, span_warning("They're already wearing something on this slot!"))
+		to_chat(user, span_warning("他们已经在这个部位穿着东西了！"))
 		return
-	them.visible_message(span_warning("[user] starts tying [them]'s chest!"),\
-		span_userdanger("[user] starts tying your chest!"),\
-		span_hear("You hear ropes being tightened."))
+	them.visible_message(span_warning("[user]开始捆绑[them]的胸部！"),\
+		span_userdanger("[user]开始捆绑你的胸部！"),\
+		span_hear("你听到绳索被拉紧的声音。"))
 	if(!do_after(user, HAS_TRAIT(user, TRAIT_RIGGER) ? 20 : 60, them))
 		return
 	var/obj/item/stack/shibari_rope/split_rope = split_stack(null, 1)
@@ -186,19 +186,19 @@
 		if(them.equip_to_slot_if_possible(shibari_body, ITEM_SLOT_ICLOTHING, TRUE, FALSE, TRUE))
 			shibari_body.tightness = tightness
 			shibari_body = null
-			them.visible_message(span_warning("[user] tied [them]'s chest!"),\
-				span_userdanger("[user] tied your chest!"),\
-				span_hear("You hear ropes being completely tightened."))
+			them.visible_message(span_warning("[user]捆绑了[them]的胸部！"),\
+				span_userdanger("[user]捆绑了你的胸部！"),\
+				span_hear("你听到绳索被完全拉紧的声音。"))
 	else
-		to_chat(user, span_warning("You don't have enough ropes!"))
+		to_chat(user, span_warning("你没有足够的绳索！"))
 
 /obj/item/stack/shibari_rope/proc/handle_arm_tying(mob/living/carbon/human/them, mob/living/user)
 	if(them.gloves)
-		to_chat(user, span_warning("They're already wearing something on this slot!"))
+		to_chat(user, span_warning("他们已经在这个部位穿着东西了！"))
 		return
-	them.visible_message(span_warning("[user] starts tying [them]'s hands!"),\
-		span_userdanger("[user] starts tying your hands!"),\
-		span_hear("You hear ropes being tightened."))
+	them.visible_message(span_warning("[user]开始捆绑[them]的双手！"),\
+		span_userdanger("[user]开始捆绑你的双手！"),\
+		span_hear("你听到绳索被拉紧的声音。"))
 	if(!do_after(user, HAS_TRAIT(user, TRAIT_RIGGER) ? 20 : 60, them))
 		return
 	var/obj/item/stack/shibari_rope/split_rope = split_stack(null, 1)
@@ -209,23 +209,23 @@
 		split_rope.forceMove(shibari_hands)
 		if(them.equip_to_slot_if_possible(shibari_hands, ITEM_SLOT_GLOVES, TRUE, FALSE, TRUE))
 			shibari_hands = null
-			them.visible_message(span_warning("[user] tied [them]'s hands!"),\
-				span_userdanger("[user] tied your hands!"),\
-				span_hear("You hear ropes being completely tightened."))
+			them.visible_message(span_warning("[user]捆绑了[them]的双手！"),\
+				span_userdanger("[user]捆绑了你的双手！"),\
+				span_hear("你听到绳索被完全拉紧的声音。"))
 	else
-		to_chat(user, span_warning("You don't have enough ropes!"))
+		to_chat(user, span_warning("你没有足够的绳索！"))
 
 
 /obj/item/stack/shibari_rope/proc/handle_leg_tying(mob/living/carbon/human/them, mob/living/user)
 	if(them.shoes)
-		to_chat(user, span_warning("They're already wearing something on this slot!"))
+		to_chat(user, span_warning("他们已经在这个部位穿着东西了！"))
 		return
 	if(them.bodyshape & BODYSHAPE_TAUR)
-		to_chat(user, span_warning("You can't tie their feet, they're a taur!"))
+		to_chat(user, span_warning("你不能捆绑他们的脚，他们是半人马！"))
 		return
-	them.visible_message(span_warning("[user] starts tying [them]'s feet!"),\
-		span_userdanger("[user] starts tying your feet!"),\
-		span_hear("You hear ropes being tightened."))
+	them.visible_message(span_warning("[user]开始捆绑[them]的双脚！"),\
+		span_userdanger("[user]开始捆绑你的双脚！"),\
+		span_hear("你听到绳索被拉紧的声音。"))
 	if(!do_after(user, HAS_TRAIT(user, TRAIT_RIGGER) ? 20 : 60, them))
 		return
 	var/obj/item/stack/shibari_rope/split_rope = split_stack(null, 1)
@@ -236,19 +236,19 @@
 		split_rope.forceMove(shibari_legs)
 		if(them.equip_to_slot_if_possible(shibari_legs, ITEM_SLOT_FEET, TRUE, FALSE, TRUE))
 			shibari_legs = null
-			them.visible_message(span_warning("[user] tied [them]'s feet!"),\
-				span_userdanger("[user] tied your feet!"),\
-				span_hear("You hear ropes being completely tightened."))
+			them.visible_message(span_warning("[user]捆绑了[them]的双脚！"),\
+				span_userdanger("[user]捆绑了你的双脚！"),\
+				span_hear("你听到绳索被完全拉紧的声音。"))
 	else
-		to_chat(user, span_warning("You don't have enough ropes!"))
+		to_chat(user, span_warning("你没有足够的绳索！"))
 
 
 /obj/item/stack/shibari_rope/proc/handle_fullbody_tying(mob/living/carbon/human/them, mob/living/user)
 	switch(user.zone_selected)
 		if(BODY_ZONE_CHEST)
-			them.visible_message(span_warning("[user] starts tying [them]'s chest!"),\
-				span_userdanger("[user] starts tying your chest!"),\
-				span_hear("You hear ropes being tightened."))
+			them.visible_message(span_warning("[user]开始捆绑[them]的胸部！"),\
+				span_userdanger("[user]开始捆绑你的胸部！"),\
+				span_hear("你听到绳索被拉紧的声音。"))
 			if(!do_after(user, HAS_TRAIT(user, TRAIT_RIGGER) ? 20 : 60, them))
 				return
 			var/slow = 0
@@ -269,18 +269,18 @@
 					if(them.equip_to_slot_if_possible(shibari_fullbody, ITEM_SLOT_ICLOTHING, TRUE, FALSE, TRUE))
 						shibari_fullbody.tightness = tightness
 						shibari_fullbody = null
-						them.visible_message(span_warning("[user] tied [them]'s chest!"),\
-							span_userdanger("[user] tied your chest!"),\
-							span_hear("You hear ropes being completely tightened."))
+						them.visible_message(span_warning("[user]捆绑了[them]的胸部！"),\
+							span_userdanger("[user]捆绑了你的胸部！"),\
+							span_hear("你听到绳索被完全拉紧的声音。"))
 				else
-					to_chat(user, span_warning("You can't mix these types of ropes!"))
+					to_chat(user, span_warning("你不能混合这些类型的绳索！"))
 					split_rope.forceMove(get_turf(them))
 			else
-				to_chat(user, span_warning("You don't have enough ropes!"))
+				to_chat(user, span_warning("你没有足够的绳索！"))
 		if(BODY_ZONE_PRECISE_GROIN)
-			them.visible_message(span_warning("[user] starts tying [them]'s groin!"),\
-				span_userdanger("[user] starts tying your groin!"),\
-				span_hear("You hear ropes being tightened."))
+			them.visible_message(span_warning("[user]开始捆绑[them]的下体！"),\
+				span_userdanger("[user]开始捆绑你的下体！"),\
+				span_hear("你听到绳索被拉紧的声音。"))
 			if(!do_after(user, HAS_TRAIT(user, TRAIT_RIGGER) ? 20 : 60, them))
 				return
 			var/obj/item/stack/shibari_rope/split_rope = null
@@ -304,14 +304,14 @@
 					if(them.equip_to_slot_if_possible(shibari_fullbody, ITEM_SLOT_ICLOTHING, TRUE, FALSE, TRUE))
 						shibari_fullbody.tightness = tightness
 						shibari_fullbody = null
-						them.visible_message(span_warning("[user] tied [them]'s groin!"),\
-							span_userdanger("[user] tied your groin!"),\
-							span_hear("You hear ropes being completely tightened."))
+						them.visible_message(span_warning("[user]捆绑了[them]的下体！"),\
+							span_userdanger("[user]捆绑了你的下体！"),\
+							span_hear("你听到绳索被完全拉紧的声音。"))
 				else
-					to_chat(user, span_warning("You can't mix these type of ropes!"))
+					to_chat(user, span_warning("你不能混合这些类型的绳索！"))
 					split_rope.forceMove(get_turf(them))
 			else
-				to_chat(user, span_warning("You don't have enough ropes!"))
+				to_chat(user, span_warning("你没有足够的绳索！"))
 
 ///This part of code required for tightness adjustment. You can change tightness of future shibari bondage on character by clicking on ropes.
 
@@ -320,15 +320,15 @@
 		if(ROPE_TIGHTNESS_HIGH)
 			tightness = ROPE_TIGHTNESS_LOW
 			conditional_pref_sound(loc, 'modular_skyrat/modules/modular_items/lewd_items/sounds/latex.ogg', 25)
-			balloon_alert(user, "you slightly tightened the ropes")
+			balloon_alert(user, "你稍微拉紧了绳索")
 		if(ROPE_TIGHTNESS_LOW)
 			tightness = ROPE_TIGHTNESS_MED
 			conditional_pref_sound(loc, 'modular_skyrat/modules/modular_items/lewd_items/sounds/latex.ogg', 50)
-			balloon_alert(user, "you moderately tightened the ropes")
+			balloon_alert(user, "你适度拉紧了绳索")
 		if(ROPE_TIGHTNESS_MED)
 			tightness = ROPE_TIGHTNESS_HIGH
 			conditional_pref_sound(loc, 'modular_skyrat/modules/modular_items/lewd_items/sounds/latex.ogg', 75)
-			balloon_alert(user, "you strongly tightened the ropes")
+			balloon_alert(user, "你用力拉紧了绳索")
 
 #undef ROPE_TIGHTNESS_LOW
 #undef ROPE_TIGHTNESS_MED

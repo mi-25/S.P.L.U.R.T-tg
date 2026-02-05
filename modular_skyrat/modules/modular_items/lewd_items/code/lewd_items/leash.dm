@@ -1,6 +1,6 @@
 /obj/item/clothing/erp_leash
-	name = "leash"
-	desc = "A guiding hand's best friend; in a sleek, semi-elastic package. Can either clip to a collar or be affixed to the neck on its own."
+	name = "牵引绳"
+	desc = "引导之手的最佳伙伴；采用时尚的半弹性包装。可以夹在项圈上，也可以单独固定在脖子上。"
 	icon = 'modular_skyrat/modules/modular_items/lewd_items/icons/obj/lewd_clothing/lewd_belts.dmi'
 	worn_icon = 'modular_skyrat/modules/modular_items/lewd_items/icons/mob/lewd_clothing/lewd_belts.dmi'
 	icon_state = "neckleash_pink"
@@ -41,7 +41,7 @@
 		return
 	/// Check their ERP prefs; if they don't allow sextoys: BTFO
 	if(!to_be_leashed.check_erp_prefs(/datum/preference/toggle/erp/sex_toy, user, src))
-		to_chat(user, span_danger("[to_be_leashed] doesn't want you to do that."))
+		to_chat(user, span_danger("[to_be_leashed]不想让你这么做。"))
 		return
 	/// Actually start the leashing part here
 	to_be_leashed.visible_message(span_warning("[user] raises the [src] to [to_be_leashed]'s neck!"),\

@@ -1,6 +1,6 @@
 /obj/item/clothing/sextoy/vibroring
-	name = "vibrating ring"
-	desc = "A ring toy used to keep your erection going strong."
+	name = "震动环"
+	desc = "一个用来保持勃起的环形玩具。"
 	icon_state = "vibroring_pink_off"
 	base_icon_state = "vibroring"
 	icon = 'modular_skyrat/modules/modular_items/lewd_items/icons/obj/lewd_items/lewd_items.dmi'
@@ -20,7 +20,7 @@
 
 /obj/item/clothing/sextoy/vibroring/attack_self(mob/user)
 	toy_on = !toy_on
-	to_chat(user, span_notice("You turn the vibroring [toy_on ? "on. Brrrr..." : "off."]"))
+	to_chat(user, span_notice("你将震动环[toy_on ? "打开了。嗡嗡嗡..." : "关闭了。"]"))
 	conditional_pref_sound(user, toy_on ? 'sound/items/weapons/magin.ogg' : 'sound/items/weapons/magout.ogg', 40, TRUE)
 	update_icon_state()
 	update_icon()
@@ -39,7 +39,7 @@
 /obj/item/clothing/sextoy/vibroring/examine(mob/user)
 	. = ..()
 	if(!color_changed)
-		. += span_notice("Alt-click to change it's color.")
+		. += span_notice("按住Alt点击以更改其颜色。")
 
 /obj/item/clothing/sextoy/vibroring/click_alt(mob/user)
 	if(color_changed)

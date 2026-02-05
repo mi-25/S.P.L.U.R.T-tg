@@ -4,8 +4,8 @@
 #define MAGIC_WAND_MODE_HIGH "high"
 
 /obj/item/clothing/sextoy/magic_wand
-	name = "magic wand"
-	desc = "Not sure where is magic in this thing, but if you press button - it makes funny vibrations"
+	name = "魔杖按摩棒"
+	desc = "不确定这玩意儿哪里有魔法，但如果你按下按钮 - 它会产生有趣的震动"
 	icon_state = "magicwand_off"
 	base_icon_state = "magicwand"
 	worn_icon_state = "magicwand"
@@ -107,12 +107,12 @@
 		return
 
 	if(!target.check_erp_prefs(/datum/preference/toggle/erp/sex_toy, user, src))
-		to_chat(user, span_danger("Looks like [target] don't want you to do that."))
+		to_chat(user, span_danger("看起来[target]不想让你这么做。"))
 		return FALSE
 
 	var/message = ""
 	if(vibration_mode == MAGIC_WAND_MODE_OFF)
-		to_chat(user, span_warning("You must turn on the toy, to use it!"))
+		to_chat(user, span_warning("你必须先打开玩具才能使用它！"))
 		return FALSE
 
 	var/first_adjective = ""
@@ -120,12 +120,12 @@
 
 	switch(vibration_mode)
 		if(MAGIC_WAND_MODE_LOW)
-			first_adjective = "gently"
-			second_adjective = "delicately"
+			first_adjective = "轻柔地"
+			second_adjective = "温柔地"
 
 		if(MAGIC_WAND_MODE_HIGH)
-			first_adjective = "roughly"
-			second_adjective = "aggressively"
+			first_adjective = "粗暴地"
+			second_adjective = "激烈地"
 
 	switch(user.zone_selected)
 		if(BODY_ZONE_PRECISE_GROIN)
@@ -137,7 +137,7 @@
 					return FALSE
 
 				if(!(vagina?.is_exposed() || penis?.is_exposed()))
-					to_chat(user, span_danger("Looks like [carbon_target]'s groin is covered!"))
+					to_chat(user, span_danger("看起来[carbon_target]的下体被遮住了！"))
 					return FALSE
 
 				var/target_organs = list()
@@ -151,43 +151,43 @@
 					return FALSE
 
 				var/organ_to_use = pick(target_organs)
-				message = (user == target) ? pick("massages their [organ_to_use] with the [src]",
-						"[first_adjective] teases their [organ_to_use] with [src]") \
-					: pick("[second_adjective] massages [target]'s [organ_to_use] with [src]",
-						"uses [src] to [first_adjective] massage [target]'s [organ_to_use]",
-						"leans the vibrator against [target]'s [organ_to_use]")
+				message = (user == target) ? pick("用[src]按摩自己的[organ_to_use]",
+						"[first_adjective]用[src]挑逗自己的[organ_to_use]") \
+					: pick("用[src][second_adjective]按摩[target]的[organ_to_use]",
+						"[first_adjective]用[src]按摩[target]的[organ_to_use]",
+						"将震动棒贴在[target]的[organ_to_use]上")
 				carbon_target.adjust_arousal(vibration_mode == MAGIC_WAND_MODE_LOW ? 4 : (vibration_mode == MAGIC_WAND_MODE_HIGH ? 8 : 5))
 				carbon_target.adjust_pleasure(vibration_mode == MAGIC_WAND_MODE_LOW ? 2 : (vibration_mode == MAGIC_WAND_MODE_HIGH ? 10 : 5))
 				carbon_target.plug13_genital_emote(carbon_target.get_organ_slot(current_equipped_slot), MAGIC_WAND_MODE_LOW ? 4 : (MAGIC_WAND_MODE_HIGH ? 8 : 5), PLUG13_DURATION_SHORT) // SPLURT EDIT - Plug13 - Magic Wand
 			else
-				message = (user == target) ? pick("massages their synthetic genitals with the [src]",
-						"[first_adjective] teases their synthetic genitals with [src]") \
-					: pick("[second_adjective] massages [target]'s synthetic genitals with [src]",
-						"uses [src] to [first_adjective] massage [target]'s synthetic genitals",
-						"leans the vibrator against [target]'s synthetic genitals")
+				message = (user == target) ? pick("用[src]按摩自己的合成生殖器",
+						"[first_adjective]用[src]挑逗自己的合成生殖器") \
+					: pick("用[src][second_adjective]按摩[target]的合成生殖器",
+						"[first_adjective]用[src]按摩[target]的合成生殖器",
+						"将震动棒贴在[target]的合成生殖器上")
 
 		if(BODY_ZONE_CHEST)
 			if(carbon_target)
 				var/obj/item/organ/genital/breasts = carbon_target.get_organ_slot(ORGAN_SLOT_BREASTS)
 				if(!breasts?.is_exposed())
-					to_chat(user, span_danger("Looks like [target]'s chest is covered!"))
+					to_chat(user, span_danger("看起来[target]的胸部被遮住了！"))
 					return FALSE
 
 				var/breasts_or_nipples = breasts ? ORGAN_SLOT_BREASTS : ORGAN_SLOT_NIPPLES
-				message = (user == target) ? pick("massages their [breasts_or_nipples] with the [src]",
-						"[first_adjective] teases their [breasts ? "tits" : ORGAN_SLOT_NIPPLES] with [src]") \
-					: pick("[second_adjective] teases [target]'s [breasts_or_nipples] with [src]",
-						"uses [src] to [vibration_mode == MAGIC_WAND_MODE_LOW ? "slowly" : ""] massage [target]'s [breasts ? "tits" : ORGAN_SLOT_NIPPLES]",
-						"uses [src] to tease [target]'s [breasts ? "boobs" : ORGAN_SLOT_NIPPLES]")
+				message = (user == target) ? pick("用[src]按摩自己的[breasts_or_nipples]",
+						"[first_adjective]用[src]挑逗自己的[breasts ? "胸部" : ORGAN_SLOT_NIPPLES]") \
+					: pick("用[src][second_adjective]挑逗[target]的[breasts_or_nipples]",
+						"用[src][vibration_mode == MAGIC_WAND_MODE_LOW ? "缓慢地" : ""]按摩[target]的[breasts ? "胸部" : ORGAN_SLOT_NIPPLES]",
+						"用[src]挑逗[target]的[breasts ? "乳房" : ORGAN_SLOT_NIPPLES]")
 				carbon_target.adjust_arousal((vibration_mode == MAGIC_WAND_MODE_LOW ? 3 : (vibration_mode == MAGIC_WAND_MODE_HIGH ? 7 : 4)))
 				carbon_target.adjust_pleasure((vibration_mode == MAGIC_WAND_MODE_LOW ? 1 : (vibration_mode == MAGIC_WAND_MODE_HIGH ? 9 : 4)))
 				carbon_target.plug13_genital_emote(carbon_target.get_organ_slot(current_equipped_slot), MAGIC_WAND_MODE_LOW ? 3 : (MAGIC_WAND_MODE_HIGH ? 7 : 4), PLUG13_DURATION_SHORT) // SPLURT EDIT - Plug13 - Magic Wand
 			else
-				message = (user == target) ? pick("massages their touch sensors with the [src]",
-						"[first_adjective] teases their touch sensors with [src]") \
-					: pick("[second_adjective] teases [target]'s touch sensors with [src]",
-						"uses [src] to [vibration_mode == MAGIC_WAND_MODE_LOW ? "slowly" : ""] massage [target]'s touch sensors",
-						"uses [src] to tease [target]'s touch sensors")
+				message = (user == target) ? pick("用[src]按摩自己的触觉传感器",
+						"[first_adjective]用[src]挑逗自己的触觉传感器") \
+					: pick("用[src][second_adjective]挑逗[target]的触觉传感器",
+						"用[src][vibration_mode == MAGIC_WAND_MODE_LOW ? "缓慢地" : ""]按摩[target]的触觉传感器",
+						"用[src]挑逗[target]的触觉传感器")
 		else
 			to_chat(user, span_warning("Use the wand on their groin or chest!"))
 			return FALSE

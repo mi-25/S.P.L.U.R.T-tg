@@ -2,8 +2,8 @@
 #define PAIN_DEFAULT 9
 
 /obj/item/bdsm_candle
-	name = "soy candle"
-	desc = "A candle with low melting temperature."
+	name = "大豆蜡烛"
+	desc = "一支低熔点的蜡烛。"
 	icon = 'modular_skyrat/modules/modular_items/lewd_items/icons/obj/lewd_items/lewd_items.dmi'
 	lefthand_file = 'modular_skyrat/modules/modular_items/lewd_items/icons/mob/lewd_inhands/lewd_inhand_left.dmi'
 	righthand_file = 'modular_skyrat/modules/modular_items/lewd_items/icons/mob/lewd_inhands/lewd_inhand_right.dmi'
@@ -111,9 +111,9 @@
 /obj/item/bdsm_candle/examine(mob/user)
 	. = ..()
 	if(!color_changed && !lit)
-		. += span_notice("Alt-click to change it's color.")
+		. += span_notice("按住Alt点击以更改其颜色。")
 	else if(lit)
-		. += span_notice("Alt-click to snuff the flame out.")
+		. += span_notice("按住Alt点击以熄灭火焰。")
 
 /obj/item/bdsm_candle/click_alt(mob/user)
 	if(!lit && !color_changed)
@@ -145,26 +145,26 @@
 
 	var/message = ""
 	if(!attacked.check_erp_prefs(/datum/preference/toggle/erp/sex_toy, user, src))
-		to_chat(user, span_danger("It looks like [attacked] don't want you to do that."))
+		to_chat(user, span_danger("看起来[attacked]不想让你这么做。"))
 		return
 	if(!lit)
-		to_chat(user, span_danger("[src] needs to be lit to produce wax!"))
+		to_chat(user, span_danger("[src]需要点燃才能产生蜡油！"))
 		return
 	switch(user.zone_selected) //to let code know what part of body we gonna wax
 		if(BODY_ZONE_PRECISE_GROIN)
 			var/obj/item/organ/genital/penis = attacked.get_organ_slot(ORGAN_SLOT_PENIS)
 			var/obj/item/organ/genital/vagina = attacked.get_organ_slot(ORGAN_SLOT_VAGINA)
-			var/penis_message = (user == attacked) ? pick("drips some wax on [attacked.p_their()] penis, causing [attacked.p_them()] to moan in pleasure.",
-						"drips some wax on [attacked.p_them()]self, letting it reach [attacked.p_their()] penis.") \
-					: pick("drips wax right on [attacked]'s penis. It slightly itches.",
-						"drips hot wax from [src] onto [attacked]'s penis, [attacked.p_they()] shivers slightly.",
-						"tilts the candle. Drops of wax, dripping from [src] onto [attacked]'s penis, made [attacked.p_them()] moan.")
+			var/penis_message = (user == attacked) ? pick("在[attacked.p_their()]的阴茎上滴了一些蜡，让[attacked.p_them()]愉悦地呻吟起来。",
+						"在[attacked.p_them()]自己身上滴了一些蜡，让蜡油流到[attacked.p_their()]的阴茎上。") \
+					: pick("直接在[attacked]的阴茎上滴蜡。有点痒。",
+						"从[src]上滴下热蜡到[attacked]的阴茎上，[attacked.p_they()]微微颤抖。",
+						"倾斜蜡烛。从[src]滴下的蜡油落在[attacked]的阴茎上，让[attacked.p_them()]呻吟起来。")
 
-			var/vagina_message = (user == attacked) ? pick("drips some wax on [attacked.p_them()]self, letting it reach [attacked.p_their()] vagina.",
-						"drips some wax onto [attacked.p_their()] pussy as [attacked.p_they()] moan in pleasure") \
-					: pick("drips some wax on [attacked]'s vagina.",
-						"tilts the candle as the wax slowly drops down, reaching [attacked]'s vagina.",
-						"tilts the candle. Drops of wax, dripping from [src] onto [attacked]'s pussy, made [attacked.p_them()] moan.")
+			var/vagina_message = (user == attacked) ? pick("在[attacked.p_them()]自己身上滴了一些蜡，让蜡油流到[attacked.p_their()]的阴道上。",
+						"在[attacked.p_their()]的小穴上滴了一些蜡，[attacked.p_they()]愉悦地呻吟起来") \
+					: pick("在[attacked]的阴道上滴了一些蜡。",
+						"倾斜蜡烛，蜡油缓缓滴下，流到[attacked]的阴道上。",
+						"倾斜蜡烛。从[src]滴下的蜡油落在[attacked]的小穴上，让[attacked.p_them()]呻吟起来。")
 
 			if(vagina?.is_exposed() && penis?.is_exposed())
 				message = pick(penis_message, vagina_message)
@@ -173,13 +173,13 @@
 			else if(vagina?.is_exposed())
 				message = vagina_message
 			else if(attacked.is_bottomless())
-				message = (user == attacked) ? pick("drips some wax on [attacked.p_them()]self, letting it reach [attacked.p_their()] belly as [attacked.p_they()] moan in pleasure.",
-						"drips some wax on [attacked]'s tummy") \
-					: pick("drips some wax on [attacked]'s belly",
-						"tilts the candle as the wax slowly drops down, reaching [attacked]'s tummy.",
-						"tilts the candle. Drops of wax, dripping from [src] onto [attacked]'s groin, made [attacked.p_them()] moan.")
+				message = (user == attacked) ? pick("在[attacked.p_them()]自己身上滴了一些蜡，让蜡油流到[attacked.p_their()]的肚子上，[attacked.p_they()]愉悦地呻吟起来。",
+						"在[attacked]的肚子上滴了一些蜡") \
+					: pick("在[attacked]的肚子上滴了一些蜡",
+						"倾斜蜡烛，蜡油缓缓滴下，流到[attacked]的肚子上。",
+						"倾斜蜡烛。从[src]滴下的蜡油落在[attacked]的下腹上，让[attacked.p_them()]呻吟起来。")
 			else
-				to_chat(user, span_danger("Looks like [attacked]'s groin is covered!"))
+				to_chat(user, span_danger("看起来[attacked]的下体被遮住了！"))
 				return
 			attacked.adjust_pain(PAIN_DEFAULT)
 			attacked.client?.plug13.send_emote(PLUG13_EMOTE_MASOCHISM, PAIN_DEFAULT, PLUG13_DURATION_SHORT) // SPLURT EDIT - Plug13 - Torture Candle
@@ -188,16 +188,16 @@
 			var/obj/item/organ/genital/breasts = attacked.get_organ_slot(ORGAN_SLOT_BREASTS)
 			if(breasts?.is_exposed())
 				var/breasts_or_nipples = breasts ? ORGAN_SLOT_BREASTS : ORGAN_SLOT_NIPPLES
-				message = (user == attacked) ? pick("drips some wax on [attacked.p_their()] [breasts_or_nipples], releasing all [attacked.p_their()] lustness",
-						"drips some wax right on [attacked.p_their()] [breasts ? "tits" : "chest"], making [attacked.p_their()] feel faint.") \
-					: pick("pours the wax that is slowly dripping from [src] onto [attacked]'s [breasts_or_nipples], [attacked.p_they()] shows pure enjoyment.",
-						"tilts the candle. Right in the moment when wax drips on [attacked]'s [breasts_or_nipples], [attacked.p_they()] shivers",
-						"tilts the candle. Just when hot drops of wax fell on [attacked]'s [breasts_or_nipples], [attacked.p_they()] quietly moans in pleasure")
+				message = (user == attacked) ? pick("在[attacked.p_their()]的[breasts_or_nipples]上滴了一些蜡，释放出[attacked.p_their()]所有的欲望",
+						"直接在[attacked.p_their()]的[breasts ? "乳房" : "胸部"]上滴了一些蜡，让[attacked.p_their()]感到晕眩。") \
+					: pick("将从[src]缓缓滴下的蜡油倒在[attacked]的[breasts_or_nipples]上，[attacked.p_they()]露出纯粹的享受。",
+						"倾斜蜡烛。就在蜡油滴在[attacked]的[breasts_or_nipples]上的那一刻，[attacked.p_they()]颤抖起来",
+						"倾斜蜡烛。就在热蜡滴落在[attacked]的[breasts_or_nipples]上时，[attacked.p_they()]轻声愉悦地呻吟起来")
 				attacked.adjust_pain(PAIN_DEFAULT * 0.66)
 				attacked.client?.plug13.send_emote(PLUG13_EMOTE_MASOCHISM, PAIN_DEFAULT * 0.66, PLUG13_DURATION_SHORT) // SPLURT EDIT - Plug13 - Torture Candle
 
 			else
-				to_chat(user, span_danger("Looks like [attacked]'s chest is covered!"))
+				to_chat(user, span_danger("看起来[attacked]的胸部被遮住了！"))
 				return
 		else
 			return

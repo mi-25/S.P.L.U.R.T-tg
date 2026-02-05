@@ -1,8 +1,8 @@
 //Yes, whip is mask item, because character can take it in mouth. For some BDSM scenarios it would be cool, but if you make it better with same functionality - go ahead, make me proud.
 
 /obj/item/clothing/mask/leatherwhip
-	name = "leather whip"
-	desc = "A tool used for domination. Hurts in a way you like it."
+	name = "皮鞭"
+	desc = "一个用于支配的工具。以你喜欢的方式造成疼痛。"
 	icon_state = "leather_whip_pink_hard"
 	worn_icon_state = "leather_whip"
 	base_icon_state = "leather"
@@ -100,9 +100,9 @@
 /obj/item/clothing/mask/leatherwhip/examine(mob/user)
 	. = ..()
 	if(!color_changed)
-		. += span_notice("Alt-click to change it's color.")
+		. += span_notice("按住Alt点击以更改其颜色。")
 	else if(!form_changed)
-		. += span_notice("Alt-click to change it's form.")
+		. += span_notice("按住Alt点击以更改其形态。")
 
 //to change color
 /obj/item/clothing/mask/leatherwhip/click_alt(mob/user)
@@ -175,13 +175,13 @@
 	var/message = ""
 	//and there is code for successful check, so we are whipping someone
 	if(!target.check_erp_prefs(/datum/preference/toggle/erp/sex_toy, user, src))
-		to_chat(user, span_danger("[target] doesn't want you to do that."))
+		to_chat(user, span_danger("[target]不想让你这么做。"))
 		return
 
 	switch(user.zone_selected) //to let code know what part of body we gonna whip
 		if(BODY_ZONE_L_LEG, BODY_ZONE_R_LEG)
 			if(carbon_target && !carbon_target.has_feet())
-				to_chat(user, span_danger("Looks like [target] is missing their legs!"))
+				to_chat(user, span_danger("看起来[target]没有腿！"))
 				return
 
 			if(current_whip_type == "hard")
@@ -226,13 +226,13 @@
 
 		if(BODY_ZONE_PRECISE_GROIN)
 			if(carbon_target && !carbon_target.is_bottomless())
-				to_chat(user, span_danger("Looks like [target]'s butt is covered!"))
+				to_chat(user, span_danger("看起来[target]的臀部被遮住了！"))
 				return
 			if(current_whip_type == "weak")
-				message = (user == target) ? pick("whips [target.p_them()]self with [src]",
-						"flogs [target.p_them()]self with [src]") \
-					: pick("playfully flogs [target]'s thighs with [src]",
-						"flogs [target] with [src]", "mercilessly flogs [target] with [src]")
+				message = (user == target) ? pick("用[src]鞭打[target.p_them()]自己",
+						"用[src]抽打[target.p_them()]自己") \
+					: pick("用[src]玩闹地抽打[target]的大腿",
+						"用[src]抽打[target]", "用[src]无情地抽打[target]")
 				if(prob(70))
 					target.try_lewd_autoemote(pick("moan", "twitch"))
 				if(prob(10))
@@ -246,11 +246,11 @@
 				conditional_pref_sound(loc, 'sound/items/weapons/whip.ogg', 60)
 
 			else
-				message = (user == target) ? pick("roughly flogs [target.p_them()]self with [src]",
-						"flogs [target.p_them()]self with [src]") \
-					: pick("playfully flogs [target]'s thighs with [src]",
-						"flogs [target] with [src]",
-						"mercilessly flogs [target] with [src]")
+				message = (user == target) ? pick("用[src]粗暴地抽打[target.p_them()]自己",
+						"用[src]抽打[target.p_them()]自己") \
+					: pick("用[src]玩闹地抽打[target]的大腿",
+						"用[src]抽打[target]",
+						"用[src]无情地抽打[target]")
 				if(prob(70))
 					target.try_lewd_autoemote(pick("moan", "twitch", "twitch_s", "scream"))
 				if(prob(10))
@@ -277,11 +277,11 @@
 				conditional_pref_sound(loc, 'sound/items/weapons/whip.ogg', 100)
 
 			else
-				message = (user == target) ? pick("whips [target.p_them()]self with [src]",
-						"lashes [target.p_them()]self with [src]") \
-					: pick("playfully lashes [target] with [src]",
-						"disciplines [target] with [src]",
-						"gently lashes [target] with [src]")
+				message = (user == target) ? pick("用[src]鞭打[target.p_them()]自己",
+						"用[src]抽打[target.p_them()]自己") \
+					: pick("用[src]玩闹地抽打[target]",
+						"用[src]惩戒[target]",
+						"用[src]轻轻抽打[target]")
 				if(prob(30))
 					target.try_lewd_autoemote(pick("moan", "twitch"))
 				if(prob(10))
@@ -299,9 +299,9 @@
 	switch(current_whip_type)
 		if("hard")
 			current_whip_type = "weak"
-			to_chat(user, span_notice("[src] feels softer. Easy mode!"))
+			to_chat(user, span_notice("[src]感觉更柔软了。简单模式！"))
 		if("weak")
 			current_whip_type = "hard"
-			to_chat(user, span_notice("[src] is now hard. Someone need to be punished!"))
+			to_chat(user, span_notice("[src]现在变硬了。有人需要被惩罚了！"))
 	update_icon()
 	update_icon_state()
