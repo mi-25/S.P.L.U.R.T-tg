@@ -1,6 +1,6 @@
 /datum/interaction/lewd/titgrope_self
-	name = "Grope Breasts (self)"
-	description = "Grope your own breasts."
+	name = "揉弄乳房（自己）"
+	description = "揉弄自己的乳房。"
 	interaction_requires = list(INTERACTION_REQUIRE_SELF_HAND)
 	user_required_parts = list(ORGAN_SLOT_BREASTS = REQUIRE_GENITAL_ANY)
 	usage = INTERACTION_SELF
@@ -59,8 +59,8 @@
 			qdel(R)
 
 /datum/interaction/lewd/self_nipsuck
-	name = "Suck Nipples (self)"
-	description = "Suck your own nipples."
+	name = "吮吸乳头（自己）"
+	description = "吮吸自己的乳头。"
 	interaction_requires = list(INTERACTION_REQUIRE_SELF_MOUTH)
 	user_required_parts = list(ORGAN_SLOT_BREASTS = REQUIRE_GENITAL_EXPOSED)
 	additional_details = list(INTERACTION_MAY_CONTAIN_DRINK)
@@ -97,8 +97,8 @@
 		qdel(R)
 
 /datum/interaction/lewd/breastfuck_self
-	name = "Breastfuck (self)"
-	description = "Fuck your own breasts."
+	name = "乳交（自己）"
+	description = "用自己的乳房自慰。"
 	interaction_requires = list(INTERACTION_REQUIRE_SELF_HAND)
 	user_required_parts = list(
 		ORGAN_SLOT_PENIS = REQUIRE_GENITAL_EXPOSED,

@@ -1,5 +1,5 @@
 /datum/interaction/lewd/unholy/piss_over
-	name = "Piss Over"
+	name = "撒尿"
 	description = "对着他们撒尿."
 	interaction_requires = list(INTERACTION_REQUIRE_SELF_BOTTOMLESS)
 	message = list(
@@ -45,7 +45,7 @@
 
 
 /datum/interaction/lewd/unholy/piss_self
-	name = "Piss over self"
+	name = "撒尿（自己）"
 	description = "对着自己撒尿."
 	usage = INTERACTION_SELF
 	message = list(
@@ -82,7 +82,7 @@
 
 
 /datum/interaction/lewd/unholy/piss_mouth
-	name = "Piss Mouth"
+	name = "尿入口中"
 	description = "对着他们的嘴里撒尿."
 	interaction_requires = list(
 		INTERACTION_REQUIRE_SELF_BOTTOMLESS,
@@ -130,7 +130,7 @@
 		bladder.stored_piss = max(0, bladder.stored_piss - bladder.piss_dosage)
 
 /datum/interaction/lewd/unholy/piss_slit
-	name = "Piss in slit"
+	name = "尿入生殖腔"
 	description = "对着他们的生殖腔撒尿."
 	interaction_requires = list(INTERACTION_REQUIRE_SELF_BOTTOMLESS)
 	message = list(
@@ -173,7 +173,7 @@
 
 
 /datum/interaction/lewd/unholy/piss_ass
-	name = "Piss in ass"
+	name = "尿入后穴"
 	description = "对着他们的屁眼撒尿."
 	interaction_requires = list(INTERACTION_REQUIRE_SELF_BOTTOMLESS)
 	target_required_parts = list(ORGAN_SLOT_ANUS = REQUIRE_GENITAL_EXPOSED)
@@ -214,7 +214,7 @@
 
 
 /datum/interaction/lewd/unholy/piss_ear
-	name = "Piss in ear"
+	name = "尿入耳中"
 	description = "对着他们的耳朵撒尿."
 	interaction_requires = list(INTERACTION_REQUIRE_SELF_BOTTOMLESS)
 	message = list(
@@ -254,7 +254,7 @@
 
 
 /datum/interaction/lewd/unholy/piss_urethra
-	name = "Piss in urethra"
+	name = "尿入尿道"
 	description = "对着他们的尿道撒尿."
 	interaction_requires = list(INTERACTION_REQUIRE_SELF_BOTTOMLESS)
 	message = list(

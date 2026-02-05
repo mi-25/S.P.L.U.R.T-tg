@@ -1,6 +1,6 @@
 /datum/interaction/lewd/jack_self
-	name = "Jack Off (self)"
-	description = "Jerk yourself off."
+	name = "打飞机（自己）"
+	description = "给自己打飞机。"
 	interaction_requires = list(INTERACTION_REQUIRE_SELF_HAND)
 	user_required_parts = list(ORGAN_SLOT_PENIS = REQUIRE_GENITAL_EXPOSED)
 	usage = INTERACTION_SELF

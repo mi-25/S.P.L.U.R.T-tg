@@ -1,6 +1,6 @@
 /datum/interaction/lewd/clothesplosion
-	name = "Clothesplosion"
-	description = "Explode out of your clothes."
+	name = "爆衣"
+	description = "从衣服中爆裂而出。"
 	usage = INTERACTION_SELF
 	interaction_requires = list(
 		INTERACTION_REQUIRE_SELF_HUMAN

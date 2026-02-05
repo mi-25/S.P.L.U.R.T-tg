@@ -1,6 +1,6 @@
 /datum/interaction/lewd/unholy/facefart
-	name = "Face Fart"
-	description = "对着他们的脸放屁."
+	name = "对脸放屁"
+	description = "对着他们的脸放屁。"
 	interaction_requires = list(INTERACTION_REQUIRE_TARGET_MOUTH)
 	user_required_parts = list(ORGAN_SLOT_ANUS = REQUIRE_GENITAL_ANY)
 	message = list(
@@ -37,8 +37,8 @@
 			'modular_zzplurt/sound/interactions/crapjob1.ogg'), 80, TRUE, falloff_distance = sound_range, pref_to_check = /datum/preference/toggle/erp/sounds) // interaction with the mouth
 
 /datum/interaction/lewd/unholy/crotchfart
-	name = "Crotch Fart"
-	description = "对着他们的胯部放屁."
+	name = "对胯部放屁"
+	description = "对着他们的胯部放屁。"
 	user_required_parts = list(ORGAN_SLOT_ANUS = REQUIRE_GENITAL_ANY)
 	message = list(
 		"将屁股压在%TARGET%的胯部并放了个屁",
@@ -69,8 +69,8 @@
 	. = ..()
 
 /datum/interaction/lewd/unholy/fartfuck
-	name = "Fart Fuck"
-	description = "操他们的屁眼 + 放屁."
+	name = "放屁肛交"
+	description = "操他们的屁眼同时放屁。"
 	user_required_parts = list(ORGAN_SLOT_PENIS = REQUIRE_GENITAL_EXPOSED)
 	target_required_parts = list(ORGAN_SLOT_ANUS = REQUIRE_GENITAL_EXPOSED)
 	cum_genital = list(
@@ -120,8 +120,8 @@
 						'modular_zzplurt/sound/interactions/bang3.ogg'), 80, TRUE, falloff_distance = sound_range, pref_to_check = /datum/preference/toggle/erp/sounds)
 
 /datum/interaction/lewd/unholy/suck_fart
-	name = "Suck Fart"
-	description = "从他们的屁眼吸出屁."
+	name = "吸屁"
+	description = "从他们的屁眼吸出屁。"
 	interaction_requires = list(INTERACTION_REQUIRE_SELF_MOUTH)
 	target_required_parts = list(ORGAN_SLOT_ANUS = REQUIRE_GENITAL_EXPOSED)
 	cum_genital = list(

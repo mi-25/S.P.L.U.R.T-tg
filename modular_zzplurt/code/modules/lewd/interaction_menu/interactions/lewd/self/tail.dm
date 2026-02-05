@@ -2,8 +2,8 @@
 // 使用 INTERACTION_SELF 使用标志和 CLIMAX_POSITION_USER 目标
 
 /datum/interaction/lewd/tail/dick/self
-	name = "Tail. Jerk Cock (self)"
-	description = "Jerk yourself off with your tail."
+	name = "尾巴·撸肉棒（自己）"
+	description = "用尾巴给自己打飞机。"
 	usage = INTERACTION_SELF
 	target_required_parts = list()
 	cum_genital = list(CLIMAX_POSITION_USER = CLIMAX_PENIS)
@@ -29,8 +29,8 @@
 	cum_message_text_overrides = list(CLIMAX_POSITION_USER = list("%CUMMING%的精液覆盖了自己的尾巴."))
 
 /datum/interaction/lewd/tail/vagina/self
-	name = "Tail. Penetrate Pussy (self)"
-	description = "Penetrate yourself with your tail."
+	name = "尾巴·插入小穴（自己）"
+	description = "用尾巴插入自己。"
 	usage = INTERACTION_SELF
 	target_required_parts = list()
 	cum_genital = list(CLIMAX_POSITION_USER = CLIMAX_VAGINA)
@@ -57,8 +57,8 @@
 	cum_message_text_overrides = list(CLIMAX_POSITION_USER = list("%CUMMING%的淫水覆盖了自己的尾巴."))
 
 /datum/interaction/lewd/tail/vagina_rub/self
-	name = "Tail. Rub Pussy (self)"
-	description = "Rub yourself with your tail."
+	name = "尾巴·摩擦小穴（自己）"
+	description = "用尾巴摩擦自己。"
 	usage = INTERACTION_SELF
 	target_required_parts = list()
 	cum_genital = list(CLIMAX_POSITION_USER = CLIMAX_VAGINA)
@@ -83,8 +83,8 @@
 	cum_message_text_overrides = list(CLIMAX_POSITION_USER = list("%CUMMING% covers their own tail with juices."))
 
 /datum/interaction/lewd/tail/ass/self
-	name = "Tail. Penetrate Ass (self)"
-	description = "Penetrate yourself with your tail."
+	name = "尾巴·插入后穴（自己）"
+	description = "用尾巴插入自己。"
 	usage = INTERACTION_SELF
 	target_required_parts = list()
 	user_required_parts = list(ORGAN_SLOT_TAIL = REQUIRE_GENITAL_ANY, ORGAN_SLOT_ANUS = REQUIRE_GENITAL_EXPOSED)
@@ -109,8 +109,8 @@
 	cum_message_text_overrides = list(CLIMAX_POSITION_USER = list("%CUMMING%在肛门内紧紧夹住自己的尾巴."))
 
 /datum/interaction/lewd/tail/ass_rub/self
-	name = "Tail. Slide Between Cheeks (self)"
-	description = "Stimulate yourself with your tail."
+	name = "尾巴·臀缝滑动（自己）"
+	description = "用尾巴刺激自己。"
 	usage = INTERACTION_SELF
 	target_required_parts = list()
 	user_required_parts = list(ORGAN_SLOT_TAIL = REQUIRE_GENITAL_ANY, ORGAN_SLOT_ANUS = REQUIRE_GENITAL_EXPOSED)
@@ -135,8 +135,8 @@
 	cum_message_text_overrides = list(CLIMAX_POSITION_USER = list("%CUMMING%紧紧夹住自己的尾巴."))
 
 /datum/interaction/lewd/tail/urethra/self
-	name = "Tail. Penetrate Urethra (self)"
-	description = "Penetrate yourself with your tail."
+	name = "尾巴·插入尿道（自己）"
+	description = "用尾巴插入自己。"
 	usage = INTERACTION_SELF
 	target_required_parts = list()
 	user_required_parts = list(ORGAN_SLOT_TAIL = REQUIRE_GENITAL_ANY, ORGAN_SLOT_PENIS = REQUIRE_GENITAL_EXPOSED)
@@ -164,8 +164,8 @@
 	cum_message_text_overrides = list(CLIMAX_POSITION_USER = list("%CUMMING%用尿道紧紧夹住自己的尾巴,用精液覆盖它."))
 
 /datum/interaction/lewd/tail/breast/self
-	name = "Tail. Slide Between Breasts (self)"
-	description = "Stimulate yourself with your tail."
+	name = "尾巴·乳沟滑动（自己）"
+	description = "用尾巴刺激自己。"
 	usage = INTERACTION_SELF
 	target_required_parts = list()
 	user_required_parts = list(ORGAN_SLOT_TAIL = REQUIRE_GENITAL_ANY, ORGAN_SLOT_BREASTS = REQUIRE_GENITAL_EXPOSED)
@@ -174,8 +174,8 @@
 	harm_text = list("用尾巴在自己的乳房之间嘲弄般地积极扭动,几乎拍打它们.")
 
 /datum/interaction/lewd/tail/self_oral
-	name = "Mouth. Lick Tail (self)"
-	description = "Lick your own tail."
+	name = "嘴巴·舔尾巴（自己）"
+	description = "舔自己的尾巴。"
 	interaction_requires = list(INTERACTION_REQUIRE_SELF_MOUTH)
 	target_required_parts = list()
 	user_required_parts = list(ORGAN_SLOT_TAIL = REQUIRE_GENITAL_ANY)

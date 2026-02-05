@@ -1,5 +1,5 @@
 /datum/interaction/lewd/unholy/faceshit
-	name = "Face Shit"
+	name = "对脸拉屎"
 	description = "对着他们的脸拉屎."
 	interaction_requires = list(INTERACTION_REQUIRE_TARGET_MOUTH)
 	user_required_parts = list(ORGAN_SLOT_ANUS = REQUIRE_GENITAL_ANY)
@@ -37,7 +37,7 @@
 			'modular_zzplurt/sound/interactions/crapjob1.ogg'), 80, TRUE, falloff_distance = sound_range, pref_to_check = /datum/preference/toggle/erp/sounds) // interaction with the mouth
 
 /datum/interaction/lewd/unholy/crotchshit
-	name = "Crotch Shit"
+	name = "对胯部拉屎"
 	description = "对着他们的胯部拉屎."
 	user_required_parts = list(ORGAN_SLOT_ANUS = REQUIRE_GENITAL_ANY)
 	message = list(
@@ -69,7 +69,7 @@
 	. = ..()
 
 /datum/interaction/lewd/unholy/shitfuck
-	name = "Shit Fuck"
+	name = "拉屎肛交"
 	description = "操他们的屁眼 + 拉屎."
 	user_required_parts = list(ORGAN_SLOT_PENIS = REQUIRE_GENITAL_EXPOSED)
 	target_required_parts = list(ORGAN_SLOT_ANUS = REQUIRE_GENITAL_EXPOSED)
@@ -119,7 +119,7 @@
 						'modular_zzplurt/sound/interactions/bang3.ogg'), 80, TRUE, falloff_distance = sound_range, pref_to_check = /datum/preference/toggle/erp/sounds)
 
 /datum/interaction/lewd/unholy/suck_shit
-	name = "Suck Shit"
+	name = "吸屎"
 	description = "从他们的屁眼吸出屎."
 	interaction_requires = list(INTERACTION_REQUIRE_SELF_MOUTH)
 	target_required_parts = list(ORGAN_SLOT_ANUS = REQUIRE_GENITAL_EXPOSED)

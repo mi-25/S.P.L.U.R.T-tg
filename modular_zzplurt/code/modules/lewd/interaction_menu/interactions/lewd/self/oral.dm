@@ -1,6 +1,6 @@
 /datum/interaction/lewd/oral_vagina_self
-	name = "Lick pussy (Self)"
-	description = "Lick your own pussy."
+	name = "舔小穴（自己）"
+	description = "舔自己的小穴。"
 	interaction_requires = list(INTERACTION_REQUIRE_SELF_MOUTH)
 	user_required_parts = list(ORGAN_SLOT_VAGINA = REQUIRE_GENITAL_EXPOSED)
 	usage = INTERACTION_SELF
@@ -49,8 +49,8 @@
 	sound_possible = default_sounds
 
 /datum/interaction/lewd/oral_self
-	name = "Selfsuck"
-	description = "Suck yourself off."
+	name = "自吸（自己）"
+	description = "给自己口交。"
 	interaction_requires = list(INTERACTION_REQUIRE_SELF_MOUTH)
 	user_required_parts = list(ORGAN_SLOT_PENIS = REQUIRE_GENITAL_EXPOSED)
 	usage = INTERACTION_SELF

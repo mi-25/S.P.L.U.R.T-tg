@@ -33,7 +33,7 @@
 	//SPLURT ADDITION START
 	// MKUltra cum lock hard block: do not proceed to climax when locked.
 	if(GLOB.mkultra_cum_locks && GLOB.mkultra_cum_locks[src])
-		visible_message(span_purple("[src] strains, but can't finish."), span_purple("You can't climax—you're locked by your owner."))
+		visible_message(span_purple("[src]紧绷着，但无法完成。"), span_purple("你无法高潮——你被主人锁定了。"))
 		return FALSE
 	//SPLURT ADDITION END
 	refractory_period = REALTIMEOFDAY + 30 SECONDS
@@ -41,8 +41,8 @@
 		return
 
 	if(HAS_TRAIT(src, TRAIT_NEVERBONER) || has_status_effect(/datum/status_effect/climax_cooldown) || (!has_vagina() && !has_penis()))
-		visible_message(span_purple("[src] twitches, trying to cum, but with no result."), \
-			span_purple("You can't have an orgasm!"))
+		visible_message(span_purple("[src]抽搐着，试图高潮，但没有结果。"), \
+			span_purple("你无法达到高潮！"))
 		return TRUE
 
 	// Reduce pop-ups and make it slightly more frictionless (lewd).
@@ -57,7 +57,7 @@
 				genitals.Add(CLIMAX_BOTH)
 		else if(has_penis())
 			genitals.Add(CLIMAX_PENIS)
-		climax_choice = tgui_alert(src, "You are climaxing, choose which genitalia to climax with.", "Genitalia Preference!", genitals)
+		climax_choice = tgui_alert(src, "你即将高潮，选择使用哪个部位。", "高潮方式", genitals)
 	else if(istype(climax_interaction, /datum/interaction) && climax_interaction.cum_genital?.len && climax_interaction.cum_genital[interaction_position])
 		climax_choice = climax_interaction.cum_genital[interaction_position]
 	conditional_pref_sound(get_turf(src), 'modular_zzplurt/sound/interactions/end.ogg', 50, TRUE, pref_to_check = /datum/preference/toggle/erp/sounds)
@@ -81,19 +81,19 @@
 	if(climax_choice == CLIMAX_PENIS || climax_choice == CLIMAX_BOTH)
 		var/obj/item/organ/genital/penis/penis = get_organ_slot(ORGAN_SLOT_PENIS)
 		if(!(testicles || testicles?.reagents.total_volume < MIN_CUM_THRESHOLD) && ishuman(src)) //If we have no god damn balls, we can't cum anywhere... GET BALLS! , OR theres so little in your balls that nothing comes out... // SPLURT EDIT - Interactions
-			visible_message(span_userlove("[src] orgasms, but nothing comes out of [self_their] penis!"), \
-				span_userlove("You orgasm, it feels great, but nothing comes out of your penis!"))
+			visible_message(span_userlove("[src]达到了高潮，但[self_their]的阴茎什么也没射出来！"), \
+				span_userlove("你达到了高潮，感觉很棒，但什么也没射出来！"))
 
 		else if(is_wearing_condom())
 			var/obj/item/clothing/sextoy/condom/condom = src:penis // bruh 💀⚰️💀⚰️💀⚰️💀⚰️💀
 			condom.condom_use() // condoms probably should become reagent containers at some point
-			visible_message(span_userlove("[src] shoots [self_their] load into the [condom], filling it up!"), \
-				span_userlove("You shoot your thick load into the [condom] and it catches it all!"))
+			visible_message(span_userlove("[src]将精液全部射进了[condom]里，把它填得满满的！"), \
+				span_userlove("你把浓稠的精液全部射进了[condom]里，它完美地接住了一切！"))
 			testicles?.reagents.remove_all(testicles.cumshot_size)
 
 		else if(!is_bottomless() && penis.visibility_preference != GENITAL_ALWAYS_SHOW)
-			visible_message(span_userlove("[src] cums inside [self_their] clothes!"), \
-				span_userlove("You shoot your load, but you weren't naked, so you mess up your clothes!"))
+			visible_message(span_userlove("[src]在[self_their]的裤子里射了出来！"), \
+				span_userlove("你射了出来，但还穿着裤子，精液弄脏了你的衣服！"))
 			self_orgasm = TRUE
 			testicles?.reagents.remove_all(testicles.cumshot_size)
 
@@ -123,22 +123,22 @@
 			if(istype(portal, /obj/structure/lewd_portal))
 				buttons += CLIMAX_PORTAL
 
-			var/penis_climax_choice = climax_interaction && !manual ? CLIMAX_IN_OR_ON : tgui_alert(src, "Choose where to shoot your load.", "Load preference!", buttons) //SPLURT EDIT CHANGE - Interactions
+			var/penis_climax_choice = climax_interaction && !manual ? CLIMAX_IN_OR_ON : tgui_alert(src, "选择射在哪里。", "射精位置", buttons) //SPLURT EDIT CHANGE - Interactions
 
 			var/create_cum_decal = FALSE
 
 			if(!penis_climax_choice || penis_climax_choice == CLIMAX_ON_FLOOR)
 				create_cum_decal = TRUE
-				visible_message(span_userlove("[src] shoots [self_their] sticky load onto the floor!"), \
-					span_userlove("You shoot string after string of hot cum, hitting the floor!"))
+				visible_message(span_userlove("[src]把粘稠的精液射到了地板上！"), \
+					span_userlove("你一股股地射出滚烫的精液，全都溅在了地板上！"))
 				testicles?.reagents.remove_all(testicles.cumshot_size)
 
 			else if(penis_climax_choice == CLIMAX_OPEN_CONTAINER || ((!climax_interaction?.cum_target[interaction_position] || !partner) && climax_interaction?.fluid_transfer_objects.Find(REF(src)))) // SPLURT EDIT - Interactions - Added support for fluid transfer objects
-				target_choice = climax_interaction?.fluid_transfer_objects.Find(REF(src)) ? climax_interaction.fluid_transfer_objects[REF(src)].name : tgui_input_list(src, "Choose a container to cum into.", "Choose target!", interactable_inrange_open_containers) //SPLURT EDIT CHANGE - Interactions
+				target_choice = climax_interaction?.fluid_transfer_objects.Find(REF(src)) ? climax_interaction.fluid_transfer_objects[REF(src)].name : tgui_input_list(src, "选择要射进去的容器。", "选择目标", interactable_inrange_open_containers) //SPLURT EDIT CHANGE - Interactions
 				if(!target_choice)
 					create_cum_decal = TRUE
-					visible_message(span_userlove("[src] shoots [self_their] sticky load onto the floor!"), \
-						span_userlove("You shoot string after string of hot cum, hitting the floor!"))
+					visible_message(span_userlove("[src]把粘稠的精液射到了地板上！"), \
+						span_userlove("你一股股地射出滚烫的精液，全都溅在了地板上！"))
 					testicles?.reagents.remove_all(testicles.cumshot_size)
 				else
 					var/obj/item/reagent_containers/cup/target_open_container = interactable_inrange_open_containers[target_choice] || climax_interaction.fluid_transfer_objects[REF(src)] // SPLURT EDIT - Interactions - Added support for fluid transfer objects
@@ -150,36 +150,36 @@
 						if(target_open_container.reagents.holder_full())
 							// its full already
 							add_cum_splatter_floor(get_turf(target_open_container))
-							visible_message(span_userlove("[src] tries to cum into the [target_open_container], but it's already full, spilling their hot load onto the floor!"), \
-								span_userlove("You try to cum into the [target_open_container], but it's already full, so it all hits the floor instead!"))
+							visible_message(span_userlove("[src]试图射进[target_open_container]里，但它已经满了，滚烫的精液溢了出来洒在地板上！"), \
+								span_userlove("你试图射进[target_open_container]里，但它已经满了，所以全都洒在了地板上！"))
 						else
 							testicles?.reagents.trans_to(target_open_container, testicles.cumshot_size, transferred_by = src)
 							if(total_volume_w_cum > target_open_container.volume)
 								// overflow, make the decal
 								add_cum_splatter_floor(get_turf(target_open_container))
-								visible_message(span_userlove("[src] shoots [self_their] sticky load into the [target_open_container], it's so full that it overflows!"), \
-									span_userlove("You shoot string after string of hot cum into the [target_open_container], making it overflow!"))
+								visible_message(span_userlove("[src]将粘稠的精液射进了[target_open_container]里，装得太满溢了出来！"), \
+									span_userlove("你一股股地把滚烫的精液射进[target_open_container]里，把它射得溢了出来！"))
 							else
-								visible_message(span_userlove("[src] shoots [self_their] sticky load into the [target_open_container]!"), \
-									span_userlove("You shoot string after string of hot cum into the [target_open_container]!"))
+								visible_message(span_userlove("[src]将粘稠的精液射进了[target_open_container]里！"), \
+									span_userlove("你一股股地把滚烫的精液射进[target_open_container]里！"))
 					else
 						// cum fail
 						create_cum_decal = TRUE
-						visible_message(span_userlove("[src] shoots [self_their] sticky load onto the floor!"), \
-							span_userlove("You shoot string after string of hot cum, hitting the floor!"))
+						visible_message(span_userlove("[src]把粘稠的精液射到了地板上！"), \
+							span_userlove("你一股股地射出滚烫的精液，全都洒在了地板上！"))
 						testicles?.reagents.remove_all(testicles.cumshot_size)
 
 			else if(penis_climax_choice == CLIMAX_PORTAL)
-				to_chat(src, "You shoot string after string of hot cum, hitting whatever is on the other side!")
-				portal.relayed_body.visible_message("[portal.relayed_body] shoots its sticky load onto the floor!")
+				to_chat(src, "你一股股地射出滚烫的精液，射到了传送门另一边的东西上！")
+				portal.relayed_body.visible_message("[portal.relayed_body]把粘稠的精液射到了地板上！")
 				add_cum_splatter_floor(get_turf(portal.relayed_body))
 
 			else
-				target_choice = climax_interaction && !manual ? partner?.name : tgui_input_list(src, "Choose a person to cum in or on.", "Choose target!", interactable_inrange_mobs) //SPLURT EDIT CHANGE - Interactions
+				target_choice = climax_interaction && !manual ? partner?.name : tgui_input_list(src, "选择要射在谁身上或射进谁体内。", "选择目标！", interactable_inrange_mobs) //SPLURT EDIT CHANGE - Interactions
 				if(!target_choice)
 					create_cum_decal = TRUE
-					visible_message(span_userlove("[src] shoots [self_their] sticky load onto the floor!"), \
-						span_userlove("You shoot string after string of hot cum, hitting the floor!"))
+					visible_message(span_userlove("[src]把粘稠的精液射到了地板上！"), \
+						span_userlove("你一股股地射出滚烫的精液，全都洒在了地板上！"))
 				else
 					var/mob/living/target_mob = climax_interaction && !manual && partner ? partner : interactable_inrange_mobs[target_choice] //SPLURT EDIT CHANGE - Interactions
 					var/target_mob_them = target_mob.p_them()
@@ -217,7 +217,7 @@
 					if(climax_interaction && !manual && interaction_inside)
 						climax_into_choice = climax_interaction.cum_target[interaction_position]
 					else if(manual)
-						climax_into_choice = tgui_input_list(src, "Where on or in [target_mob] do you wish to cum?", "Final frontier!", target_buttons)
+						climax_into_choice = tgui_input_list(src, "你想射在[target_mob]的哪里或射进[target_mob]的哪里？", "最后的选择！", target_buttons)
 					else
 						climax_into_choice = "On [target_mob_them]"
 
@@ -226,19 +226,19 @@
 					else if(!climax_into_choice)
 					//SPLURT EDIT CHANGE END
 						create_cum_decal = TRUE
-						visible_message(span_userlove("[src] shoots their sticky load onto the floor!"), \
-							span_userlove("You shoot string after string of hot cum, hitting the floor!"))
+						visible_message(span_userlove("[src]把粘稠的精液射到了地板上！"), \
+							span_userlove("你一股股地射出滚烫的精液，全都洒在了地板上！"))
 						conditional_pref_sound(get_turf(src), 'modular_zzplurt/sound/interactions/endout.ogg', 50, TRUE, pref_to_check = /datum/preference/toggle/erp/sounds) //SPLURT EDIT CHANGE - Interactions
 					else if(climax_into_choice == "On [target_mob_them]")
 						create_cum_decal = TRUE
-						visible_message(span_userlove("[src] shoots their sticky load onto [target_mob]!"), \
-							span_userlove("You shoot string after string of hot cum onto [target_mob]!"))
+						visible_message(span_userlove("[src]把粘稠的精液射到了[target_mob]身上！"), \
+							span_userlove("你一股股地把滚烫的精液射到[target_mob]身上！"))
 						conditional_pref_sound(get_turf(src), 'modular_zzplurt/sound/interactions/endout.ogg', 50, TRUE, pref_to_check = /datum/preference/toggle/erp/sounds) //SPLURT EDIT CHANGE - Interactions
 					else
 						visible_message(
-							span_userlove("[src] hilts [self_their] cock into [target_mob]'s [climax_into_choice], shooting cum into [target_mob_them]!"),
-							span_userlove("You hilt your cock into [target_mob]'s [climax_into_choice], shooting cum into [target_mob_them]!"))
-						to_chat(target_mob, span_userlove("Your [climax_into_choice] fills with warm cum as [src] shoots [self_their] load into it."))
+							span_userlove("[src]将[self_their]的肉棒完全插入[target_mob]的[climax_into_choice]，把精液射进了[target_mob_them]体内！"),
+							span_userlove("你将肉棒完全插入[target_mob]的[climax_into_choice]，把精液射进了[target_mob_them]体内！"))
+						to_chat(target_mob, span_userlove("你的[climax_into_choice]被[src]射出的温热精液填满了。"))
 						conditional_pref_sound(get_turf(target_mob), climax_into_choice == "mouth" ? pick('modular_zzplurt/sound/interactions/mouthend (1).ogg', 'modular_zzplurt/sound/interactions/mouthend (2).ogg') : 'modular_zzplurt/sound/interactions/endout.ogg', 50, TRUE, pref_to_check = /datum/preference/toggle/erp/sounds) //SPLURT EDIT CHANGE - Interactions
 						//SPLURT EDIT ADDITION BEGIN - Genital Inflation and pregnancy
 						var/datum/component/interactable/interactable = target_mob.GetComponent(/datum/component/interactable)
@@ -316,13 +316,13 @@
 		if(!is_bottomless() && vagina?.visibility_preference != GENITAL_ALWAYS_SHOW)
 			if(vagina?.reagents.total_volume >= MIN_VAGINA_WETNESS_THRESHOLD)
 				visible_message(
-					span_userlove("[src] cums in [self_their] underwear from [self_their] vagina!"),
-					span_userlove("You cum in your underwear from your vagina! Eww."))
+					span_userlove("[src]在[self_their]的内裤里高潮了，阴道的淫水弄湿了内裤！"),
+					span_userlove("你在内裤里高潮了，阴道的淫水弄湿了内裤！真糟糕。"))
 				self_orgasm = TRUE
 			else
 				visible_message(
-					span_userlove("[src] cums in [self_their] underwear from [self_their] vagina!"),
-					span_userlove("You cum in your underwear from your vagina, but you aren't wet enough to mess it up."))
+					span_userlove("[src]在[self_their]的内裤里高潮了，但还不够湿，没有弄脏内裤。"),
+					span_userlove("你在内裤里高潮了，但还不够湿，没有弄脏内裤。"))
 		else
 			var/list/interactable_inrange_mobs = list()
 			var/list/interactable_inrange_open_containers = list()
@@ -346,20 +346,20 @@
 			if(istype(portal, /obj/structure/lewd_portal))
 				buttons += CLIMAX_PORTAL
 
-			var/vagina_climax_choice = climax_interaction && !manual ? CLIMAX_IN_OR_ON : tgui_alert(src, "Choose where to squirt.", "Squirt preference!", buttons)
+			var/vagina_climax_choice = climax_interaction && !manual ? CLIMAX_IN_OR_ON : tgui_alert(src, "选择喷在哪里。", "喷射位置", buttons)
 
 			var/create_cum_decal = FALSE
 
 			if(!vagina_climax_choice || vagina_climax_choice == CLIMAX_ON_FLOOR)
 				create_cum_decal = TRUE
-				visible_message(span_userlove("[src] twitches and moans as [p_they()] squirt on the floor!"), \
-					span_userlove("You twitch and moan as you squirt on the floor!"))
+				visible_message(span_userlove("[src]抽搐着呻吟，[p_they()]喷到了地板上！"), \
+					span_userlove("你抽搐着呻吟，喷到了地板上！"))
 			else if(vagina_climax_choice == CLIMAX_OPEN_CONTAINER || ((!climax_interaction?.cum_target[interaction_position] || !partner) && climax_interaction?.fluid_transfer_objects.Find(REF(src)))) // SPLURT EDIT - Interactions - Added support for fluid transfer objects
-				target_choice = climax_interaction?.fluid_transfer_objects.Find(REF(src)) ? climax_interaction.fluid_transfer_objects[REF(src)].name : tgui_input_list(src, "Choose a container to squirt into.", "Choose target!", interactable_inrange_open_containers) // SPLURT EDIT - Interactions - Added support for fluid transfer objects
+				target_choice = climax_interaction?.fluid_transfer_objects.Find(REF(src)) ? climax_interaction.fluid_transfer_objects[REF(src)].name : tgui_input_list(src, "选择要喷进去的容器。", "选择目标！", interactable_inrange_open_containers) // SPLURT EDIT - Interactions - Added support for fluid transfer objects
 				if(!target_choice)
 					create_cum_decal = TRUE
-					visible_message(span_userlove("[src] squirts onto the floor!"), \
-						span_userlove("You squirt onto the floor!"))
+					visible_message(span_userlove("[src]喷到了地板上！"), \
+						span_userlove("你喷到了地板上！"))
 					vagina?.reagents.remove_all(vagina?.reagents.total_volume)
 				else
 					var/obj/item/reagent_containers/cup/target_open_container = interactable_inrange_open_containers[target_choice] || climax_interaction.fluid_transfer_objects[REF(src)] // SPLURT EDIT - Interactions - Added support for fluid transfer objects
@@ -369,33 +369,33 @@
 						conditional_pref_sound(get_turf(src), SFX_DESECRATION, 50, TRUE, pref_to_check = /datum/preference/toggle/erp/sounds)
 						if(target_open_container.reagents.holder_full())
 							add_cum_splatter_floor(get_turf(target_open_container), female = TRUE)
-							visible_message(span_userlove("[src] tries to squirt into the [target_open_container], but it's already full, spilling onto the floor!"), \
-								span_userlove("You try to squirt into the [target_open_container], but it's already full, so it all hits the floor instead!"))
+							visible_message(span_userlove("[src]试图喷进[target_open_container]里，但它已经满了，溢到了地板上！"), \
+								span_userlove("你试图喷进[target_open_container]里，但它已经满了，所以全都洒在了地板上！"))
 						else
 							vagina?.reagents.trans_to(target_open_container, vagina?.reagents.total_volume, transferred_by = src)
 							if(total_volume_w_squirt > target_open_container.volume)
 								add_cum_splatter_floor(get_turf(target_open_container), female = TRUE)
-								visible_message(span_userlove("[src] squirts into the [target_open_container], it's so full that it overflows!"), \
-									span_userlove("You squirt into the [target_open_container], making it overflow!"))
+								visible_message(span_userlove("[src]喷进了[target_open_container]里，装得太满溢了出来！"), \
+									span_userlove("你喷进[target_open_container]里，把它喷得溢了出来！"))
 							else
-								visible_message(span_userlove("[src] squirts into the [target_open_container]!"), \
-									span_userlove("You squirt into the [target_open_container]!"))
+								visible_message(span_userlove("[src]喷进了[target_open_container]里！"), \
+									span_userlove("你喷进[target_open_container]里！"))
 					else
 						create_cum_decal = TRUE
-						visible_message(span_userlove("[src] squirts onto the floor!"), \
-							span_userlove("You squirt onto the floor!"))
+						visible_message(span_userlove("[src]喷到了地板上！"), \
+							span_userlove("你喷到了地板上！"))
 						vagina?.reagents.remove_all(vagina?.reagents.total_volume)
 			else if(vagina_climax_choice == CLIMAX_PORTAL)
-				to_chat(src, "You squirt through the portal, hitting whatever is on the other side!")
-				portal.relayed_body.visible_message("[portal.relayed_body] squirts onto the floor!")
+				to_chat(src, "你通过传送门喷了出来，喷到了传送门另一边的东西上！")
+				portal.relayed_body.visible_message("[portal.relayed_body]喷到了地板上！")
 				add_cum_splatter_floor(get_turf(portal.relayed_body), female = TRUE)
 				vagina?.reagents.remove_all(vagina?.reagents.total_volume)
 			else
-				target_choice = climax_interaction && !manual ? partner.name : tgui_input_list(src, "Choose who to squirt on.", "Choose target!", interactable_inrange_mobs)
+				target_choice = climax_interaction && !manual ? partner.name : tgui_input_list(src, "选择要喷在谁身上。", "选择目标！", interactable_inrange_mobs)
 				if(!target_choice)
 					create_cum_decal = TRUE
-					visible_message(span_userlove("[src] twitches and moans as [p_they()] squirt on the floor!"), \
-						span_userlove("You twitch and moan as you squirt on the floor!"))
+					visible_message(span_userlove("[src]抽搐着呻吟，[p_they()]喷到了地板上！"), \
+						span_userlove("你抽搐着呻吟，喷到了地板上！"))
 				else
 					var/mob/living/target_mob = climax_interaction && !manual ? partner : interactable_inrange_mobs[target_choice]
 					var/target_mob_them = target_mob.p_them()
@@ -432,7 +432,7 @@
 					if(climax_interaction && !manual && interaction_inside)
 						climax_into_choice = climax_interaction.cum_target[interaction_position]
 					else if(manual)
-						climax_into_choice = tgui_input_list(src, "Where on or in [target_mob] do you wish to squirt?", "Final frontier!", target_buttons)
+						climax_into_choice = tgui_input_list(src, "你想喷在[target_mob]的哪里或喷进[target_mob]的哪里？", "最后的选择！", target_buttons)
 					else
 						climax_into_choice = "On [target_mob_them]"
 
@@ -440,18 +440,18 @@
 						create_cum_decal = !interaction_inside
 					else if(!climax_into_choice)
 						create_cum_decal = TRUE
-						visible_message(span_userlove("[src] squirts on the floor!"), \
-							span_userlove("You squirt on the floor!"))
+						visible_message(span_userlove("[src]喷到了地板上！"), \
+							span_userlove("你喷到了地板上！"))
 						conditional_pref_sound(get_turf(src), 'modular_zzplurt/sound/interactions/endout.ogg', 50, TRUE, pref_to_check = /datum/preference/toggle/erp/sounds) //SPLURT EDIT CHANGE - Interactions
 					else if(climax_into_choice == "On [target_mob_them]")
 						create_cum_decal = TRUE
-						visible_message(span_userlove("[src] squirts all over [target_mob]!"), \
-							span_userlove("You squirt all over [target_mob]!"))
+						visible_message(span_userlove("[src]喷了[target_mob]一身！"), \
+							span_userlove("你喷了[target_mob]一身！"))
 						conditional_pref_sound(get_turf(src), 'modular_zzplurt/sound/interactions/endout.ogg', 50, TRUE, pref_to_check = /datum/preference/toggle/erp/sounds) //SPLURT EDIT CHANGE - Interactions
 					else
-						visible_message(span_userlove("[src] squirts into [target_mob]'s [climax_into_choice]!"), \
-							span_userlove("You squirt into [target_mob]'s [climax_into_choice]!"))
-						to_chat(target_mob, span_userlove("Your [climax_into_choice] fills with [src]'s fluids."))
+						visible_message(span_userlove("[src]喷进了[target_mob]的[climax_into_choice]里！"), \
+							span_userlove("你喷进了[target_mob]的[climax_into_choice]里！"))
+						to_chat(target_mob, span_userlove("你的[climax_into_choice]被[src]的淫水填满了。"))
 						conditional_pref_sound(get_turf(target_mob), climax_into_choice == "mouth" ? pick('modular_zzplurt/sound/interactions/mouthend (1).ogg', 'modular_zzplurt/sound/interactions/mouthend (2).ogg') : 'modular_zzplurt/sound/interactions/endout.ogg', 50, TRUE, pref_to_check = /datum/preference/toggle/erp/sounds) //SPLURT EDIT CHANGE - Interactions
 						//SPLURT EDIT ADDITION BEGIN - Genital Inflation
 						var/datum/component/interactable/interactable = target_mob.GetComponent(/datum/component/interactable)

@@ -23,24 +23,24 @@
 	/// List of clown-specific messages for different genital types
 	var/static/list/clown_genital_messages = list(
 		ORGAN_SLOT_VAGINA = list(
-			"<b>%OWNER%</b>'s clussy honks[pick(" loudly", "")]!",
-			"<b>%OWNER%</b>'s pussy squeaks[pick(" loudly", "")]!"
+			"<b>%OWNER%</b>的小丑穴发出[pick("响亮的", "")]嘟嘟声！",
+			"<b>%OWNER%</b>的小穴发出[pick("响亮的", "")]吱吱声！"
 		),
 		ORGAN_SLOT_PENIS = list(
-			"<b>%OWNER%</b>'s cock honks[pick(" loudly", "")]!",
-			"<b>%OWNER%</b>'s penis squeaks[pick(" loudly", "")]!"
+			"<b>%OWNER%</b>的肉棒发出[pick("响亮的", "")]嘟嘟声！",
+			"<b>%OWNER%</b>的阴茎发出[pick("响亮的", "")]吱吱声！"
 		),
 		ORGAN_SLOT_ANUS = list(
-			"<b>%OWNER%</b>'s fun hole honks[pick(" loudly", "")]!",
-			"<b>%OWNER%</b>'s ass squeaks[pick(" loudly", "")]!"
+			"<b>%OWNER%</b>的欢乐洞发出[pick("响亮的", "")]嘟嘟声！",
+			"<b>%OWNER%</b>的屁股发出[pick("响亮的", "")]吱吱声！"
 		),
 		ORGAN_SLOT_BREASTS = list(
-			"<b>%OWNER%</b>'s honkers produce a loud squeak!",
-			"\The <b>%OWNER%</b>'s breasts honk[pick(" loudly", "")]!"
+			"<b>%OWNER%</b>的大奶子发出响亮的吱吱声！",
+			"<b>%OWNER%</b>的乳房发出[pick("响亮的", "")]嘟嘟声！"
 		),
 		"mouth" = list(
-			"<b>%OWNER%</b>'s mouth honks[pick(" loudly", "")]!",
-			"<b>%OWNER%</b>'s throat squeaks[pick(" loudly", "")]!"
+			"<b>%OWNER%</b>的嘴巴发出[pick("响亮的", "")]嘟嘟声！",
+			"<b>%OWNER%</b>的喉咙发出[pick("响亮的", "")]吱吱声！"
 		)
 	)
 

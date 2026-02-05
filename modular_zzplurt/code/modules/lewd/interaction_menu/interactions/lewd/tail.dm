@@ -57,8 +57,8 @@
 // 包括插入、摩擦和刺激动作
 
 /datum/interaction/lewd/tail/dick
-	name = "Tail. Jerk Cock"
-	description = "Jerk off their cock with your tail."
+	name = "尾巴·撸肉棒"
+	description = "用尾巴给他们打飞机。"
 	target_required_parts = list(ORGAN_SLOT_PENIS = REQUIRE_GENITAL_EXPOSED)
 	cum_genital = list(CLIMAX_POSITION_TARGET = CLIMAX_PENIS)
 	additional_details = list(INTERACTION_FILLS_CONTAINERS)
@@ -84,8 +84,8 @@
 	cum_message_text_overrides = list(CLIMAX_POSITION_TARGET = list("%CUMMING%的精液覆盖了%CAME_IN%的尾巴."))
 
 /datum/interaction/lewd/tail/vagina
-	name = "Tail. Penetrate Pussy"
-	description = "Penetrate their pussy with your tail."
+	name = "尾巴·插入小穴"
+	description = "用尾巴插入他们的小穴。"
 	target_required_parts = list(ORGAN_SLOT_VAGINA = REQUIRE_GENITAL_EXPOSED)
 	cum_genital = list(CLIMAX_POSITION_TARGET = CLIMAX_VAGINA)
 	try_milking = TRUE
@@ -110,8 +110,8 @@
 	cum_message_text_overrides = list(CLIMAX_POSITION_TARGET = list("%CUMMING%的淫水覆盖了%CAME_IN%的尾巴."))
 
 /datum/interaction/lewd/tail/vagina_rub
-	name = "Tail. Rub Pussy"
-	description = "Slide your tail against their pussy."
+	name = "尾巴·摩擦小穴"
+	description = "用尾巴摩擦他们的小穴。"
 	target_required_parts = list(ORGAN_SLOT_VAGINA = REQUIRE_GENITAL_EXPOSED)
 	cum_genital = list(CLIMAX_POSITION_TARGET = CLIMAX_VAGINA)
 	try_milking = TRUE
@@ -136,8 +136,8 @@
 	cum_message_text_overrides = list(CLIMAX_POSITION_TARGET = list("%CUMMING%的淫水覆盖了%CAME_IN%的尾巴."))
 
 /datum/interaction/lewd/tail/ass
-	name = "Tail. Penetrate Ass"
-	description = "Penetrate their ass with your tail."
+	name = "尾巴·插入后穴"
+	description = "用尾巴插入他们的后穴。"
 	target_required_parts = list(ORGAN_SLOT_ANUS = REQUIRE_GENITAL_EXPOSED)
 	help_text = list(
 		"用尾巴滑入%TARGET%的肛门.",
@@ -160,8 +160,8 @@
 	cum_message_text_overrides = list(CLIMAX_POSITION_TARGET = list("%CUMMING%紧紧夹住%CAME_IN%的尾巴."))
 
 /datum/interaction/lewd/tail/ass_rub
-	name = "Tail. Slide Between Cheeks"
-	description = "Slide your tail between their cheeks."
+	name = "尾巴·臀缝滑动"
+	description = "用尾巴在他们的臀缝间滑动。"
 	target_required_parts = list(ORGAN_SLOT_ANUS = REQUIRE_GENITAL_EXPOSED)
 	help_text = list(
 		"用尾巴在%TARGET%的臀瓣之间滑动.",
@@ -184,8 +184,8 @@
 	cum_message_text_overrides = list(CLIMAX_POSITION_TARGET = list("%CUMMING%紧紧夹住%CAME_IN%的尾巴."))
 
 /datum/interaction/lewd/slap/tail
-	name = "Tail. Spank Ass"
-	description = "Spank their ass with your tail."
+	name = "尾巴·打屁股"
+	description = "用尾巴打他们的屁股。"
 	interaction_requires = list()
 	user_required_parts = list(ORGAN_SLOT_TAIL = REQUIRE_GENITAL_ANY)
 	category = "Lewd (Tail)"
@@ -196,8 +196,8 @@
 	)
 
 /datum/interaction/lewd/tail/urethra
-	name = "Tail. Penetrate Urethra"
-	description = "Penetrate their urethra with your tail."
+	name = "尾巴·插入尿道"
+	description = "用尾巴插入他们的尿道。"
 	target_required_parts = list(ORGAN_SLOT_PENIS = REQUIRE_GENITAL_EXPOSED)
 	cum_genital = list(CLIMAX_POSITION_TARGET = CLIMAX_PENIS)
 	sound_possible = list('modular_zzplurt/sound/interactions/bang1.ogg',
@@ -224,8 +224,8 @@
 	cum_message_text_overrides = list(CLIMAX_POSITION_TARGET = list("%CUMMING%紧紧夹住%CAME_IN%的尾巴,用精液覆盖它."))
 
 /datum/interaction/lewd/tail/breast
-	name = "Tail. Slide Between Breasts"
-	description = "Slide between their breasts with your tail."
+	name = "尾巴·乳沟滑动"
+	description = "用尾巴在他们的乳沟间滑动。"
 	target_required_parts = list(ORGAN_SLOT_BREASTS = REQUIRE_GENITAL_EXPOSED)
 	help_text = list("轻轻地用尾巴在%TARGET%的乳房之间滑动.")
 	grab_text = list("用尾巴坚持不懈地压入并在%TARGET%的乳房之间扭动.")
@@ -241,8 +241,8 @@
 	target_required_parts = list(ORGAN_SLOT_TAIL = REQUIRE_GENITAL_ANY)
 
 /datum/interaction/lewd/tail/someone/oral
-	name = "Mouth. Lick Tail"
-	description = "Lick their tail."
+	name = "嘴巴·舔尾巴"
+	description = "舔他们的尾巴。"
 	interaction_requires = list(INTERACTION_REQUIRE_SELF_MOUTH)
 	help_text = list("舔舐%TARGET%的尾巴尖.")
 	grab_text = list("用嘴唇包裹%TARGET%的尾巴尖.")
@@ -250,8 +250,8 @@
 	sound_possible = list('modular_zzplurt/sound/interactions/squelch1.ogg')
 
 /datum/interaction/lewd/extreme/harmful/tail_choke
-	name = "Tailchoke"
-	description = "Choke them with your tail. (Warning: Causes oxygen damage)"
+	name = "尾巴锁喉"
+	description = "用尾巴勒住他们的脖子。（警告：造成窒息伤害）"
 	user_required_parts = list(ORGAN_SLOT_TAIL = REQUIRE_GENITAL_ANY)
 	category = "Lewd (Tail)"
 	sound_possible = list('sound/items/weapons/thudswoosh.ogg')

@@ -1,6 +1,6 @@
 /datum/interaction/lewd/finger_self_vagina
-	name = "Finger Pussy (self)"
-	description = "Finger your own pussy."
+	name = "指交小穴（自己）"
+	description = "指交自己的小穴。"
 	interaction_requires = list(INTERACTION_REQUIRE_SELF_HAND)
 	user_required_parts = list(ORGAN_SLOT_VAGINA = REQUIRE_GENITAL_EXPOSED)
 	usage = INTERACTION_SELF
@@ -53,8 +53,8 @@
 		. = ..()
 
 /datum/interaction/lewd/finger_self_anus
-	name = "Finger Ass (self)"
-	description = "Finger your own ass."
+	name = "指交后穴（自己）"
+	description = "指交自己的后穴。"
 	interaction_requires = list(INTERACTION_REQUIRE_SELF_HAND)
 	user_required_parts = list(ORGAN_SLOT_ANUS = REQUIRE_GENITAL_EXPOSED)
 	usage = INTERACTION_SELF

@@ -1,6 +1,6 @@
 /datum/interaction/lewd/thighs_penis
-	name = "Thigh Smother (Penis)"
-	description = "Smother them with your penis."
+	name = "大腿窒息（阴茎）"
+	description = "用你的阴茎窒息他们。"
 	interaction_requires = list(INTERACTION_REQUIRE_TARGET_MOUTH)
 	user_required_parts = list(ORGAN_SLOT_PENIS = REQUIRE_GENITAL_EXPOSED)
 	cum_genital = list(CLIMAX_POSITION_USER = CLIMAX_PENIS)
@@ -24,8 +24,8 @@
 	target_arousal = 2
 
 /datum/interaction/lewd/thighs_vagina
-	name = "Thigh Smother (Vagina)"
-	description = "Smother them with your pussy."
+	name = "大腿窒息（小穴）"
+	description = "用你的小穴窒息他们。"
 	interaction_requires = list(INTERACTION_REQUIRE_TARGET_MOUTH)
 	user_required_parts = list(ORGAN_SLOT_VAGINA = REQUIRE_GENITAL_EXPOSED)
 	cum_genital = list(CLIMAX_POSITION_USER = CLIMAX_VAGINA)
@@ -49,8 +49,8 @@
 	target_arousal = 2
 
 /datum/interaction/lewd/thighfuck
-	name = "Thighfuck"
-	description = "Fuck their thighs."
+	name = "腿交"
+	description = "操他们的大腿。"
 	interaction_requires = list(INTERACTION_REQUIRE_TARGET_BOTTOMLESS)
 	user_required_parts = list(ORGAN_SLOT_PENIS = REQUIRE_GENITAL_EXPOSED)
 	cum_genital = list(CLIMAX_POSITION_USER = CLIMAX_PENIS)
@@ -98,8 +98,8 @@
 	target_arousal = 4
 
 /datum/interaction/lewd/thighjob
-	name = "Give Thighjob"
-	description = "Pleasure them with your thighs."
+	name = "腿交服务"
+	description = "用你的大腿取悦他们。"
 	interaction_requires = list(INTERACTION_REQUIRE_SELF_BOTTOMLESS)
 	target_required_parts = list(ORGAN_SLOT_PENIS = REQUIRE_GENITAL_EXPOSED)
 	cum_genital = list(CLIMAX_POSITION_TARGET = CLIMAX_PENIS)
