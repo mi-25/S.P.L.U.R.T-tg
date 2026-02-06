@@ -3,7 +3,7 @@
 
 /datum/smite/tabletide/effect(client/user, mob/living/target)
 	. = ..()
-	priority_announce(html_decode("[target] has brought the wrath of the gods upon themselves and is now being tableslammed across the station. Please stand by."), "Table Tideslam")
+	priority_announce(html_decode("[target]招致了神明的愤怒，正在被桌子撞击着穿越整个空间站。请各位注意安全。"), "桌面冲击潮")
 	var/list/areas = list()
 	for(var/area/A in GLOB.areas)
 		if(A.z == SSmapping.station_start)

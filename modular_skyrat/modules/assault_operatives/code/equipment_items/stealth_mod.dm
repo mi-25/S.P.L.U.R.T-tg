@@ -1,13 +1,12 @@
 /datum/mod_theme/covert
-	name = "covert"
-	desc = "A rarely seen MOD design of unknown origin, covered in sleek armor and with a menacingly solid faceplate."
-	extended_desc = "Not all that much is known about this type of suit, dubbed the 'Covert' type by most who come across it. \
-		The build is a streamlined layering consisting of shaped Plastitanium, and composite ceramic, while the under suit is \
-		lined with a lightweight Kevlar and durathread hybrid weave to provide ample protection to the user where the plating \
-		doesn't, with an illegal onboard electric powered ablative shield module to provide resistance against conventional \
-		energy firearms. In addition, it has an in-built chameleon system, allowing you to disguise the suit while undeployed. \
-		Aside from that, there are no manufcaturer marks or tags to be found, and even the color scheme is unfamiliar when \
-		it comes to most known MOD producers."
+	name = "隐秘型"
+	desc = "一种罕见的MOD设计，来源未知，覆盖着光滑的装甲，面板坚固而威严。"
+	extended_desc = "关于这种被大多数人称为'隐秘型'的装甲，人们所知甚少。\
+		其构造是由成型的质钛合金和复合陶瓷组成的流线型分层结构，而内衬则是\
+		由轻质凯夫拉和耐久纤维混合编织而成，在装甲板未覆盖的地方为使用者提供充足的保护，\
+		并配备了非法的机载电动消融护盾模块，以抵抗常规能量武器。此外，它还内置了变色龙系统，\
+		允许你在未展开时伪装装甲。除此之外，找不到任何制造商标记或标签，\
+		甚至配色方案对于大多数已知的MOD生产商来说也很陌生。"
 	default_skin = "stealth"
 	armor_type = /datum/armor/mod_theme_covert
 	resistance_flags = FIRE_PROOF | ACID_PROOF

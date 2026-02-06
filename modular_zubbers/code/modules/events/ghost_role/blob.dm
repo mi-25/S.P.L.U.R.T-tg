@@ -33,7 +33,7 @@
 
 /datum/round_event/ghost_role/blob/proc/lose_some_weight_fatty(victim)
 	priority_announce(
-		"It appears that the level 5 biohazard aboard [station_name()] was a false alarm, as our sensors appeared to have mistakenly labeled [victim] as a level 5 biohazard. \
-		All crewmembers are reminded to practice healthy eating habbits as part of Nanotrasen's Safe and Healthy Eating program.",
-		"Biohazard Alert"
+		"[station_name()]上的5级生物危害似乎是误报，我们的传感器错误地将[victim]标记为5级生物危害。\
+		提醒所有船员作为纳米传讯安全健康饮食计划的一部分，请保持健康的饮食习惯。",
+		"生物危害警报"
 	)

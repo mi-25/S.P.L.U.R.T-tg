@@ -40,7 +40,7 @@
 			living_aliens = TRUE
 
 	if(living_aliens || fake)
-		priority_announce("Unidentified lifesigns detected coming aboard [station_name()]. Secure any exterior access, including ducting and ventilation.", "Lifesign Alert", ANNOUNCER_ALIENS)
+		priority_announce("检测到不明生命信号正在登上[station_name()]。请封锁所有外部通道，包括管道和通风系统。", "生命信号警报", ANNOUNCER_ALIENS)
 
 
 /datum/round_event/ghost_role/alien_infestation/spawn_role()

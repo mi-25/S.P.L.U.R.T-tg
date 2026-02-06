@@ -1,9 +1,9 @@
 //VENDING MACHINES
 /obj/machinery/vending/assaultops_ammo
-	name = "\improper Syndicate Ammo Station"
-	desc = "An ammo vending machine which holds a variety of different ammo mags."
+	name = "\improper 辛迪加弹药站"
+	desc = "一台弹药自动售货机，存放着各种不同的弹药弹匣。"
 	icon_state = "liberationstation"
-	vend_reply = "Item dispensed."
+	vend_reply = "物品已分发。"
 	scan_id = FALSE
 	resistance_flags = FIRE_PROOF
 	onstation = FALSE

@@ -39,19 +39,19 @@ SUBSYSTEM_DEF(goldeneye)
 	if(uploaded_keys >= required_keys)
 		activate()
 		return
-	priority_announce("UNAUTHORISED KEYCARD UPLOAD DETECTED. [uploaded_keys]/[required_keys] KEYCARDS UPLOADED.", "GoldenEye Defence Network")
+	priority_announce("检测到未授权的密钥卡上传。已上传 [uploaded_keys]/[required_keys] 张密钥卡。", "黄金眼防御网络")
 
 /// Activates goldeneye.
 /datum/controller/subsystem/goldeneye/proc/activate()
-	var/message = "/// GOLDENEYE DEFENCE NETWORK BREACHED /// \n \
-	Unauthorised GoldenEye Defence Network access detected. \n \
-	ICARUS online. \n \
-	Targeting system override detected... \n \
-	New target: /NTSS13/ \n \
-	ICARUS firing protocols activated. \n \
-	ETA to fire: [ignition_time / 10] seconds."
+	var/message = "/// 黄金眼防御网络已被突破 /// \n \
+	检测到未授权的黄金眼防御网络访问。\n \
+	伊卡洛斯系统已上线。\n \
+	检测到目标系统被覆盖...\n \
+	新目标：/NTSS13/ \n \
+	伊卡洛斯发射程序已激活。\n \
+	预计发射时间：[ignition_time / 10] 秒。"
 
-	priority_announce(message, "GoldenEye Defence Network", ANNOUNCER_ICARUS)
+	priority_announce(message, "黄金眼防御网络", ANNOUNCER_ICARUS)
 	goldeneye_activated = TRUE
 
 	addtimer(CALLBACK(src, PROC_REF(fire_icarus)), ignition_time)
@@ -73,8 +73,8 @@ SUBSYSTEM_DEF(goldeneye)
 
 // Goldeneye key
 /obj/item/goldeneye_key
-	name = "\improper GoldenEye authentication keycard"
-	desc = "A high profile authentication keycard to Nanotrasen's GoldenEye defence network. It seems indestructible."
+	name = "\improper 黄金眼认证钥匙卡"
+	desc = "纳米传讯黄金眼防御网络的高级认证钥匙卡。它似乎坚不可摧。"
 	icon = 'modular_skyrat/modules/assault_operatives/icons/goldeneye.dmi'
 	icon_state = "goldeneye_key"
 	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF
@@ -88,13 +88,13 @@ SUBSYSTEM_DEF(goldeneye)
 	. = ..()
 	SSgoldeneye.goldeneye_keys += src
 	goldeneye_tag = "G[rand(10000, 99999)]"
-	name = "\improper GoldenEye authentication keycard: [goldeneye_tag]"
+	name = "\improper 黄金眼认证钥匙卡：[goldeneye_tag]"
 	AddComponent(/datum/component/gps, goldeneye_tag)
 	SSpoints_of_interest.make_point_of_interest(src)
 
 /obj/item/goldeneye_key/examine(mob/user)
 	. = ..()
-	. += "The DNA data link belongs to: [extract_name]"
+	. += "DNA数据链接属于：[extract_name]"
 
 /obj/item/goldeneye_key/Destroy(force)
 	SSgoldeneye.goldeneye_keys -= src
@@ -102,8 +102,8 @@ SUBSYSTEM_DEF(goldeneye)
 
 // Upload terminal
 /obj/machinery/goldeneye_upload_terminal
-	name = "\improper GoldenEye Defnet Upload Terminal"
-	desc = "An ominous terminal with some ports and keypads, the screen is scrolling with illegible nonsense. It has a strange marking on the side, a red ring with a gold circle within."
+	name = "\improper 黄金眼防御网络上传终端"
+	desc = "一个不祥的终端，带有一些端口和键盘，屏幕上滚动着难以辨认的乱码。侧面有一个奇怪的标记，一个红色的环，里面有一个金色的圆圈。"
 	icon = 'modular_skyrat/modules/assault_operatives/icons/goldeneye.dmi'
 	icon_state = "goldeneye_terminal"
 	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF
@@ -117,32 +117,32 @@ SUBSYSTEM_DEF(goldeneye)
 	if(uploading)
 		return
 	if(!is_station_level(z))
-		say("CONNECTION TO GOLDENEYE NOT DETECTED: Please return to comms range.")
+		say("未检测到黄金眼连接：请返回通讯范围内。")
 		playsound(src, 'sound/machines/nuke/angry_beep.ogg', 100)
 		return
 	if(!istype(weapon, /obj/item/goldeneye_key))
-		say("AUTHENTICATION ERROR: Please do not insert foreign objects into terminal.")
+		say("认证错误：请勿将异物插入终端。")
 		playsound(src, 'sound/machines/nuke/angry_beep.ogg', 100)
 		return
 	var/obj/item/goldeneye_key/inserting_key = weapon
-	say("GOLDENEYE KEYCARD ACCEPTED: Please wait while the keycard is verified...")
+	say("黄金眼密钥卡已接受：正在验证密钥卡，请稍候...")
 	playsound(src, 'sound/machines/nuke/general_beep.ogg', 100)
 	uploading = TRUE
 	if(do_after(user, 10 SECONDS, src))
-		say("GOLDENEYE KEYCARD AUTHENTICATED!")
+		say("黄金眼密钥卡认证成功！")
 		playsound(src, 'sound/machines/nuke/confirm_beep.ogg', 100)
 		SSgoldeneye.upload_key()
 		uploading = FALSE
 		qdel(inserting_key)
 	else
-		say("GOLDENEYE KEYCARD VERIFICATION FAILED: Please try again.")
+		say("黄金眼密钥卡验证失败：请重试。")
 		playsound(src, 'sound/machines/nuke/angry_beep.ogg', 100)
 		uploading = FALSE
 
 // Pinpointer
 /obj/item/pinpointer/nuke/goldeneye
-	name = "\improper GoldenEye keycard pinpointer"
-	desc = "A handheld tracking device that locks onto certain signals. This one is configured to locate any GoldenEye keycards."
+	name = "\improper 黄金眼钥匙卡定位器"
+	desc = "一个手持追踪设备，可以锁定特定信号。这个设备配置为定位任何黄金眼钥匙卡。"
 	icon_state = "pinpointer_syndicate"
 	worn_icon_state = "pinpointer_black"
 	active = TRUE
@@ -154,11 +154,11 @@ SUBSYSTEM_DEF(goldeneye)
 
 /obj/item/pinpointer/nuke/goldeneye/attack_self(mob/living/user)
 	if(!LAZYLEN(SSgoldeneye.goldeneye_keys))
-		to_chat(user, span_danger("ERROR! No GoldenEye keys detected!"))
+		to_chat(user, span_danger("错误！未检测到黄金眼密钥！"))
 		return
-	target = tgui_input_list(user, "Select GoldenEye keycard to track", "GoldenEye keycard", SSgoldeneye.goldeneye_keys)
+	target = tgui_input_list(user, "选择要追踪的黄金眼密钥卡", "黄金眼密钥卡", SSgoldeneye.goldeneye_keys)
 	if(target)
-		to_chat(user, span_notice("Set to track: [target.name]"))
+		to_chat(user, span_notice("已设置追踪：[target.name]"))
 
 /obj/item/pinpointer/nuke/goldeneye/scan_for_target()
 	if(QDELETED(target))
@@ -166,9 +166,9 @@ SUBSYSTEM_DEF(goldeneye)
 
 // Objective
 /datum/objective/goldeneye
-	name = "subvert goldeneye"
-	objective_name = "Subvert GoldenEye"
-	explanation_text = "Extract all of the required GoldenEye authentication keys from the heads of staff and activate GoldenEye."
+	name = "颠覆黄金眼"
+	objective_name = "颠覆黄金眼"
+	explanation_text = "从部门主管那里提取所有所需的黄金眼认证钥匙并激活黄金眼。"
 	martyr_compatible = TRUE
 
 /datum/objective/goldeneye/check_completion()
@@ -180,8 +180,8 @@ SUBSYSTEM_DEF(goldeneye)
 
 
 /atom/movable/screen/alert/status_effect/goldeneye_pinpointer
-	name = "Target Integrated Pinpointer"
-	desc = "Even stealthier than a normal implant, it points to a selected GoldenEye keycard."
+	name = "目标集成定位器"
+	desc = "比普通植入物更隐蔽，它指向选定的黄金眼钥匙卡。"
 	icon = 'icons/obj/devices/tracker.dmi'
 	icon_state = "pinon"
 
@@ -251,7 +251,7 @@ SUBSYSTEM_DEF(goldeneye)
 
 /datum/status_effect/goldeneye_pinpointer/proc/set_target(obj/item/new_target)
 	target = new_target
-	to_chat(owner, span_redtext("Integrated pinpointer set to: [target.name]"))
+	to_chat(owner, span_redtext("集成定位器已设置为：[target.name]"))
 
 #undef ICARUS_IGNITION_TIME
 #undef PINPOINTER_PING_TIME

@@ -16,7 +16,7 @@
 		JOB_CHIEF_ENGINEER,
 	)
 	weight = 3
-	min_pop = 50
+	min_pop = 1
 	ruleset_flags = RULESET_INVADER|RULESET_HIGH_IMPACT
 	min_antag_cap = 5
 	max_antag_cap = list("denominator" = 18, "offset" = 1)

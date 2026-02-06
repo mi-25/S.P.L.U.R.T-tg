@@ -122,32 +122,32 @@
 
 /datum/round_event/cme/announce(fake)
 	if(fake)
-		priority_announce("Critical Coronal mass ejection detected! Expected intensity: [uppertext(cme_intensity)]. Impact in: [rand(200, 300)] seconds. \
-		All synthetic and non-organic lifeforms should seek shelter immediately! \
-		Ensure all sensitive equipment is shielded.", "Solar Event", sound('modular_skyrat/modules/cme/sound/cme_warning.ogg'))
+		priority_announce("检测到严重日冕物质抛射！预计强度：[uppertext(cme_intensity)]。预计撞击时间：[rand(200, 300)]秒。\
+		所有合成体和非有机生命体应立即寻找掩护！\
+		确保所有敏感设备已屏蔽。", "太阳事件", sound('modular_skyrat/modules/cme/sound/cme_warning.ogg'))
 	else
 		switch(cme_intensity)
 			if(CME_UNKNOWN)
-				priority_announce("Coronal mass ejection detected! Expected intensity: UNKNOWN. Impact in: [round((start_when * SSevents.wait) * 0.1, 0.1)] seconds. \
-				All synthetic and non-organic lifeforms should seek shelter immediately! \
-				Neutralize magnetic field bubbles at all costs.", "Solar Event", sound('modular_skyrat/modules/cme/sound/cme_warning.ogg'))
+				priority_announce("检测到日冕物质抛射！预计强度：未知。预计撞击时间：[round((start_when * SSevents.wait) * 0.1, 0.1)]秒。\
+				所有合成体和非有机生命体应立即寻找掩护！\
+				务必中和磁场气泡。", "太阳事件", sound('modular_skyrat/modules/cme/sound/cme_warning.ogg'))
 			if(CME_MINIMAL)
-				priority_announce("Coronal mass ejection detected! Expected intensity: [uppertext(cme_intensity)]. Impact in: [round((start_when * SSevents.wait) * 0.1, 0.1)] seconds. \
-				All synthetic and non-organic lifeforms should seek shelter immediately! \
-				Neutralize magnetic field bubbles at all costs.", "Solar Event", sound('modular_skyrat/modules/cme/sound/cme_warning.ogg'))
+				priority_announce("检测到日冕物质抛射！预计强度：[uppertext(cme_intensity)]。预计撞击时间：[round((start_when * SSevents.wait) * 0.1, 0.1)]秒。\
+				所有合成体和非有机生命体应立即寻找掩护！\
+				务必中和磁场气泡。", "太阳事件", sound('modular_skyrat/modules/cme/sound/cme_warning.ogg'))
 			if(CME_MODERATE)
-				priority_announce("Coronal mass ejection detected! Expected intensity: [uppertext(cme_intensity)]. Impact in: [round((start_when * SSevents.wait) * 0.1, 0.1)] seconds. \
-				All synthetic and non-organic lifeforms should seek shelter immediately! \
-				Neutralize magnetic field bubbles at all costs.", "Solar Event", sound('modular_skyrat/modules/cme/sound/cme_warning.ogg'))
+				priority_announce("检测到日冕物质抛射！预计强度：[uppertext(cme_intensity)]。预计撞击时间：[round((start_when * SSevents.wait) * 0.1, 0.1)]秒。\
+				所有合成体和非有机生命体应立即寻找掩护！\
+				务必中和磁场气泡。", "太阳事件", sound('modular_skyrat/modules/cme/sound/cme_warning.ogg'))
 			if(CME_EXTREME)
 				addtimer(CALLBACK(src, PROC_REF(cme_level_callback), SEC_LEVEL_ORANGE, TRUE, FALSE), (round((start_when * SSevents.wait) * 0.1, 0.1)) SECONDS)
-				priority_announce("Critical Coronal mass ejection detected! Expected intensity: [uppertext(cme_intensity)]. Impact in: [round((start_when * SSevents.wait) * 0.1, 0.1)] seconds. \
-				All synthetic and non-organic lifeforms should seek shelter immediately! \
-				Neutralize magnetic field bubbles at all costs.", "Solar Event", sound('modular_skyrat/modules/cme/sound/cme_warning.ogg'))
+				priority_announce("检测到严重日冕物质抛射！预计强度：[uppertext(cme_intensity)]。预计撞击时间：[round((start_when * SSevents.wait) * 0.1, 0.1)]秒。\
+				所有合成体和非有机生命体应立即寻找掩护！\
+				务必中和磁场气泡。", "太阳事件", sound('modular_skyrat/modules/cme/sound/cme_warning.ogg'))
 			if(CME_ARMAGEDDON)
 				addtimer(CALLBACK(src, PROC_REF(cme_level_callback), SEC_LEVEL_GAMMA, TRUE, TRUE), (round((start_when * SSevents.wait) * 0.1, 0.1)) SECONDS)
-				priority_announce("Neutron Mass Ejection Detected! Expected intensity: [uppertext(cme_intensity)]. Impact in: [round((start_when * SSevents.wait) * 0.1, 0.1)] seconds. \
-				All personnel should proceed to their nearest warpgate for evacuation, the Terran Government has issued this mandatory alert.", "Solar Event", sound('modular_skyrat/modules/cme/sound/cme_warning.ogg'))
+				priority_announce("检测到中子物质抛射！预计强度：[uppertext(cme_intensity)]。预计撞击时间：[round((start_when * SSevents.wait) * 0.1, 0.1)]秒。\
+				所有人员应立即前往最近的曲速门进行疏散，泰拉政府已发布强制警报。", "太阳事件", sound('modular_skyrat/modules/cme/sound/cme_warning.ogg'))
 
 /datum/round_event/cme/tick(seconds_between_ticks)
 	if(ISMULTIPLE(activeFor, rand(cme_frequency_lower, cme_frequency_upper)))
@@ -164,7 +164,7 @@
 			INVOKE_ASYNC(SSsecurity_level, TYPE_PROC_REF(/datum/controller/subsystem/security_level/, minimum_security_level), SEC_LEVEL_ORANGE, TRUE, FALSE)
 
 	var/area/loc_area_name = get_area(spawnpoint)
-	minor_announce("WARNING! [uppertext(intensity)] PULSE EXPECTED IN: [loc_area_name.name]", "Solar Flare Log:")
+	minor_announce("警告！预计[uppertext(intensity)]脉冲将出现在：[loc_area_name.name]", "太阳耀斑日志：")
 	switch(intensity)
 		if(CME_MINIMAL)
 			var/obj/effect/cme/spawnedcme = new(spawnpoint)
@@ -181,7 +181,7 @@
 
 
 /datum/round_event/cme/end()
-	minor_announce("The station has cleared the solar flare, please proceed to repair electronic failures.", "CME cleared:")
+	minor_announce("空间站已脱离太阳耀斑影响，请开始修复电子设备故障。", "CME已清除：")
 
 
 /*
