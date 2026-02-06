@@ -3,7 +3,7 @@
 
 /datum/interaction/lewd/portal/feet/show_climax(mob/living/cumming, mob/living/came_in, position)
 	var/obj/item/clothing/shoes/worn_shoes = came_in.get_item_by_slot(ITEM_SLOT_FEET)
-	var/feet_text = worn_shoes?.name || pick("bare feet", "toes", "soles")
+	var/feet_text = worn_shoes?.name || pick("赤脚", "脚趾", "脚底")
 
 	var/list/original_messages = cum_message_text_overrides.Copy()
 	var/list/original_self_messages = cum_self_text_overrides.Copy()
@@ -62,7 +62,7 @@
 	var/list/original_hidden_target_messages = hidden_target_messages.Copy()
 
 	var/obj/item/clothing/shoes/worn_shoes = user.get_item_by_slot(ITEM_SLOT_FEET)
-	var/feet_text = worn_shoes?.name || pick("bare feet", "toes", "soles")
+	var/feet_text = worn_shoes?.name || pick("赤脚", "脚趾", "脚底")
 
 	// Replace %FEET% in messages
 	if(length(message))
@@ -100,86 +100,86 @@
 	hidden_target_messages = original_hidden_target_messages
 
 /datum/interaction/lewd/portal/feet/footjob
-	name = "Portal Footjob"
-	description = "Give them a footjob through the portal dildo."
+	name = "传送门足交"
+	description = "通过传送门假阳具给他们足交。"
 	target_required_parts = list(ORGAN_SLOT_PENIS = REQUIRE_GENITAL_ANY)
 	cum_genital = list(CLIMAX_POSITION_TARGET = CLIMAX_PENIS)
 	cum_target = list(CLIMAX_POSITION_TARGET = null)
 	message = list(
-		"rubs %TARGET%'s cock with their %FEET% through the portal dildo",
-		"works %TARGET%'s shaft with their %FEET% through the portal dildo",
-		"grinds their %FEET% against %TARGET%'s penis through the portal dildo",
-		"gives %TARGET%'s member a footjob through the portal dildo"
+		"通过传送门假阳具用%FEET%摩擦%TARGET%的阴茎",
+		"通过传送门假阳具用%FEET%套弄%TARGET%的肉棒",
+		"通过传送门假阳具用%FEET%磨蹭%TARGET%的阴茎",
+		"通过传送门假阳具给%TARGET%的肉棒足交"
 	)
 	user_messages = list(
-		"You feel %TARGET%'s cock throbbing against your %FEET% through the portal",
-		"The warmth of %TARGET%'s shaft pulses against your %FEET% through the portal",
-		"You work %TARGET%'s penis with your %FEET% through the portal dildo"
+		"你通过传送门感觉到%TARGET%的阴茎在你的%FEET%上跳动",
+		"%TARGET%的肉棒的温暖通过传送门在你的%FEET%上脉动",
+		"你通过传送门假阳具用%FEET%套弄%TARGET%的阴茎"
 	)
 	target_messages = list(
-		"You feel %USER%'s %FEET% rubbing your cock through the portal panties",
-		"%USER%'s %FEET% press against your shaft through the portal",
-		"%USER%'s %FEET% work your penis through the portal"
+		"你通过传送门内裤感觉到%USER%的%FEET%摩擦你的阴茎",
+		"%USER%的%FEET%通过传送门压在你的肉棒上",
+		"%USER%的%FEET%通过传送门套弄你的阴茎"
 	)
 
 	hidden_message = list(
-		"rubs the portal dildo's cock with their %FEET%",
-		"works the portal dildo's shaft with their %FEET%",
-		"grinds their %FEET% against the portal dildo's penis",
-		"gives the portal dildo's member a footjob"
+		"用%FEET%摩擦传送门假阳具的阴茎",
+		"用%FEET%套弄传送门假阳具的肉棒",
+		"用%FEET%磨蹭传送门假阳具的阴茎",
+		"给传送门假阳具的肉棒足交"
 	)
 	hidden_user_messages = list(
-		"You feel the cock throbbing against your %FEET% through the portal",
-		"The warmth of the shaft pulses against your %FEET% through the portal",
-		"You work the penis with your %FEET% through the portal dildo"
+		"你通过传送门感觉到阴茎在你的%FEET%上跳动",
+		"肉棒的温暖通过传送门在你的%FEET%上脉动",
+		"你通过传送门假阳具用%FEET%套弄阴茎"
 	)
 	hidden_target_messages = list(
-		"You feel %FEET% rubbing your cock through the portal panties",
-		"%FEET% press against your shaft through the portal",
-		"%FEET% work your penis through the portal"
+		"你通过传送门内裤感觉到%FEET%摩擦你的阴茎",
+		"%FEET%通过传送门压在你的肉棒上",
+		"%FEET%通过传送门套弄你的阴茎"
 	)
 
 	cum_message_text_overrides = list(
 		CLIMAX_POSITION_TARGET = list(
-			"%CUMMING%'s cock throbs against %CAME_IN%'s %FEET% as they cum through the portal",
-			"%CUMMING% shoots their seed over %CAME_IN%'s %FEET% through the portal",
-			"%CUMMING% climaxes hard on %CAME_IN%'s %FEET% through the portal"
+			"%CUMMING%的阴茎在%CAME_IN%的%FEET%上跳动，通过传送门射精",
+			"%CUMMING%通过传送门将精液射在%CAME_IN%的%FEET%上",
+			"%CUMMING%通过传送门在%CAME_IN%的%FEET%上强烈高潮"
 		)
 	)
 	cum_self_text_overrides = list(
 		CLIMAX_POSITION_TARGET = list(
-			"Your cock throbs against %CAME_IN%'s %FEET% as you cum through the portal",
-			"You shoot your seed over %CAME_IN%'s %FEET% through the portal",
-			"You climax hard on %CAME_IN%'s %FEET% through the portal"
+			"你的阴茎在%CAME_IN%的%FEET%上跳动，通过传送门射精",
+			"你通过传送门将精液射在%CAME_IN%的%FEET%上",
+			"你通过传送门在%CAME_IN%的%FEET%上强烈高潮"
 		)
 	)
 	cum_partner_text_overrides = list(
 		CLIMAX_POSITION_TARGET = list(
-			"You feel %CUMMING%'s cock throb against your %FEET% as they cum through the portal",
-			"%CUMMING% shoots their seed over your %FEET% through the portal dildo",
-			"Your %FEET% are coated with %CUMMING%'s warm cum through the portal"
+			"你通过传送门感觉到%CUMMING%的阴茎在你的%FEET%上跳动射精",
+			"%CUMMING%通过传送门假阳具将精液射在你的%FEET%上",
+			"你的%FEET%通过传送门被%CUMMING%温暖的精液覆盖"
 		)
 	)
 
 	hidden_cum_message_text_overrides = list(
 		CLIMAX_POSITION_TARGET = list(
-			"The portal panties' cock throbs against the %FEET% as they cum",
-			"The wearer shoots their seed over the %FEET% through the portal",
-			"The portal panties' user climaxes hard on the %FEET%"
+			"传送门内裤的阴茎在%FEET%上跳动射精",
+			"穿戴者通过传送门将精液射在%FEET%上",
+			"传送门内裤的使用者在%FEET%上强烈高潮"
 		)
 	)
 	hidden_cum_self_text_overrides = list(
 		CLIMAX_POSITION_TARGET = list(
-			"Your cock throbs against the %FEET% as you cum through the portal",
-			"You shoot your seed over the %FEET% through the portal",
-			"You climax hard on the %FEET% through the portal"
+			"你的阴茎在%FEET%上跳动，通过传送门射精",
+			"你通过传送门将精液射在%FEET%上",
+			"你通过传送门在%FEET%上强烈高潮"
 		)
 	)
 	hidden_cum_partner_text_overrides = list(
 		CLIMAX_POSITION_TARGET = list(
-			"You feel the cock throb against your %FEET% as they cum through the portal",
-			"Warm cum shoots over your %FEET% through the portal dildo",
-			"Your %FEET% are coated with cum through the portal"
+			"你通过传送门感觉到阴茎在你的%FEET%上跳动射精",
+			"温暖的精液通过传送门假阳具射在你的%FEET%上",
+			"你的%FEET%通过传送门被精液覆盖"
 		)
 	)
 
@@ -197,86 +197,86 @@
 	target_arousal = 4
 
 /datum/interaction/lewd/portal/feet/footgrind_vagina
-	name = "Portal Foot Grind (Vagina)"
-	description = "Grind your foot against their pussy through the portal fleshlight."
+	name = "传送门足部摩擦（阴道）"
+	description = "通过传送门飞机杯用你的脚摩擦他们的阴部。"
 	target_required_parts = list(ORGAN_SLOT_VAGINA = REQUIRE_GENITAL_ANY)
 	cum_genital = list(CLIMAX_POSITION_TARGET = CLIMAX_VAGINA)
 	cum_target = list(CLIMAX_POSITION_TARGET = null)
 	message = list(
-		"grinds their %FEET% against %TARGET%'s pussy through the portal fleshlight",
-		"rubs their %FEET% on %TARGET%'s vagina through the portal fleshlight",
-		"works their %FEET% against %TARGET%'s wet hole through the portal fleshlight",
-		"presses their %FEET% into %TARGET%'s pussy through the portal fleshlight"
+		"通过传送门飞机杯用%FEET%磨蹭%TARGET%的阴部",
+		"通过传送门飞机杯用%FEET%摩擦%TARGET%的阴道",
+		"通过传送门飞机杯用%FEET%套弄%TARGET%湿润的小穴",
+		"通过传送门飞机杯将%FEET%压入%TARGET%的阴部"
 	)
 	user_messages = list(
-		"You feel %TARGET%'s warm pussy against your %FEET% through the portal",
-		"The wetness of %TARGET%'s vagina coats your %FEET% as you grind through the portal",
-		"You work your %FEET% against %TARGET%'s pussy through the portal fleshlight"
+		"你通过传送门感觉到%TARGET%温暖的阴部贴着你的%FEET%",
+		"%TARGET%阴道的湿润在你通过传送门磨蹭时涂满你的%FEET%",
+		"你通过传送门飞机杯用%FEET%套弄%TARGET%的阴部"
 	)
 	target_messages = list(
-		"You feel %USER%'s %FEET% grinding against your pussy through the portal panties",
-		"%USER%'s %FEET% rub against your vagina through the portal",
-		"%USER%'s %FEET% work your pussy through the portal"
+		"你通过传送门内裤感觉到%USER%的%FEET%磨蹭你的阴部",
+		"%USER%的%FEET%通过传送门摩擦你的阴道",
+		"%USER%的%FEET%通过传送门套弄你的阴部"
 	)
 
 	hidden_message = list(
-		"grinds their %FEET% against the portal fleshlight's pussy",
-		"rubs their %FEET% on the portal fleshlight's vagina",
-		"works their %FEET% against the portal fleshlight's wet hole",
-		"presses their %FEET% into the portal fleshlight's pussy"
+		"用%FEET%磨蹭传送门飞机杯的阴部",
+		"用%FEET%摩擦传送门飞机杯的阴道",
+		"用%FEET%套弄传送门飞机杯湿润的小穴",
+		"将%FEET%压入传送门飞机杯的阴部"
 	)
 	hidden_user_messages = list(
-		"You feel the warm pussy against your %FEET% through the portal",
-		"The wetness coats your %FEET% as you grind through the portal",
-		"You work your %FEET% against the vagina through the portal fleshlight"
+		"你通过传送门感觉到温暖的阴部贴着你的%FEET%",
+		"湿润在你通过传送门磨蹭时涂满你的%FEET%",
+		"你通过传送门飞机杯用%FEET%套弄阴道"
 	)
 	hidden_target_messages = list(
-		"You feel %FEET% grinding against your pussy through the portal panties",
-		"%FEET% rub against your vagina through the portal",
-		"%FEET% work your pussy through the portal"
+		"你通过传送门内裤感觉到%FEET%磨蹭你的阴部",
+		"%FEET%通过传送门摩擦你的阴道",
+		"%FEET%通过传送门套弄你的阴部"
 	)
 
 	cum_message_text_overrides = list(
 		CLIMAX_POSITION_TARGET = list(
-			"%CUMMING%'s pussy quivers against %CAME_IN%'s %FEET% as they cum through the portal",
-			"%CUMMING% climaxes hard on %CAME_IN%'s %FEET% through the portal",
-			"%CUMMING%'s vagina contracts in orgasm around %CAME_IN%'s %FEET% through the portal"
+			"%CUMMING%的阴部在%CAME_IN%的%FEET%上颤抖，通过传送门高潮",
+			"%CUMMING%通过传送门在%CAME_IN%的%FEET%上强烈高潮",
+			"%CUMMING%的阴道通过传送门在%CAME_IN%的%FEET%周围收缩高潮"
 		)
 	)
 	cum_self_text_overrides = list(
 		CLIMAX_POSITION_TARGET = list(
-			"Your pussy quivers against %CAME_IN%'s %FEET% as you cum through the portal",
-			"You climax hard on %CAME_IN%'s %FEET% through the portal",
-			"Your vagina contracts in orgasm around %CAME_IN%'s %FEET% through the portal"
+			"你的阴部在%CAME_IN%的%FEET%上颤抖，通过传送门高潮",
+			"你通过传送门在%CAME_IN%的%FEET%上强烈高潮",
+			"你的阴道通过传送门在%CAME_IN%的%FEET%周围收缩高潮"
 		)
 	)
 	cum_partner_text_overrides = list(
 		CLIMAX_POSITION_TARGET = list(
-			"You feel %CUMMING%'s pussy quiver against your %FEET% as they cum through the portal",
-			"%CUMMING% climaxes on your %FEET% through the portal fleshlight",
-			"The portal fleshlight's pussy contracts around your %FEET% as %CUMMING% cums"
+			"你通过传送门感觉到%CUMMING%的阴部在你的%FEET%上颤抖高潮",
+			"%CUMMING%通过传送门飞机杯在你的%FEET%上高潮",
+			"传送门飞机杯的阴部在%CUMMING%高潮时在你的%FEET%周围收缩"
 		)
 	)
 
 	hidden_cum_message_text_overrides = list(
 		CLIMAX_POSITION_TARGET = list(
-			"The portal panties' pussy quivers against the %FEET% as they cum",
-			"The wearer climaxes hard on the %FEET% through the portal",
-			"The portal panties' vagina contracts in orgasm"
+			"传送门内裤的阴部在%FEET%上颤抖高潮",
+			"穿戴者通过传送门在%FEET%上强烈高潮",
+			"传送门内裤的阴道收缩高潮"
 		)
 	)
 	hidden_cum_self_text_overrides = list(
 		CLIMAX_POSITION_TARGET = list(
-			"Your pussy quivers against the %FEET% as you cum through the portal",
-			"You climax hard on the %FEET% through the portal",
-			"Your vagina contracts in orgasm around the %FEET% through the portal"
+			"你的阴部在%FEET%上颤抖，通过传送门高潮",
+			"你通过传送门在%FEET%上强烈高潮",
+			"你的阴道通过传送门在%FEET%周围收缩高潮"
 		)
 	)
 	hidden_cum_partner_text_overrides = list(
 		CLIMAX_POSITION_TARGET = list(
-			"You feel the pussy quiver against your %FEET% as they cum through the portal",
-			"The portal fleshlight's user climaxes on your %FEET%",
-			"The portal fleshlight's pussy contracts around your %FEET%"
+			"你通过传送门感觉到阴部在你的%FEET%上颤抖高潮",
+			"传送门飞机杯的使用者在你的%FEET%上高潮",
+			"传送门飞机杯的阴部在你的%FEET%周围收缩"
 		)
 	)
 
@@ -293,86 +293,86 @@
 	target_arousal = 4
 
 /datum/interaction/lewd/portal/feet/footgrind_anus
-	name = "Portal Foot Grind (Anus)"
-	description = "Grind your foot against their ass through the portal fleshlight."
+	name = "传送门足部摩擦（肛门）"
+	description = "通过传送门飞机杯用你的脚摩擦他们的屁股。"
 	target_required_parts = list(ORGAN_SLOT_ANUS = REQUIRE_GENITAL_ANY)
 	cum_genital = list(CLIMAX_POSITION_TARGET = CLIMAX_BOTH)
 	cum_target = list(CLIMAX_POSITION_TARGET = null)
 	message = list(
-		"grinds their %FEET% against %TARGET%'s ass through the portal fleshlight",
-		"rubs their %FEET% on %TARGET%'s anus through the portal fleshlight",
-		"works their %FEET% against %TARGET%'s tight hole through the portal fleshlight",
-		"presses their %FEET% into %TARGET%'s ass through the portal fleshlight"
+		"通过传送门飞机杯用%FEET%磨蹭%TARGET%的屁股",
+		"通过传送门飞机杯用%FEET%摩擦%TARGET%的肛门",
+		"通过传送门飞机杯用%FEET%套弄%TARGET%紧致的小穴",
+		"通过传送门飞机杯将%FEET%压入%TARGET%的屁股"
 	)
 	user_messages = list(
-		"You feel %TARGET%'s tight ass against your %FEET% through the portal",
-		"The warmth of %TARGET%'s anus envelops your %FEET% as you grind through the portal",
-		"You work your %FEET% against %TARGET%'s ass through the portal fleshlight"
+		"你通过传送门感觉到%TARGET%紧致的屁股贴着你的%FEET%",
+		"%TARGET%肛门的温暖在你通过传送门磨蹭时包裹你的%FEET%",
+		"你通过传送门飞机杯用%FEET%套弄%TARGET%的屁股"
 	)
 	target_messages = list(
-		"You feel %USER%'s %FEET% grinding against your ass through the portal panties",
-		"%USER%'s %FEET% rub against your anus through the portal",
-		"%USER%'s %FEET% work your ass through the portal"
+		"你通过传送门内裤感觉到%USER%的%FEET%磨蹭你的屁股",
+		"%USER%的%FEET%通过传送门摩擦你的肛门",
+		"%USER%的%FEET%通过传送门套弄你的屁股"
 	)
 
 	hidden_message = list(
-		"grinds their %FEET% against the portal fleshlight's ass",
-		"rubs their %FEET% on the portal fleshlight's anus",
-		"works their %FEET% against the portal fleshlight's tight hole",
-		"presses their %FEET% into the portal fleshlight's ass"
+		"用%FEET%磨蹭传送门飞机杯的屁股",
+		"用%FEET%摩擦传送门飞机杯的肛门",
+		"用%FEET%套弄传送门飞机杯紧致的小穴",
+		"将%FEET%压入传送门飞机杯的屁股"
 	)
 	hidden_user_messages = list(
-		"You feel the tight ass against your %FEET% through the portal",
-		"The warmth envelops your %FEET% as you grind through the portal",
-		"You work your %FEET% against the anus through the portal fleshlight"
+		"你通过传送门感觉到紧致的屁股贴着你的%FEET%",
+		"温暖在你通过传送门磨蹭时包裹你的%FEET%",
+		"你通过传送门飞机杯用%FEET%套弄肛门"
 	)
 	hidden_target_messages = list(
-		"You feel %FEET% grinding against your ass through the portal panties",
-		"%FEET% rub against your anus through the portal",
-		"%FEET% work your ass through the portal"
+		"你通过传送门内裤感觉到%FEET%磨蹭你的屁股",
+		"%FEET%通过传送门摩擦你的肛门",
+		"%FEET%通过传送门套弄你的屁股"
 	)
 
 	cum_message_text_overrides = list(
 		CLIMAX_POSITION_TARGET = list(
-			"%CUMMING%'s ass squeezes against %CAME_IN%'s %FEET% as they cum through the portal",
-			"%CUMMING% climaxes hard on %CAME_IN%'s %FEET% through the portal",
-			"%CUMMING%'s anus contracts in orgasm around %CAME_IN%'s %FEET% through the portal"
+			"%CUMMING%的屁股在%CAME_IN%的%FEET%上收缩，通过传送门高潮",
+			"%CUMMING%通过传送门在%CAME_IN%的%FEET%上强烈高潮",
+			"%CUMMING%的肛门在高潮时在%CAME_IN%的%FEET%周围收缩，通过传送门"
 		)
 	)
 	cum_self_text_overrides = list(
 		CLIMAX_POSITION_TARGET = list(
-			"Your ass squeezes against %CAME_IN%'s %FEET% as you cum through the portal",
-			"You climax hard on %CAME_IN%'s %FEET% through the portal",
-			"Your anus contracts in orgasm around %CAME_IN%'s %FEET% through the portal"
+			"你的屁股在%CAME_IN%的%FEET%上收缩，通过传送门高潮",
+			"你通过传送门在%CAME_IN%的%FEET%上强烈高潮",
+			"你的肛门在高潮时在%CAME_IN%的%FEET%周围收缩，通过传送门"
 		)
 	)
 	cum_partner_text_overrides = list(
 		CLIMAX_POSITION_TARGET = list(
-			"You feel %CUMMING%'s ass squeeze against your %FEET% as they cum through the portal",
-			"%CUMMING% climaxes on your %FEET% through the portal fleshlight",
-			"The portal fleshlight's anus contracts around your %FEET% as %CUMMING% cums"
+			"你通过传送门感觉到%CUMMING%的屁股在你的%FEET%上收缩高潮",
+			"%CUMMING%通过传送门飞机杯在你的%FEET%上高潮",
+			"传送门飞机杯的肛门在%CUMMING%高潮时在你的%FEET%周围收缩"
 		)
 	)
 
 	hidden_cum_message_text_overrides = list(
 		CLIMAX_POSITION_TARGET = list(
-			"The portal panties' ass squeezes against the %FEET% as they cum",
-			"The wearer climaxes hard on the %FEET% through the portal",
-			"The portal panties' anus contracts in orgasm"
+			"传送门内裤的屁股在%FEET%上收缩高潮",
+			"穿戴者通过传送门在%FEET%上强烈高潮",
+			"传送门内裤的肛门在高潮时收缩"
 		)
 	)
 	hidden_cum_self_text_overrides = list(
 		CLIMAX_POSITION_TARGET = list(
-			"Your ass squeezes against the %FEET% as you cum through the portal",
-			"You climax hard on the %FEET% through the portal",
-			"Your anus contracts in orgasm around the %FEET% through the portal"
+			"你的屁股在%FEET%上收缩，通过传送门高潮",
+			"你通过传送门在%FEET%上强烈高潮",
+			"你的肛门在高潮时在%FEET%周围收缩，通过传送门"
 		)
 	)
 	hidden_cum_partner_text_overrides = list(
 		CLIMAX_POSITION_TARGET = list(
-			"You feel the ass squeeze against your %FEET% as they cum through the portal",
-			"The portal fleshlight's user climaxes on your %FEET%",
-			"The portal fleshlight's anus contracts around your %FEET%"
+			"你通过传送门感觉到屁股在你的%FEET%上收缩高潮",
+			"传送门飞机杯的使用者在你的%FEET%上高潮",
+			"传送门飞机杯的肛门在你的%FEET%周围收缩"
 		)
 	)
 

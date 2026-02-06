@@ -165,22 +165,22 @@
 	. = ..()
 	if(!pinless)
 		if(pin)
-			. += "It has \a [pin] installed."
+			. += "它安装了[pin]。"
 			if(pin.pin_removable)
-				. += span_info("[pin] looks like [pin.p_they()] could be removed with some <b>tools</b>.")
+				. += span_info("[pin]看起来可以用一些<b>工具</b>移除。")
 			else
-				. += span_info("[pin] looks like [pin.p_theyre()] firmly locked in, [pin.p_they()] looks impossible to remove.")
+				. += span_info("[pin]看起来被牢牢锁住了，似乎不可能移除。")
 		else
-			. += "It doesn't have a <b>firing pin</b> installed, and won't fire."
+			. += "它没有安装<b>击发针</b>，无法射击。"
 
 	var/healthpercent = (atom_integrity/max_integrity) * 100
 	switch(healthpercent)
 		if(60 to 95)
-			. += span_info("It looks slightly damaged.")
+			. += span_info("它看起来有轻微损坏。")
 		if(25 to 60)
-			. += span_warning("It appears heavily damaged.")
+			. += span_warning("它看起来损坏严重。")
 		if(0 to 25)
-			. += span_boldwarning("It's falling apart!")
+			. += span_boldwarning("它快要散架了！")
 
 //called after the gun has successfully fired its chambered ammo.
 /obj/item/gun/proc/process_chamber(empty_chamber = TRUE, from_firing = TRUE, chamber_next_round = TRUE)
@@ -216,38 +216,38 @@
 		return FALSE
 	if(tk_firing(user))
 		visible_message(
-			span_danger("[src] fires itself[pointblank ? " point blank at [pbtarget]!" : "!"]"),
-			blind_message = span_hear("You hear a gunshot!"),
+			span_danger("[src]自己开火了[pointblank ? "，近距离射击[pbtarget]！" : "！"]"),
+			blind_message = span_hear("你听到了枪声！"),
 			vision_distance = COMBAT_MESSAGE_RANGE
 		)
 	else if(pointblank)
 		if(user == pbtarget)
 			user.visible_message(
-				span_danger("[user] fires [src] point blank at [user.p_them()]self!"),
-				span_userdanger("You fire [src] point blank at yourself!"),
-				span_hear("You hear a gunshot!"),
+				span_danger("[user]用[src]近距离射击了[user.p_them()]自己！"),
+				span_userdanger("你用[src]近距离射击了自己！"),
+				span_hear("你听到了枪声！"),
 				vision_distance = COMBAT_MESSAGE_RANGE,
 				visible_message_flags = ALWAYS_SHOW_SELF_MESSAGE,
 			)
 		else
 			user.visible_message(
-				span_danger("[user] fires [src] point blank at [pbtarget]!"),
-				span_danger("You fire [src] point blank at [pbtarget]!"),
-				span_hear("You hear a gunshot!"),
+				span_danger("[user]用[src]近距离射击了[pbtarget]！"),
+				span_danger("你用[src]近距离射击了[pbtarget]！"),
+				span_hear("你听到了枪声！"),
 				vision_distance = COMBAT_MESSAGE_RANGE,
 				ignored_mobs = pbtarget,
 				visible_message_flags = ALWAYS_SHOW_SELF_MESSAGE,
 			)
-			to_chat(pbtarget, span_userdanger("[user] fires [src] point blank at you!"))
+			to_chat(pbtarget, span_userdanger("[user]用[src]近距离射击了你！"))
 		if(pb_knockback > 0 && ismob(pbtarget))
 			var/mob/PBT = pbtarget
 			var/atom/throw_target = get_edge_target_turf(PBT, user.dir)
 			PBT.throw_at(throw_target, pb_knockback, 2)
 	else if(!tk_firing(user))
 		user.visible_message(
-			span_danger("[user] fires [src]!"),
-			span_danger("You fire [src]!"),
-			span_hear("You hear a gunshot!"),
+			span_danger("[user]用[src]开火了！"),
+			span_danger("你用[src]开火了！"),
+			span_hear("你听到了枪声！"),
 			vision_distance = COMBAT_MESSAGE_RANGE,
 			ignored_mobs = user,
 			visible_message_flags = ALWAYS_SHOW_SELF_MESSAGE,
@@ -262,7 +262,7 @@
 		return ..()
 	var/mob/living/holder = loc
 	if(holder.is_holding(src) && holder.stat < UNCONSCIOUS)
-		to_chat(holder, span_boldwarning("[src] breaks down!"))
+		to_chat(holder, span_boldwarning("[src]损坏了！"))
 		holder.playsound_local(get_turf(src), 'sound/items/weapons/smash.ogg', 50, TRUE)
 	return ..()
 
@@ -292,15 +292,15 @@
 	if(HAS_TRAIT(user, TRAIT_CLUMSY) && prob(40))
 		// yes this will sound silly for bows and wands, but that's a "gun" moment for you
 		user.visible_message(
-			span_danger("While trying to flip [src] [user] pulls the trigger accidentally!"),
-			span_userdanger("While trying to flip [src] you pull the trigger accidentally!"),
+			span_danger("在试图转动[src]时，[user]不小心扣动了扳机！"),
+			span_userdanger("在试图转动[src]时，你不小心扣动了扳机！"),
 		)
 		process_fire(user, user, FALSE, user.get_random_valid_zone(even_weights = TRUE))
 		user.dropItemToGround(src, TRUE)
 	else
 		user.visible_message(
-			span_notice("[user] spins [src] around [user.p_their()] finger by the trigger. That's pretty badass."),
-			span_notice("You spin [src] around your finger by the trigger. That's pretty badass."),
+			span_notice("[user]用扳机转动[src]绕着[user.p_their()]手指旋转。真是帅气。"),
+			span_notice("你用扳机转动[src]绕着手指旋转。真是帅气。"),
 		)
 		playsound(src, 'sound/items/handling/ammobox_pickup.ogg', 20, FALSE)
 
@@ -322,10 +322,10 @@
 
 	var/datum/component/gunpoint/gunpoint_component = user.GetComponent(/datum/component/gunpoint)
 	if (gunpoint_component)
-		balloon_alert(user, "already holding [gunpoint_component.target == interacting_with ? "them" : "someone"] up!")
+		balloon_alert(user, "已经在劫持[gunpoint_component.target == interacting_with ? "他们" : "某人"]了！")
 		return ITEM_INTERACT_BLOCKING
 	if (user == interacting_with)
-		balloon_alert(user, "can't hold yourself up!")
+		balloon_alert(user, "不能劫持自己！")
 		return ITEM_INTERACT_BLOCKING
 
 	if(do_after(user, 0.5 SECONDS, interacting_with))
@@ -382,7 +382,7 @@
 
 	var/obj/item/bodypart/other_hand = user.has_hand_for_held_index(user.get_inactive_hand_index()) //returns non-disabled inactive hands
 	if(weapon_weight == WEAPON_HEAVY && (user.get_inactive_held_item() || !other_hand))
-		balloon_alert(user, "use both hands!")
+		balloon_alert(user, "需要双手使用！")
 		return
 	//DUAL (or more!) WIELDING
 	var/bonus_spread = 0
@@ -405,7 +405,7 @@
 				var/target_zone = user.get_random_valid_zone(blacklisted_parts = list(BODY_ZONE_CHEST, BODY_ZONE_HEAD, BODY_ZONE_L_ARM, BODY_ZONE_R_ARM), even_weights = TRUE, bypass_warning = TRUE)
 				if(!target_zone)
 					return
-				to_chat(user, span_userdanger("You shoot yourself in the foot with [src]!"))
+				to_chat(user, span_userdanger("你用[src]射中了自己的脚！"))
 				process_fire(user, user, FALSE, null, target_zone)
 				SEND_SIGNAL(user, COMSIG_MOB_CLUMSY_SHOOT_FOOT)
 				if(!tk_firing(user) && !HAS_TRAIT(src, TRAIT_NODROP))
@@ -427,8 +427,8 @@
 			pin.auth_fail(user)
 			return FALSE
 	else
-		to_chat(user, span_warning("[src]'s trigger is locked. This weapon doesn't have a firing pin installed!"))
-		balloon_alert(user, "trigger locked, firing pin needed!")
+		to_chat(user, span_warning("[src]的扳机被锁住了。这把武器没有安装击发针！"))
+		balloon_alert(user, "扳机锁定，需要击发针！")
 	return FALSE
 
 /obj/item/gun/proc/recharge_newshot()
@@ -445,7 +445,7 @@
 	if(chambered?.loaded_projectile)
 		if(HAS_TRAIT(user, TRAIT_PACIFISM)) // If the user has the pacifist trait, then they won't be able to fire [src] if the round chambered inside of [src] is lethal.
 			if(chambered.harmful) // Is the bullet chambered harmful?
-				to_chat(user, span_warning("[src] is lethally chambered! You don't want to risk harming anyone..."))
+				to_chat(user, span_warning("[src]装填了致命弹药！你不想冒险伤害任何人..."))
 				firing_burst = FALSE
 				return FALSE
 		var/sprd
@@ -511,7 +511,7 @@
 		if(chambered)
 			if(HAS_TRAIT(user, TRAIT_PACIFISM)) // If the user has the pacifist trait, then they won't be able to fire [src] if the round chambered inside of [src] is lethal.
 				if(chambered.harmful) // Is the bullet chambered harmful?
-					to_chat(user, span_warning("[src] is lethally chambered! You don't want to risk harming anyone..."))
+					to_chat(user, span_warning("[src]装填了致命弹药！你不想冒险伤害任何人..."))
 					return
 			var/sprd = round((rand(0, 1) - 0.5) * DUALWIELD_PENALTY_EXTRA_MULTIPLIER * total_random_spread)
 			before_firing(target,user)
@@ -549,13 +549,13 @@
 	if(!user.can_perform_action(src, FORBID_TELEKINESIS_REACH))
 		return
 	if(pin?.pin_removable && user.is_holding(src))
-		user.visible_message(span_warning("[user] attempts to remove [pin] from [src] with [I]."),
-		span_notice("You attempt to remove [pin] from [src]. (It will take [DisplayTimeText(FIRING_PIN_REMOVAL_DELAY)].)"), null, 3)
+		user.visible_message(span_warning("[user]试图用[I]从[src]中移除[pin]。"),
+		span_notice("你试图从[src]中移除[pin]。（需要[DisplayTimeText(FIRING_PIN_REMOVAL_DELAY)]。）"), null, 3)
 		if(I.use_tool(src, user, FIRING_PIN_REMOVAL_DELAY, volume = 50))
 			if(!pin) //check to see if the pin is still there, or we can spam messages by clicking multiple times during the tool delay
 				return
-			user.visible_message(span_notice("[pin] is pried out of [src] by [user], destroying the pin in the process."),
-								span_warning("You pry [pin] out with [I], destroying the pin in the process."), null, 3)
+			user.visible_message(span_notice("[user]用撬棍从[src]中撬出了[pin]，在过程中摧毁了击发针。"),
+								span_warning("你用[I]撬出了[pin]，在过程中摧毁了击发针。"), null, 3)
 			QDEL_NULL(pin)
 			return ITEM_INTERACT_SUCCESS
 
@@ -566,13 +566,13 @@
 	if(!user.can_perform_action(src, FORBID_TELEKINESIS_REACH))
 		return
 	if(pin?.pin_removable && user.is_holding(src))
-		user.visible_message(span_warning("[user] attempts to remove [pin] from [src] with [I]."),
-		span_notice("You attempt to remove [pin] from [src]. (It will take [DisplayTimeText(FIRING_PIN_REMOVAL_DELAY)].)"), null, 3)
+		user.visible_message(span_warning("[user]试图用[I]从[src]中移除[pin]。"),
+		span_notice("你试图从[src]中移除[pin]。（需要[DisplayTimeText(FIRING_PIN_REMOVAL_DELAY)]。）"), null, 3)
 		if(I.use_tool(src, user, FIRING_PIN_REMOVAL_DELAY, 5, volume = 50))
 			if(!pin) //check to see if the pin is still there, or we can spam messages by clicking multiple times during the tool delay
 				return
-			user.visible_message(span_notice("[pin] is spliced out of [src] by [user], melting part of the pin in the process."),
-								span_warning("You splice [pin] out of [src] with [I], melting part of the pin in the process."), null, 3)
+			user.visible_message(span_notice("[user]用焊枪从[src]中切出了[pin]，在过程中熔化了部分击发针。"),
+								span_warning("你用[I]从[src]中切出了[pin]，在过程中熔化了部分击发针。"), null, 3)
 			QDEL_NULL(pin)
 			return TRUE
 
@@ -583,13 +583,13 @@
 	if(!user.can_perform_action(src, FORBID_TELEKINESIS_REACH))
 		return
 	if(pin?.pin_removable && user.is_holding(src))
-		user.visible_message(span_warning("[user] attempts to remove [pin] from [src] with [I]."),
-		span_notice("You attempt to remove [pin] from [src]. (It will take [DisplayTimeText(FIRING_PIN_REMOVAL_DELAY)].)"), null, 3)
+		user.visible_message(span_warning("[user]试图用[I]从[src]中移除[pin]。"),
+		span_notice("你试图从[src]中移除[pin]。（需要[DisplayTimeText(FIRING_PIN_REMOVAL_DELAY)]。）"), null, 3)
 		if(I.use_tool(src, user, FIRING_PIN_REMOVAL_DELAY, volume = 50))
 			if(!pin) //check to see if the pin is still there, or we can spam messages by clicking multiple times during the tool delay
 				return
-			user.visible_message(span_notice("[pin] is ripped out of [src] by [user], mangling the pin in the process."),
-								span_warning("You rip [pin] out of [src] with [I], mangling the pin in the process."), null, 3)
+			user.visible_message(span_notice("[user]用钳子从[src]中扯出了[pin]，在过程中损坏了击发针。"),
+								span_warning("你用[I]从[src]中扯出了[pin]，在过程中损坏了击发针。"), null, 3)
 			QDEL_NULL(pin)
 			return TRUE
 
@@ -604,26 +604,26 @@
 		return
 
 	if(user == target)
-		target.visible_message(span_warning("[user] sticks [src] in [user.p_their()] mouth, ready to pull the trigger..."), \
-			span_userdanger("You stick [src] in your mouth, ready to pull the trigger..."))
+		target.visible_message(span_warning("[user]把[src]塞进[user.p_their()]嘴里，准备扣动扳机..."), \
+			span_userdanger("你把[src]塞进嘴里，准备扣动扳机..."))
 	else
-		target.visible_message(span_warning("[user] points [src] at [target]'s head, ready to pull the trigger..."), \
-			span_userdanger("[user] points [src] at your head, ready to pull the trigger..."))
+		target.visible_message(span_warning("[user]用[src]指着[target]的头，准备扣动扳机..."), \
+			span_userdanger("[user]用[src]指着你的头，准备扣动扳机..."))
 
 	fire_cd = TRUE
 
 	if(!bypass_timer && (!do_after(user, 12 SECONDS, target) || user.zone_selected != BODY_ZONE_PRECISE_MOUTH))
 		if(user)
 			if(user == target)
-				user.visible_message(span_notice("[user] decided not to shoot."))
+				user.visible_message(span_notice("[user]决定不开枪了。"))
 			else if(target?.Adjacent(user))
-				target.visible_message(span_notice("[user] has decided to spare [target]"), span_notice("[user] has decided to spare your life!"))
+				target.visible_message(span_notice("[user]决定放过[target]"), span_notice("[user]决定饶你一命！"))
 		fire_cd = FALSE
 		return
 
 	fire_cd = FALSE
 
-	target.visible_message(span_warning("[user] pulls the trigger!"), span_userdanger("[(user == target) ? "You pull" : "[user] pulls"] the trigger!"))
+	target.visible_message(span_warning("[user]扣动了扳机！"), span_userdanger("[(user == target) ? "你扣动" : "[user]扣动"]了扳机！"))
 
 	if(chambered?.loaded_projectile)
 		chambered.loaded_projectile.damage *= 5

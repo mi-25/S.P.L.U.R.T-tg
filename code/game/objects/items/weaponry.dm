@@ -25,7 +25,7 @@
 	AddElement(/datum/element/kneejerk)
 
 /obj/item/banhammer/suicide_act(mob/living/user)
-	user.visible_message(span_suicide("[user] is hitting [user.p_them()]self with [src]! It looks like [user.p_theyre()] trying to ban [user.p_them()]self from life."))
+	user.visible_message(span_suicide("[user]正在用[src]击打[user.p_them()]自己！看起来[user.p_theyre()]想把自己从生命中封禁！"))
 	return (BRUTELOSS|FIRELOSS|TOXLOSS|OXYLOSS)
 /*
 oranges says: This is a meme relating to the english translation of the ss13 russian wiki page on lurkmore.
@@ -34,9 +34,9 @@ for further reading, please see: https://github.com/tgstation/tgstation/pull/301
 */
 /obj/item/banhammer/attack(mob/M, mob/living/user)
 	if(user.zone_selected == BODY_ZONE_HEAD)
-		M.visible_message(span_danger("[user] are stroking the head of [M] with a bangammer."), span_userdanger("[user] are stroking your head with a bangammer."), span_hear("You hear a bangammer stroking a head.")) // see above comment
+		M.visible_message(span_danger("[user]正在用封禁锤抚摸[M]的头。"), span_userdanger("[user]正在用封禁锤抚摸你的头。"), span_hear("你听到封禁锤抚摸头部的声音。")) // see above comment
 	else
-		M.visible_message(span_danger("[M] has been banned FOR NO REISIN by [user]!"), span_userdanger("You have been banned FOR NO REISIN by [user]!"), span_hear("You hear a banhammer banning someone."))
+		M.visible_message(span_danger("[M]被[user]无理由封禁了！"), span_userdanger("你被[user]无理由封禁了！"), span_hear("你听到封禁锤封禁某人的声音。"))
 	playsound(loc, 'sound/effects/adminhelp.ogg', 15) //keep it at 15% volume so people don't jump out of their skin too much
 	if(user.combat_mode)
 		return ..(M, user)
@@ -102,8 +102,8 @@ for further reading, please see: https://github.com/tgstation/tgstation/pull/301
 	attack_verb_simple = list("attack", "slash", "stab", "slice", "tear", "lacerate", "rip", "dice", "cut")
 
 /obj/item/sord/suicide_act(mob/living/user)
-	user.visible_message(span_suicide("[user] is trying to impale [user.p_them()]self with [src]! It might be a suicide attempt if it weren't so shitty."), \
-	span_suicide("You try to impale yourself with [src], but it's USELESS..."))
+	user.visible_message(span_suicide("[user]试图用[src]刺穿[user.p_them()]自己！如果不是这把剑太烂的话，这可能是自杀尝试。"), \
+	span_suicide("你试图用[src]刺穿自己，但它太没用了..."))
 	return SHAME
 
 /obj/item/claymore
@@ -151,7 +151,7 @@ for further reading, please see: https://github.com/tgstation/tgstation/pull/301
 	AddComponent(/datum/component/alternative_sharpness, SHARP_POINTY, alt_continuous, alt_simple, -15)
 
 /obj/item/claymore/suicide_act(mob/living/user)
-	user.visible_message(span_suicide("[user] is falling on [src]! It looks like [user.p_theyre()] trying to commit suicide!"))
+	user.visible_message(span_suicide("[user]正倒在[src]上！看起来[user.p_theyre()]想自杀！"))
 	return BRUTELOSS
 
 /obj/item/claymore/hit_reaction(mob/living/carbon/human/owner, atom/movable/hitby, attack_text = "the attack", final_block_chance = 0, damage = 0, attack_type = MELEE_ATTACK, damage_type = BRUTE)

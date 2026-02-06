@@ -4,8 +4,8 @@
 	theme = /datum/mod_theme/lustwish
 
 /obj/item/mod/module/hypno_visor
-	name = "hypnosis module"
-	desc = "A module inserted into the visor of a suit in which commands can be processed. Use on self to set directives."
+	name = "催眠模块"
+	desc = "一个插入到模块服面罩中的模块，可以处理指令。对自己使用以设置指令。"
 	icon = 'modular_zubbers/icons/mob/clothing/modsuit/mod_modules.dmi'
 	icon_state = "module_hypno"
 	module_type = MODULE_PASSIVE
@@ -26,13 +26,13 @@
 
 /obj/item/mod/module/hypno_visor/attack_self(mob/user)
 	. = ..()
-	hypno_message = tgui_input_text(user, "Change the hypnotic phrase.", max_length = MAX_MESSAGE_LEN)
+	hypno_message = tgui_input_text(user, "更改催眠短语。", max_length = MAX_MESSAGE_LEN)
 
 /obj/item/mod/module/hypno_visor/on_part_activation()
 	if(!(mod.wearer.client?.prefs?.read_preference(/datum/preference/toggle/erp/hypnosis) && mod.wearer.client.prefs.read_preference(/datum/preference/toggle/erp/sex_toy)))
-		return to_chat(mod.wearer, span_warning("Mind resilient to hypnotic effects: Shutting down"))
+		return to_chat(mod.wearer, span_warning("心智对催眠效果有抵抗力：正在关闭"))
 	if(hypno_message == "" || isnull(hypno_message))
-		hypno_message = "Obey"
+		hypno_message = "服从"
 	mod.wearer.gain_trauma(new /datum/brain_trauma/very_special/induced_hypnosis(hypno_message), TRAUMA_RESILIENCE_MAGIC)
 
 /obj/item/mod/module/hypno_visor/on_part_deactivation(deleting = FALSE)
@@ -56,8 +56,8 @@
 	set_holdable(can_hold_list = list(/obj/item/remote_controller))
 
 /obj/item/mod/module/remote_control
-	name = "modsuit remote module"
-	desc = "A module, once inserted, will allow anyone with its linked remote to control all functionality of the suit."
+	name = "模块服遥控模块"
+	desc = "一个模块，插入后将允许任何持有配对遥控器的人控制模块服的所有功能。"
 	icon = 'modular_zubbers/icons/mob/clothing/modsuit/mod_modules.dmi'
 	icon_state = "module_remote"
 	module_type = MODULE_PASSIVE
@@ -77,7 +77,7 @@
 
 /obj/item/mod/module/remote_control/can_install(obj/item/mod/control/mod)
 	if(locate(/obj/item/remote_controller) in contents)
-		balloon_alert(usr, "remove remote from storage")
+		balloon_alert(usr, "从存储中移除遥控器")
 		return FALSE
 	return TRUE
 
@@ -86,8 +86,8 @@
 	atom_storage?.open_storage(user)
 
 /obj/item/remote_controller
-	name = "modsuit remote"
-	desc = "A remote that allows control of a modsuit once its paired module is inserted."
+	name = "模块服遥控器"
+	desc = "一个遥控器，一旦配对模块被插入，就可以控制模块服。"
 	icon = 'modular_zubbers/icons/mob/clothing/modsuit/mod_modules.dmi'
 	icon_state = "remote_item"
 	w_class = WEIGHT_CLASS_SMALL

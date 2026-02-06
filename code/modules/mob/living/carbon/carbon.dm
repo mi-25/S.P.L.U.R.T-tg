@@ -50,8 +50,8 @@
 			take_bodypart_damage(5 + 5 * extra_speed, check_armor = TRUE, wound_bonus = extra_speed * 5)
 		else if(!iscarbon(hit_atom) && extra_speed)
 			take_bodypart_damage(5 * extra_speed, check_armor = TRUE, wound_bonus = extra_speed * 5)
-		visible_message(span_danger("[src] crashes into [hit_atom][extra_speed ? " really hard" : ""]!"),\
-			span_userdanger("You violently crash into [hit_atom][extra_speed ? " extra hard" : ""]!"))
+		visible_message(span_danger("[src]撞向了[hit_atom][extra_speed ? "，非常猛烈" : ""]！"),\
+			span_userdanger("你猛烈地撞向了[hit_atom][extra_speed ? "，格外用力" : ""]！"))
 		log_combat(hit_atom, src, "crashes ")
 		oof_noise = TRUE
 
@@ -71,21 +71,21 @@
 		oof_noise = TRUE
 
 		if(blocked)
-			visible_message(span_danger("[src] crashes into [victim][extra_speed ? " really hard" : ""], but [victim] blocked the worst of it!"),\
-				span_userdanger("You violently crash into [victim][extra_speed ? " extra hard" : ""], but [victim] managed to block the worst of it!"))
+			visible_message(span_danger("[src]撞向了[victim][extra_speed ? "，非常猛烈" : ""]，但[victim]格挡住了大部分冲击！"),\
+				span_userdanger("你猛烈地撞向了[victim][extra_speed ? "，格外用力" : ""]，但[victim]成功格挡住了大部分冲击！"))
 			log_combat(src, victim, "crashed into and was blocked by")
 			return
 		else if(HAS_TRAIT(victim, TRAIT_BRAWLING_KNOCKDOWN_BLOCKED))
 			victim.take_bodypart_damage(10 + 5 * extra_speed, check_armor = TRUE, wound_bonus = extra_speed * 5)
 			victim.apply_damage(10 + 10 * extra_speed, STAMINA)
 			victim.adjust_staggered_up_to(STAGGERED_SLOWDOWN_LENGTH * 2, 10 SECONDS)
-			visible_message(span_danger("[src] crashes into [victim][extra_speed ? " really hard" : ""], but [victim] was able to stay on their feet!"),\
-				span_userdanger("You violently crash into [victim][extra_speed ? " extra hard" : ""], but [victim] managed to stay on their feet!"))
+			visible_message(span_danger("[src]撞向了[victim][extra_speed ? "，非常猛烈" : ""]，但[victim]稳住了身形！"),\
+				span_userdanger("你猛烈地撞向了[victim][extra_speed ? "，格外用力" : ""]，但[victim]成功稳住了身形！"))
 		else
 			victim.Paralyze(2 SECONDS)
 			victim.take_bodypart_damage(10 + 5 * extra_speed, check_armor = TRUE, wound_bonus = extra_speed * 5)
-			visible_message(span_danger("[src] crashes into [victim][extra_speed ? " really hard" : ""], knocking them both over!"),\
-				span_userdanger("You violently crash into [victim][extra_speed ? " extra hard" : ""]!"))
+			visible_message(span_danger("[src]撞向了[victim][extra_speed ? "，非常猛烈" : ""]，把两人都撞倒了！"),\
+				span_userdanger("你猛烈地撞向了[victim][extra_speed ? "，格外用力" : ""]！"))
 		log_combat(src, victim, "crashed into")
 
 	if(oof_noise)
@@ -136,13 +136,13 @@
 		var/obj/item/restraints/cuffs = src.get_item_by_slot(ITEM_SLOT_HANDCUFFED)
 		buckle_cd = cuffs.breakouttime
 
-	visible_message(span_warning("[src] attempts to unbuckle [p_them()]self!"),
-				span_notice("You attempt to unbuckle yourself... \
-				(This will take around [DisplayTimeText(buckle_cd)] and you must stay still.)"))
+	visible_message(span_warning("[src]试图解开[p_them()]自己的束缚！"),
+				span_notice("你试图解开自己的束缚... \
+				（这需要大约[DisplayTimeText(buckle_cd)]，你必须保持静止。）"))
 
 	if(!do_after(src, buckle_cd, target = src, timed_action_flags = IGNORE_HELD_ITEM, hidden = TRUE))
 		if(buckled)
-			to_chat(src, span_warning("You fail to unbuckle yourself!"))
+			to_chat(src, span_warning("你未能解开自己的束缚！"))
 		return
 
 	if(QDELETED(src) || isnull(buckled))
@@ -183,26 +183,26 @@
 	if((cuff_break != INSTANT_CUFFBREAK) && (SEND_SIGNAL(src, COMSIG_MOB_REMOVING_CUFFS, cuffs) & COMSIG_MOB_BLOCK_CUFF_REMOVAL))
 		return //The blocking object should sent a fluff-appropriate to_chat about cuff removal being blocked
 	if(cuffs.item_flags & BEING_REMOVED)
-		to_chat(src, span_warning("You're already attempting to remove [cuffs]!"))
+		to_chat(src, span_warning("你已经在试图移除[cuffs]了！"))
 		return
 	cuffs.item_flags |= BEING_REMOVED
 	breakouttime = cuffs.breakouttime
 	if(!cuff_break)
-		visible_message(span_warning("[src] attempts to remove [cuffs]!"))
-		to_chat(src, span_notice("You attempt to remove [cuffs]... (This will take around [DisplayTimeText(breakouttime)] and you need to stand still.)"))
+		visible_message(span_warning("[src]试图移除[cuffs]！"))
+		to_chat(src, span_notice("你试图移除[cuffs]...（这需要大约[DisplayTimeText(breakouttime)]，你需要保持静止。）"))
 		if(do_after(src, breakouttime, target = src, timed_action_flags = IGNORE_HELD_ITEM, hidden = TRUE))
 			. = clear_cuffs(cuffs, cuff_break)
 		else
-			to_chat(src, span_warning("You fail to remove [cuffs]!"))
+			to_chat(src, span_warning("你未能移除[cuffs]！"))
 
 	else if(cuff_break == FAST_CUFFBREAK)
 		breakouttime = 5 SECONDS
-		visible_message(span_warning("[src] is trying to break [cuffs]!"))
-		to_chat(src, span_notice("You attempt to break [cuffs]... (This will take around 5 seconds and you need to stand still.)"))
+		visible_message(span_warning("[src]正在试图挣脱[cuffs]！"))
+		to_chat(src, span_notice("你试图挣脱[cuffs]...（这需要大约5秒，你需要保持静止。）"))
 		if(do_after(src, breakouttime, target = src, timed_action_flags = IGNORE_HELD_ITEM))
 			. = clear_cuffs(cuffs, cuff_break)
 		else
-			to_chat(src, span_warning("You fail to break [cuffs]!"))
+			to_chat(src, span_warning("你未能挣脱[cuffs]！"))
 
 	else if(cuff_break == INSTANT_CUFFBREAK)
 		. = clear_cuffs(cuffs, cuff_break)
@@ -221,8 +221,8 @@
 		return FALSE
 	if(I != handcuffed && I != legcuffed)
 		return FALSE
-	visible_message(span_danger("[src] manages to [cuff_break ? "break" : "remove"] [I]!"))
-	to_chat(src, span_notice("You successfully [cuff_break ? "break" : "remove"] [I]."))
+	visible_message(span_danger("[src]成功[cuff_break ? "挣脱" : "移除"]了[I]！"))
+	to_chat(src, span_notice("你成功[cuff_break ? "挣脱" : "移除"]了[I]。"))
 
 	if(cuff_break)
 		. = !((I == handcuffed) || (I == legcuffed))
@@ -296,8 +296,8 @@
 	if(!force && !blood && (nutrition < 100))
 		if(message)
 			visible_message(
-				span_warning("[src] dry heaves!"),
-				span_userdanger("You try to throw up, but there's nothing in your stomach!"),
+				span_warning("[src]干呕着！"),
+				span_userdanger("你想呕吐，但胃里什么都没有！"),
 			)
 		if(stun)
 			var/stun_time = 20 SECONDS
@@ -311,16 +311,16 @@
 	if(is_mouth_covered()) //make this add a blood/vomit overlay later it'll be hilarious
 		if(message)
 			visible_message(
-				span_danger("[src] throws up all over [p_them()]self!"),
-				span_userdanger("You throw up all over yourself!"),
+				span_danger("[src]吐了[p_them()]自己一身！"),
+				span_userdanger("你吐了自己一身！"),
 			)
 			add_mood_event("vomit", /datum/mood_event/vomitself)
 		distance = 0
 	else
 		if(message)
 			visible_message(
-				span_danger("[src] throws up!"),
-				span_userdanger("You throw up!"),
+				span_danger("[src]呕吐了！"),
+				span_userdanger("你呕吐了！"),
 			)
 			if(!isflyperson(src))
 				add_mood_event("vomit", /datum/mood_event/vomit)
@@ -370,8 +370,8 @@
  * * amount: int The amount of reagent
  */
 /mob/living/carbon/proc/expel_ingested(atom/bite, amount)
-	visible_message(span_danger("[src] throws up all over [p_them()]self!"), \
-					span_userdanger("You are unable to keep the [bite] down without a stomach!"))
+	visible_message(span_danger("[src]吐了[p_them()]自己一身！"), \
+					span_userdanger("没有胃，你无法留住[bite]！"))
 
 	var/turf/floor = get_turf(src)
 	var/obj/effect/decal/cleanable/vomit/spew = new(floor, get_static_viruses())
@@ -1357,10 +1357,10 @@
 	if(isnull(head))
 		return ..()
 	if(!can_bleed())
-		to_chat(src, span_notice("You get a headache."))
+		to_chat(src, span_notice("你感到头痛。"))
 		return
 	head.adjustBleedStacks(5)
-	visible_message(span_notice("[src] gets a nosebleed."), span_warning("You get a nosebleed."))
+	visible_message(span_notice("[src]流鼻血了。"), span_warning("你流鼻血了。"))
 
 /mob/living/carbon/check_hit_limb_zone_name(hit_zone)
 	if(get_bodypart(hit_zone))

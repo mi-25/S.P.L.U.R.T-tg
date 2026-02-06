@@ -123,7 +123,7 @@
 
 	// Character info - Reoriented to show from user's perspective
 	.["isTargetSelf"] = (user == self)
-	.["interactingWith"] = user == self ? "Interacting with yourself..." : "Interacting with \the [self]..."
+	.["interactingWith"] = user == self ? "与自己互动..." : "与[self]互动..."
 
 	// Primary attributes (user's stats)
 	if(user)
@@ -249,66 +249,66 @@
 
 	// Basic attributes
 	if(target.get_bodypart(BODY_ZONE_L_ARM) || target.get_bodypart(BODY_ZONE_R_ARM))
-		attributes += "have hands"
+		attributes += "有手"
 	if(target.get_bodypart(BODY_ZONE_HEAD) || (!iscarbon(target) && target.simulated_interaction_requirements[INTERACTION_REQUIRE_SELF_MOUTH]))
-		attributes += "have a mouth, which is [target.is_mouth_covered() ? "covered" : "uncovered"]"
+		attributes += "有嘴巴，目前[target.is_mouth_covered() ? "被遮住" : "未遮住"]"
 
 	// Sexual exhaustion
 	if(target.refractory_period > REALTIMEOFDAY) // fix - was ticks since server start vs ticks since midnight
-		attributes += "are sexually exhausted for the time being"
+		attributes += "暂时处于性疲劳状态"
 
 	// Intent
 	var/intent_name = resolve_intent_name(target)
 	switch(intent_name)
 		if("help")
-			attributes += "are acting gentle"
+			attributes += "表现得很温柔"
 		if("disarm")
-			attributes += "are acting playful"
+			attributes += "表现得很顽皮"
 		if("grab")
-			attributes += "are acting rough"
+			attributes += "表现得很粗暴"
 		if("harm")
-			attributes += "are fighting anyone who comes near"
+			attributes += "正在攻击靠近的任何人"
 
 	// Clothing state
 	var/is_topless = target.is_topless()
 	var/is_bottomless = target.is_bottomless()
 	if(is_topless && is_bottomless)
-		attributes += "are naked"
+		attributes += "全裸"
 	else if((is_topless && !is_bottomless) || (!is_topless && is_bottomless))
-		attributes += "are partially clothed"
+		attributes += "半裸"
 	else
-		attributes += "are clothed"
+		attributes += "穿着衣服"
 
 	// Genital checks
 	if(target.has_penis(REQUIRE_GENITAL_EXPOSED))
-		attributes += "have a penis"
+		attributes += "有阴茎"
 	/* Not implemented yet
 	if(target.has_strapon(REQUIRE_GENITAL_EXPOSED))
 		attributes += "have a strapon"
 	*/
 	if(target.has_balls(REQUIRE_GENITAL_EXPOSED))
-		attributes += "have a ballsack"
+		attributes += "有睾丸"
 	if(target.has_vagina(REQUIRE_GENITAL_EXPOSED))
-		attributes += "have a vagina"
+		attributes += "有阴道"
 	if(target.has_breasts(REQUIRE_GENITAL_EXPOSED))
-		attributes += "have breasts"
+		attributes += "有乳房"
 	if(target.has_anus(REQUIRE_GENITAL_EXPOSED))
-		attributes += "have an anus"
+		attributes += "有肛门"
 	if(target.has_belly(REQUIRE_GENITAL_EXPOSED))
-		attributes += "have a belly"
+		attributes += "有肚子"
 
 	// Feet
 	if(target.has_feet(REQUIRE_GENITAL_EXPOSED))
 		switch(target.get_num_feet())
 			if(2)
-				attributes += "have a pair of feet"
+				attributes += "有一双脚"
 			if(1)
-				attributes += "have a single foot"
+				attributes += "有一只脚"
 
 	// Tail
 	var/mob/living/carbon/human/human_target = target
 	if(ishuman(human_target) && human_target.has_tail(REQUIRE_GENITAL_ANY))
-		attributes += "have a tail"
+		attributes += "有尾巴"
 
 	return attributes
 
@@ -353,7 +353,7 @@
 			mob_belly.genital_size = min(mob_belly.genital_size + growth_amount, BELLY_MAX_SIZE)
 			to_update += mob_belly
 			if(mob_belly.genital_size > prev_size)
-				human_self.visible_message(span_lewd("\The <b>[human_self]</b>'s belly bloats outwards as it gets pumped full of [LOWER_TEXT(initial(fluid_source.internal_fluid_datum:name))]!"))
+				human_self.visible_message(span_lewd("<b>[human_self]</b>的肚子向外膨胀，被[LOWER_TEXT(initial(fluid_source.internal_fluid_datum:name))]灌满了！"))
 
 		// Handle butt inflation when belly gets big enough from anal
 		if(slot == ORGAN_SLOT_ANUS && mob_belly.genital_size >= 3)
@@ -369,7 +369,7 @@
 				mob_butt.genital_size = min(mob_butt.genital_size + growth_amount, BUTT_MAX_SIZE)
 				to_update += mob_butt
 				if(mob_butt.genital_size > prev_size)
-					human_self.visible_message(span_lewd("\The <b>[human_self]</b>'s ass swells outwards as it gets pumped full of [LOWER_TEXT(initial(fluid_source.internal_fluid_datum:name))]!"))
+					human_self.visible_message(span_lewd("<b>[human_self]</b>的臀部向外膨胀，被[LOWER_TEXT(initial(fluid_source.internal_fluid_datum:name))]灌满了！"))
 
 	// Handle penis and testicles inflation
 	else if(slot == ORGAN_SLOT_PENIS)
@@ -418,7 +418,7 @@
 			mob_penis.Insert(human_self, 0, FALSE)
 			mob_penis.genital_size = 4
 			mob_penis.girth = 3
-			human_self.visible_message(span_lewd("\The <b>[human_self]</b>'s crotch feels warm as something suddenly sprouts between their legs."))
+			human_self.visible_message(span_lewd("<b>[human_self]</b>的胯部感到温暖，突然有什么东西从两腿之间长了出来。"))
 
 		if(mob_penis && human_self.client?.prefs.read_preference(/datum/preference/toggle/erp/penis_enlargement))
 			var/prev_size = mob_penis.genital_size
@@ -427,7 +427,7 @@
 			mob_penis.girth = min(mob_penis.girth + (growth_amount * 0.5), PENIS_MAX_GIRTH)
 			to_update += mob_penis
 			if(mob_penis.genital_size > prev_size || mob_penis.girth > prev_girth)
-				human_self.visible_message(span_lewd("\The <b>[human_self]</b>'s penis swells larger as it gets pumped full of [LOWER_TEXT(initial(fluid_source.internal_fluid_datum:name))]!"))
+				human_self.visible_message(span_lewd("<b>[human_self]</b>的阴茎膨胀变大，被[LOWER_TEXT(initial(fluid_source.internal_fluid_datum:name))]灌满了！"))
 
 		var/obj/item/organ/genital/testicles/mob_testicles = human_self.get_organ_slot(ORGAN_SLOT_TESTICLES)
 		if(!mob_testicles && human_self.client?.prefs.read_preference(/datum/preference/toggle/erp/new_genitalia_growth))
@@ -441,7 +441,7 @@
 			mob_testicles.genital_size = min(mob_testicles.genital_size + (growth_amount * 0.5), TESTICLES_MAX_SIZE)
 			to_update += mob_testicles
 			if(mob_testicles.genital_size > prev_size)
-				human_self.visible_message(span_lewd("\The <b>[human_self]</b>'s balls grow heavier as they get pumped full of [LOWER_TEXT(initial(fluid_source.internal_fluid_datum:name))]!"))
+				human_self.visible_message(span_lewd("<b>[human_self]</b>的睾丸变得更沉重，被[LOWER_TEXT(initial(fluid_source.internal_fluid_datum:name))]灌满了！"))
 
 	// Handle breast inflation
 	else if(slot == ORGAN_SLOT_BREASTS)
@@ -457,11 +457,11 @@
 			mob_breasts.genital_size = BREASTS_MIN_SIZE
 
 			if(mob_breasts.visibility_preference == GENITAL_ALWAYS_SHOW || human_self.is_topless())
-				human_self.visible_message(span_notice("[human_self]'s bust suddenly expands!"))
-				to_chat(human_self, span_purple("Your chest feels warm, tingling with sensitivity as it expands outward."))
+				human_self.visible_message(span_notice("[human_self]的胸部突然膨胀了！"))
+				to_chat(human_self, span_purple("你的胸部感到温暖，随着向外膨胀而产生刺痛的敏感感。"))
 			else
-				human_self.visible_message(span_notice("The area around [human_self]'s chest suddenly bounces a bit."))
-				to_chat(human_self, span_purple("Your chest feels warm, tingling with sensitivity as it strains against your clothes."))
+				human_self.visible_message(span_notice("[human_self]的胸部区域突然弹跳了一下。"))
+				to_chat(human_self, span_purple("你的胸部感到温暖，随着紧贴衣服而产生刺痛的敏感感。"))
 
 		if(mob_breasts && human_self.client?.prefs.read_preference(/datum/preference/toggle/erp/breast_enlargement))
 			var/prev_size = mob_breasts.genital_size
@@ -469,22 +469,22 @@
 			to_update += mob_breasts
 			if(mob_breasts.genital_size > prev_size)
 				if(mob_breasts.visibility_preference == GENITAL_ALWAYS_SHOW || human_self.is_topless())
-					human_self.visible_message(span_lewd("\The <b>[human_self]</b>'s breasts swell larger as they get pumped full of [LOWER_TEXT(initial(fluid_source.internal_fluid_datum:name))]!"))
+					human_self.visible_message(span_lewd("<b>[human_self]</b>的乳房膨胀变大，被[LOWER_TEXT(initial(fluid_source.internal_fluid_datum:name))]灌满了！"))
 				else
-					human_self.visible_message(span_lewd("\The area around [human_self]'s chest suddenly bounces a bit."))
+					human_self.visible_message(span_lewd("[human_self]的胸部区域突然弹跳了一下。"))
 
 	for(var/obj/item/organ/genital/genital in to_update)
 		call(/datum/reagent/drug/aphrodisiac::update_appearance())(human_self, genital)
 
 /mob/living/proc/interact_with()
-	set name = "Interact With"
-	set desc = "Perform an interaction with someone."
+	set name = "互动"
+	set desc = "与某人进行互动。"
 	set category = "IC"
 	set src in view(usr.client)
 
 	var/datum/component/interactable/menu = GetComponent(/datum/component/interactable)
 	if(!menu)
-		to_chat(src, span_warning("You must have done something really bad to not have an interaction component."))
+		to_chat(src, span_warning("你一定做了什么非常糟糕的事情才会没有互动组件。"))
 		return
 
 	menu.open_interaction_menu(src, usr)

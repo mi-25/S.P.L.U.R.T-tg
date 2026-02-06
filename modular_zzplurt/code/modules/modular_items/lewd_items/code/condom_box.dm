@@ -1,6 +1,6 @@
 /obj/item/storage/box/condoms
-	name = "surplus condom box"
-	desc = "A large collection of condoms, suitable for the safest of sluts!"
+	name = "剩余避孕套盒"
+	desc = "一大盒避孕套，适合最注重安全的人！"
 	icon = 'modular_zzplurt/icons/obj/lewd/fleshlight.dmi'
 	icon_state = "box"
 	illustration = null

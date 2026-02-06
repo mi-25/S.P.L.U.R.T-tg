@@ -71,7 +71,7 @@
 //rename collar code
 
 /obj/item/clothing/neck/kink_collar/attack_self(mob/user)
-	tagname = stripped_input(user, "你想更改标签上的名字吗？", "给你的新宠物命名", "Spot", MAX_NAME_LEN)
+	tagname = stripped_input(user, "你想更改标签上的名字吗？", "给你的新宠物命名", "小斑", MAX_NAME_LEN)
 	name = "[initial(name)] - [tagname]"
 
 /*
@@ -79,8 +79,8 @@
 */
 
 /obj/item/clothing/neck/kink_collar/locked
-	name = "locked collar"
-	desc = "A tight collar. It appears to have some kind of lock."
+	name = "带锁项圈"
+	desc = "一个紧致的项圈。它似乎有某种锁。"
 	icon = 'modular_skyrat/modules/modular_items/lewd_items/icons/obj/lewd_clothing/lewd_neck.dmi'
 	worn_icon = 'modular_skyrat/modules/modular_items/lewd_items/icons/mob/lewd_clothing/lewd_neck.dmi'
 	icon_state = "lock_collar_cyan"
@@ -112,12 +112,12 @@
 
 /obj/item/clothing/neck/kink_collar/locked/proc/IsLocked(to_lock, mob/user)
 	if(!broken)
-		to_chat(user, span_warning("[to_lock ? "The collar locks with a resounding click!" : "The collar unlocks with a small clunk."]"))
+		to_chat(user, span_warning("[to_lock ? "项圈发出响亮的咔嗒声锁上了！" : "项圈发出轻微的咔嗒声解锁了。"]"))
 		locked = (to_lock ? TRUE : FALSE)
 		if(!to_lock)
 			REMOVE_TRAIT(src, TRAIT_NODROP, TRAIT_NODROP)
 		return
-	to_chat(user, span_warning("It looks like the lock is broken - now it's just an ordinary old collar."))
+	to_chat(user, span_warning("看起来锁已经坏了——现在它只是一个普通的旧项圈。"))
 	locked = FALSE
 	REMOVE_TRAIT(src, TRAIT_NODROP, TRAIT_NODROP)
 
@@ -127,27 +127,27 @@
 	if(attack_item.key_id == REF(src))
 		IsLocked((locked ? FALSE : TRUE), user)
 		return
-	to_chat(user, span_warning("This isn't the correct key!"))
+	to_chat(user, span_warning("这不是正确的钥匙！"))
 
 /obj/item/clothing/neck/kink_collar/locked/equipped(mob/living/carbon/human/user, slot)
 	. = ..()
 	if(!(locked && src == user.wear_neck))
 		return
 	ADD_TRAIT(src, TRAIT_NODROP, TRAIT_NODROP)
-	to_chat(user, span_warning("You hear a suspicious click around your neck - it seems the collar is now locked!"))
+	to_chat(user, span_warning("你听到脖子周围传来可疑的咔嗒声——看来项圈现在锁上了！"))
 
 //this code prevents wearer from taking collar off if it's locked. Have fun!
 
 /obj/item/clothing/neck/kink_collar/locked/attack_hand(mob/user)
 	if(loc == user && user.get_item_by_slot(ITEM_SLOT_NECK) && locked)
-		to_chat(user, span_warning("The collar is locked! You'll need to unlock it before you can take it off!"))
+		to_chat(user, span_warning("项圈被锁住了！你需要先解锁才能取下它！"))
 		return
 	add_fingerprint(usr)
 	return ..()
 
 /obj/item/clothing/neck/kink_collar/locked/mouse_drop_dragged(atom/over_object, mob/user, src_location, over_location, params)
 	if(loc == user && user.get_item_by_slot(ITEM_SLOT_NECK) && locked && istype(over_object, /atom/movable/screen/inventory/hand))
-		to_chat(user, span_warning("The collar is locked! You'll need to unlock it before you can take it off!"))
+		to_chat(user, span_warning("项圈被锁住了！你需要先解锁才能取下它！"))
 		return
 	var/atom/movable/screen/inventory/hand/inv_hand = over_object
 	if(user.putItemFromInventoryInHandIfPossible(src, inv_hand.held_index))
@@ -159,8 +159,8 @@
 //It's 2:56 of 08.04.2021, i want to sleep. Please laugh.
 
 /obj/item/key/kink_collar
-	name = "kink collar key"
-	desc = "A key for a tiny lock on a collar or bag."
+	name = "项圈钥匙"
+	desc = "用于项圈或包上小锁的钥匙。"
 	icon = 'modular_skyrat/modules/modular_items/lewd_items/icons/obj/lewd_items/lewd_items.dmi'
 	icon_state = "collar_key_metal"
 	base_icon_state = "collar_key"
@@ -183,7 +183,7 @@
 
 //changing name of key in case if we using multiple collars with same color
 /obj/item/key/kink_collar/attack_self(mob/user)
-	keyname = stripped_input(user, "Would you like to change the name on the key?", "Renaming key", "Key", MAX_NAME_LEN)
+	keyname = stripped_input(user, "你想更改钥匙上的名字吗？", "重命名钥匙", "钥匙", MAX_NAME_LEN)
 	name = "[initial(name)] - [keyname]"
 
 //we checking if we can open collar with THAT KEY with SAME ID as the collar.
@@ -197,7 +197,7 @@
 	if(REF(collar) == src.key_id)
 		collar.IsLocked((collar.locked ? FALSE : TRUE), user)
 	else
-		to_chat(user, span_warning("This isn't the correct key!"))
+		to_chat(user, span_warning("这不是正确的钥匙！"))
 
 /obj/item/circular_saw/attack(mob/living/carbon/target, mob/living/user, params)
 	if(!istype(target))
@@ -206,29 +206,29 @@
 		return ..()
 	var/obj/item/clothing/neck/kink_collar/locked/collar = target.wear_neck
 	if(collar.broken)
-		to_chat(user, span_warning("The lock is already broken!"))
+		to_chat(user, span_warning("锁已经坏了！"))
 		return
-	to_chat(user, span_warning("You try to cut the lock right off!"))
+	to_chat(user, span_warning("你试图直接切断锁！"))
 	if(target != user)
 		if(!do_after(user, 2 SECONDS, target))
 			return
 		collar.broken = TRUE
 		collar.IsLocked(FALSE, user)
 		if(prob(33)) //chance to get damage
-			to_chat(user, span_warning("You successfully cut away the lock, but gave [target.name] several cuts in the process!"))
+			to_chat(user, span_warning("你成功切断了锁，但在过程中给[target.name]造成了几处割伤！"))
 			target.apply_damage(rand(1, 4), BRUTE, BODY_ZONE_HEAD, wound_bonus = 10)
 		else
-			to_chat(user, span_warning("You successfully cut away the lock!"))
+			to_chat(user, span_warning("你成功切断了锁！"))
 	else
 		if(!do_after(user, 3 SECONDS, target))
 			return
 		if(prob(33))
-			to_chat(user, span_warning("You successfully cut away the lock, but gave yourself several cuts in the process!"))
+			to_chat(user, span_warning("你成功切断了锁，但在过程中给自己造成了几处割伤！"))
 			collar.broken = TRUE
 			collar.IsLocked(FALSE, user)
 			target.apply_damage(rand(2, 4), BRUTE, BODY_ZONE_HEAD, wound_bonus = 10)
 		else
-			to_chat(user, span_warning("You fail to cut away the lock, cutting yourself in the process!"))
+			to_chat(user, span_warning("你未能切断锁，反而在过程中割伤了自己！"))
 			target.apply_damage(rand(3, 5), BRUTE, BODY_ZONE_HEAD, wound_bonus = 30)
 
 /*
@@ -239,8 +239,8 @@
 
 //Controller stuff
 /obj/item/mind_controller
-	name = "mind controller"
-	desc = "A small remote for sending basic emotion patterns to a collar."
+	name = "意念控制器"
+	desc = "一个用于向项圈发送基本情绪模式的小型遥控器。"
 	icon = 'modular_skyrat/modules/modular_items/lewd_items/icons/obj/lewd_items/lewd_items.dmi'
 	lefthand_file = 'modular_skyrat/modules/modular_items/lewd_items/icons/mob/lewd_inhands/lewd_inhand_left.dmi'
 	righthand_file = 'modular_skyrat/modules/modular_items/lewd_items/icons/mob/lewd_inhands/lewd_inhand_right.dmi'
@@ -261,13 +261,13 @@
 /obj/item/mind_controller/attack_self(mob/user)
 	if(!collar)
 		return
-	collar.emoting = tgui_input_text(user, "Change the emotion pattern.", max_length = MAX_MESSAGE_LEN)
+	collar.emoting = tgui_input_text(user, "更改情绪模式。", max_length = MAX_MESSAGE_LEN)
 	collar.emoting_proc()
 
 //Collar stuff
 /obj/item/clothing/neck/mind_collar
-	name = "mind collar"
-	desc = "A tight collar. It has some strange high-tech emitters on the side."
+	name = "意念项圈"
+	desc = "一个紧致的项圈。侧面有一些奇怪的高科技发射器。"
 	icon = 'modular_skyrat/modules/modular_items/lewd_items/icons/obj/lewd_clothing/lewd_neck.dmi'
 	worn_icon = 'modular_skyrat/modules/modular_items/lewd_items/icons/mob/lewd_clothing/lewd_neck.dmi'
 	icon_state = "mindcollar"
@@ -275,7 +275,7 @@
 	kink_collar = TRUE
 	/// Reference to the mind control remote
 	var/obj/item/mind_controller/remote
-	var/emoting = "Shivers."
+	var/emoting = "颤抖。"
 
 /obj/item/clothing/neck/mind_collar/Initialize(mapload)
 	. = ..()

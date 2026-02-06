@@ -34,8 +34,8 @@
 		/datum/action/item_action/toggle_gag,
 	)
 	action_slots = ITEM_SLOT_HANDS | ITEM_SLOT_MASK
-	var/list/moans = list("Mmmph...", "Hmmphh", "Mmmfhg", "Gmmmh...") // Phrases to be said when the player attempts to talk when speech modification / voicebox is enabled.
-	var/list/moans_alt = list("Mhgm...", "Hmmmp!...", "Gmmmhp!") // Power probability phrases to be said when talking.
+	var/list/moans = list("唔嗯...", "嗯唔", "唔呣", "嗯...") // Phrases to be said when the player attempts to talk when speech modification / voicebox is enabled.
+	var/list/moans_alt = list("唔嗯...", "嗯唔!...", "呣嗯!") // Power probability phrases to be said when talking.
 	var/moans_alt_probability = 5 // Probability for alternative sounds to play.
 	var/temp_check = TRUE //Used to check if user unconsious to prevent choking him until he wakes up
 	/// Does the gasmask impede the user's ability to talk?

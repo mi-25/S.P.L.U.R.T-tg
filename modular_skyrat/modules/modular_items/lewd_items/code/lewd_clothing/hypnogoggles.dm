@@ -1,6 +1,6 @@
 /obj/item/clothing/glasses/hypno
-	name = "hypnotic goggles"
-	desc = "Woaa-a-ah... This is lewd."
+	name = "催眠护目镜"
+	desc = "哇哦...这太色情了。"
 	icon_state = "hypnogoggles_pink"
 	base_icon_state = "hypnogoggles"
 	inhand_icon_state = "hypnogoggles_pink"
@@ -17,7 +17,7 @@
 	/// The person wearing the goggles
 	var/mob/living/carbon/victim
 	/// The hypnotic codephrase. Default always required otherwise things break.
-	var/codephrase = "Obey."
+	var/codephrase = "服从。"
 
 /obj/item/clothing/glasses/hypno/equipped(mob/user, slot)//Adding hypnosis on equip
 	. = ..()
@@ -29,7 +29,7 @@
 	if(codephrase != "")
 		victim.gain_trauma(new /datum/brain_trauma/very_special/induced_hypnosis(codephrase), TRAUMA_RESILIENCE_MAGIC)
 	else
-		codephrase = "Obey."
+		codephrase = "服从。"
 		victim.gain_trauma(new /datum/brain_trauma/very_special/induced_hypnosis(codephrase), TRAUMA_RESILIENCE_MAGIC)
 
 /obj/item/clothing/glasses/hypno/dropped(mob/user)//Removing hypnosis on unequip
@@ -49,7 +49,7 @@
 
 /obj/item/clothing/glasses/hypno/attack_self(mob/user)//Setting up hypnotising phrase
 	. = ..()
-	codephrase = tgui_input_text(user, "Change the hypnotic phrase", max_length = MAX_MESSAGE_LEN)
+	codephrase = tgui_input_text(user, "更改催眠短语", max_length = MAX_MESSAGE_LEN)
 
 /// Populates the list of hypnogoggle designs to pick from, called on init
 /obj/item/clothing/glasses/hypno/proc/populate_hypnogoggles_designs()
@@ -91,9 +91,9 @@
 	inhand_icon_state = "[base_icon_state]_[current_hypnogoggles_color]"
 
 /datum/brain_trauma/very_special/induced_hypnosis
-	name = "Hypnosis"
-	desc = "Patient's subconscious is completely enthralled by a word or sentence. It appears to be induced by something they're wearing."
-	scan_desc = "epileptic induced looping thought pattern"
+	name = "催眠"
+	desc = "患者的潜意识完全被某个词或句子所控制。这似乎是由他们佩戴的某物引起的。"
+	scan_desc = "癫痫诱发的循环思维模式"
 	gain_text = ""
 	lose_text = ""
 	resilience = TRAUMA_RESILIENCE_BASIC
@@ -116,19 +116,19 @@
 /datum/brain_trauma/very_special/induced_hypnosis/on_gain()
 	log_game("[key_name(owner)] was hypnogoggled'.")
 	to_chat(owner, "<span class = 'reallybig hypnophrase'>[hypnotic_phrase]</span>")
-	to_chat(owner, span_notice(pick("You feel your thoughts focusing on this phrase... you can't seem to get it out of your head.",
-									"Your head hurts, but this is all you can think of. It must be vitally important.",
-									"You feel a part of your mind repeating this over and over. You need to follow these words.",
-									"Something about this sounds... right, for some reason. You feel like you should follow these words.",
-									"These words keep echoing in your mind. You find yourself completely fascinated by them.")))
-	to_chat(owner, span_boldwarning("You've been hypnotized by this sentence. You must follow these words. If it isn't a clear order, you can freely interpret how to do so, as long as you act like the words are your highest priority."))
+	to_chat(owner, span_notice(pick("你感到思绪集中在这句话上...你似乎无法将它从脑海中驱除。",
+									"你的头很痛，但这是你唯一能想到的。这一定非常重要。",
+									"你感到大脑的一部分在不断重复这句话。你需要遵循这些话。",
+									"这句话听起来...很对，不知为何。你觉得应该遵循这些话。",
+									"这些话在你脑海中不断回响。你发现自己完全被它们迷住了。")))
+	to_chat(owner, span_boldwarning("你被这句话催眠了。你必须遵循这些话。如果不是明确的命令，你可以自由解释如何执行，只要你表现得像这些话是你的最高优先级。"))
 	var/atom/movable/screen/alert/hypnosis/hypno_alert = owner.throw_alert("hypnosis", /atom/movable/screen/alert/hypnosis)
-	hypno_alert.desc = "\"[hypnotic_phrase]\"... your mind seems to be fixated on this concept."
+	hypno_alert.desc = "\"[hypnotic_phrase]\"...你的思维似乎被这个概念所固定。"
 	return ..()
 
 /datum/brain_trauma/very_special/induced_hypnosis/on_lose()
 	log_game("[key_name(owner)] is no longer hypnogoggled.")
-	to_chat(owner, span_userdanger("You suddenly snap out of your hypnosis. The phrase '[hypnotic_phrase]' no longer feels important to you."))
+	to_chat(owner, span_userdanger("你突然从催眠中清醒过来。短语'[hypnotic_phrase]'对你来说不再重要了。"))
 	owner.clear_alert("hypnosis")
 	..()
 

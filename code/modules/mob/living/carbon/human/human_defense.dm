@@ -48,8 +48,8 @@
 		return ..()
 
 	visible_message(
-		span_danger("\The [hitting_projectile] gets reflected by [src]!"),
-		span_userdanger("\The [hitting_projectile] gets reflected by [src]!"),
+		span_danger("[hitting_projectile]被[src]反弹了！"),
+		span_userdanger("[hitting_projectile]被[src]反弹了！"),
 	)
 	// Finds and plays the block_sound of item which reflected
 	for(var/obj/item/held_item in held_items)
@@ -114,9 +114,9 @@
 		return
 	var/obj/item/bodypart/arm/active_arm = user.get_active_hand()
 	playsound(loc, active_arm.unarmed_attack_sound, 25, TRUE, -1)
-	visible_message(span_danger("[user] [hulk_verb]ed [src]!"), \
-					span_userdanger("[user] [hulk_verb]ed [src]!"), span_hear("You hear a sickening sound of flesh hitting flesh!"), null, user)
-	to_chat(user, span_danger("You [hulk_verb] [src]!"))
+	visible_message(span_danger("[user]猛击了[src]！"), \
+					span_userdanger("[user]猛击了你！"), span_hear("你听到了令人作呕的肉体撞击声！"), null, user)
+	to_chat(user, span_danger("你猛击了[src]！"))
 	apply_damage(15, BRUTE, wound_bonus=10)
 
 /mob/living/carbon/human/attack_hand(mob/user, list/modifiers)
@@ -139,9 +139,9 @@
 		target.Knockdown(SHOVE_KNOCKDOWN_HUMAN, daze_amount = 3 SECONDS)
 	if(!HAS_TRAIT(src, TRAIT_BRAWLING_KNOCKDOWN_BLOCKED))
 		Knockdown(SHOVE_KNOCKDOWN_COLLATERAL, daze_amount = 3 SECONDS)
-	target.visible_message(span_danger("[shover] shoves [target.name] into [name]!"),
-		span_userdanger("You're shoved into [name] by [shover]!"), span_hear("You hear aggressive shuffling followed by a loud thud!"), COMBAT_MESSAGE_RANGE, src)
-	to_chat(src, span_danger("You shove [target.name] into [name]!"))
+	target.visible_message(span_danger("[shover]把[target.name]推向了[name]！"),
+		span_userdanger("你被[shover]推向了[name]！"), span_hear("你听到了激烈的推搡声，接着是一声巨响！"), COMBAT_MESSAGE_RANGE, src)
+	to_chat(src, span_danger("你把[target.name]推向了[name]！"))
 	log_combat(shover, target, "shoved", addition = "into [name][weapon ? " with [weapon]" : ""]")
 	return COMSIG_LIVING_SHOVE_HANDLED
 
@@ -153,23 +153,23 @@
 		var/obj/item/I = get_active_held_item()
 		if(I && !(I.item_flags & ABSTRACT) && dropItemToGround(I))
 			playsound(loc, 'sound/items/weapons/slash.ogg', 25, TRUE, -1)
-			visible_message(span_danger("[user] disarmed [src]!"), \
-							span_userdanger("[user] disarmed you!"), span_hear("You hear aggressive shuffling!"), null, user)
-			to_chat(user, span_danger("You disarm [src]!"))
+			visible_message(span_danger("[user]缴械了[src]！"), \
+							span_userdanger("[user]缴械了你！"), span_hear("你听到了激烈的推搡声！"), null, user)
+			to_chat(user, span_danger("你缴械了[src]！"))
 		else if(!user.client || prob(5)) // only natural monkeys get to stun reliably, (they only do it occasionaly)
 			playsound(loc, 'sound/items/weapons/pierce.ogg', 25, TRUE, -1)
 			if (src.IsKnockdown() && !src.IsParalyzed())
 				Paralyze(40)
 				log_combat(user, src, "pinned")
-				visible_message(span_danger("[user] pins [src] down!"), \
-								span_userdanger("[user] pins you down!"), span_hear("You hear shuffling and a muffled groan!"), null, user)
-				to_chat(user, span_danger("You pin [src] down!"))
+				visible_message(span_danger("[user]压制住了[src]！"), \
+								span_userdanger("[user]压制住了你！"), span_hear("你听到了推搡声和低沉的呻吟！"), null, user)
+				to_chat(user, span_danger("你压制住了[src]！"))
 			else
 				Knockdown(30)
 				log_combat(user, src, "tackled")
-				visible_message(span_danger("[user] tackles [src] down!"), \
-								span_userdanger("[user] tackles you down!"), span_hear("You hear aggressive shuffling followed by a loud thud!"), null, user)
-				to_chat(user, span_danger("You tackle [src] down!"))
+				visible_message(span_danger("[user]扑倒了[src]！"), \
+								span_userdanger("[user]扑倒了你！"), span_hear("你听到了激烈的推搡声，接着是一声巨响！"), null, user)
+				to_chat(user, span_danger("你扑倒了[src]！"))
 		return TRUE
 
 	if(!user.combat_mode)

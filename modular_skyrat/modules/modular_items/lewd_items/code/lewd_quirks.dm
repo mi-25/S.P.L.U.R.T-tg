@@ -10,11 +10,11 @@
 	abstract_type = /datum/brain_trauma/very_special
 
 /datum/brain_trauma/very_special/bimbo
-	name = "Permanent hormonal disruption"
-	desc = "The patient has completely lost the ability to form speech and seems extremely aroused."
-	scan_desc = "permanent hormonal disruption"
-	gain_text = span_purple("Your thoughts get cloudy, but it turns you on like hell.")
-	lose_text = span_warning("A pleasant coolness spreads throughout your body, You are thinking clearly again.")
+	name = "永久性荷尔蒙紊乱"
+	desc = "患者完全失去了正常说话的能力，似乎极度兴奋。"
+	scan_desc = "永久性荷尔蒙紊乱"
+	gain_text = span_purple("你的思绪变得模糊，但这让你无比兴奋。")
+	lose_text = span_warning("一股舒适的清凉感遍布全身，你又能清晰地思考了。")
 	//people need to be able to gain it through the chemical OD
 	can_gain = TRUE
 	//people should not be able to randomly get this trauma
@@ -115,20 +115,20 @@
 	if(!in_company())
 		//since you aren't within company, you won't be satisfied
 		satisfaction = clamp(satisfaction - 1, 0, 1000)
-		to_chat(human_owner, span_purple("You feel so alone, but you could just... Satisfy yourself...")) // SPLURT EDIT CHANGE - Hexacrocin OD Bounty - message, was "You feel so alone without someone..."
+		to_chat(human_owner, span_purple("你感到如此孤独，但你可以...自己满足自己...")) // SPLURT EDIT CHANGE - Hexacrocin OD Bounty - message, was "You feel so alone without someone..."
 		return
 
 	switch(satisfaction)
 		if(0 to 100)
-			to_chat(human_owner, span_purple("You can feel yourself growing restless, carnal needs starting to well up inside you.")) //SPLURT EDIT CHANGE - Hexacrocin OD Bounty - message, was "You can't STAND it, you need a partner NOW!"
+			to_chat(human_owner, span_purple("你感到越来越焦躁不安，肉欲的需求开始在体内涌动。")) //SPLURT EDIT CHANGE - Hexacrocin OD Bounty - message, was "You can't STAND it, you need a partner NOW!"
 		if(101 to 150)
-			to_chat(human_owner, span_purple("Your body has returned to normal, as far as you can tell...")) //SPLURT EDIT CHANGE - Hexacrocin OD Bounty - message, was "You'd hit that. Yeah. That's at least a six."
+			to_chat(human_owner, span_purple("你的身体似乎恢复正常了...")) //SPLURT EDIT CHANGE - Hexacrocin OD Bounty - message, was "You'd hit that. Yeah. That's at least a six."
 		if(151 to 200)
-			to_chat(human_owner, span_purple("The nice, warm sensation barely lingers within you.")) // SPLURT EDIT CHANGE - Hexacrocin OD Bounty - message, was "Your clothes are feeling tight."
+			to_chat(human_owner, span_purple("那股美好而温暖的感觉几乎消失了。")) // SPLURT EDIT CHANGE - Hexacrocin OD Bounty - message, was "Your clothes are feeling tight."
 		if(201 to 250)
-			to_chat(human_owner, span_purple("The pleasantly warm feeling in your body is fading, but it's still present.")) // SPLURT EDIT CHANGE - Hexacrocin OD Bounty - message, was "Desire fogs your decisions."
+			to_chat(human_owner, span_purple("身体里那股令人愉悦的温暖感正在消退，但仍然存在。")) // SPLURT EDIT CHANGE - Hexacrocin OD Bounty - message, was "Desire fogs your decisions."
 		if(251 to 1000)
-			to_chat(human_owner, span_purple("Your body feels pleasantly warm and slightly tingly. It's a good feeling.")) // SPLURT EDIT CHANGE - Hexacrocin OD Bounty - message, was "Jeez, it's hot in here.."
+			to_chat(human_owner, span_purple("你的身体感到温暖舒适，还有点刺痒。这是一种美好的感觉。")) // SPLURT EDIT CHANGE - Hexacrocin OD Bounty - message, was "Jeez, it's hot in here.."
 
 /**
  * If we have another human in view, return true
@@ -176,7 +176,7 @@
 
 //Mood boost
 /datum/mood_event/bimbo
-	description = span_purple("So-o... Help..less... Lo-ve it!\n")
+	description = span_purple("好...无助...好喜欢!\n")
 
 /*
 *	MASOCHISM
@@ -187,13 +187,13 @@
 	var/erp_quirk = FALSE
 
 /datum/quirk/masochism
-	name = "Masochism"
-	desc = "Pain brings you indescribable pleasure."
+	name = "受虐癖"
+	desc = "疼痛会给你带来难以言喻的快感。"
 	value = 0 //ERP Traits don't have price. They are priceless. Ba-dum-tss
 	mob_trait = TRAIT_MASOCHISM
-	gain_text = span_danger("You have a sudden desire for pain...")
-	lose_text = span_notice("Ouch! Pain is... Painful again! Ou-ou-ouch!")
-	medical_record_text = "Subject has masochism."
+	gain_text = span_danger("你突然渴望疼痛...")
+	lose_text = span_notice("哎哟！疼痛又...变得痛苦了！哎哟哎哟！")
+	medical_record_text = "对象患有受虐癖。"
 	icon = FA_ICON_HEART_BROKEN
 	erp_quirk = TRUE
 
@@ -214,11 +214,11 @@
 */
 
 /datum/brain_trauma/very_special/neverboner
-	name = "Loss of libido"
-	desc = "The patient has completely lost sexual interest."
-	scan_desc = "lack of libido"
-	gain_text = span_notice("You don't feel horny anymore.")
-	lose_text = span_notice("A pleasant warmth spreads over your body.")
+	name = "性欲丧失"
+	desc = "患者完全失去了性欲。"
+	scan_desc = "性欲缺失"
+	gain_text = span_notice("你不再感到性欲了。")
+	lose_text = span_notice("一股舒适的温暖感遍布全身。")
 	random_gain = FALSE
 	resilience = TRAUMA_RESILIENCE_ABSOLUTE
 
@@ -237,13 +237,13 @@
 */
 
 /datum/quirk/sadism
-	name = "Sadism"
-	desc = "You feel pleasure when you see someone in agony."
+	name = "施虐癖"
+	desc = "看到别人痛苦时你会感到快感。"
 	value = 0 //ERP Traits don't have price. They are priceless. Ba-dum-tss
 	mob_trait = TRAIT_SADISM
-	gain_text = span_danger("You feel a sudden desire to inflict pain.")
-	lose_text = span_notice("Others' pain doesn't satisfy you anymore.")
-	medical_record_text = "Subject has sadism."
+	gain_text = span_danger("你突然渴望施加痛苦。")
+	lose_text = span_notice("他人的痛苦不再让你满足了。")
+	medical_record_text = "对象患有施虐癖。"
 	icon = FA_ICON_HAMMER
 	erp_quirk = TRUE
 
@@ -258,11 +258,11 @@
 	affected_human?.cure_trauma_type(/datum/brain_trauma/very_special/sadism, TRAUMA_RESILIENCE_ABSOLUTE)
 
 /datum/brain_trauma/very_special/sadism
-	name = "Sadism"
-	desc = "The subject's cerebral pleasure centers are more active when someone is suffering."
-	scan_desc = "sadistic tendencies"
-	gain_text = span_purple("You feel a desire to hurt somebody.")
-	lose_text = span_notice("You feel compassion again.")
+	name = "施虐癖"
+	desc = "当有人受苦时，对象的大脑快感中枢会更加活跃。"
+	scan_desc = "施虐倾向"
+	gain_text = span_purple("你渴望伤害某人。")
+	lose_text = span_notice("你又能感受到同情了。")
 	can_gain = TRUE
 	random_gain = FALSE
 	resilience = TRAUMA_RESILIENCE_ABSOLUTE
@@ -292,13 +292,13 @@
 //Shibari update quirks: Rope bunny and rigger. One have additional mood bonus (0) and exist for same reason as ananas affinity, other one can faster tie ropes on character because why not.
 //Rope bunny code
 /datum/quirk/ropebunny
-	name = "Rope bunny"
-	desc = "You love being tied up."
+	name = "绳缚爱好者"
+	desc = "你喜欢被绑起来。"
 	value = 0 //ERP Traits don't have price. They are priceless. Ba-dum-tss
 	mob_trait = TRAIT_ROPEBUNNY
-	medical_record_text = "Subject has a fondness for restraints."
-	gain_text = span_danger("You really want to be restrained for some reason.")
-	lose_text = span_notice("Being restrained doesn't arouse you anymore.")
+	medical_record_text = "对象对束缚有特殊偏好。"
+	gain_text = span_danger("你突然非常想被束缚起来。")
+	lose_text = span_notice("被束缚不再让你兴奋了。")
 	icon = FA_ICON_HANDCUFFS
 	erp_quirk = TRUE
 
@@ -314,13 +314,13 @@
 
 //Rigger code
 /datum/quirk/rigger
-	name = "Rigger"
-	desc = "You find the weaving of rope knots on the body wonderful."
+	name = "绳师"
+	desc = "你觉得在身体上编织绳结非常美妙。"
 	value = 0 //ERP Traits don't have price. They are priceless. Ba-dum-tss
 	mob_trait = TRAIT_RIGGER
-	medical_record_text = "Subject has a increased dexterity when tying knots."
-	gain_text = span_danger("Suddenly you understand rope weaving much better than before.")
-	lose_text = span_notice("Rope knots looks complicated again.")
+	medical_record_text = "对象在打绳结时灵巧度提升。"
+	gain_text = span_danger("你突然比以前更懂得如何编织绳结了。")
+	lose_text = span_notice("绳结看起来又变得复杂了。")
 	icon = FA_ICON_CHAIN_BROKEN
 	erp_quirk = TRUE
 
@@ -334,7 +334,7 @@
 	var/mob/living/carbon/human/affected_mob = quirk_holder
 	REMOVE_TRAIT(affected_mob, TRAIT_RIGGER, TRAIT_LEWDQUIRK)
 /datum/mood_event/sadistic
-	description = span_purple("Others' suffering makes me happier\n")
+	description = span_purple("他人的痛苦让我更快乐\n")
 
 /*
 *	EMPATH BONUS
@@ -344,10 +344,10 @@
 /mob/living/carbon/human/proc/get_arousal_info()
 	switch(arousal)
 		if(AROUSAL_MINIMUM_DETECTABLE to AROUSAL_LOW)
-			return span_purple("[p_They()] [p_are()] slightly blushed.") // Splurt - Replaces weirdly placed p_they with p_They. This is supposed to be CAPITALIZED
+			return span_purple("[p_They()]脸上微微泛红。") // Splurt - Replaces weirdly placed p_they with p_They. This is supposed to be CAPITALIZED
 		if(AROUSAL_LOW to AROUSAL_MEDIUM)
-			return span_purple("[p_They()] [p_are()] quite aroused and seems to be stirring up lewd thoughts in [p_their()] head.") // Splurt - Replaces weirdly placed p_they with p_They. This is supposed to be CAPITALIZED
+			return span_purple("[p_They()]相当兴奋，似乎脑海中正涌现出淫荡的想法。") // Splurt - Replaces weirdly placed p_they with p_They. This is supposed to be CAPITALIZED
 		if(AROUSAL_HIGH to AROUSAL_AUTO_CLIMAX_THRESHOLD)
-			return span_purple("[p_They()] [p_are()] aroused as hell.") // Splurt - Replaces weirdly placed p_they with p_They. This is supposed to be CAPITALIZED
+			return span_purple("[p_They()]极度兴奋。") // Splurt - Replaces weirdly placed p_they with p_They. This is supposed to be CAPITALIZED
 		if(AROUSAL_AUTO_CLIMAX_THRESHOLD to INFINITY)
-			return span_purple("[p_They()] [p_are()] extremely excited, exhausting from intolerable desire.") // Splurt - Replaces weirdly placed p_they with p_They. This is supposed to be CAPITALIZED
+			return span_purple("[p_They()]极度亢奋，因无法忍受的欲望而精疲力竭。") // Splurt - Replaces weirdly placed p_they with p_They. This is supposed to be CAPITALIZED

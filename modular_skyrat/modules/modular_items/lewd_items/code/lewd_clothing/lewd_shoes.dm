@@ -1,7 +1,7 @@
 //heels item
 /obj/item/clothing/shoes/latex_heels
-	name = "latex heels"
-	desc = "Lace up before use. It's pretty difficult to walk in these."
+	name = "乳胶高跟鞋"
+	desc = "使用前请系好鞋带。穿着这双鞋走路相当困难。"
 	icon_state = "latexheels"
 	inhand_icon_state = null
 	// We really need to find a way to condense there.
@@ -15,8 +15,8 @@
 	AddComponent(/datum/component/squeak, list('modular_skyrat/modules/modular_items/lewd_items/sounds/highheel1.ogg' = 1, 'modular_skyrat/modules/modular_items/lewd_items/sounds/highheel2.ogg' = 1), 70)
 
 /obj/item/clothing/shoes/latex_heels/domina_heels
-	name = "dominant heels"
-	desc = "A pair of aesthetically pleasing heels."
+	name = "支配者高跟鞋"
+	desc = "一双美观悦目的高跟鞋。"
 	icon_state = "dominaheels"
 
 /*
@@ -24,8 +24,8 @@
 */
 
 /obj/item/clothing/shoes/latex_socks
-	name = "latex socks"
-	desc = "A pair of shiny, split-toe socks made of some strange material."
+	name = "乳胶袜"
+	desc = "一双由某种奇特材料制成的闪亮分趾袜。"
 	icon_state = "latexsocks"
 	inhand_icon_state = null
 	w_class = WEIGHT_CLASS_SMALL

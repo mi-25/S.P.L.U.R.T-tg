@@ -1,6 +1,6 @@
 /obj/item/borg/upgrade/transform/ntjack
-	name = "borg module picker (Centcom)"
-	desc = "Allows you to to turn a cyborg into a experimental nanotrasen cyborg."
+	name = "机器人模块选择器（中央指挥部）"
+	desc = "允许你将一个机器人转变为实验性纳米传讯机器人。"
 	icon_state = "module_illegal"
 	new_model = /obj/item/robot_model/centcom
 
@@ -8,8 +8,8 @@
 	return ..()
 
 /obj/item/borg/upgrade/transform/security
-	name = "borg model picker (Security)"
-	desc = "Allows you to to turn a cyborg into a Security model, shitsec abound."
+	name = "机器人模型选择器（安保）"
+	desc = "允许你将一个机器人转变为安保型号，垃圾安保遍地。"
 	icon_state = "module_security"
 	new_model = /obj/item/robot_model/security
 
@@ -17,8 +17,8 @@
 
 //ADVANCED ROBOTICS REPAIR
 /obj/item/borg/upgrade/healthanalyzer
-	name = "Research cyborg advanced Health Analyzer"
-	desc = "An upgrade to the Research model cyborg's standard health analyzer."
+	name = "研究机器人高级健康分析仪"
+	desc = "研究型机器人标准健康分析仪的升级版。"
 	icon_state = "module_medical"
 	require_model = TRUE
 	model_type = list(/obj/item/robot_model/sci)
@@ -29,8 +29,8 @@
 
 //Science inducer
 /obj/item/borg/upgrade/inducer_sci
-	name = "Research integrated power inducer"
-	desc = "An integrated inducer that can charge a device's internal cell from power provided by the cyborg."
+	name = "研究集成电力感应器"
+	desc = "一个集成感应器，可以使用机器人提供的电力为设备的内部电池充电。"
 	require_model = TRUE
 	model_type = list(/obj/item/robot_model/sci)
 	model_flags = BORG_MODEL_RESEARCH
@@ -38,8 +38,8 @@
 
 //Bluespace RPED
 /obj/item/borg/upgrade/brped
-	name = "Research cyborg Rapid Part Exchange Device Upgrade"
-	desc = "An upgrade to the Research model cyborg's standard RPED."
+	name = "研究机器人快速部件交换装置升级"
+	desc = "研究型机器人标准RPED的升级版。"
 	icon_state = "module_engineer"
 	require_model = TRUE
 	model_type = list(/obj/item/robot_model/sci)
@@ -61,8 +61,8 @@
 
 //Upgrade for the experi scanner
 /obj/item/borg/upgrade/experi_scanner
-	name = "Research cyborg BlueSpace Experi-Scanner"
-	desc = "An upgrade to the Research model cyborg's standard health analyzer."
+	name = "研究机器人蓝空间实验扫描仪"
+	desc = "研究型机器人标准健康分析仪的升级版。"
 	icon_state = "module_general"
 	require_model = TRUE
 	model_type = list(/obj/item/robot_model/sci)
@@ -73,7 +73,7 @@
 // Borg Dom Aura :)
 /obj/item/borg/upgrade/dominatrixmodule/action(mob/living/silicon/robot/borg, mob/living/user)
 	if(borg.hasToys)
-		to_chat(usr, span_warning("This unit already has a 'recreational' module installed!"))
+		to_chat(usr, span_warning("该单元已经安装了'娱乐'模块！"))
 		return FALSE
 	. = ..()
 	if(.)
@@ -89,8 +89,8 @@
 
 // Engineering RLD
 /obj/item/borg/upgrade/rld
-	name = "Engineering Cyborg Rapid Lighting Device Upgrade"
-	desc = "An upgrade to allow a cyborg to use a Rapid Lighting Device."
+	name = "工程机器人快速照明装置升级"
+	desc = "允许机器人使用快速照明装置的升级。"
 	icon_state = "module_engineer"
 	require_model = TRUE
 	model_type = list(/obj/item/robot_model/engineering, /obj/item/robot_model/janitor)
@@ -100,8 +100,8 @@
 // Borg Advanced Xenoarchaeology Bag
 
 /obj/item/borg/upgrade/xenoarch/adv
-	name = "Cyborg Advanced Xenoarchaeology Bag"
-	desc = "An improved bag to pick up strange rocks for science"
+	name = "机器人高级异星考古袋"
+	desc = "一个改进的袋子，用于为科学收集奇怪的石头"
 	icon_state = "module_general"
 	require_model = TRUE
 	model_type = list(/obj/item/robot_model/miner, /obj/item/robot_model/sci)
@@ -112,8 +112,8 @@
 // Mining Borg Vent Pinpointer
 
 /obj/item/borg/upgrade/pinpointer/vent
-	name = "Vent Pinpointer"
-	desc = "A modularized tracking device. It will locate and point to nearby vents."
+	name = "通风口定位器"
+	desc = "一个模块化追踪设备。它会定位并指向附近的通风口。"
 	icon_state = "module_miner"
 	require_model = TRUE
 	model_type = list(/obj/item/robot_model/miner)
@@ -129,32 +129,32 @@
 			return install(pkamods, usr, FALSE)
 
 /obj/item/gun/energy/recharge/kinetic_accelerator/railgun/cyborg
-	desc = "Portable particle accelerator. Only Usable on lavaland"
+	desc = "便携式粒子加速器。仅可在熔岩地使用"
 	holds_charge = TRUE
 	unique_frequency = TRUE
 
 /obj/item/gun/energy/recharge/kinetic_accelerator/repeater/cyborg
-	desc = "A PKA with a three shot magazine"
+	desc = "一个带有三发弹匣的PKA"
 	holds_charge = TRUE
 	unique_frequency = TRUE
 
 /obj/item/gun/energy/recharge/kinetic_accelerator/shotgun/cyborg
-	desc = "A PKA that fires three shots with a longer cooldown."
+	desc = "一个发射三发但冷却时间更长的PKA。"
 	holds_charge = TRUE
 	unique_frequency = TRUE
 
 /obj/item/gun/energy/recharge/kinetic_accelerator/glock/cyborg
-	desc = "A Snub Nosed PKA with more mode capacity but less damage and range."
+	desc = "一个短管PKA，模式容量更大但伤害和射程较小。"
 	holds_charge = TRUE
 	unique_frequency = TRUE
 
 /obj/item/gun/energy/recharge/kinetic_accelerator/shockwave/cyborg
-	desc = "Creates a shockwave around the user, with the same power as the base PKA."
+	desc = "在使用者周围产生冲击波，威力与基础PKA相同。"
 	holds_charge = TRUE
 	unique_frequency = TRUE
 
 /obj/item/gun/energy/recharge/kinetic_accelerator/m79/cyborg
-	desc = "Fires the same bombs used by the mining modsuit. Only usable on lavaland"
+	desc = "发射采矿模块服使用的同类炸弹。仅可在熔岩地使用"
 	holds_charge = TRUE
 	unique_frequency = TRUE
 
@@ -225,8 +225,8 @@
 	var/hasToys = FALSE
 
 /obj/item/borg/upgrade/obediencemodule
-	name = "Cyborg Obedience Module"
-	desc = "A module that greatly upgrades the ability of borgs to display affection."
+	name = "机器人服从模块"
+	desc = "一个大幅提升机器人表达爱意能力的模块。"
 	icon = 'modular_skyrat/modules/borgs/icons/robot_items.dmi'
 	icon_state = "module_lust"
 	custom_price = 0
@@ -241,7 +241,7 @@
 // WellTrained Obedience Behaviour
 /obj/item/borg/upgrade/obediencemodule/action(mob/living/silicon/robot/borg, mob/living/user)
 	if(borg.hasToys)
-		to_chat(usr, span_warning("This unit already has a 'recreational' module installed!"))
+		to_chat(usr, span_warning("该单元已经安装了'娱乐'模块！"))
 		return FALSE
 	. = ..()
 	if(.)
@@ -257,8 +257,8 @@
 		borg.remove_quirk(/datum/quirk/well_trained)
 
 /obj/item/borg/upgrade/detailer
-	name = "janitor detailing toolset"
-	desc = "Upgrades a janitor cyborgs tiling capabilities while adding the ability to modify floor decals."
+	name = "清洁工精细工具组"
+	desc = "升级清洁工机器人的铺设能力，同时增加修改地板贴花的能力。"
 	icon_state = "module_janitor"
 	require_model = TRUE
 	model_type = list(/obj/item/robot_model/janitor)
@@ -269,8 +269,8 @@
 						)
 
 /obj/item/borg/upgrade/cyborg_cable_coil
-	name = "integrated cable coil"
-	desc = "Condensed spooling technology allows cabling technology in janitorial modules."
+	name = "集成电缆线圈"
+	desc = "浓缩卷线技术允许在清洁模块中使用布线技术。"
 	icon_state = "module_janitor"
 	require_model = TRUE
 	model_type = list(/obj/item/robot_model/janitor)

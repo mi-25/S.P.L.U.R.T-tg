@@ -1,7 +1,7 @@
 //normal ball mittens
 /obj/item/clothing/gloves/ball_mittens
-	name = "ball mittens"
-	desc = "A nice, comfortable pair of inflatable ball gloves."
+	name = "球形手套"
+	desc = "一副舒适的充气球形手套。"
 	icon_state = "ballmittens"
 	inhand_icon_state = null
 	icon = 'modular_skyrat/modules/modular_items/lewd_items/icons/obj/lewd_clothing/lewd_gloves.dmi'
@@ -18,15 +18,15 @@
 	var/obj/item/clothing/gloves/ball_mittens_reinforced/reinforced_muffs = new
 	remove_item_from_storage(user)
 	user.put_in_hands(reinforced_muffs)
-	to_chat(user, span_notice("You reinforced the belts on [src] with [attacking_item]."))
+	to_chat(user, span_notice("你用[attacking_item]加固了[src]的束带。"))
 	qdel(attacking_item)
 	qdel(src)
 	return TRUE
 
 //ball_mittens reinforced
 /obj/item/clothing/gloves/ball_mittens_reinforced //We getting this item by using handcuffs on normal ball mittens
-	name = "reinforced ball mittens"
-	desc = "Do not put these on, it's REALLY hard to take them off! But they look so comfortable..."
+	name = "加固球形手套"
+	desc = "不要戴上这个，脱下来真的很难！但它们看起来好舒服..."
 	icon_state = "ballmittens"
 	inhand_icon_state = null
 	icon = 'modular_skyrat/modules/modular_items/lewd_items/icons/obj/lewd_clothing/lewd_gloves.dmi'
@@ -36,8 +36,8 @@
 
 //latex gloves
 /obj/item/clothing/gloves/latex_gloves
-	name = "latex gloves"
-	desc = "Awesome looking gloves that are satisfying to the touch."
+	name = "乳胶手套"
+	desc = "外观出色的手套，触感令人满意。"
 	icon_state = "latexgloves"
 	inhand_icon_state = "latex_gloves"
 	w_class = WEIGHT_CLASS_SMALL

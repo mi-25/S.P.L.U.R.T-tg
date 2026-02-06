@@ -1,6 +1,6 @@
 /obj/item/electropack/shockcollar
-	name = "shock collar"
-	desc = "A reinforced metal collar. It has some sort of wiring near the front."
+	name = "电击项圈"
+	desc = "一个加固的金属项圈。前面有某种线路。"
 	icon = 'modular_skyrat/modules/modular_items/lewd_items/icons/obj/lewd_clothing/lewd_neck.dmi'
 	worn_icon = 'modular_skyrat/modules/modular_items/lewd_items/icons/mob/lewd_clothing/lewd_neck.dmi'
 	icon_state = "shockcollar"
@@ -19,7 +19,7 @@
 	var/tagname = null
 
 /datum/design/electropack/shockcollar
-	name = "Shockcollar"
+	name = "电击项圈"
 	id = "shockcollar"
 	build_type = AUTOLATHE
 	build_path = /obj/item/electropack/shockcollar
@@ -34,7 +34,7 @@
 
 /obj/item/electropack/shockcollar/attack_hand(mob/user)
 	if(loc == user && user.get_item_by_slot(ITEM_SLOT_NECK))
-		to_chat(user, span_warning("The collar is fastened tight! You'll need help if you want to take it off!"))
+		to_chat(user, span_warning("项圈扣得很紧！如果你想摘下来需要别人帮忙！"))
 		return
 	return ..()
 
@@ -52,7 +52,7 @@
 		addtimer(VARSET_CALLBACK(src, shock_cooldown, FALSE), 10 SECONDS)
 		step(affected_mob, pick(GLOB.cardinals))
 
-		to_chat(affected_mob, span_danger("You feel a sharp shock from the collar!"))
+		to_chat(affected_mob, span_danger("你感到项圈传来一阵剧烈的电击！"))
 		var/datum/effect_system/spark_spread/created_sparks = new /datum/effect_system/spark_spread
 		created_sparks.set_up(3, 1, affected_mob)
 		created_sparks.start()
@@ -70,7 +70,7 @@
 
 /obj/item/electropack/shockcollar/attackby(obj/item/used_item, mob/user, params) // Moves it here because on_click is being bad
 	if(istype(used_item, /obj/item/pen))
-		var/tag_input = stripped_input(user, "Would you like to change the name on the tag?", "Name your new pet", tagname ? tagname : "Spot", MAX_NAME_LEN)
+		var/tag_input = stripped_input(user, "你想更改标签上的名字吗？", "给你的新宠物命名", tagname ? tagname : "Spot", MAX_NAME_LEN)
 		if(tag_input)
 			tagname = tag_input
 			name = "[initial(name)] - [tag_input]"
@@ -91,8 +91,8 @@
 	. = ..()
 
 /obj/item/electropack/shockcollar/pacify
-	name = "pacifying collar"
-	desc = "A reinforced metal collar that latches onto the wearer and prevents harmful thoughts."
+	name = "安抚项圈"
+	desc = "一个加固的金属项圈，扣在佩戴者身上并阻止有害的想法。"
 
 /obj/item/electropack/shockcollar/pacify/equipped(mob/living/carbon/human/user, slot)
 	. = ..()

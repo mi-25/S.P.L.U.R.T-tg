@@ -27,9 +27,9 @@
 	var/choke_timer
 
 	/// Phrases when the gag modifies the player's speech.
-	var/list/moans = list("Mmmph...", "Hmmphh", "Mmmfhg", "Gmmmh...")
+	var/list/moans = list("唔嗯...", "嗯唔", "唔呣", "嗯...")
 	/// Lower probability phrases to be used when speech is modified.
-	var/list/moans_alt = list("Mhgm...", "Hmmmp!...", "GMmmhp!")
+	var/list/moans_alt = list("唔嗯...", "嗯唔!...", "呣嗯!")
 	/// Probability for alternative phrases to be used when speech is modified.
 	var/moans_alt_probability = 5
 
@@ -85,7 +85,7 @@
 		return
 	size_list_position = ((size_list_position + 1) % list_len) + 1
 	gag_size = possible_gag_sizes[size_list_position]
-	balloon_alert(user, "size set to [gag_size]")
+	balloon_alert(user, "尺寸设置为[gag_size]")
 
 // A ballgag that can choke the wearer
 /obj/item/clothing/mask/ballgag/choking

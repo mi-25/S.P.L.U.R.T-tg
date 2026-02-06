@@ -13,31 +13,31 @@
 	//the message that will be sent to the owner at the end
 	var/blur_time = 0
 	var/jitter_time = 0
-	var/lust_message = "You feel your body getting warmer as your arousal becomes visible to anyone around you..."
+	var/lust_message = "你感到身体越来越热，你的兴奋状态已经被周围的人看得一清二楚..."
 	//we are using if statements so that it slowly becomes more and more to the person
 	human_owner.manual_emote(pick(lust_emotes))
 	if(stress >= 60)
 		blur_time = 5 SECONDS
-		lust_message = "Lewd images and thoughts of sex flood your mind, making it hard to concentrate..."
+		lust_message = "淫荡的画面和性爱的念头充斥着你的大脑，让你难以集中注意力..."
 	if(stress >= 120)
 		blur_time = 10 SECONDS
 		jitter_time = 10 SECONDS
-		lust_message = "You find your arousal growing further as you feel an aching need for release..."
+		lust_message = "你发现自己的欲望进一步增长，感到一种迫切需要释放的渴望..."
 	if(stress >= 180)
 		blur_time = 15 SECONDS
 		jitter_time = 15 SECONDS
 		human_owner.adjust_stamina_loss(5)
-		lust_message = "Your sexual impulses rise even further as you feel your throbbing genitals leaking and/or growing fully hard..."
+		lust_message = "你的性冲动进一步上升，你感到自己跳动的生殖器正在流出液体和/或完全勃起..."
 	if(stress >= 240)
 		blur_time = 20 SECONDS
 		jitter_time = 20 SECONDS
 		human_owner.adjust_stamina_loss(10)
-		lust_message = "It's almost impossible to focus your mind on anything other than sex as your carnal needs continue to grow even stronger!"
+		lust_message = "你几乎无法将注意力集中在性以外的任何事情上，你的肉欲需求继续变得更加强烈！"
 	if(stress >= 300)
 		blur_time = 30 SECONDS
 		jitter_time = 30 SECONDS
 		human_owner.adjust_stamina_loss(15)
-		lust_message = "You feel so desperately aroused that the almost painful aching, throbbing heat overwhelming your body has taken on a life of it's own. You NEED release!"
+		lust_message = "你感到如此绝望地兴奋，那种几乎令人痛苦的疼痛、跳动的热量压倒了你的身体，仿佛有了自己的生命。你需要释放！"
 	if(blur_time)
 		human_owner.set_eye_blur_if_lower(blur_time)
 	if(jitter_time)
@@ -45,7 +45,7 @@
 
 	to_chat(human_owner, span_purple(lust_message))
 	if(!in_company())
-		to_chat(human_owner, span_purple("You find yourself groping your genitals, seeking any kind of relief"))
+		to_chat(human_owner, span_purple("你发现自己在抚摸自己的生殖器，寻求任何形式的解脱"))
 		human_owner.adjust_pleasure(5)
 
 	var/overflow = 0

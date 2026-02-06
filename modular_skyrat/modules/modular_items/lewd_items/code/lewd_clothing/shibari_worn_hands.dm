@@ -1,6 +1,6 @@
 /obj/item/clothing/gloves/shibari_hands
-	name = "shibari arms bondage"
-	desc = "Bondage ropes that cover arms."
+	name = "手臂绳缚"
+	desc = "覆盖手臂的绳缚绳索。"
 	icon = 'icons/map_icons/clothing/_clothing.dmi'
 	icon_state = "/obj/item/clothing/gloves/shibari_hands"
 	post_init_icon_state = "shibari_arms"

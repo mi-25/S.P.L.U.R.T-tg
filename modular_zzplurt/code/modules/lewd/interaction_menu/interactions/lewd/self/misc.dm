@@ -1,14 +1,14 @@
 /datum/interaction/lewd/clothesplosion
 	name = "爆衣"
-	description = "从衣服中爆裂而出。"
+	description = "脱光所有的衣物。"
 	usage = INTERACTION_SELF
 	interaction_requires = list(
 		INTERACTION_REQUIRE_SELF_HUMAN
 	)
 	message = list(
-		"从衣服中爆裂而出!",
-		"从服装中爆炸而出!",
-		"戏剧性地撕破衣服挣脱出来!"
+		"瞬间脱掉了所有衣服!",
+		"身上的衣物瞬间飞散!",
+		"戏剧性地脱光了全身!"
 	)
 	sound_range = 1
 	sound_use = FALSE

@@ -1,6 +1,6 @@
 /obj/item/clothing/sextoy/portal_panties
-	name = "portal panties"
-	desc = "A pair of panties with bluespace tech allowing lovers to hump at a distance. Needs to be paired with a portal fleshlight before use."
+	name = "传送门内裤"
+	desc = "一条采用蓝空间技术的内裤，让恋人们能够远距离亲热。使用前需要与传送门飞机杯配对。"
 	icon = 'modular_zzplurt/icons/obj/lewd/fleshlight.dmi'
 	icon_state = "portal_panties"
 	worn_icon = 'modular_zzplurt/icons/mob/clothing/underwear.dmi' //TODO: Add a worn icon for this item
@@ -20,13 +20,13 @@
 
 /obj/item/clothing/sextoy/portal_panties/add_context(atom/source, list/context, obj/item/held_item, mob/user)
 	if(isnull(held_item))
-		context[SCREENTIP_CONTEXT_LMB] = "Pick up"
-		context[SCREENTIP_CONTEXT_RMB] = "Toggle anonymous mode"
-		context[SCREENTIP_CONTEXT_ALT_LMB] = linked_fleshlight ? "Unlink fleshlight" : "No fleshlight linked"
+		context[SCREENTIP_CONTEXT_LMB] = "拾取"
+		context[SCREENTIP_CONTEXT_RMB] = "切换匿名模式"
+		context[SCREENTIP_CONTEXT_ALT_LMB] = linked_fleshlight ? "解除飞机杯绑定" : "未绑定飞机杯"
 		return CONTEXTUAL_SCREENTIP_SET
 
 	if(istype(held_item, /obj/item/clothing/sextoy/portal_fleshlight))
-		context[SCREENTIP_CONTEXT_LMB] = "Link fleshlight"
+		context[SCREENTIP_CONTEXT_LMB] = "绑定飞机杯"
 		return CONTEXTUAL_SCREENTIP_SET
 
 	return NONE
@@ -34,16 +34,16 @@
 /obj/item/clothing/sextoy/portal_panties/examine(mob/user)
 	. = ..()
 	if(!linked_fleshlight)
-		. += span_notice("The status light is off. The device needs to be paired with a portal fleshlight.")
+		. += span_notice("状态灯熄灭。设备需要与传送门飞机杯配对。")
 		return
 
-	. += span_notice("The status light is [equipped_slot ? "on" : "off"]. The portal is [equipped_slot ? "open" : "closed"].")
+	. += span_notice("状态灯[equipped_slot ? "亮起" : "熄灭"]。传送门[equipped_slot ? "已开启" : "已关闭"]。")
 	if(equipped_slot)
-		. += span_notice("The current target is: [current_target]")
+		. += span_notice("当前目标为：[current_target]")
 
-	. += span_notice("Use it as underwear to autodetect genitals")
-	. += span_notice("Use as mask to connect to the mouth")
-	. += span_notice("Use in genital slots to connect to specific genitals")
+	. += span_notice("作为内裤穿着可自动检测生殖器")
+	. += span_notice("作为面罩穿着可连接到嘴部")
+	. += span_notice("穿戴在生殖器槽位可连接到特定生殖器")
 
 /obj/item/clothing/sextoy/portal_panties/attackby(obj/item/W, mob/user, list/modifiers, list/attack_modifiers)
 	. = ..()
@@ -94,9 +94,9 @@
 	if(linked_fleshlight)
 		linked_fleshlight.update_appearance()
 	else if(slot in list(ITEM_SLOT_UNDERWEAR, ITEM_SLOT_MASK, ORGAN_SLOT_PENIS, ORGAN_SLOT_VAGINA, ORGAN_SLOT_ANUS))
-		audible_message("[icon2html(src, hearers(src))] *beep* *beep* *beep*")
+		audible_message("[icon2html(src, hearers(src))] *哔* *哔* *哔*")
 		playsound(src, 'sound/machines/beep/triple_beep.ogg', ASSEMBLY_BEEP_VOLUME, TRUE)
-		to_chat(user, span_notice("The panties are not linked to a portal fleshlight."))
+		to_chat(user, span_notice("内裤未与传送门飞机杯绑定。"))
 
 /obj/item/clothing/sextoy/portal_panties/attack_hand_secondary(mob/user, list/modifiers)
 	. = ..()
@@ -105,19 +105,19 @@
 
 	anonymous = !anonymous
 	playsound(src, 'sound/machines/ping.ogg', 50, FALSE)
-	balloon_alert(user, "anonymous mode: [anonymous ? "ON" : "OFF"]")
+	balloon_alert(user, "匿名模式：[anonymous ? "开启" : "关闭"]")
 	return SECONDARY_ATTACK_CANCEL_ATTACK_CHAIN
 
 /obj/item/clothing/sextoy/portal_panties/click_alt(mob/user)
 	if(!linked_fleshlight)
-		to_chat(user, span_warning("[src] isn't linked to any portal fleshlight!"))
+		to_chat(user, span_warning("[src]未与任何传送门飞机杯绑定！"))
 		return CLICK_ACTION_BLOCKING
 
-	var/choice = tgui_alert(user, "Are you sure you want to unlink the portal fleshlight?", "Unlink Portal Fleshlight", list("Yes", "No"))
-	if(choice != "Yes")
+	var/choice = tgui_alert(user, "确定要解除传送门飞机杯的绑定吗？", "解除传送门飞机杯绑定", list("是", "否"))
+	if(choice != "是")
 		return CLICK_ACTION_BLOCKING
 
-	to_chat(user, span_notice("You unlink the portal fleshlight from [src]."))
+	to_chat(user, span_notice("你解除了[src]与传送门飞机杯的绑定。"))
 	linked_fleshlight.unlink_panties()
 
 /obj/item/clothing/sextoy/portal_panties/Destroy()
