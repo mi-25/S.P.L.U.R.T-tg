@@ -1,8 +1,8 @@
 // Base Sol SMG
 
 /obj/item/gun/ballistic/automatic/sol_smg
-	name = "\improper Sindano Submachine Gun"
-	desc = "A small submachine gun firing .35 Sol. Commonly seen in the hands of PMCs and other unsavory corpos. Accepts any standard Sol pistol magazine."
+	name = "\improper 辛达诺冲锋枪"
+	desc = "一把发射.35 Sol的小型冲锋枪。常见于私人军事公司和其他令人不快的公司人员手中。接受任何标准Sol手枪弹匣。"
 
 	icon = 'modular_skyrat/modules/modular_weapons/icons/obj/company_and_or_faction_based/carwo_defense_systems/guns32x.dmi'
 	icon_state = "sindano"
@@ -37,18 +37,17 @@
 
 /obj/item/gun/ballistic/automatic/sol_smg/examine(mob/user)
 	. = ..()
-	. += span_notice("You can <b>examine closer</b> to learn a little more about this weapon.")
+	. += span_notice("你可以<b>仔细检查</b>以了解更多关于此武器的信息。")
 
 /obj/item/gun/ballistic/automatic/sol_smg/examine_more(mob/user)
 	. = ..()
 
-	. += "The Sindano submachinegun was originally produced for military contract. \
-		These guns were seen in the hands of anyone from medics, ship techs, logistics officers, \
-		and shuttle pilots often had several just to show off. Due to TerraGov's quest to \
-		extend the lifespans of their logistics officers and quartermasters, the weapon \
-		uses the same standard pistol cartridge that most other miltiary weapons of \
-		small caliber use. This results in interchangeable magazines between pistols \
-		and submachineguns, neat!"
+	. += "辛达诺冲锋枪最初为军事合同生产。\
+		这些枪出现在从医疗兵、舰船技师、后勤官员到穿梭机飞行员等任何人手中，\
+		后者经常携带好几把只是为了炫耀。由于TerraGov致力于延长\
+		其后勤官员和军需官的寿命，这款武器使用与其他大多数小口径\
+		军事武器相同的标准手枪弹药。这使得手枪和冲锋枪之间的\
+		弹匣可以互换，真不错！"
 
 	return .
 
@@ -58,7 +57,7 @@
 // Sindano (evil)
 
 /obj/item/gun/ballistic/automatic/sol_smg/evil
-	desc = "A small submachinegun, this one is painted in tacticool black. Accepts any standard Sol pistol magazine."
+	desc = "一把小型冲锋枪，这把被涂成了战术酷黑色。接受任何标准Sol手枪弹匣。"
 
 	icon_state = "sindano_evil"
 	inhand_icon_state = "sindano_evil"

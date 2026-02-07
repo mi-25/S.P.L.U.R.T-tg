@@ -2,8 +2,8 @@
 	keyslot2 = null
 
 /obj/item/radio/headset/chameleon/advanced
-	special_desc = "A chameleon headset employed by the Syndicate in infiltration operations. \
-	This particular model features flashbang protection, and the ability to amplify your volume."
+	special_desc = "辛迪加在渗透行动中使用的变色龙耳机。 \
+	这个特定型号具有闪光弹防护功能，并能放大你的音量。"
 	command = TRUE
 	freerange = TRUE
 

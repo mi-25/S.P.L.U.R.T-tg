@@ -12,8 +12,8 @@
 	AddComponent(/datum/component/toggle_icon)
 
 /obj/item/clothing/suit/armor/vest/capcarapace/syndicate/winter
-	name = "syndicate captain's winter vest"
-	desc = "A sinister yet comfortable looking vest of advanced armor worn over a black and red fireproof jacket. The fur is said to be from wolves on the icemoon."
+	name = "辛迪加队长冬季背心"
+	desc = "一件阴森却舒适的先进装甲背心，穿在黑色和红色的防火夹克外面。据说毛皮来自冰月上的狼。"
 	icon = 'modular_skyrat/modules/syndie_edits/icons/obj.dmi'
 	worn_icon = 'modular_skyrat/modules/syndie_edits/icons/worn.dmi'
 	icon_state = "syndievest_winter"
@@ -27,24 +27,24 @@
 	AddComponent(/datum/component/toggle_icon)
 
 /obj/item/clothing/head/hats/warden/syndicate
-	name = "master at arms' police hat"
-	desc = "A fashionable police cap emblazoned with a golden badge, issued to the Master at Arms. Protects the head from impacts."
+	name = "军械长警帽"
+	desc = "一顶时尚的警帽，饰有金色徽章，颁发给军械长。保护头部免受冲击。"
 	icon = 'modular_skyrat/master_files/icons/obj/clothing/hats.dmi'
 	worn_icon = 'modular_skyrat/master_files/icons/mob/clothing/head.dmi'
 	icon_state = "policehelm_syndie"
 	dog_fashion = null
 
 /obj/item/clothing/head/helmet/swat/ds
-	name = "SWAT helmet"
-	desc = "A robust and spaceworthy helmet with a small cross on it along with 'IP' written across the earpad."
+	name = "特警头盔"
+	desc = "一个坚固且适合太空使用的头盔，上面有一个小十字架，耳垫上写着'IP'。"
 	icon = 'modular_skyrat/master_files/icons/obj/clothing/head/helmet.dmi'
 	worn_icon = 'modular_skyrat/master_files/icons/mob/clothing/head/helmet.dmi'
 	icon_state = "swat_ds"
 	supports_variations_flags = CLOTHING_SNOUTED_VARIATION
 
 /obj/item/clothing/head/beret/sec/syndicate
-	name = "brig officer's beret"
-	desc = "A stylish and protective beret, produced and manufactured by Interdyne Pharmaceuticals with help from the Gorlex Marauders."
+	name = "禁闭室军官贝雷帽"
+	desc = "一顶时尚且具有保护性的贝雷帽，由国际药品公司在戈莱克斯掠夺者的帮助下生产和制造。"
 	icon_state = "/obj/item/clothing/head/beret/sec/syndicate"
 	greyscale_config = /datum/greyscale_config/beret_badge
 	greyscale_config_worn = /datum/greyscale_config/beret_badge/worn

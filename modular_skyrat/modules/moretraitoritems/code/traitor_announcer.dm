@@ -1,10 +1,10 @@
 #define INFINITE_CHARGES -1
 
 /obj/item/device/traitor_announcer
-	name = "odd device"
-	desc = "Hmm... what is this for?"
+	name = "奇怪的设备"
+	desc = "嗯...这是用来做什么的？"
 	special_desc_requirement = EXAMINE_CHECK_SYNDICATE
-	special_desc = "A remote that can be used to transmit a fake announcement of your own design."
+	special_desc = "一个可以用来传输你自己设计的虚假公告的遥控器。"
 	icon = 'icons/obj/devices/scanner.dmi'
 	lefthand_file = 'icons/mob/inhands/items/devices_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/items/devices_righthand.dmi'
@@ -18,28 +18,28 @@
 	. = ..()
 	//can we use this?
 	if(!isliving(user) || (uses == 0))
-		balloon_alert(user, "no uses left!")
+		balloon_alert(user, "没有使用次数了！")
 		return
 	//build our announcement
-	var/origin = reject_bad_text(tgui_input_text(user, "Who is announcing, or where is the announcement coming from?", "Announcement Origin", get_area_name(user), max_length = 28))
+	var/origin = reject_bad_text(tgui_input_text(user, "谁在公告，或者公告来自哪里？", "公告来源", get_area_name(user), max_length = 28))
 	if(!origin)
-		balloon_alert(user, "bad origin!")
+		balloon_alert(user, "来源无效！")
 		return
-	var/audio_key = tgui_input_list(user, "Which announcement audio key should play? ('Intercept' is default)", "Announcement Audio", GLOB.announcer_keys, ANNOUNCER_INTERCEPT)
+	var/audio_key = tgui_input_list(user, "应该播放哪个公告音频键？('拦截'是默认)", "公告音频", GLOB.announcer_keys, ANNOUNCER_INTERCEPT)
 	if(!audio_key)
-		balloon_alert(user, "bad audio!")
+		balloon_alert(user, "音频无效！")
 		return
-	var/color = tgui_input_list(user, "Which color should the announcement be?", "Announcement Hue", ANNOUNCEMENT_COLORS, "default")
+	var/color = tgui_input_list(user, "公告应该是什么颜色？", "公告色调", ANNOUNCEMENT_COLORS, "default")
 	if(!color)
-		balloon_alert(user, "bad color!")
+		balloon_alert(user, "颜色无效！")
 		return
-	var/title = reject_bad_text(tgui_input_text(user, "Choose the title of the announcement.", "Announcement Title", max_length = 42))
+	var/title = reject_bad_text(tgui_input_text(user, "选择公告的标题。", "公告标题", max_length = 42))
 	if(!title)
-		balloon_alert(user, "bad title!")
+		balloon_alert(user, "标题无效！")
 		return
-	var/input = reject_bad_text(tgui_input_text(user, "Choose the bodytext of the announcement.", "Announcement Text", max_length = 512, multiline = TRUE))
+	var/input = reject_bad_text(tgui_input_text(user, "选择公告的正文。", "公告文本", max_length = 512, multiline = TRUE))
 	if(!input)
-		balloon_alert(user, "bad text!")
+		balloon_alert(user, "文本无效！")
 		return
 	//treat voice
 	var/list/message_data = user.treat_message(input)

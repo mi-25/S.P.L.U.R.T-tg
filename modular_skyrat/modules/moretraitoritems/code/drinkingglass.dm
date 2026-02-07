@@ -1,6 +1,6 @@
 /obj/item/reagent_containers/cup/glass/drinkingglass/shotglass/syndicate
-	name = "shot glass"
-	desc = "A shot glass - the universal symbol for terrible decisions."
+	name = "小酒杯"
+	desc = "一个小酒杯 - 糟糕决策的普遍象征。"
 	icon_state = "shotglass"
 	base_icon_state = "shotglass"
 	gulp_size = 50
@@ -10,8 +10,8 @@
 	initial_reagent_flags = REFILLABLE | DRAINABLE
 
 /obj/item/storage/box/syndieshotglasses
-	name = "box of shot glasses"
-	desc = "It has a picture of shot glasses on it."
+	name = "小酒杯盒"
+	desc = "上面有小酒杯的图片。"
 	illustration = "drinkglass"
 
 /obj/item/storage/box/syndieshotglasses/PopulateContents()

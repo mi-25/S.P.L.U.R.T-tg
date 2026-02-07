@@ -1,8 +1,8 @@
 // TerraGov shotgun (this was gonna be in a proprietary shotgun shell type outside of 12ga at some point, wild right?)
 
 /obj/item/gun/ballistic/shotgun/riot/sol
-	name = "\improper Renoster Shotgun"
-	desc = "A twelve gauge shotgun with an eight shell capacity underneath. Made for and used by TerraGov's various military branches."
+	name = "\improper 雷诺斯特霰弹枪"
+	desc = "一把十二号口径霰弹枪，下方有八发容量。为TerraGov各军事部门制造和使用。"
 
 	icon = 'modular_skyrat/modules/modular_weapons/icons/obj/company_and_or_faction_based/carwo_defense_systems/guns48x.dmi'
 	icon_state = "renoster"
@@ -38,18 +38,17 @@
 
 /obj/item/gun/ballistic/shotgun/riot/sol/examine(mob/user)
 	. = ..()
-	. += span_notice("You can <b>examine closer</b> to learn a little more about this weapon.")
+	. += span_notice("你可以<b>仔细检查</b>以了解更多关于此武器的信息。")
 
 /obj/item/gun/ballistic/shotgun/riot/sol/examine_more(mob/user)
 	. = ..()
 
-	. += "The Renoster was designed at its core as a police shotgun. \
-		As consequence, it holds all the qualities a police force would want \
-		in one. Large shell capacity, sturdy frame, while holding enough \
-		capacity for modification to satiate even the most overfunded of \
-		peacekeeper forces. Inevitably, the weapon made its way into civilian \
-		markets alongside its sale to several military branches that also \
-		saw value in having a heavy shotgun."
+	. += "雷诺斯特的核心设计是一款警用霰弹枪。\
+		因此，它具备了一支警察部队所期望的所有品质。\
+		大容量、坚固的框架，同时拥有足够的改装潜力，\
+		足以满足即使是最资金过剩的维和部队。\
+		不可避免地，这款武器在销往多个军事部门的同时，\
+		也进入了民用市场，这些部门也认识到拥有一把重型霰弹枪的价值。"
 
 	return .
 
@@ -63,7 +62,7 @@
 // Shotgun but EVIL!
 
 /obj/item/gun/ballistic/shotgun/riot/sol/evil
-	desc = "A twleve gauge shotgun with an eight shell capacity underneath. This one is painted in a tacticool black."
+	desc = "一把十二号口径霰弹枪，下方有八发容量。这把被涂成了战术酷黑色。"
 
 	icon_state = "renoster_evil"
 	worn_icon_state = "renoster_evil"

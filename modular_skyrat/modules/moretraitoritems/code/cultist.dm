@@ -1,9 +1,9 @@
 /obj/item/clothing/glasses/hud/health/night/cultblind_unrestricted
-	desc = "Where we are going, we won't need eyes to see."
-	name = "zealot's blindfold"
+	desc = "我们要去的地方，不需要眼睛来看。"
+	name = "狂热者的眼罩"
 	icon_state = "blindfold"
 	inhand_icon_state = "blindfold"
 	flash_protect = FLASH_PROTECTION_WELDER
 
 /obj/item/clothing/glasses/hud/health/night/cultblind_unrestricted/narsie
-	desc = "May Nar'Sie guide you through the darkness and shield you from the light."
+	desc = "愿纳尔'西指引你穿越黑暗，庇护你远离光明。"

@@ -1,8 +1,8 @@
 // Base Sol rifle
 
 /obj/item/gun/ballistic/automatic/sol_rifle
-	name = "\improper Carwo-Cawil Battle Rifle"
-	desc = "A heavy battle rifle firing .40 Sol. Commonly seen in the hands of TerraGov military types. Accepts any standard TerraGov rifle magazine."
+	name = "\improper 卡沃-卡维尔战斗步枪"
+	desc = "一支发射.40 Sol的重型战斗步枪。常见于TerraGov军方人员手中。接受任何标准TerraGov步枪弹匣。"
 
 	icon = 'modular_skyrat/modules/modular_weapons/icons/obj/company_and_or_faction_based/carwo_defense_systems/guns48x.dmi'
 	icon_state = "infanterie"
@@ -54,19 +54,17 @@
 
 /obj/item/gun/ballistic/automatic/sol_rifle/examine(mob/user)
 	. = ..()
-	. += span_notice("You can <b>examine closer</b> to learn a little more about this weapon.")
+	. += span_notice("你可以<b>仔细检查</b>以了解更多关于此武器的信息。")
 
 /obj/item/gun/ballistic/automatic/sol_rifle/examine_more(mob/user)
 	. = ..()
 
-	. += "The Carwo-Cawil rifles are built by Carwo for \
-		use by TerraGov's various infantry branches. Following the rather reasonable \
-		military requirements of using the same few cartridges and magazines, \
-		the lifespans of logistics coordinators and quartermasters everywhere \
-		were lengthened by several years. While typically only for military sale \
-		in the past, the recent collapse of certain unnamed weapons manufacturers \
-		has caused Carwo to open many of its military weapons to civilian sale, \
-		which includes this one."
+	. += "卡沃-卡维尔步枪由卡沃公司制造，供TerraGov各步兵部队使用。\
+		遵循相当合理的军事要求，使用相同的几种弹药和弹匣，\
+		各地后勤协调员和军需官的寿命因此延长了数年。\
+		虽然过去通常只供军方销售，但最近某些未具名武器制造商的倒闭\
+		促使卡沃公司将其许多军用武器向民用市场开放，\
+		其中包括这一款。"
 
 	return .
 
@@ -76,8 +74,8 @@
 // Sol marksman rifle
 
 /obj/item/gun/ballistic/automatic/sol_rifle/marksman
-	name = "\improper Cawil Marksman Rifle"
-	desc = "A heavy marksman rifle commonly seen in the hands of TerraGov military types. Accepts any standard TerraGov rifle magazine."
+	name = "\improper 卡维尔精确射手步枪"
+	desc = "一支重型精确射手步枪，常见于TerraGov军方人员手中。接受任何标准TerraGov步枪弹匣。"
 
 	icon_state = "elite"
 	worn_icon_state = "elite"
@@ -102,11 +100,10 @@
 /obj/item/gun/ballistic/automatic/sol_rifle/marksman/examine_more(mob/user)
 	. = ..()
 
-	. += "This particlar variant is a marksman rifle. \
-		Automatic fire was forsaken for a semi-automatic setup, a more fitting \
-		stock, and more often than not a scope. Typically also seen with smaller \
-		magazines for convenience for the shooter, but as with any other Sol \
-		rifle, all standard magazine types will work."
+	. += "这个特定变体是一款精确射手步枪。\
+		为了半自动设置、更合适的枪托和通常配备的瞄准镜，\
+		自动射击功能被舍弃。通常也配备较小的弹匣以方便射手，\
+		但与其他Sol步枪一样，所有标准弹匣类型都适用。"
 
 	return .
 
@@ -116,8 +113,8 @@
 // Machinegun based on the base Sol rifle
 
 /obj/item/gun/ballistic/automatic/sol_rifle/machinegun
-	name = "\improper Qarad Light Machinegun"
-	desc = "A hefty machinegun commonly seen in the hands of TerraGov military types. Accepts any standard TerraGov rifle magazine."
+	name = "\improper 卡拉德轻机枪"
+	desc = "一挺重型机枪，常见于TerraGov军方人员手中。接受任何标准TerraGov步枪弹匣。"
 
 	icon_state = "outomaties"
 	worn_icon_state = "outomaties"
@@ -136,13 +133,12 @@
 /obj/item/gun/ballistic/automatic/sol_rifle/machinegun/examine_more(mob/user)
 	. = ..()
 
-	. += "The 'Qarad' variant of the rifle, what you are looking at now, \
-		is a modification to turn the weapon into a passable, if sub-optimal \
-		light machinegun. To support the machinegun role, the internals were \
-		converted to make the gun into an open bolt, faster firing machine. These \
-		additions, combined with a battle rifle not meant to be used fully auto \
-		much to begin with, made for a relatively unwieldy weapon. A machinegun, \
-		however, is still a machinegun, no matter how hard it is to keep on target."
+	. += "你现在看到的步枪'卡拉德'变体，\
+		是一种将武器改造为合格（即使不是最优）轻机枪的改装。\
+		为了支持机枪角色，内部结构被转换为开放式枪机，实现更快的射速。\
+		这些改进，加上本就不太适合全自动使用的战斗步枪，\
+		造就了一款相对笨重的武器。然而，机枪终究是机枪，\
+		无论保持瞄准有多困难。"
 
 	return .
 
@@ -152,7 +148,7 @@
 // Evil version of the rifle (nothing different its just black)
 
 /obj/item/gun/ballistic/automatic/sol_rifle/evil
-	desc = "A heavy battle rifle, this one seems to be painted tacticool black. Accepts any standard TerraGov rifle magazine."
+	desc = "一支重型战斗步枪，这把似乎被涂成了战术酷黑色。接受任何标准TerraGov步枪弹匣。"
 
 	icon_state = "infanterie_evil"
 	worn_icon_state = "infanterie_evil"
