@@ -42,7 +42,7 @@ $include splurt/plug13.txt
 # SERVERSQLNAME tgstation
 
 ## Station name: The name of the station as it is referred to in-game. If commented out, the game will generate a random name instead.
-STATIONNAME 蓝红球高级足疗娱乐会所
+STATIONNAME 13号无限制格斗大赛赛区
 
 ## Put on byond hub: Uncomment this to put your server on the byond hub.
 #HUB
